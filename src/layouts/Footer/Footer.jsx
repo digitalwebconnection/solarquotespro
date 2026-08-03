@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Sun, Mail, Phone, MapPin } from 'lucide-react';
+import { APP_NAME, CONTACT_EMAIL, CONTACT_PHONE } from '../../utils/constants';
 
 const Footer = () => {
   return (
@@ -11,29 +12,11 @@ const Footer = () => {
           <div className="mb-8 md:mb-0">
             <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-white mb-6">
               <Sun className="h-8 w-8 text-yellow-500" />
-              <span>SolarQuotesPro</span>
+              <span>{APP_NAME}</span>
             </Link>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Your trusted independent source for solar energy information, tools, quotes, and installer reviews across the country.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <span className="sr-only">Facebook</span>
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <span className="sr-only">Instagram</span>
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </div>
           </div>
           
           {/* Quick Links */}
@@ -42,9 +25,9 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Home</Link></li>
               <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> About Us</Link></li>
-              <li><Link to="/tools" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Solar Calculators</Link></li>
+              <li><Link to="/tools/all-solar-tools" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Solar Calculators</Link></li>
               <li><Link to="/faq" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Common Questions</Link></li>
-              <li><Link to="/reviews" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Installer Reviews</Link></li>
+              <li><Link to="/reviews/all-solar-reviews" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Installer Reviews</Link></li>
             </ul>
           </div>
           
@@ -55,8 +38,6 @@ const Footer = () => {
               <li><Link to="/blog" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Solar Blog</Link></li>
               <li><Link to="/search" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Search Site</Link></li>
               <li><Link to="/start-here" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Beginner's Guide</Link></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Privacy Policy</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Terms of Service</a></li>
             </ul>
           </div>
           
@@ -70,11 +51,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center text-slate-400">
                 <Phone className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
-                <span>1-800-SOLAR-PRO</span>
+                <span>{CONTACT_PHONE}</span>
               </li>
               <li className="flex items-center text-slate-400">
                 <Mail className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
-                <span>hello@solarquotespro.com</span>
+                <span>{CONTACT_EMAIL}</span>
               </li>
             </ul>
             <div className="mt-6">
@@ -87,7 +68,7 @@ const Footer = () => {
         
         <div className="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SolarQuotesPro. All rights reserved.
+            &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-slate-500">
             <p>Designed for a brighter future ☀️</p>
