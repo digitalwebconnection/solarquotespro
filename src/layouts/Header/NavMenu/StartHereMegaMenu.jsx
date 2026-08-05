@@ -23,7 +23,7 @@ const StartHereMegaMenu = () => {
     >
       <Link 
         to="/start-here"
-        className="flex items-center text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+        className="flex items-center text-gray-700 hover:text-orange-500 px-3 py-2 rounded-xl text-sm font-medium transition-colors"
       >
         Start Here <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </Link>

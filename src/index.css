@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+body {
+  @apply bg-slate-50 text-slate-700 antialiased font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply  font-bold tracking-tight;
+}
+
+/* Base custom gradients */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400;
+}

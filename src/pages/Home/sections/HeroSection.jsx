@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="text-left max-w-3xl flex-1 mt-10 lg:mt-0">
           <div className="inline-flex px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 backdrop-blur-md mb-8 items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
-            <span className="text-blue-300 font-semibold tracking-wide text-sm uppercase">The Future of Energy</span>
+            <span className="text-white font-semibold tracking-wide text-sm uppercase">The Future of Energy</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
@@ -62,8 +62,8 @@ const HeroSection = () => {
 
         {/* Floating Glass Card - Quick Calculator */}
         <div className="hidden lg:block flex-1 relative w-full max-w-md w-full">
-          <div className="absolute -inset-1 bg-linear-to-r from-blue-500 to-teal-400 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
-          <div className="relative bg-slate-900/70 backdrop-blur-2xl border border-white/10 p-8 rounded-3xl shadow-2xl">
+          <div className="absolute -inset-1 bg-linear-to-r from-blue-500 to-teal-400 rounded-xl blur-xl opacity-30 animate-pulse"></div>
+          <div className="relative bg-slate-900/70 backdrop-blur-2xl border border-white/10 p-8 rounded-xl shadow-2xl">
             <h3 className="text-2xl font-bold text-white mb-2">Calculate Savings</h3>
             <p className="text-slate-300 mb-6 text-sm">See how much you could save with solar in seconds.</p>
             

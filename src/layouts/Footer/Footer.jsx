@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
             </ul>
             <div className="mt-6">
-              <Link to="/contact" className="inline-block bg-transparent border-2 border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors w-full text-center">
+              <Link to="/contact" className="inline-block bg-transparent border-2 border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-xl text-sm font-semibold transition-colors w-full text-center">
                 Contact Us
               </Link>
             </div>
