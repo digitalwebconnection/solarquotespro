@@ -1,89 +1,64 @@
-import { FileText, Users, DollarSign, ChevronRight } from 'lucide-react';
-
-const steps = [
-  {
-    num: '1',
-    icon: <FileText size={28} className="text-[#1b75bb]" />,
-    title: 'Request Quotes',
-    desc: 'Tell us about your home and energy needs through our quick form.'
-  },
-  {
-    num: '2',
-    icon: <Users size={28} className="text-[#1b75bb]" />,
-    title: 'Compare Installers',
-    desc: 'Receive quotes from up to three pre-vetted, trusted local solar installers.'
-  },
-  {
-    num: '3',
-    icon: <DollarSign size={28} className="text-[#1b75bb]" />,
-    title: 'Choose & Save',
-    desc: 'Select the best quote for you and start saving money on your electricity bills.'
-  }
-];
+import { motion } from 'framer-motion';
+import { Home, Users, CheckSquare } from 'lucide-react';
 
 export default function HowItWorks() {
+  const steps = [
+    {
+      icon: <Home className="w-8 h-8 text-amber-500" />,
+      title: "1. Tell Us About Your Property",
+      description: "Complete our quick online form in under 2 minutes."
+    },
+    {
+      icon: <Users className="w-8 h-8 text-amber-500" />,
+      title: "2. We Match You With Verified Installers",
+      description: "Based on your location and requirements, we select up to three trusted installers from our network."
+    },
+    {
+      icon: <CheckSquare className="w-8 h-8 text-amber-500" />,
+      title: "3. Compare & Choose",
+      description: "Receive personalised quotes, compare pricing, products, warranties and choose the installer that's right for you."
+    }
+  ];
+
   return (
-    <section className="py-20 bg-[#eaeff3] font-['Helvetica_Neue',Helvetica,Arial,sans-serif]" id="how-it-works">
-      <div className="max-w-[1110px] mx-auto px-4 md:px-6">
-        
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-[26px] md:text-[32px] font-bold text-[#2b3864] uppercase tracking-wide mb-4">
-            How It Works
-          </h2>
-          <p className="text-[16px] md:text-[18px] text-[#404040] max-w-2xl mx-auto">
-            Three simple steps to switch to solar and take control of your energy bills.
-          </p>
+    <section className="py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">How It Works</h2>
         </div>
-        
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-          {/* Connector Line (Desktop Only) */}
-          <div className="hidden md:block absolute top-[40px] left-[16%] right-[16%] h-[2px] bg-[#d4d7e0] -z-10"></div>
+
+        <div className="grid md:grid-cols-3 gap-8 relative">
+          {/* Connecting line for desktop */}
+          <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-slate-200 via-amber-300 to-slate-200" />
           
           {steps.map((step, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-white rounded-[8px] border border-[#e0e0e0] shadow-[4px_4px_12px_rgba(0,0,0,0.07)] p-8 pt-10 relative flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
+              className="relative bg-slate-50 border border-slate-200 rounded-3xl p-8 text-center hover:border-amber-300 transition-colors group shadow-sm hover:shadow-md"
             >
-              {/* Number Badge & Icon Container */}
-              <div className="w-[80px] h-[80px] bg-white rounded-full border-2 border-[#1b75bb] flex items-center justify-center absolute -top-[40px] left-1/2 -translate-x-1/2 shadow-[0_4px_10px_rgba(27,117,187,0.15)]">
+              <div className="w-20 h-20 mx-auto bg-white border-2 border-slate-100 group-hover:border-amber-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm relative z-10 transition-colors">
                 {step.icon}
-                
-                {/* Step Number Indicator */}
-                <div className="absolute -top-1 -right-2 w-[28px] h-[28px] bg-[#f3701f] text-white rounded-full flex items-center justify-center font-bold text-[14px] shadow-sm border border-white">
-                  {step.num}
-                </div>
               </div>
-              
-              <h3 className="text-[#2b3864] text-[18px] font-bold mt-6 mb-3">
-                {step.title}
-              </h3>
-              
-              <p className="text-[#494949] text-[15px] leading-relaxed m-0">
-                {step.desc}
-              </p>
-              
-              {/* Mobile Connector Arrow */}
-              {index < steps.length - 1 && (
-                <div className="md:hidden absolute -bottom-[20px] left-1/2 -translate-x-1/2 z-20 w-[40px] h-[40px] bg-[#eaeff3] rounded-full flex items-center justify-center text-[#9fa2a5]">
-                  <ChevronRight size={24} className="rotate-90" />
-                </div>
-              )}
-            </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">{step.title}</h3>
+              <p className="text-slate-600">{step.description}</p>
+            </motion.div>
           ))}
         </div>
         
-        {/* Optional Call to Action to complete the SolarQuotes feel */}
-        <div className="mt-16 text-center">
-          <a 
-            href="#get-quotes" 
-            className="inline-block bg-[#f3701f] hover:bg-[#d96218] text-white font-bold text-[16px] md:text-[18px] py-4 px-10 rounded-[40px] shadow-[0_4px_15px_rgba(243,112,31,0.3)] transition-colors duration-300 uppercase tracking-wide"
-          >
-            Get 3 Free Quotes Now
-          </a>
-        </div>
-        
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mt-12 font-bold text-xl text-slate-700 flex flex-col sm:flex-row justify-center items-center gap-4"
+        >
+          <span>No pressure.</span>
+          <span className="hidden sm:inline text-amber-500">•</span>
+          <span>No obligation.</span>
+        </motion.div>
       </div>
     </section>
   );

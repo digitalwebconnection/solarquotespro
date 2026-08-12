@@ -1,60 +1,41 @@
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import logo from '../assets/solarqoat copy.png';
+
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white pt-24 pb-8">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl p-16 mb-24 shadow-xl shadow-orange-500/20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Ready to go solar?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Join thousands of homeowners saving on their energy bills.</p>
-          <button className="bg-white text-orange-500 hover:bg-slate-50 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all text-lg">
-            Get Free Quotes Today
+    <footer className="bg-slate-50 pt-20 pb-10 border-t border-slate-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready To Compare Solar Quotes?</h2>
+          <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+            Get connected with trusted Australian solar installers today. 
+            Receive up to 3 free, no-obligation solar quotes and choose with confidence.
+          </p>
+          
+          <button className="group relative inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-900 text-lg font-bold px-10 py-5 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:-translate-y-1 mx-auto">
+            Get My Free Quotes
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
-        
-        <div className="grid lg:grid-cols-3 gap-16 mb-16">
-          <div className="lg:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-6">
-              <img src="/solarquotepro-logo.png" alt="SolarQuotes Pro Logo" className="h-12 w-auto brightness-0 invert" />
-            </a>
-            <p className="text-slate-400 leading-relaxed">
-              Empowering homeowners to make the switch to clean, affordable solar energy with absolute transparency.
-            </p>
+          <div className="mt-4 text-slate-500 font-medium text-sm">
+            It only takes 2 minutes
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <img src={logo} alt="True Solar Quote Logo" className="h-8 w-auto opacity-80 grayscale" />
           </div>
           
-          <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-8">
-            <div>
-              <h4 className="text-white font-bold mb-6 text-lg">Explore</h4>
-              <ul className="flex flex-col gap-4">
-                <li><a href="#how-it-works" className="text-slate-400 hover:text-orange-500 transition-colors">How It Works</a></li>
-                <li><a href="#categories" className="text-slate-400 hover:text-orange-500 transition-colors">Categories</a></li>
-                <li><a href="#installers" className="text-slate-400 hover:text-orange-500 transition-colors">Installers</a></li>
-                <li><a href="#reviews" className="text-slate-400 hover:text-orange-500 transition-colors">Reviews</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-6 text-lg">Resources</h4>
-              <ul className="flex flex-col gap-4">
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">Solar Calculator</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">Rebates Guide</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">Blog</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">FAQ</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
-              <ul className="flex flex-col gap-4">
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">About Us</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">Contact</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-orange-500 transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
+          <div className="text-slate-500 text-sm">
+            &copy; {new Date().getFullYear()} True Solar Quote. All rights reserved.
           </div>
-        </div>
-        
-        <div className="border-t border-white/10 pt-8 text-center text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} SolarQuotes Pro. All rights reserved.</p>
         </div>
       </div>
     </footer>
