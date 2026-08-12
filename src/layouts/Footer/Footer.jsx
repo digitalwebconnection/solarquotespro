@@ -18,7 +18,7 @@ const Footer = () => {
               Your trusted independent source for solar energy information, tools, quotes, and installer reviews across the country.
             </p>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white uppercase tracking-wider text-sm">Explore</h4>
@@ -30,7 +30,7 @@ const Footer = () => {
               <li><Link to="/reviews/all-solar-reviews" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Installer Reviews</Link></li>
             </ul>
           </div>
-          
+
           {/* Resources */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white uppercase tracking-wider text-sm">Resources</h4>
@@ -40,14 +40,14 @@ const Footer = () => {
               <li><Link to="/start-here" className="text-slate-400 hover:text-white transition-colors flex items-center"><span className="text-blue-500 mr-2 text-xs">▶</span> Beginner's Guide</Link></li>
             </ul>
           </div>
-          
+
           {/* Contact */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white uppercase tracking-wider text-sm">Get in Touch</h4>
             <ul className="space-y-4">
               <li className="flex items-start text-slate-400">
                 <MapPin className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0 mt-0.5" />
-                <span>123 Solar Way, Suite 100<br/>Sunnyville, CA 90210</span>
+                <span>123 Solar Way, Suite 100<br />Sunnyville, CA 90210</span>
               </li>
               <li className="flex items-center text-slate-400">
                 <Phone className="h-5 w-5 mr-3 text-blue-500 flex-shrink-0" />
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-500 text-sm mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.

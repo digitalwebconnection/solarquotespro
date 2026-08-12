@@ -23,7 +23,7 @@ const StartHereMegaMenu = () => {
     >
       <Link 
         to="/start-here"
-        className="flex items-center text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+        className="relative flex items-center text-slate-700 hover:text-orange-500 px-3 py-2 text-[17px] font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-orange-500 after:transition-all after:duration-300"
       >
         Start Here <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </Link>
@@ -31,7 +31,7 @@ const StartHereMegaMenu = () => {
       {isOpen && (
         <div className="absolute left-0 mt-0 pt-2 z-50 flex">
           {/* Main Category List */}
-          <div className="w-72 bg-white shadow-xl border border-gray-100 py-4 relative z-10 rounded-l-md">
+          <div className="w-72 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/5 py-4 relative z-10 rounded-l-xl">
             <div className="px-5 pb-3 mb-2 border-b border-gray-100">
               <Link to="/start-here" className="text-orange-500 hover:text-orange-600 font-medium text-[17px]">
                 New To Solar? Read This First
@@ -43,7 +43,7 @@ const StartHereMegaMenu = () => {
                 <li 
                   key={idx}
                   onMouseEnter={() => setActiveCategory(idx)}
-                  className={`px-5 py-2.5 cursor-pointer flex justify-between items-center transition-colors ${activeCategory === idx ? 'bg-slate-50' : 'hover:bg-slate-50'}`}
+                  className={`px-5 py-2.5 mx-2 my-0.5 rounded-lg cursor-pointer flex justify-between items-center transition-colors ${activeCategory === idx ? 'bg-orange-50 text-orange-600' : 'hover:bg-slate-50 hover:text-orange-500'}`}
                 >
                   <span className="text-[#3b4c6b] text-[15px]">{category.title}</span>
                   <ChevronRight className="w-4 h-4 text-orange-500" />
@@ -54,7 +54,7 @@ const StartHereMegaMenu = () => {
           
           {/* Submenu Flyout */}
           {activeCategory !== null && (
-            <div className="w-64 bg-white shadow-xl border border-l-0 border-gray-100 py-4 rounded-r-md -ml-1 h-full min-h-[500px]">
+            <div className="w-64 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/5 py-4 rounded-r-xl -ml-1 h-full min-h-125">
               <div className="px-5 pb-3 mb-2 border-b border-gray-100">
                 <span className="text-[#3b4c6b] font-bold text-lg">
                   {navigationData.startHereCategories[activeCategory].title}
