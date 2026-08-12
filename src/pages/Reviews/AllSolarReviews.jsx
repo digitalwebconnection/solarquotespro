@@ -17,7 +17,7 @@ const AllSolarReviews = () => {
             <Breadcrumbs paths={["Reviews","All Solar Reviews"]} />
           </div>
           
-          <section className="hero bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-16 px-4 md:px-8 rounded-2xl mb-12 shadow-lg text-center">
+          <section className="hero bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-16 px-4 md:px-8 rounded-xl mb-12 shadow-lg text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">All Solar Reviews</h1>
         <p className="text-lg text-orange-50 max-w-2xl mx-auto">Read honest feedback from thousands of homeowners who have made the switch.</p>
       </section>

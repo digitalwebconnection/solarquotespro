@@ -21,7 +21,9 @@ const WhyChooseUs = () => {
             ))}
           </ul>
         </div>
-        <div className="bg-blue-50 rounded-3xl p-8 relative overflow-hidden min-h-100 flex items-center justify-center">
+
+        <div className="bg-blue-50 rounded-xl p-8 relative overflow-hidden min-h-[400px] flex items-center justify-center">
+
           <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
           <div className="z-10 text-center">
              <div className="w-32 h-32 bg-blue-600 rounded-full mx-auto flex items-center justify-center text-white text-5xl mb-6 shadow-xl">🛡️</div>

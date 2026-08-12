@@ -14,7 +14,7 @@ const FeaturedCategories = () => {
           { title: 'Inverters', icon: '⚡', color: 'bg-yellow-100 text-yellow-600' },
           { title: 'Installers', icon: '👷', color: 'bg-blue-100 text-blue-600' }
         ].map((cat) => (
-          <div key={cat.title} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer text-center">
+          <div key={cat.title} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer text-center">
             <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl mb-6 ${cat.color} group-hover:scale-110 transition-transform`}>
               {cat.icon}
             </div>

@@ -17,7 +17,7 @@ const Microinverters = () => {
           </div>
           
           {/* 1. Dynamic Hero Section */}
-      <section className="hero bg-gradient-to-r from-blue-700 to-blue-500 text-white py-20 px-4 md:px-8 rounded-2xl mb-12 shadow-lg relative overflow-hidden">
+      <section className="hero bg-gradient-to-r from-blue-700 to-blue-500 text-white py-20 px-4 md:px-8 rounded-xl mb-12 shadow-lg relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
             Microinverters
@@ -50,7 +50,7 @@ const Microinverters = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[1, 2, 3].map((item) => (
             <div key={item} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Highlight Feature {item}</h3>
@@ -81,14 +81,14 @@ const Microinverters = () => {
       </section>
 
       {/* 5. Call to Action (CTA) Section */}
-      <section className="cta bg-gray-900 text-white py-16 px-4 md:px-8 rounded-2xl text-center shadow-xl">
+      <section className="cta bg-gray-900 text-white py-16 px-4 md:px-8 rounded-xl text-center shadow-xl">
         <h2 className="text-3xl font-bold mb-4">Ready to take the next step?</h2>
         <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Get up to 3 free, no-obligation quotes from pre-vetted installers in your local area.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition-colors duration-200">
             Get 3 Free Quotes
           </button>
-          <button className="bg-transparent hover:bg-gray-800 text-white font-semibold py-3 px-8 border border-gray-600 rounded-lg transition-colors duration-200">
+          <button className="bg-transparent hover:bg-gray-800 text-white font-semibold py-3 px-8 border border-gray-600 rounded-xl transition-colors duration-200">
             Contact Us
           </button>
         </div>

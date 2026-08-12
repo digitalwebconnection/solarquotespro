@@ -9,15 +9,19 @@ const ToolsDropdown = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex items-center text-slate-700 hover:text-blue-600 px-3 py-2 text-[17px] font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all after:duration-300"
+
+        className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 rounded-xl text-sm font-medium transition-colors"
+
       >
         Tools <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      
+
       {isOpen && (
-        <div className="absolute left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/5 py-2 z-50">
+
+        <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+
           {navigationData.toolsLinks.map((link, idx) => (
             <Link 
               key={idx}

@@ -24,7 +24,7 @@ const QuoteRequestForm = () => {
               required
               value={zipCode}
               onChange={(e) => setZipCode(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500"
               placeholder="e.g. 90210"
             />
           </div>

@@ -2,7 +2,9 @@ import React from 'react';
 
 const SolarCalculatorPromo = () => {
   return (
-    <section className="calculator-promo mb-20 bg-linear-to-br from-gray-900 to-gray-800 text-white rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden">
+
+    <section className="calculator-promo mb-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden">
+
        <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-50"></div>
        <div className="max-w-2xl relative z-10 mb-8 md:mb-0">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Calculate Your Solar Savings</h2>

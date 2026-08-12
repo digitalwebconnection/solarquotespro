@@ -2,7 +2,7 @@ import React from 'react';
 
 const HowItWorks = () => {
   return (
-    <section className="how-it-works mb-20 bg-white py-16 rounded-3xl shadow-sm border border-gray-100 px-8">
+    <section className="how-it-works mb-20 bg-white py-16 rounded-xl shadow-sm border border-gray-100 px-8">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-900">How It Works</h2>
         <p className="text-lg text-gray-500 mt-4">Three simple steps to switch to solar</p>

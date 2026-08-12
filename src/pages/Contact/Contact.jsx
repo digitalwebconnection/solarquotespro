@@ -17,13 +17,13 @@ const Contact = () => {
             <Breadcrumbs paths={["Contact","Contact"]} />
           </div>
           
-          <section className="hero bg-gradient-to-r from-gray-800 to-gray-900 text-white py-16 px-4 md:px-8 rounded-2xl mb-12 shadow-lg text-center">
+          <section className="hero bg-gradient-to-r from-gray-800 to-gray-900 text-white py-16 px-4 md:px-8 rounded-xl mb-12 shadow-lg text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Contact Us</h1>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">Have questions? We're here to help. Reach out to our team.</p>
       </section>
 
       <section className="mb-16 max-w-6xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+        <div className="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
           <div className="lg:w-1/2 p-8 md:p-12 border-r border-gray-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Send a Message</h2>
             <ContactForm />

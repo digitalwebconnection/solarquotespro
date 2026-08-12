@@ -9,7 +9,7 @@ const TopInstallers = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4].map((item) => (
-          <div key={item} className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all text-center">
+          <div key={item} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all text-center">
             <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-md">
               <img src={`https://ui-avatars.com/api/?name=Company+${item}&background=0D8ABC&color=fff&size=96`} alt="Installer Logo" className="w-full h-full object-cover" />
             </div>
@@ -18,7 +18,7 @@ const TopInstallers = () => {
               {'★'.repeat(5)} <span className="text-gray-500 ml-1">(120)</span>
             </div>
             <p className="text-sm text-gray-600 mb-4">Serving your local area with over 10 years of experience.</p>
-            <button className="text-blue-600 font-bold hover:text-blue-800 text-sm w-full py-2 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors">View Profile</button>
+            <button className="text-blue-600 font-bold hover:text-blue-800 text-sm w-full py-2 border border-blue-200 rounded-xl hover:bg-blue-50 transition-colors">View Profile</button>
           </div>
         ))}
       </div>

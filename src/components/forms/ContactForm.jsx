@@ -24,7 +24,7 @@ const ContactForm = () => {
 
   if (submitted) {
     return (
-      <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-md shadow-sm">
+      <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-xl shadow-sm">
         <h3 className="text-lg font-medium text-green-800 mb-2">Message Sent!</h3>
         <p className="text-green-700">Thank you for reaching out. We will get back to you as soon as possible.</p>
         <button 
@@ -38,7 +38,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8 border border-gray-100">
+    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
       <div className="mb-6">
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
         <input
@@ -48,7 +48,7 @@ const ContactForm = () => {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
           placeholder="John Doe"
         />
       </div>
@@ -61,7 +61,7 @@ const ContactForm = () => {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
           placeholder="john@example.com"
         />
       </div>
@@ -73,7 +73,7 @@ const ContactForm = () => {
           required
           value={formData.subject}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
         >
           <option value="" disabled>Select a subject</option>
           <option value="general">General Inquiry</option>
@@ -91,13 +91,13 @@ const ContactForm = () => {
           required
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors resize-none"
           placeholder="How can we help you?"
         ></textarea>
       </div>
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white font-medium py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors shadow-sm"
+        className="w-full bg-blue-600 text-white font-medium py-3 px-4 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors shadow-sm"
       >
         Send Message
       </button>
