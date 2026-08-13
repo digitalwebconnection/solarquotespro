@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Settings, ShieldAlert, Cpu, UserCheck, DollarSign, Search, Zap } from 'lucide-react';
+import { Settings, ShieldAlert, Cpu, UserCheck, DollarSign, Search } from 'lucide-react';
 
 export default function WhyCompare() {
   return (

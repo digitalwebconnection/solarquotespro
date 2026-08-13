@@ -3,7 +3,6 @@ import {
   CheckCircle,
   ArrowRight,
   ShieldCheck,
-  Clock,
   Award,
 } from "lucide-react";
 
@@ -16,7 +15,15 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-slate-50">
+    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-amber-50">
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] bg-amber-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-30"></div>
+        <div className="absolute top-[20%] left-[-10%] w-[35rem] h-[35rem] bg-sky-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
@@ -174,6 +181,21 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Bottom Wave Divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="relative block w-[calc(100%+1.3px)] h-[40px] sm:h-[70px] lg:h-[100px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-white"
+          ></path>
+        </svg>
       </div>
     </section>
   );
