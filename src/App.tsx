@@ -12,7 +12,7 @@ import CTA from './components/CTA';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 overflow-x-clip">
       <Header />
       <main>
         <Hero />

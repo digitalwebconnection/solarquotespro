@@ -1,23 +1,25 @@
-import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, ShieldCheck, Clock, Award } from 'lucide-react';
+import { motion } from "framer-motion";
+import {
+  CheckCircle,
+  ArrowRight,
+  ShieldCheck,
+  Clock,
+  Award,
+} from "lucide-react";
 
 export default function Hero() {
   const features = [
     "100% Free Service",
     "No Obligation Quotes",
     "Verified Installers Only",
-    "Australia Wide"
+    "Australia Wide",
   ];
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
-      {/* Background glowing effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-200/50 blur-[120px] rounded-full pointer-events-none" />
-      
+    <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -27,25 +29,27 @@ export default function Hero() {
               <Award className="w-4 h-4" />
               Australia's Trusted Way To Compare Solar Quotes
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-6">
-              Get 3 Free Quotes From <span className="text-gradient">Verified</span> Solar Installers
+              Get 3 Free Quotes From{" "}
+              <span className="text-gradient">Verified</span> Solar Installers
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-600 mb-4 max-w-2xl font-medium">
               Stop wasting time comparing dozens of solar companies.
             </p>
             <p className="text-base md:text-lg text-slate-500 mb-8 max-w-xl">
-              Tell us about your home once, and we'll connect you with up to 3 carefully verified local installers who compete for your business.
+              Tell us about your home once, and we'll connect you with up to 3
+              carefully verified local installers who compete for your business.
             </p>
-            
+
             <ul className="grid sm:grid-cols-2 gap-4 mb-10">
               {features.map((feature, idx) => (
-                <motion.li 
+                <motion.li
                   key={idx}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + (idx * 0.1) }}
+                  transition={{ delay: 0.3 + idx * 0.1 }}
                   className="flex items-center gap-3 text-slate-700 font-medium"
                 >
                   <CheckCircle className="w-5 h-5 text-amber-500 shrink-0" />
@@ -53,7 +57,7 @@ export default function Hero() {
                 </motion.li>
               ))}
             </ul>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -66,53 +70,109 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Abstract aesthetic graphic right side */}
-          <motion.div 
-             initial={{ opacity: 0, scale: 0.9 }}
-             animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 0.8, delay: 0.2 }}
-             className="relative hidden lg:block"
+          {/* Unique Dashboard-style White Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:block"
           >
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-tr from-amber-200 to-transparent rounded-3xl transform rotate-6 border border-slate-200 backdrop-blur-sm" />
-              <div className="absolute inset-0 bg-white rounded-3xl transform -rotate-3 border border-slate-100 shadow-xl p-8 flex flex-col justify-center">
-                 
-                 <div className="space-y-6">
-                    <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                       <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                         <ShieldCheck className="w-6 h-6 text-green-600" />
-                       </div>
-                       <div>
-                         <div className="text-slate-900 font-bold">Verified Installers</div>
-                         <div className="text-sm text-slate-500">Pre-vetted for quality</div>
-                       </div>
-                    </div>
+            {/* Subtle glow behind the card to make it pop off the white background without being a colored blob */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-amber-50 to-slate-50 rounded-[2.5rem] blur-2xl opacity-70"></div>
 
-                    <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 ml-8 shadow-sm">
-                       <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                         <Clock className="w-6 h-6 text-blue-600" />
-                       </div>
-                       <div>
-                         <div className="text-slate-900 font-bold">Save Time</div>
-                         <div className="text-sm text-slate-500">One form, 3 quotes</div>
-                       </div>
-                    </div>
+            <div className="relative w-full max-w-lg mx-auto bg-white rounded-md border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] p-8">
+              {/* Header */}
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <div className="text-xs font-bold tracking-wider text-amber-500 uppercase mb-2 flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    Live Network
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 leading-tight">
+                    Installer
+                    <br />
+                    Match Engine
+                  </h3>
+                </div>
+                <div className="h-12 w-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100 shadow-inner">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+              </div>
 
-                    <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                       <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                         <Award className="w-6 h-6 text-amber-600" />
-                       </div>
-                       <div>
-                         <div className="text-slate-900 font-bold">Best Value</div>
-                         <div className="text-sm text-slate-500">Installers compete</div>
-                       </div>
-                    </div>
-                 </div>
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <div className="bg-slate-50 rounded-md p-4 border border-slate-100 transition-all hover:shadow-md hover:-translate-y-1 hover:bg-white cursor-default">
+                  <div className="text-xs font-semibold text-slate-500 mb-1 uppercase tracking-wide">
+                    Vetted Installers
+                  </div>
+                  <div className="text-2xl font-black text-slate-900">
+                    4,250<span className="text-amber-500">+</span>
+                  </div>
+                </div>
+                <div className="bg-emerald-50/50 rounded-md p-4 border border-emerald-100 transition-all hover:shadow-md hover:-translate-y-1 hover:bg-white cursor-default">
+                  <div className="text-xs font-semibold text-emerald-600/80 mb-1 uppercase tracking-wide">
+                    Avg. Savings
+                  </div>
+                  <div className="text-2xl font-black text-emerald-600">
+                    30<span className="text-emerald-600">%</span>
+                  </div>
+                </div>
+              </div>
 
+              {/* Animated Progress/Steps */}
+              <div className="relative">
+                {/* Connecting line */}
+                <div className="absolute left-[19px] top-6 bottom-6 w-[2px] bg-slate-100"></div>
+
+                <div className="space-y-4 relative">
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 rounded-full bg-white border-2 border-slate-200 text-slate-400 flex items-center justify-center font-bold text-sm relative z-10 group-hover:border-amber-400 group-hover:text-amber-500 transition-colors shadow-sm">
+                      1
+                    </div>
+                    <div className="bg-slate-50/80 p-3 rounded-md flex-1 border border-transparent group-hover:border-slate-100 group-hover:bg-white transition-all">
+                      <div className="font-bold text-slate-900 text-sm mb-0.5">
+                        Submit Details
+                      </div>
+                      <div className="text-xs text-slate-500">
+                        Takes less than 60 seconds
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 rounded-full bg-white border-2 border-slate-200 text-slate-400 flex items-center justify-center font-bold text-sm relative z-10 group-hover:border-blue-400 group-hover:text-blue-500 transition-colors shadow-sm">
+                      2
+                    </div>
+                    <div className="bg-slate-50/80 p-3 rounded-md flex-1 border border-transparent group-hover:border-slate-100 group-hover:bg-white transition-all">
+                      <div className="font-bold text-slate-900 text-sm mb-0.5">
+                        System Matches
+                      </div>
+                      <div className="text-xs text-slate-500">
+                        We find top 3 local pros
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 rounded-full bg-amber-500 border-2 border-amber-500 text-white flex items-center justify-center font-bold text-sm relative z-10 shadow-md group-hover:scale-110 transition-transform">
+                      3
+                    </div>
+                    <div className="bg-white p-3 rounded-md flex-1 border border-amber-100 shadow-sm">
+                      <div className="font-bold text-amber-700 text-sm mb-0.5">
+                        Compare & Save
+                      </div>
+                      <div className="text-xs text-amber-600/80">
+                        Choose the best quote
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
