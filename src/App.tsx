@@ -6,7 +6,9 @@ import WhyChooseUs from './components/WhyChooseUs';
 import VerificationProcess from './components/VerificationProcess';
 import WhyCompare from './components/WhyCompare';
 import FAQ from './components/FAQ';
+import SolarJourney from './components/SolarJourney';
 import Footer from './components/Footer';
+import CTA from './components/CTA';
 
 function App() {
   return (
@@ -20,19 +22,10 @@ function App() {
         <VerificationProcess />
         <WhyCompare />
         
-        {/* Your Solar Journey Starts Here - small transition section */}
-        <section className="py-20 bg-amber-500 text-slate-900 text-center">
-          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Your Solar Journey Starts Here</h2>
-            <p className="text-lg md:text-xl font-medium opacity-90 max-w-2xl mx-auto">
-              Whether you're installing your first solar system or upgrading your existing one, True Solar Quote makes finding the right installer simple.
-              We'll help you compare trusted professionals so you can buy with confidence.
-            </p>
-          </div>
-        </section>
-
+        <SolarJourney />
         <FAQ />
       </main>
+      <CTA />
       <Footer />
     </div>
   );

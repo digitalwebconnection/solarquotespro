@@ -62,7 +62,7 @@ const HeroSection = () => {
 
         {/* Floating Glass Card - Quick Calculator */}
 
-        <div className="hidden lg:block flex-1 relative w-full max-w-md w-full">
+        <div className="hidden lg:block flex-1 relative max-w-md w-full">
           <div className="absolute -inset-1 bg-linear-to-r from-blue-500 to-teal-400 rounded-xl blur-xl opacity-30 animate-pulse"></div>
           <div className="relative bg-slate-900/70 backdrop-blur-2xl border border-white/10 p-8 rounded-xl shadow-2xl">
 

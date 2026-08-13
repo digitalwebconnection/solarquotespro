@@ -11,9 +11,7 @@ body {
   @apply bg-slate-50 text-slate-800 antialiased font-sans;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-bold tracking-tight text-slate-900;
-}
+
 
 /* Base custom gradients */
 .text-gradient {
