@@ -9,6 +9,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useQuoteModal } from "../../context/QuoteModalContext";
+import { solarRoofImg, avatar1Img, avatar2Img, avatar3Img } from "../../assets/images";
 
 export default function Hero() {
   const { openQuoteModal } = useQuoteModal();
@@ -140,9 +141,9 @@ export default function Hero() {
 
               <div className="flex items-center gap-3 text-left">
                 <div className="flex -space-x-2">
-                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&q=80" alt="Verified Customer" />
-                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" alt="Verified Customer" />
-                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&q=80" alt="Verified Customer" />
+                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar1Img} alt="Verified Customer" />
+                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar2Img} alt="Verified Customer" />
+                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar3Img} alt="Verified Customer" />
                 </div>
                 <div>
                   <div className="flex items-center text-amber-500 text-xs">
@@ -172,7 +173,7 @@ export default function Hero() {
               {/* Graphic Banner: Modern Australian Solar Rooftop */}
               <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
                 <img
-                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&auto=format&fit=crop&q=85"
+                  src={solarRoofImg}
                   alt="Modern Australian Home with High Efficiency Solar Panels"
                   className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 opacity-90"
                 />

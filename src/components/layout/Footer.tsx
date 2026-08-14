@@ -1,4 +1,5 @@
-import { ArrowRight, Mail, Phone, MapPin, ShieldCheck, Zap, Award, Lock } from 'lucide-react';
+import { ArrowRight, Mail, Phone,  ShieldCheck, Zap, Award, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/solarqoat copy.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -57,11 +58,11 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'Why Choose Us', href: '#why-choose-us' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Our Standards', href: '#standards' },
-    { label: 'Frequently Asked Questions', href: '#faq' }
+    { label: 'Home', href: '/' },
+    { label: 'Why Choose Us', href: '/#why-choose-us' },
+    { label: 'How It Works', href: '/#how-it-works' },
+    { label: 'Our Standards', href: '/cec-standards' },
+    { label: 'Frequently Asked Questions', href: '/#faq' }
   ];
 
   const serviceLinks = [
@@ -104,9 +105,9 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="space-y-4 lg:pr-6">
-            <a href="#" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <img src={logo} alt="Solar Quotes Pro Logo" className="h-18 w-auto" />
-            </a>
+            </Link>
             <p className="text-sm text-slate-900 leading-relaxed font-medium">
               Empowering Australian homeowners with transparent, competitive, and verified solar energy quotes from CEC-accredited professionals nationwide.
             </p>
@@ -127,13 +128,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((item) => (
                 <li key={item.label}>
-                  <a 
-                    href={item.href} 
+                  <Link 
+                    to={item.href} 
                     className="text-slate-900 font-semibold hover:text-orange-600 transition-colors duration-300 text-sm flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-orange-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -165,12 +166,7 @@ export default function Footer() {
               <span className="w-1.5 h-4 bg-orange-500 rounded-full"></span> Contact Us
             </h3>
             <ul className="space-y-3.5 text-sm">
-              <li className="flex items-start gap-3 text-slate-900 group">
-                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-orange-300 transition-colors shrink-0 shadow-xs">
-                  <MapPin className="w-4 h-4 text-orange-600" />
-                </div>
-                <span className="mt-0.5 font-medium">Sydney, NSW, Australia<br />Australia-Wide Service</span>
-              </li>
+           
               <li className="flex items-center gap-3 text-slate-900 group">
                 <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-orange-300 transition-colors shrink-0 shadow-xs">
                   <Phone className="w-4 h-4 text-orange-600" />
@@ -181,7 +177,7 @@ export default function Footer() {
                 <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-orange-300 transition-colors shrink-0 shadow-xs">
                   <Mail className="w-4 h-4 text-orange-600" />
                 </div>
-                <a href="mailto:hello@solarquotespro.com.au" className="hover:text-orange-600 transition-colors font-bold">hello@solarquotespro.com.au</a>
+                <a href="mailto:solarquotespro@gmail.com" className="hover:text-orange-600 transition-colors font-bold">solarquotespro@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -194,9 +190,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Solar Quotes Pro. All rights reserved. Australia's trusted solar comparison engine.
           </div>
           <div className="flex items-center gap-6 text-xs pe-30 font-bold text-slate-900">
-            <a href="#" className="hover:text-orange-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-orange-600 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-orange-600 transition-colors">CEC Verification Standards</a>
+            <Link to="/privacy" className="hover:text-orange-600 transition-colors">Privacy & Data Standards</Link>
+            <Link to="/terms" className="hover:text-orange-600 transition-colors">Terms of Service</Link>
+            <Link to="/cec-standards" className="hover:text-orange-600 transition-colors">CEC Verification Standards</Link>
           </div>
         </div>
 

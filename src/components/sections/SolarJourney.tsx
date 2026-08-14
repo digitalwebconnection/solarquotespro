@@ -8,6 +8,7 @@ import {
   TrendingDown 
 } from 'lucide-react';
 import { useQuoteModal } from '../../context/QuoteModalContext';
+import { solarRoofImg } from '../../assets/images';
 
 const SolarJourney = () => {
   const { openQuoteModal } = useQuoteModal();
@@ -39,7 +40,7 @@ const SolarJourney = () => {
   return (
     <section 
       className="relative min-h-137.5 lg:min-h-130 flex flex-col justify-center items-center bg-slate-950 overflow-hidden my-4 lg:my-8 bg-fixed bg-center bg-cover bg-no-repeat"
-      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop')" }}
+      style={{ backgroundImage: `url(${solarRoofImg})` }}
     >
       {/* ─── Layered Gradient Dark Vignette Overlay ─── */}
       <div className="absolute inset-0 bg-linear-to-b from-slate-950/90 via-slate-950/80 to-slate-950/95 backdrop-blur-[2px]" />

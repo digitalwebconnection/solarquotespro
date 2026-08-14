@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, FileText, Users, ArrowRightLeft, ShieldCheck, Zap } from 'lucide-react';
 import { useQuoteModal } from '../../context/QuoteModalContext';
+import { solarRoofImg, solarInspectionImg, installerHandshakeImg } from '../../assets/images';
 
 export default function HowItWorks() {
   const { openQuoteModal } = useQuoteModal();
@@ -16,7 +17,7 @@ export default function HowItWorks() {
       description: "Complete our quick online form in under 2 minutes. We check your roof size and bill amount.",
       tag: "Takes < 60 Seconds",
       color: "amber",
-      bgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdsqW7JsArNw1RjgX6oMIiHQJtvSwDxcvW23xqGcMAQEfGUQLBP64UFUE&s=10"
+      bgImage: solarRoofImg
     },
     {
       num: "02",
@@ -25,7 +26,7 @@ export default function HowItWorks() {
       description: "Based on your location and requirements, we select up to 3 CEC-accredited installers in your postcode.",
       tag: "100% CEC-Accredited",
       color: "emerald",
-      bgImage: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&auto=format&fit=crop&q=80"
+      bgImage: solarInspectionImg
     },
     {
       num: "03",
@@ -34,7 +35,7 @@ export default function HowItWorks() {
       description: "Receive itemized quotes with government STC rebates deducted upfront. Choose the installer that's right for you.",
       tag: "Save Up To 30%",
       color: "blue",
-      bgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4DwN8uDElQs7Pn5464VrWh97UfMo5fLnelnSUh9uhslWg5G3mW4813Po&s=10"
+      bgImage: installerHandshakeImg
     }
   ];
 

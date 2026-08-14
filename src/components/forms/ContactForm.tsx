@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { WEB3FORMS_ACCESS_KEY } from '../../config/web3forms';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
+    subject: 'general',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -16,90 +21,202 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    // In a real app, send the data to an API
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const getSubjectLabel = (subj: string) => {
+        switch (subj) {
+          case 'general': return 'General Solar Inquiry';
+          case 'quote': return 'Installer Matching Help';
+          case 'installer_network': return 'Join Installer Network (CEC Pros)';
+          case 'feedback': return 'Feedback & Support';
+          default: return subj;
+        }
+      };
+
+      const topicLabel = getSubjectLabel(formData.subject);
+
+      const data = new FormData();
+      data.append("access_key", WEB3FORMS_ACCESS_KEY);
+      data.append("from_name", "Solar Quotes Pro Inquiries");
+      data.append("subject", `💬 Customer Inquiry: ${formData.name} • ${topicLabel}`);
+      data.append("replyto", formData.email);
+
+      data.append("INQUIRY CATEGORY", topicLabel);
+
+      data.append("1. SENDER CONTACT", [
+        `• Full Name: ${formData.name}`,
+        `• Email: ${formData.email}`,
+        `• Phone: ${formData.phone || 'Not Provided'}`
+      ].join('\n'));
+
+      data.append("2. CUSTOMER MESSAGE", formData.message);
+
+      data.append("3. SUBMISSION STATUS", "Received via Website Contact Form • 24-Hour SLA");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitting(false);
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: 'general',
+          message: ''
+        });
+      } else {
+        setIsSubmitting(false);
+        setErrorMessage(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Web3Forms submission error:", error);
+      setIsSubmitting(false);
+      setErrorMessage("Network error. Please check your connection and try again.");
+    }
   };
 
   if (submitted) {
     return (
-      <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-xl shadow-sm">
-        <h3 className="text-lg font-medium text-green-800 mb-2">Message Sent!</h3>
-        <p className="text-green-700">Thank you for reaching out. We will get back to you as soon as possible.</p>
+      <div className="bg-emerald-50 border border-emerald-200 p-8 rounded-3xl text-center shadow-md">
+        <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle2 className="w-9 h-9" />
+        </div>
+        <h3 className="text-2xl font-serif font-black text-slate-900 mb-2">Message Sent Successfully!</h3>
+        <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
+          Thank you for reaching out to Solar Quotes Pro. A solar advisor will review your message and respond within 24 hours.
+        </p>
         <button 
           onClick={() => setSubmitted(false)}
-          className="mt-4 text-sm text-green-600 hover:text-green-800 font-medium underline"
+          className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider py-3 px-6 rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-md"
         >
-          Send another message
+          Send Another Message
         </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-      <div className="mb-6">
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
-          placeholder="John Doe"
-        />
+    <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 border border-slate-200 relative overflow-hidden">
+      
+      {errorMessage && (
+        <div className="mb-6 p-4 bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm rounded-2xl flex items-center gap-2.5 shadow-xs">
+          <AlertCircle className="w-5 h-5 text-rose-600 shrink-0" />
+          <span>{errorMessage}</span>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-5">
+        <div>
+          <label htmlFor="contact_name" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+            Full Name <span className="text-orange-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="contact_name"
+            name="name"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-orange-500 bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-orange-500/15 placeholder:text-slate-400"
+            placeholder="Sarah Jenkins"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="contact_email" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+            Email Address <span className="text-orange-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="contact_email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-orange-500 bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-orange-500/15 placeholder:text-slate-400"
+            placeholder="sarah@example.com.au"
+          />
+        </div>
       </div>
-      <div className="mb-6">
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
-          placeholder="john@example.com"
-        />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-5">
+        <div>
+          <label htmlFor="contact_phone" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="contact_phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-orange-500 bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-orange-500/15 placeholder:text-slate-400"
+            placeholder="0400 000 000"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="contact_subject" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+            Inquiry Subject
+          </label>
+          <select
+            id="contact_subject"
+            name="subject"
+            required
+            value={formData.subject}
+            onChange={handleChange}
+            className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-orange-500 bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-orange-500/15 cursor-pointer"
+          >
+            <option value="general">General Solar Inquiry</option>
+            <option value="quote">Installer Matching Help</option>
+            <option value="installer_network">Join Installer Network (CEC Pros)</option>
+            <option value="feedback">Feedback & Support</option>
+          </select>
+        </div>
       </div>
+
       <div className="mb-6">
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-        <select
-          id="subject"
-          name="subject"
-          required
-          value={formData.subject}
-          onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors"
-        >
-          <option value="" disabled>Select a subject</option>
-          <option value="general">General Inquiry</option>
-          <option value="quote">Get a Quote</option>
-          <option value="support">Support</option>
-          <option value="feedback">Feedback</option>
-        </select>
-      </div>
-      <div className="mb-6">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+        <label htmlFor="contact_message" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+          Your Message <span className="text-orange-500">*</span>
+        </label>
         <textarea
-          id="message"
+          id="contact_message"
           name="message"
-          rows={5}
+          rows={4}
           required
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 focus:bg-white transition-colors resize-none"
-          placeholder="How can we help you?"
-        ></textarea>
+          className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-orange-500 bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-orange-500/15 resize-none placeholder:text-slate-400"
+          placeholder="Tell us about your property, energy requirements, or question..."
+        />
       </div>
+
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white font-medium py-3 px-4 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors shadow-sm"
+        disabled={isSubmitting}
+        className="w-full bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-base py-4 px-6 rounded-2xl transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
       >
-        Send Message
+        {isSubmitting ? (
+          <span className="inline-flex items-center gap-2">
+            <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></span>
+            Sending Message...
+          </span>
+        ) : (
+          <>
+            <span>Send Message</span>
+            <Send className="w-4 h-4" />
+          </>
+        )}
       </button>
     </form>
   );

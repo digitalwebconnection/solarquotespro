@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Menu, X, Zap, ArrowRight, Award } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/solarqoat copy.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -9,10 +10,10 @@ export default function Header() {
   const { openQuoteModal } = useQuoteModal();
 
   const navLinks = [
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
-    { name: 'Standards', href: '#standards' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Why Choose Us', href: '/#why-choose-us' },
+    { name: 'Standards', href: '/cec-standards' },
+    { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
@@ -44,22 +45,22 @@ export default function Header() {
         <div className="flex justify-between items-center h-18 sm:h-20">
           
           {/* Logo with Ambient Glow */}
-          <a href="#" className="flex items-center gap-3 group relative">
+          <Link to="/" className="flex items-center gap-3 group relative">
             <div className="absolute -inset-2 bg-linear-to-r from-amber-400/25 to-orange-500/25 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <img src={logo} alt="Solar Quotes Pro Logo" className="h-9 sm:h-10 w-auto relative z-10 transition-transform group-hover:scale-102" />
-          </a>
+          </Link>
           
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
-                href={link.href}
+                to={link.href}
                 className="text-slate-700 hover:text-orange-600 font-bold text-sm tracking-tight transition-colors relative group py-1"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 group-hover:w-full transition-all duration-300 rounded-full" />
-              </a>
+              </Link>
             ))}
 
             {/* Glowing CTA Button */}
@@ -100,14 +101,14 @@ export default function Header() {
           </div>
 
           {navLinks.map((link) => (
-            <a 
+            <Link 
               key={link.name} 
-              href={link.href}
+              to={link.href}
               className="text-slate-800 hover:text-amber-600 font-bold text-base px-2 py-1.5 transition-colors border-b border-slate-100"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
 
           <button 

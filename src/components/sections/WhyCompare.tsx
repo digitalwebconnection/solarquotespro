@@ -11,6 +11,7 @@ import {
   Scale
 } from 'lucide-react';
 import { useQuoteModal } from '../../context/QuoteModalContext';
+import { solarSavingsImg, solarRoofImg, installerHandshakeImg, modernHomeImg } from '../../assets/images';
 
 export default function WhyCompare() {
   const { openQuoteModal } = useQuoteModal();
@@ -110,7 +111,7 @@ export default function WhyCompare() {
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
-                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80"
+                src={solarSavingsImg}
                 alt="Fair Pricing Analysis"
                 className="w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                 loading="lazy"
@@ -149,7 +150,7 @@ export default function WhyCompare() {
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&auto=format&fit=crop&q=80"
+                src={solarRoofImg}
                 alt="Solar Panels Hardware"
                 className="w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                 loading="lazy"
@@ -188,7 +189,7 @@ export default function WhyCompare() {
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
-                src="https://images.unsplash.com/photo-1450133064473-71024230f91b?w=600&auto=format&fit=crop&q=80"
+                src={installerHandshakeImg}
                 alt="Warranty Protection"
                 className="w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                 loading="lazy"
@@ -227,7 +228,7 @@ export default function WhyCompare() {
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
-                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80"
+                src={modernHomeImg}
                 alt="System Design Analysis"
                 className="w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                 loading="lazy"

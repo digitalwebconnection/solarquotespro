@@ -11,6 +11,7 @@ import {
   SearchSlash,
 } from 'lucide-react';
 import { useQuoteModal } from '../../context/QuoteModalContext';
+import { solarRoofImg } from '../../assets/images';
 
 export default function ValueProposition() {
   const { openQuoteModal } = useQuoteModal();
@@ -43,7 +44,7 @@ export default function ValueProposition() {
             {/* Main High-Definition Rooftop Image */}
             <div className="relative rounded-xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 min-h-95 sm:min-h-160 group">
               <img
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1000&auto=format&fit=crop&q=85"
+                src={solarRoofImg}
                 alt="Australian clean energy residential rooftop solar installation"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90"
                 loading="lazy"
