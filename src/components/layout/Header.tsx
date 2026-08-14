@@ -1,20 +1,47 @@
 import { motion } from 'framer-motion';
 import { Menu, X, Zap, ArrowRight, Award } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/solarqoat copy.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { openQuoteModal } = useQuoteModal();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: 'How It Works', href: '/#how-it-works' },
     { name: 'Why Choose Us', href: '/#why-choose-us' },
-    { name: 'Standards', href: '/cec-standards' },
     { name: 'FAQ', href: '/#faq' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    setIsMenuOpen(false);
+
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+
+      if (location.pathname === '/') {
+        // Already on home page, scroll directly
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, '', `#${targetId}`);
+        }
+      } else {
+        // On another page, navigate to home with hash
+        navigate(`/#${targetId}`);
+      }
+    } else if (href === '/') {
+      if (location.pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
@@ -45,7 +72,11 @@ export default function Header() {
         <div className="flex justify-between items-center h-18 sm:h-20">
           
           {/* Logo with Ambient Glow */}
-          <Link to="/" className="flex items-center gap-3 group relative">
+          <Link 
+            to="/" 
+            onClick={(e) => handleNavClick(e, '/')}
+            className="flex items-center gap-3 group relative"
+          >
             <div className="absolute -inset-2 bg-linear-to-r from-amber-400/25 to-orange-500/25 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <img src={logo} alt="Solar Quotes Pro Logo" className="h-9 sm:h-10 w-auto relative z-10 transition-transform group-hover:scale-102" />
           </Link>
@@ -56,6 +87,7 @@ export default function Header() {
               <Link 
                 key={link.name} 
                 to={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-slate-700 hover:text-orange-600 font-bold text-sm tracking-tight transition-colors relative group py-1"
               >
                 {link.name}
@@ -104,8 +136,8 @@ export default function Header() {
             <Link 
               key={link.name} 
               to={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-slate-800 hover:text-amber-600 font-bold text-base px-2 py-1.5 transition-colors border-b border-slate-100"
-              onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
             </Link>

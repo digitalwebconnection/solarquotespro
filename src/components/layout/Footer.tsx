@@ -1,5 +1,5 @@
-import { ArrowRight, Mail, Phone,  ShieldCheck, Zap, Award, Lock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Mail, Phone, ShieldCheck, Zap, Award, Lock } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/solarqoat copy.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -33,6 +33,30 @@ const Linkedin = (props: any) => (
 
 export default function Footer() {
   const { openQuoteModal } = useQuoteModal();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+
+      if (location.pathname === '/') {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, '', `#${targetId}`);
+        }
+      } else {
+        navigate(`/#${targetId}`);
+      }
+    } else if (href === '/') {
+      if (location.pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
 
   const trustGuarantees = [
     {
@@ -105,7 +129,11 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="space-y-4 lg:pr-6">
-            <Link to="/" className="flex items-center gap-3">
+            <Link 
+              to="/" 
+              onClick={(e) => handleNavClick(e, '/')}
+              className="flex items-center gap-3"
+            >
               <img src={logo} alt="Solar Quotes Pro Logo" className="h-18 w-auto" />
             </Link>
             <p className="text-sm text-slate-900 leading-relaxed font-medium">
@@ -130,6 +158,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link 
                     to={item.href} 
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="text-slate-900 font-semibold hover:text-orange-600 transition-colors duration-300 text-sm flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-orange-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
