@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Card from '../common/Card';
 
 interface ProductCardProps {
