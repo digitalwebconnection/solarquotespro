@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -7,18 +7,16 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = ({ children, variant = 'primary', className = '', ...props }: ButtonProps) => {
-
-  const baseStyle = "inline-flex items-center justify-center font-medium rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
-
+  const baseStyle = "inline-flex items-center justify-center font-bold rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 cursor-pointer";
 
   const variants = {
-    primary: "bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 shadow-md shadow-blue-500/30 hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-300",
-    secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
-    outline: "border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
+    primary: "bg-amber-500 hover:bg-amber-400 text-slate-900 shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/30 hover:-translate-y-0.5 active:translate-y-0",
+    secondary: "bg-slate-100 text-slate-800 hover:bg-slate-200",
+    outline: "border-2 border-slate-200 text-slate-700 hover:border-amber-500 hover:text-amber-600 bg-white"
   };
 
   return (
-    <button className={`${baseStyle} ${variants[variant]} px-12 cursor-pointer py-2 text-sm ${className}`} {...props}>
+    <button className={`${baseStyle} ${variants[variant]} px-6 py-3 text-sm ${className}`} {...props}>
       {children}
     </button>
   );

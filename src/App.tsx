@@ -1,33 +1,35 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import ValueProposition from './components/ValueProposition';
-import HowItWorks from './components/HowItWorks';
-import WhyChooseUs from './components/WhyChooseUs';
-import VerificationProcess from './components/VerificationProcess';
-import WhyCompare from './components/WhyCompare';
-import FAQ from './components/FAQ';
-import SolarJourney from './components/SolarJourney';
-import Footer from './components/Footer';
-import CTA from './components/CTA';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Hero from './components/sections/Hero';
+import ValueProposition from './components/sections/ValueProposition';
+import HowItWorks from './components/sections/HowItWorks';
+import WhyChooseUs from './components/sections/WhyChooseUs';
+import VerificationProcess from './components/sections/VerificationProcess';
+import WhyCompare from './components/sections/WhyCompare';
+import SolarJourney from './components/sections/SolarJourney';
+import FAQ from './components/sections/FAQ';
+import SolarAdvisorBot from './components/common/SolarAdvisorBot';
+import { QuoteModalProvider } from './context/QuoteModalContext';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 overflow-x-clip">
-      <Header />
-      <main>
-        <Hero />
-        <ValueProposition />
-        <HowItWorks />
-        <WhyChooseUs />
-        <VerificationProcess />
-        <WhyCompare />
-        
-        <SolarJourney />
-        <FAQ />
-      </main>
-      <CTA />
-      <Footer />
-    </div>
+    <QuoteModalProvider>
+      <div className="min-h-screen bg-slate-50 font-sans text-slate-800 overflow-x-clip scroll-smooth">
+        <Header />
+        <main>
+          <Hero />
+          <ValueProposition />
+          <HowItWorks />
+          <WhyChooseUs />
+          <VerificationProcess />
+          <WhyCompare />
+          <SolarJourney />
+          <FAQ />
+        </main>
+        <Footer />
+        <SolarAdvisorBot />
+      </div>
+    </QuoteModalProvider>
   );
 }
 

@@ -13,7 +13,3 @@ body {
 
 
 
-/* Base custom gradients */
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500;
-}

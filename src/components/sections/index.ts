@@ -1,0 +1,9 @@
+export { default as Hero } from './Hero';
+export { default as ValueProposition } from './ValueProposition';
+export { default as HowItWorks } from './HowItWorks';
+export { default as WhyChooseUs } from './WhyChooseUs';
+export { default as VerificationProcess } from './VerificationProcess';
+export { default as WhyCompare } from './WhyCompare';
+export { default as SolarJourney } from './SolarJourney';
+export { default as FAQ } from './FAQ';
+export { default as CTA } from './CTA';
