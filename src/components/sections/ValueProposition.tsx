@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { 
   ShieldCheck, 
   ArrowRight, 
-  Star, 
   Sun, 
   BatteryCharging, 
   Zap,
@@ -86,29 +85,7 @@ export default function ValueProposition() {
               </div>
             </div>
 
-            {/* Floating Customer Social Proof Graphic Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="absolute -bottom-6 -right-3 sm:-right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)] border border-slate-200 p-4 max-w-67.5 z-20"
-            >
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                ))}
-              </div>
-              <p className="text-xs text-slate-700 leading-relaxed font-medium italic mb-2.5">
-                "Saved over $4,200 by comparing 3 quotes on this platform. Incredible service!"
-              </p>
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 font-black text-[11px] flex items-center justify-center">
-                  JM
-                </div>
-                <div className="text-[11px] text-slate-600 font-bold">James M. — Sydney NSW</div>
-              </div>
-            </motion.div>
+       
           </motion.div>
 
           {/* ─── Right: High Contrast Copy & Visual Bill Savings Graphic ─── */}
