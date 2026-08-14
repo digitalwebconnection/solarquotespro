@@ -22,7 +22,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-linear-to-b from-slate-50 via-amber-50/30 to-white">
+    <section className="relative pt-8 pb-8 lg:pt-14 lg:pb-14 overflow-hidden bg-linear-to-b from-slate-50 via-amber-50/30 to-white">
       
       {/* ─── Rich Background Graphic Effects (Light & Dynamic) ─── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">

@@ -1,0 +1,6 @@
+# True Solar Quote Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://truesolarquote.com.au/sitemap.xml

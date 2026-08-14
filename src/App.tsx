@@ -11,12 +11,14 @@ import WhyCompare from './components/sections/WhyCompare';
 import SolarJourney from './components/sections/SolarJourney';
 import FAQ from './components/sections/FAQ';
 import SolarAdvisorBot from './components/common/SolarAdvisorBot';
+import LiveSocialProof from './components/common/LiveSocialProof';
 import ScrollToTop from './components/common/ScrollToTop';
 import { QuoteModalProvider } from './context/QuoteModalContext';
 
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const CECStandards = lazy(() => import('./pages/CECStandards'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageLoader() {
   return (
@@ -57,12 +59,13 @@ function App() {
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/cec-standards" element={<CECStandards />} />
               <Route path="/verification-standards" element={<CECStandards />} />
-              <Route path="*" element={<HomePage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </div>
         <Footer />
         <SolarAdvisorBot />
+        <LiveSocialProof />
       </div>
     </QuoteModalProvider>
   );

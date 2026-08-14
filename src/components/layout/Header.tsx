@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Menu, X, Zap, ArrowRight, Award } from 'lucide-react';
+import { Menu, X, Zap, ArrowRight, Award, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/truesolar.png';
@@ -23,18 +23,21 @@ export default function Header() {
 
     if (href.startsWith('/#')) {
       e.preventDefault();
-      const targetId = href.replace('/#', '');
+      const targetId = href.substring(2);
 
       if (location.pathname === '/') {
-        // Already on home page, scroll directly
         const element = document.getElementById(targetId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          window.history.pushState(null, '', `#${targetId}`);
+          element.scrollIntoView({ behavior: 'smooth' });
         }
       } else {
-        // On another page, navigate to home with hash
-        navigate(`/#${targetId}`);
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
       }
     } else {
       navigate(href);
@@ -52,11 +55,19 @@ export default function Header() {
             <span className="text-[#F9B122] font-bold">100% CEC-Accredited Installers</span>
           </div>
           <div className="flex items-center gap-4 text-slate-200 text-[11px] font-semibold">
+            <a 
+              href="mailto:hello@truesolarquote.com.au" 
+              className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#F9B122]" />
+              <span>hello@truesolarquote.com.au</span>
+            </a>
+            <span className="hidden sm:inline text-white/30">•</span>
             <span className="hidden md:flex items-center gap-1">
               <Award className="w-3.5 h-3.5 text-[#F9B122]" />
-              <span>Independent & Unbiased</span>
+              <span>Independent</span>
             </span>
-            <span className="hidden sm:inline text-white/30">•</span>
+            <span className="hidden md:inline text-white/30">•</span>
             <span className="text-[#F9B122] font-bold flex items-center gap-1">
               ⚡ $0 Free Service
             </span>

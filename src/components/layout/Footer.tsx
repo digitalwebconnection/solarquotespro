@@ -197,18 +197,26 @@ export default function Footer() {
               <span className="w-1.5 h-4 bg-[#F9B122] rounded-full"></span> Contact Us
             </h3>
             <ul className="space-y-3.5 text-sm">
-           
               <li className="flex items-center gap-3 text-slate-800 group">
-                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-amber-300 transition-colors shrink-0 shadow-xs">
-                  <Phone className="w-4 h-4 text-[#003B73]" />
+                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-[#F9B122]/10 group-hover:border-[#F9B122] transition-colors shrink-0 shadow-xs">
+                  <Phone className="w-4 h-4 text-[#00417E]" />
                 </div>
-                <a href="tel:+61420135638" className="hover:text-[#003B73] transition-colors font-bold">+61 420 135 638</a>
+                <a href="tel:+61420135638" className="hover:text-[#00417E] transition-colors font-bold">+61 420 135 638</a>
               </li>
               <li className="flex items-center gap-3 text-slate-800 group">
-                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-emerald-50 group-hover:border-emerald-300 transition-colors shrink-0 shadow-xs">
-                  <Mail className="w-4 h-4 text-emerald-600" />
+                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-[#0A6702]/10 group-hover:border-[#0A6702] transition-colors shrink-0 shadow-xs">
+                  <Mail className="w-4 h-4 text-[#0A6702]" />
                 </div>
-                <a href="mailto:solarquotespro@gmail.com" className="hover:text-emerald-700 transition-colors font-bold">solarquotespro@gmail.com</a>
+                <a href="mailto:hello@truesolarquote.com.au" className="hover:text-[#0A6702] transition-colors font-bold">hello@truesolarquote.com.au</a>
+              </li>
+              <li className="pt-2">
+                <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-[11px] text-slate-600 space-y-1">
+                  <p className="font-bold text-slate-800 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#0A6702]"></span>
+                    Australian Registered Entity
+                  </p>
+                  <p>Operating under Australian Consumer Law (ACL) & Clean Energy Council guidelines.</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -220,10 +228,10 @@ export default function Footer() {
           <div className="text-slate-700 text-xs font-semibold">
             &copy; {new Date().getFullYear()} True Solar Quote. All rights reserved. Australia's trusted solar comparison engine.
           </div>
-          <div className="flex items-center gap-6 text-xs pe-30 font-bold text-slate-700">
-            <Link to="/privacy" className="hover:text-[#003B73] transition-colors">Privacy & Data Standards</Link>
-            <Link to="/terms" className="hover:text-[#003B73] transition-colors">Terms of Service</Link>
-            <Link to="/cec-standards" className="hover:text-[#003B73] transition-colors">CEC Verification Standards</Link>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-bold text-slate-700">
+            <Link to="/privacy" className="hover:text-[#00417E] transition-colors">Privacy & Data</Link>
+            <Link to="/terms" className="hover:text-[#00417E] transition-colors">Terms of Service</Link>
+            <Link to="/cec-standards" className="hover:text-[#00417E] transition-colors">CEC Standards</Link>
           </div>
         </div>
 
