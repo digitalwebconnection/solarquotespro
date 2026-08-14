@@ -6,7 +6,8 @@ import logo from '../../assets/solarqoat copy.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);.0
+  
   const { openQuoteModal } = useQuoteModal();
   const location = useLocation();
   const navigate = useNavigate();
