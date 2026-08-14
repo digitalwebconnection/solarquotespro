@@ -7,7 +7,7 @@ import { useQuoteModal } from '../../context/QuoteModalContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);.0
-  
+
   const { openQuoteModal } = useQuoteModal();
   const location = useLocation();
   const navigate = useNavigate();
@@ -79,7 +79,7 @@ export default function Header() {
             className="flex items-center gap-3 group relative"
           >
             <div className="absolute -inset-2 bg-linear-to-r from-amber-400/25 to-orange-500/25 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            <img src={logo} alt="Solar Quotes Pro Logo" className="h-9 sm:h-10 w-auto relative z-10 transition-transform group-hover:scale-102" />
+            <img src={logo} alt="Solar Quotes Pro Logo" className="h-9 sm:h-15 w-auto relative z-10 transition-transform group-hover:scale-102" />
           </Link>
           
           {/* Desktop Navigation Links */}
