@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-green: #0A6702;
+  --color-brand-gold: #F9B122;
+  --color-brand-navy: #00417E;
+
+  --color-solar-green: #0A6702;
+  --color-solar-gold: #F9B122;
+  --color-solar-navy: #00417E;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --brand-green: #0A6702;
+    --brand-gold: #F9B122;
+    --brand-navy: #00417E;
   }
 }
 
@@ -14,6 +25,3 @@ html {
 body {
   @apply bg-slate-50 text-slate-800 antialiased font-sans;
 }
-
-
-

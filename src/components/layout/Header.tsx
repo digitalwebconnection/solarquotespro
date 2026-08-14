@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import { Menu, X, Zap, ArrowRight, Award } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../../assets/solarqoat copy.png';
+import logo from '../../assets/truesolar.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);.0
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { openQuoteModal } = useQuoteModal();
   const location = useLocation();
@@ -36,33 +36,29 @@ export default function Header() {
         // On another page, navigate to home with hash
         navigate(`/#${targetId}`);
       }
-    } else if (href === '/') {
-      if (location.pathname === '/') {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+    } else {
+      navigate(href);
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
-      
-      {/* ─── Top Mini Trust & Live Status Bar ─── */}
-      <div className="bg-slate-950 text-white text-[11px] font-semibold py-1.5 px-4 hidden sm:block border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              CEC-Accredited Network Active
-            </span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-300">10,000+ Australian Homes Matched</span>
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all duration-300">
+      {/* ─── Top Trust & Accreditation Bar ─── */}
+      <div className="bg-[#00417E] text-white text-xs py-2 px-4 border-b border-[#003466]">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-2 font-medium">
+            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-[#0A6702] ring-2 ring-white/30 animate-pulse" />
+            <span className="text-slate-200 hidden sm:inline">Australia's Premier Solar Network:</span>
+            <span className="text-[#F9B122] font-bold">100% CEC-Accredited Installers</span>
           </div>
-
-          <div className="flex items-center gap-3 text-slate-300">
-            <span className="flex items-center gap-1 text-amber-400">
-              <Award className="w-3.5 h-3.5" />
-              100% Free & Independent Service
+          <div className="flex items-center gap-4 text-slate-200 text-[11px] font-semibold">
+            <span className="hidden md:flex items-center gap-1">
+              <Award className="w-3.5 h-3.5 text-[#F9B122]" />
+              <span>Independent & Unbiased</span>
+            </span>
+            <span className="hidden sm:inline text-white/30">•</span>
+            <span className="text-[#F9B122] font-bold flex items-center gap-1">
+              ⚡ $0 Free Service
             </span>
           </div>
         </div>
@@ -76,10 +72,10 @@ export default function Header() {
           <Link 
             to="/" 
             onClick={(e) => handleNavClick(e, '/')}
-            className="flex items-center gap-3 group relative"
+            className="flex items-center gap-3 group relative py-1"
           >
-            <div className="absolute -inset-2 bg-linear-to-r from-amber-400/25 to-orange-500/25 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            <img src={logo} alt="Solar Quotes Pro Logo" className="h-9 sm:h-15 w-auto relative z-10 transition-transform group-hover:scale-102" />
+            <div className="absolute -inset-2 bg-linear-to-r from-[#F9B122]/20 via-[#0A6702]/15 to-[#00417E]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            <img src={logo} alt="True Solar Quote Logo" className="h-10 sm:h-13 w-auto object-contain relative z-10 transition-transform group-hover:scale-102" />
           </Link>
           
           {/* Desktop Navigation Links */}
@@ -89,10 +85,10 @@ export default function Header() {
                 key={link.name} 
                 to={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-slate-700 hover:text-orange-600 font-bold text-sm tracking-tight transition-colors relative group py-1"
+                className="text-slate-800 hover:text-[#00417E] font-bold text-sm tracking-tight transition-colors relative group py-1"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 group-hover:w-full transition-all duration-300 rounded-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] group-hover:w-full transition-all duration-300 rounded-full" />
               </Link>
             ))}
 
@@ -101,9 +97,9 @@ export default function Header() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => openQuoteModal()}
-              className="group inline-flex items-center gap-2 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 px-6 py-2.5 rounded-full font-black text-sm transition-all shadow-[0_4px_20px_rgba(249,115,22,0.35)] hover:shadow-[0_6px_25px_rgba(249,115,22,0.5)] cursor-pointer"
+              className="group inline-flex items-center gap-2 bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] px-6 py-2.5 rounded-full font-black text-sm transition-all shadow-[0_4px_20px_rgba(249,177,34,0.35)] hover:shadow-[0_6px_25px_rgba(249,177,34,0.5)] cursor-pointer"
             >
-              <Zap className="w-4 h-4 text-slate-950 fill-slate-950" />
+              <Zap className="w-4 h-4 text-[#00417E] fill-[#00417E]" />
               <span>Get 3 Free Quotes</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </motion.button>
@@ -128,8 +124,8 @@ export default function Header() {
           className="md:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 py-6 flex flex-col gap-4 shadow-2xl"
         >
           {/* Status Badge in Mobile Drawer */}
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold w-fit mb-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A6702]/10 border border-[#0A6702]/20 text-[#0A6702] text-xs font-bold w-fit mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#0A6702] animate-pulse" />
             <span>CEC-Accredited Network Online</span>
           </div>
 
@@ -138,7 +134,7 @@ export default function Header() {
               key={link.name} 
               to={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-slate-800 hover:text-amber-600 font-bold text-base px-2 py-1.5 transition-colors border-b border-slate-100"
+              className="text-slate-800 hover:text-[#00417E] font-bold text-base px-2 py-1.5 transition-colors border-b border-slate-100"
             >
               {link.name}
             </Link>
@@ -149,10 +145,10 @@ export default function Header() {
               setIsMenuOpen(false);
               openQuoteModal();
             }}
-            className="w-full inline-flex items-center justify-center gap-2 bg-linear-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 px-6 py-3.5 rounded-xl font-black mt-2 cursor-pointer shadow-lg shadow-amber-500/25 active:scale-98"
+            className="w-full bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] py-3.5 px-4 rounded-xl font-black text-sm transition-all shadow-md mt-2 flex items-center justify-center gap-2 cursor-pointer"
           >
-            <Zap className="w-4 h-4 fill-slate-950" />
-            <span>Get Free Quotes</span>
+            <Zap className="w-4 h-4 text-[#00417E] fill-[#00417E]" />
+            <span>Get 3 Free Quotes</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>

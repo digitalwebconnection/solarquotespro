@@ -31,15 +31,15 @@ export default function WhyChooseUs() {
           >
             {/* Tag */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-orange-500" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-orange-600">Trusted by Homeowners</span>
+              <div className="h-px w-8 bg-[#0A6702]" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0A6702]">Trusted by Homeowners</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 leading-[1.1] mb-6">
               Why Thousands of Australians Choose{' '}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 via-orange-500 to-amber-600 relative whitespace-nowrap">
-                Solar Quotes Pro
-                <svg className="absolute -bottom-1 left-0 w-full h-2 text-orange-500/50" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] relative whitespace-nowrap">
+                True Solar Quote
+                <svg className="absolute -bottom-1 left-0 w-full h-2 text-[#F9B122]/50" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
                 </svg>
               </span>
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
                 <strong className="text-slate-900 font-bold">not every installer delivers the same quality, pricing or service.</strong>
               </p>
               <p>
-                That's where Solar Quotes Pro helps. We match homeowners with trusted solar professionals who have been verified for licensing, experience and customer satisfaction—so you receive competitive quotes from installers you can trust.
+                That's where True Solar Quote helps. We match homeowners with trusted solar professionals who have been verified for licensing, experience and customer satisfaction—so you receive competitive quotes from installers you can trust.
               </p>
             </div>
 

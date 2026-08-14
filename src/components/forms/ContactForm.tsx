@@ -110,7 +110,7 @@ const ContactForm = () => {
 
       const data = new FormData();
       data.append("access_key", WEB3FORMS_ACCESS_KEY);
-      data.append("from_name", "Solar Quotes Pro Inquiries");
+      data.append("from_name", "True Solar Quote Inquiries");
       data.append("subject", `💬 Customer Inquiry: ${formData.name} • ${topicLabel}`);
       data.append("replyto", formData.email);
 
@@ -163,7 +163,7 @@ const ContactForm = () => {
         </div>
         <h3 className="text-2xl font-serif font-black text-slate-900 mb-2">Message Sent Successfully!</h3>
         <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
-          Thank you for reaching out to Solar Quotes Pro. A solar advisor will review your message and respond within 24 hours.
+          Thank you for reaching out to True Solar Quote. A solar advisor will review your message and respond within 24 hours.
         </p>
         <button 
           onClick={() => setSubmitted(false)}
@@ -188,7 +188,7 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-5">
         <div>
           <label htmlFor="contact_name" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-            Full Name <span className="text-orange-500">*</span>
+            Full Name <span className="text-[#00417E]">*</span>
           </label>
           <input
             type="text"
@@ -207,7 +207,7 @@ const ContactForm = () => {
             className={`w-full px-4 py-3.5 rounded-2xl border-2 ${
               fieldErrors.name 
                 ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
-                : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                : 'border-slate-200 focus:border-[#00417E] focus:ring-[#00417E]/15'
             } bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 placeholder:text-slate-400`}
             placeholder="Sarah Jenkins"
           />
@@ -221,7 +221,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="contact_email" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-            Email Address <span className="text-orange-500">*</span>
+            Email Address <span className="text-[#00417E]">*</span>
           </label>
           <input
             type="email"
@@ -240,7 +240,7 @@ const ContactForm = () => {
             className={`w-full px-4 py-3.5 rounded-2xl border-2 ${
               fieldErrors.email 
                 ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
-                : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                : 'border-slate-200 focus:border-[#00417E] focus:ring-[#00417E]/15'
             } bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 placeholder:text-slate-400`}
             placeholder="sarah@example.com.au"
           />
@@ -255,27 +255,35 @@ const ContactForm = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-5">
         <div>
-          <label htmlFor="contact_phone" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-            Phone Number (10 Digits)
-          </label>
+          <div className="flex items-center justify-between mb-2">
+            <label htmlFor="contact_phone" className="block text-xs font-bold uppercase tracking-wider text-slate-800">
+              Contact Phone <span className="text-[#00417E]">*</span>
+            </label>
+            <span className="text-[10px] text-slate-700 font-bold bg-[#0A6702]/10 border border-[#0A6702]/20 px-2 py-0.5 rounded-md">
+              10-Digit AU Number
+            </span>
+          </div>
           <input
             type="tel"
             id="contact_phone"
             name="phone"
+            required
             inputMode="numeric"
             value={formData.phone}
             onChange={handleChange}
             onBlur={() => {
-              const digits = formData.phone.replace(/\D/g, '');
-              if (digits.length > 0 && digits.length !== 10) {
-                setFieldErrors(prev => ({ ...prev, phone: 'Phone number must be exactly 10 digits (e.g. 0400 123 456)' }));
+              const digits = (formData.phone || '').replace(/\D/g, '');
+              if (!digits) {
+                setFieldErrors(prev => ({ ...prev, phone: 'Phone number is required' }));
+              } else if (digits.length < 10) {
+                setFieldErrors(prev => ({ ...prev, phone: `Please enter full 10-digit number (${digits.length}/10 entered)` }));
               }
             }}
             maxLength={12}
             className={`w-full px-4 py-3.5 rounded-2xl border-2 ${
               fieldErrors.phone 
                 ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
-                : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                : 'border-slate-200 focus:border-[#00417E] focus:ring-[#00417E]/15'
             } bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 placeholder:text-slate-400`}
             placeholder="0400 123 456"
           />
@@ -289,27 +297,29 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="contact_subject" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-            Inquiry Subject
+            Inquiry Type
           </label>
-          <select
-            id="contact_subject"
-            name="subject"
-            required
-            value={formData.subject}
-            onChange={handleChange}
-            className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-orange-500 bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-orange-500/15 cursor-pointer"
-          >
-            <option value="general">General Solar Inquiry</option>
-            <option value="quote">Installer Matching Help</option>
-            <option value="installer_network">Join Installer Network (CEC Pros)</option>
-            <option value="feedback">Feedback & Support</option>
-          </select>
+          <div className="relative">
+            <select
+              id="contact_subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-[#00417E] bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 focus:ring-[#00417E]/15 cursor-pointer"
+            >
+              <option value="general">General Solar Inquiry</option>
+              <option value="quotes">Quote Request Assistance</option>
+              <option value="installer">Installer Network / Partner Inquiries</option>
+              <option value="feedback">Feedback & Suggestions</option>
+              <option value="press">Media & Corporate</option>
+            </select>
+          </div>
         </div>
       </div>
 
       <div className="mb-6">
         <label htmlFor="contact_message" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-          Your Message <span className="text-orange-500">*</span>
+          Your Message <span className="text-[#00417E]">*</span>
         </label>
         <textarea
           id="contact_message"
@@ -328,7 +338,7 @@ const ContactForm = () => {
           className={`w-full px-4 py-3.5 rounded-2xl border-2 ${
             fieldErrors.message 
               ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
-              : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+              : 'border-slate-200 focus:border-[#00417E] focus:ring-[#00417E]/15'
           } bg-slate-50 focus:bg-white text-slate-900 font-semibold text-sm outline-none transition-all focus:ring-4 resize-none placeholder:text-slate-400`}
           placeholder="Tell us about your property, energy requirements, or question..."
         />
@@ -343,11 +353,11 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-base py-4 px-6 rounded-2xl transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+        className="w-full bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black text-base py-4 px-6 rounded-2xl transition-all shadow-lg shadow-[#F9B122]/30 hover:shadow-[#F9B122]/50 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
           <span className="inline-flex items-center gap-2">
-            <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></span>
+            <span className="w-4 h-4 border-2 border-[#00417E] border-t-transparent rounded-full animate-spin"></span>
             Sending Message...
           </span>
         ) : (

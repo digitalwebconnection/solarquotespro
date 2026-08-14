@@ -152,7 +152,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
       const formData = new FormData();
       formData.append("access_key", WEB3FORMS_ACCESS_KEY);
       formData.append("subject", `⚡ Solar Lead: ${contactData.fullName} • Postcode ${postcode} (${systemType === 'solar_battery' ? 'Solar + Battery' : systemType === 'solar_only' ? 'Solar Only' : 'Battery Only'})`);
-      formData.append("from_name", "Solar Quotes Pro Lead Engine");
+      formData.append("from_name", "True Solar Quote Lead Engine");
       formData.append("replyto", contactData.email);
 
       // Executive Structured Sections (Clean Encoding)
@@ -204,11 +204,11 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
     <div className="bg-white rounded-3xl shadow-[0_25px_70px_-15px_rgba(15,23,42,0.35)] border border-slate-200/90 overflow-hidden w-full max-w-lg mx-auto relative">
       
       {/* ─── Clean, Refined Premium Header ─── */}
-      <div className="relative bg-slate-950 text-white p-6 sm:p-7 border-b border-slate-800">
+      <div className="relative bg-linear-to-r from-slate-950 via-[#003B73] to-slate-950 text-white p-6 sm:p-7 border-b border-slate-800">
         
         {/* Subtle Warm Accent Glow */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-400/15 rounded-full blur-2xl pointer-events-none" />
 
         {/* Close Button */}
         {onClose && (
@@ -224,7 +224,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
         <div className="relative z-10 pr-8">
           {/* Status Trust Pill */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-300 text-[11px] font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-amber-300 text-[11px] font-bold uppercase tracking-wider mb-3">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             100% Free & Independent Match
           </div>
@@ -234,7 +234,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
           </h3>
           
           <p className="text-xs sm:text-sm text-slate-300 mt-1.5 flex items-center gap-1.5 font-medium">
-            <ShieldCheck className="w-4 h-4 text-orange-400 shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
             {isSubmitted 
               ? 'Connecting you with local CEC-accredited installers.' 
               : 'Compare verified, top-rated local installers in your area.'}
@@ -245,7 +245,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
         {!isSubmitted && (
           <div className="mt-5 pt-4 border-t border-slate-800/80 relative z-10">
             <div className="flex items-center justify-between text-xs font-semibold mb-2">
-              <span className="text-orange-400 font-bold">Step {step} of 3</span>
+              <span className="text-amber-400 font-bold">Step {step} of 3</span>
               <span className="text-slate-300 text-[11px]">
                 {step === 1 && 'System & Location'}
                 {step === 2 && 'Energy & Property'}
@@ -262,7 +262,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     s < step 
                       ? 'bg-emerald-500' 
                       : s === step 
-                      ? 'bg-linear-to-r from-amber-400 via-orange-500 to-amber-500' 
+                      ? 'bg-linear-to-r from-amber-400 via-amber-500 to-emerald-500' 
                       : 'bg-slate-800'
                   }`}
                 />

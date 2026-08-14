@@ -56,7 +56,7 @@ export default function CECStandards() {
           CEC Verification Standards
         </h1>
         <p className="text-slate-600 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-          How Solar Quotes Pro audits, verifies, and continually benchmarks Australian solar installers to guarantee safety, maximum rebate eligibility, and long-term energy savings.
+          How True Solar Quote audits, verifies, and continually benchmarks Australian solar installers to guarantee safety, maximum rebate eligibility, and long-term energy savings.
         </p>
       </div>
 
@@ -89,12 +89,12 @@ export default function CECStandards() {
         {/* ─── 10-Point Inspection Infobox ─── */}
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-6">
           <div className="text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-orange-600">Pre-Match Verification</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#003B73]">Pre-Match Verification</span>
             <h2 className="text-2xl sm:text-3xl font-serif font-black text-slate-950 mt-1">
               Our 10-Point Pre-Screening Checklist
             </h2>
             <p className="text-slate-600 text-sm mt-1">
-              Before an installer is permitted to submit quotes on Solar Quotes Pro, they must pass each check:
+              Before an installer is permitted to submit quotes on True Solar Quote, they must pass each check:
             </p>
           </div>
 

@@ -129,7 +129,7 @@ export default function ValueProposition() {
             <h2 className="text-3xl font-serif sm:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.1] mb-5 tracking-tight">
               Why Thousands of Australians Choose{' '}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 via-orange-500 to-amber-600 relative whitespace-nowrap">
-                Solar Quotes Pro
+                True Solar Quote
                 <svg className="absolute -bottom-1 left-0 w-full h-2.5 text-orange-300" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
                 </svg>

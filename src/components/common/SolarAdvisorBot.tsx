@@ -218,9 +218,9 @@ export default function SolarAdvisorBot() {
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.94 }}
           onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center gap-2.5 p-3.5 sm:px-3 sm:py-2 rounded-full shadow-[0_10px_35px_-5px_rgba(249,115,22,0.45)] transition-all cursor-pointer ${isOpen
+          className={`flex items-center gap-2.5 p-3.5 sm:px-4 sm:py-2.5 rounded-full shadow-[0_10px_35px_-5px_rgba(249,177,34,0.5)] transition-all cursor-pointer ${isOpen
               ? 'bg-slate-900 text-white hover:bg-slate-800 ring-2 ring-slate-700'
-              : 'bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 text-slate-950 hover:shadow-orange-500/60 font-black'
+              : 'bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black'
             }`}
           aria-label="Toggle AI Solar Advisor Chat"
         >
@@ -229,10 +229,10 @@ export default function SolarAdvisorBot() {
           ) : (
             <>
               <div className="relative flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-slate-950 text-amber-400 flex items-center justify-center font-black shadow-inner">
+                <div className="w-8 h-8 rounded-full bg-[#00417E] text-[#F9B122] flex items-center justify-center font-black shadow-inner">
                   <Bot className="w-4 h-4 stroke-[2.5]" />
                 </div>
-                <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-amber-400 animate-pulse" />
+                <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#0A6702] border-2 border-[#F9B122] animate-pulse" />
               </div>
               <span className="hidden sm:inline text-sm font-black tracking-tight">Ask Sunny • Solar AI</span>
             </>
@@ -251,26 +251,26 @@ export default function SolarAdvisorBot() {
             className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-50 w-90 sm:w-102.5 max-w-[calc(100vw-2rem)] h-135 max-h-[calc(100vh-7rem)] bg-white rounded-3xl shadow-[0_25px_70px_-15px_rgba(15,23,42,0.4)] border border-slate-200/90 overflow-hidden flex flex-col backdrop-blur-xl"
           >
             {/* Chat Header */}
-            <div className="bg-linear-to-r from-slate-950 via-slate-900 to-slate-950 text-white p-4 sm:p-5 border-b border-slate-800 relative flex items-center justify-between shrink-0">
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="bg-linear-to-r from-slate-950 via-[#00417E] to-slate-950 text-white p-4 sm:p-5 border-b border-slate-800 relative flex items-center justify-between shrink-0">
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#0A6702]/20 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-3 relative z-10">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-2xl bg-linear-to-br from-amber-400 via-orange-400 to-orange-500 flex items-center justify-center text-slate-950 font-black shadow-md shadow-orange-500/20">
+                  <div className="w-10 h-10 rounded-2xl bg-[#F9B122] flex items-center justify-center text-[#00417E] font-black shadow-md">
                     <Bot className="w-5 h-5 stroke-[2.5]" />
                   </div>
-                  <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center">
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#0A6702] border-2 border-slate-900 flex items-center justify-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   </span>
                 </div>
 
                 <div>
-                  <div className="flex items-center gap-1.5">
-                    <h4 className="font-bold text-sm text-white">Sunny</h4>
-                    <span className="text-[10px] bg-amber-500/20 text-amber-400 border border-amber-500/30 px-1.5 py-0.2 rounded font-bold">AI Advisor</span>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-bold text-sm text-white">Sunny</h3>
+                    <span className="text-[10px] bg-[#0A6702]/20 text-[#0A6702] border border-[#0A6702]/40 px-1.5 py-0.2 rounded font-bold">True Solar AI</span>
                   </div>
                   <p className="text-[11px] text-slate-300 flex items-center gap-1 mt-0.5">
-                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                    <ShieldCheck className="w-3 h-3 text-[#0A6702]" />
                     <span>CEC-Accredited Guidance</span>
                   </p>
                 </div>

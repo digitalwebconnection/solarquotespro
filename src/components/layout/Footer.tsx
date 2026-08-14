@@ -1,6 +1,6 @@
 import { ArrowRight, Mail, Phone, ShieldCheck, Zap, Award, Lock } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../../assets/solarqoat copy.png';
+import logo from '../../assets/truesolar.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
 const Facebook = (props: any) => (
@@ -9,11 +9,6 @@ const Facebook = (props: any) => (
   </svg>
 );
 
-const Twitter = (props: any) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-  </svg>
-);
 
 const Instagram = (props: any) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -23,13 +18,7 @@ const Instagram = (props: any) => (
   </svg>
 );
 
-const Linkedin = (props: any) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
+
 
 export default function Footer() {
   const { openQuoteModal } = useQuoteModal();
@@ -132,26 +121,39 @@ export default function Footer() {
             <Link 
               to="/" 
               onClick={(e) => handleNavClick(e, '/')}
-              className="flex items-center gap-3"
+              className="inline-block py-1"
             >
-              <img src={logo} alt="Solar Quotes Pro Logo" className="h-18 w-auto" />
+              <img src={logo} alt="True Solar Quote Logo" className="h-12 sm:h-14 w-auto object-contain" />
             </Link>
-            <p className="text-sm text-slate-900 leading-relaxed font-medium">
+            <p className="text-sm text-slate-700 leading-relaxed font-medium">
               Empowering Australian homeowners with transparent, competitive, and verified solar energy quotes from CEC-accredited professionals nationwide.
             </p>
             <div className="flex space-x-2.5 pt-2">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" aria-label="Social Link" className="text-slate-900 bg-white border border-slate-300 hover:bg-linear-to-r hover:from-amber-400 hover:to-orange-500 hover:text-slate-950 hover:border-orange-400 transition-all duration-300 p-2.5 rounded-xl hover:-translate-y-1 hover:shadow-md">
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a 
+                href="https://www.facebook.com/profile.php?id=61592788688425" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="True Solar Quote Facebook" 
+                className="text-slate-800 bg-white border border-slate-300 hover:bg-linear-to-r hover:from-amber-400 hover:to-orange-500 hover:text-slate-950 hover:border-orange-400 transition-all duration-300 p-2.5 rounded-xl hover:-translate-y-1 hover:shadow-md"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/truesolarquote/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="True Solar Quote Instagram" 
+                className="text-slate-800 bg-white border border-slate-300 hover:bg-[#F9B122] hover:text-[#00417E] hover:border-[#F9B122] transition-all duration-300 p-2.5 rounded-xl hover:-translate-y-1 hover:shadow-md"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-slate-900 font-serif font-black text-base mb-4 tracking-wide flex items-center gap-2">
-              <span className="w-1.5 h-4 bg-orange-500 rounded-full"></span> Quick Links
+              <span className="w-1.5 h-4 bg-[#00417E] rounded-full"></span> Quick Links
             </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((item) => (
@@ -159,9 +161,9 @@ export default function Footer() {
                   <Link 
                     to={item.href} 
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="text-slate-900 font-semibold hover:text-orange-600 transition-colors duration-300 text-sm flex items-center gap-2 group"
+                    className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
                   >
-                    <ArrowRight className="w-3.5 h-3.5 text-orange-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#F9B122] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
                   </Link>
                 </li>
@@ -172,16 +174,16 @@ export default function Footer() {
           {/* Services / Quotes */}
           <div>
             <h3 className="text-slate-900 font-serif font-black text-base mb-4 tracking-wide flex items-center gap-2">
-              <span className="w-1.5 h-4 bg-orange-500 rounded-full"></span> Solar Quotes
+              <span className="w-1.5 h-4 bg-[#0A6702] rounded-full"></span> Solar Quotes
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((item) => (
                 <li key={item.label}>
                   <button 
                     onClick={item.action} 
-                    className="text-slate-900 font-semibold hover:text-orange-600 transition-colors duration-300 text-sm flex items-center gap-2 group cursor-pointer text-left"
+                    className="text-slate-700 font-semibold hover:text-[#0A6702] transition-colors duration-300 text-sm flex items-center gap-2 group cursor-pointer text-left"
                   >
-                    <ArrowRight className="w-3.5 h-3.5 text-orange-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#0A6702] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
                   </button>
                 </li>
@@ -192,21 +194,21 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-slate-900 font-serif font-black text-base mb-4 tracking-wide flex items-center gap-2">
-              <span className="w-1.5 h-4 bg-orange-500 rounded-full"></span> Contact Us
+              <span className="w-1.5 h-4 bg-[#F9B122] rounded-full"></span> Contact Us
             </h3>
             <ul className="space-y-3.5 text-sm">
            
-              <li className="flex items-center gap-3 text-slate-900 group">
-                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-orange-300 transition-colors shrink-0 shadow-xs">
-                  <Phone className="w-4 h-4 text-orange-600" />
+              <li className="flex items-center gap-3 text-slate-800 group">
+                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-amber-300 transition-colors shrink-0 shadow-xs">
+                  <Phone className="w-4 h-4 text-[#003B73]" />
                 </div>
-                <a href="tel:1300000000" className="hover:text-orange-600 transition-colors font-bold">1300 000 000</a>
+                <a href="tel:+61420135638" className="hover:text-[#003B73] transition-colors font-bold">+61 420 135 638</a>
               </li>
-              <li className="flex items-center gap-3 text-slate-900 group">
-                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-amber-50 group-hover:border-orange-300 transition-colors shrink-0 shadow-xs">
-                  <Mail className="w-4 h-4 text-orange-600" />
+              <li className="flex items-center gap-3 text-slate-800 group">
+                <div className="bg-white p-2 rounded-xl border border-slate-200 group-hover:bg-emerald-50 group-hover:border-emerald-300 transition-colors shrink-0 shadow-xs">
+                  <Mail className="w-4 h-4 text-emerald-600" />
                 </div>
-                <a href="mailto:solarquotespro@gmail.com" className="hover:text-orange-600 transition-colors font-bold">solarquotespro@gmail.com</a>
+                <a href="mailto:solarquotespro@gmail.com" className="hover:text-emerald-700 transition-colors font-bold">solarquotespro@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -215,13 +217,13 @@ export default function Footer() {
 
         {/* ─── Bottom Bar ─── */}
         <div className="pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-slate-900 text-xs font-semibold">
-            &copy; {new Date().getFullYear()} Solar Quotes Pro. All rights reserved. Australia's trusted solar comparison engine.
+          <div className="text-slate-700 text-xs font-semibold">
+            &copy; {new Date().getFullYear()} True Solar Quote. All rights reserved. Australia's trusted solar comparison engine.
           </div>
-          <div className="flex items-center gap-6 text-xs pe-30 font-bold text-slate-900">
-            <Link to="/privacy" className="hover:text-orange-600 transition-colors">Privacy & Data Standards</Link>
-            <Link to="/terms" className="hover:text-orange-600 transition-colors">Terms of Service</Link>
-            <Link to="/cec-standards" className="hover:text-orange-600 transition-colors">CEC Verification Standards</Link>
+          <div className="flex items-center gap-6 text-xs pe-30 font-bold text-slate-700">
+            <Link to="/privacy" className="hover:text-[#003B73] transition-colors">Privacy & Data Standards</Link>
+            <Link to="/terms" className="hover:text-[#003B73] transition-colors">Terms of Service</Link>
+            <Link to="/cec-standards" className="hover:text-[#003B73] transition-colors">CEC Verification Standards</Link>
           </div>
         </div>
 

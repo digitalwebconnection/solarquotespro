@@ -107,7 +107,7 @@ const SolarJourney = () => {
           className="space-y-1 text-base sm:text-lg md:text-xl text-slate-200 font-medium max-w-7xl mx-auto mb-8 leading-relaxed"
         >
           <p>
-            Whether you're installing your first solar system or upgrading with battery storage, Solar Quotes Pro eliminates the guesswork.
+            Whether you're installing your first solar system or upgrading with battery storage, True Solar Quote eliminates the guesswork.
           </p>
           <p className="text-amber-200/90 font-bold">
             Compare trusted local installers who compete to give you the highest quality at the best price.

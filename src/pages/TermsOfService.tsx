@@ -18,7 +18,7 @@ export default function TermsOfService() {
           Terms of Service
         </h1>
         <p className="text-slate-600 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-          Please review the terms and conditions governing the use of Solar Quotes Pro's independent comparison service.
+          Please review the terms and conditions governing the use of True Solar Quote's independent comparison service.
         </p>
         <div className="mt-4 text-xs text-slate-700 font-semibold">
           Last Updated: {lastUpdated} • Governing Law: New South Wales, Australia
@@ -32,22 +32,22 @@ export default function TermsOfService() {
           {/* 1. Introduction */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing or using the website and quote matching service provided by <strong>Solar Quotes Pro</strong> ("Platform", "we", "us", or "our"), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.
+              By accessing or using the website and quote matching service provided by <strong>True Solar Quote</strong> ("Platform", "we", "us", or "our"), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.
             </p>
           </section>
 
           {/* 2. Free Comparison Service */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
               2. Free & Independent Matching Service
             </h2>
             <p>
-              Solar Quotes Pro is a <strong>100% free, no-obligation comparison service</strong> for consumers. We do not charge Australian homeowners or businesses any fee to request or receive quotes.
+              True Solar Quote is a <strong>100% free, no-obligation comparison service</strong> for consumers. We do not charge Australian homeowners or businesses any fee to request or receive quotes.
             </p>
             <p>
               Our role is to facilitate connections between property owners and vetted third-party Clean Energy Council (CEC) accredited solar installers operating in their regional area.
@@ -61,69 +61,61 @@ export default function TermsOfService() {
               <span>Zero Pressure & No Obligation to Purchase</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Requesting quotes via Solar Quotes Pro does not obligate you to purchase a solar system, battery, or service from any installer. You remain fully empowered to evaluate proposals, negotiate terms, or decline quotes at your sole discretion.
+              Requesting quotes via True Solar Quote does not obligate you to purchase a solar system, battery, or service from any installer. You remain fully empowered to evaluate proposals, negotiate terms, or decline quotes at your sole discretion.
             </p>
           </section>
 
           {/* 4. Installer Relationship & Disclaimers */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
               3. Independent Installer Network & Contracts
             </h2>
             <p>
-              While Solar Quotes Pro enforces rigorous vetting standards (including verification of CEC accreditation, licensing, and insurance), participating installers operate as independent businesses.
+              While True Solar Quote enforces rigorous vetting standards (including verification of CEC accreditation, licensing, and insurance), participating installers operate as independent businesses.
             </p>
             <ul className="space-y-2 pl-2">
               <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-1" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
                 <span>Any contract entered into for the supply or installation of solar equipment is solely between you and the chosen solar contractor.</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-1" />
-                <span>Installers are solely responsible for site assessments, structural integrity checks, STC rebate processing, and equipment warranties.</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
+                <span>True Solar Quote is not a licensed solar installer, electrical contractor, or party to any installation contract.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
+                <span>We strongly recommend verifying all system specifications, warranty terms, and final pricing directly with your quoting installers before proceeding.</span>
               </li>
             </ul>
           </section>
 
-          {/* 5. User Responsibilities */}
+          {/* 5. Limitation of Liability */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
-              4. User Responsibilities
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
+              4. Accuracy & Estimates Disclaimer
             </h2>
-            <p>When requesting quotes through our platform, you agree to:</p>
-            <ul className="space-y-2 pl-2 text-xs sm:text-sm">
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Provide accurate and truthful contact information and property details.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Ensure you are the property owner, authorized representative, or tenant with landlord permission to inquire about solar installations.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Not submit fraudulent, automated, or malicious spam requests.</span>
-              </li>
-            </ul>
+            <p>
+              All savings estimates, system sizing approximations, and pricing ranges presented on the platform or in informational emails are for illustrative guidance only. Actual system output and financial savings depend on your specific roof angle, shading, geographic irradiation, local network tariffs, and feed-in tariff rates.
+            </p>
           </section>
 
           {/* 6. Intellectual Property */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
               5. Intellectual Property
             </h2>
             <p>
-              All content, brand assets, logos, design graphics, software, and layout on Solar Quotes Pro are protected by Australian copyright and trademark laws. You may not copy, reproduce, or scrape platform data without explicit prior written consent.
+              All content, brand assets, logos, design graphics, software, and layout on True Solar Quote are protected by Australian copyright and trademark laws. You may not copy, reproduce, or scrape platform data without explicit prior written consent.
             </p>
           </section>
 
           {/* 7. Governing Law */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
               6. Governing Law
             </h2>
             <p>
@@ -135,8 +127,8 @@ export default function TermsOfService() {
           <section className="space-y-2 pt-4 border-t border-slate-200">
             <h3 className="font-bold text-slate-900">Legal Contact</h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Solar Quotes Pro — Legal & Compliance<br />
-              Email: <a href="mailto:hello@solarquotespro.com.au" className="text-orange-600 font-semibold">hello@solarquotespro.com.au</a><br />
+              True Solar Quote — Legal & Compliance<br />
+              Email: <a href="mailto:hello@truesolarquote.com.au" className="text-[#003B73] font-semibold">hello@truesolarquote.com.au</a><br />
               Location: Sydney, NSW, Australia
             </p>
           </section>

@@ -87,16 +87,16 @@ export default function Hero() {
             className="lg:col-span-7 text-left"
           >
             {/* Trust Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white border border-orange-400 text-orange-900 font-bold text-xs sm:text-sm mb-6 shadow-md shadow-orange-500/10 backdrop-blur-sm">
-              <Award className="w-4 h-4 text-orange-500 shrink-0" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#00417E]/25 text-[#00417E] font-bold text-xs sm:text-sm mb-6 shadow-md shadow-[#00417E]/10 backdrop-blur-sm">
+              <Award className="w-4 h-4 text-[#F9B122] shrink-0" />
               <span>Australia's Trusted Way To Compare Solar Quotes</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#0A6702] animate-pulse" />
             </div>
 
             {/* Main Headline with Custom Gradient */}
             <h1 className="text-4xl sm:text-5xl lg:text-5xl font-black font-serif text-slate-900 leading-[1.1] tracking-tight mb-6">
               Get 3 Free Quotes From{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 via-orange-500 to-amber-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122]">
                 Verified
               </span>{" "}
               Solar Installers
@@ -119,9 +119,9 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + idx * 0.1 }}
-                  className="flex items-center gap-3 bg-white/90 border border-slate-200/80 px-3.5 py-2.5 rounded-xl text-slate-800 font-bold text-xs sm:text-sm shadow-xs backdrop-blur-sm"
+                  className="flex items-center gap-3 bg-white/95 border border-slate-200/90 px-3.5 py-2.5 rounded-xl text-slate-800 font-bold text-xs sm:text-sm shadow-xs backdrop-blur-sm"
                 >
-                  <CheckCircle className="w-4.5 h-4.5 text-orange-500 shrink-0" />
+                  <CheckCircle className="w-4.5 h-4.5 text-[#0A6702] shrink-0" />
                   <span>{feature}</span>
                 </motion.li>
               ))}
@@ -133,7 +133,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => openQuoteModal()}
-                className="group relative inline-flex items-center justify-center gap-3 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 text-base sm:text-lg font-black px-8 py-2 rounded-full transition-all duration-300 shadow-[0_10px_35px_rgba(249,115,22,0.35)] hover:shadow-[0_15px_45px_rgba(249,115,22,0.5)] cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-3 bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] text-base sm:text-lg font-black px-8 py-3 rounded-full transition-all duration-300 shadow-[0_10px_35px_rgba(249,177,34,0.4)] hover:shadow-[0_15px_45px_rgba(249,177,34,0.6)] cursor-pointer"
               >
                 <span>Get Your Free Quotes</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />

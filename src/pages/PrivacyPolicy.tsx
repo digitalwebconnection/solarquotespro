@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           Privacy & Data Standards
         </h1>
         <p className="text-slate-600 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-          We believe in 100% transparency. Learn how Solar Quotes Pro protects your personal information, enforces strict data security, and respects your privacy.
+          We believe in 100% transparency. Learn how True Solar Quote protects your personal information, enforces strict data security, and respects your privacy.
         </p>
         <div className="mt-4 text-xs text-slate-700 font-semibold">
           Last Updated: {lastUpdated} • Applicable Australia-Wide
@@ -32,11 +32,11 @@ export default function PrivacyPolicy() {
           {/* 1. Overview */}
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 flex items-center gap-2.5">
-              <span className="w-2 h-5 bg-orange-500 rounded-full shrink-0"></span>
+              <span className="w-2 h-5 bg-[#003B73] rounded-full shrink-0"></span>
               1. Our Privacy Commitment
             </h2>
             <p>
-              At <strong>Solar Quotes Pro</strong> ("we", "our", or "us"), we are committed to protecting the privacy of Australian homeowners and business operators who use our independent solar comparison platform.
+              At <strong>True Solar Quote</strong> ("we", "our", or "us"), we are committed to protecting the privacy of Australian homeowners and business operators who use our independent solar comparison platform.
             </p>
             <p>
               We comply with the <strong>Privacy Act 1988 (Cth)</strong> and the <strong>Australian Privacy Principles (APPs)</strong>, which govern standards, rights, and obligations around handling, using, and storing personal information.
@@ -127,7 +127,7 @@ export default function PrivacyPolicy() {
               Under the Australian Privacy Principles, you have the right to request access to the personal information we hold about you, request corrections, or request immediate deletion from our matching database.
             </p>
             <p>
-              To submit a data access or deletion request, please email our Data Privacy Officer at <a href="mailto:privacy@solarquotespro.com.au" className="text-orange-600 font-bold underline">privacy@solarquotespro.com.au</a>.
+              To submit a data access or deletion request, please email our Data Privacy Officer at <a href="mailto:privacy@truesolarquote.com.au" className="text-[#003B73] font-bold underline">privacy@truesolarquote.com.au</a>.
             </p>
           </section>
 
@@ -135,8 +135,8 @@ export default function PrivacyPolicy() {
           <section className="space-y-2 pt-4 border-t border-slate-200">
             <h3 className="font-bold text-slate-900">Questions or Concerns?</h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Solar Quotes Pro — Privacy & Compliance Division<br />
-              Email: <a href="mailto:privacy@solarquotespro.com.au" className="text-orange-600 font-semibold">privacy@solarquotespro.com.au</a><br />
+              True Solar Quote — Privacy & Compliance Division<br />
+              Email: <a href="mailto:privacy@truesolarquote.com.au" className="text-[#003B73] font-semibold">privacy@truesolarquote.com.au</a><br />
               Location: Sydney, NSW, Australia (Operating Nationwide)
             </p>
           </section>
