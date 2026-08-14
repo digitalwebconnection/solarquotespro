@@ -13,7 +13,8 @@ import {
   ArrowLeft, 
   ShieldCheck, 
   Lock, 
-  Award
+  Award,
+  AlertCircle
 } from 'lucide-react';
 import { WEB3FORMS_ACCESS_KEY } from '../../config/web3forms';
 
@@ -37,9 +38,31 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
     phone: '',
   });
 
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
+  const validateEmail = (email: string) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email.trim());
+  };
+
+  const formatAustralianPhone = (raw: string) => {
+    const digits = raw.replace(/\D/g, '').slice(0, 10);
+    if (digits.length <= 4) return digits;
+    if (digits.length <= 7) return `${digits.slice(0, 4)} ${digits.slice(4)}`;
+    return `${digits.slice(0, 4)} ${digits.slice(4, 7)} ${digits.slice(7)}`;
+  };
+
+  const validatePhone = (phone: string) => {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length === 10 || (digits.length === 11 && digits.startsWith('61'));
+  };
+
+  const validatePostcode = (pc: string) => {
+    return /^\d{4}$/.test(pc.trim());
+  };
 
   // Australian State detection helper
   const auLocationPreview = useMemo(() => {
@@ -61,35 +84,44 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
   const handleStep1Submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!postcode.trim() || postcode.trim().length < 3) {
-      setErrorMsg('Please enter a valid Australian postcode (e.g. 2000, 3000, 4000)');
+    if (!validatePostcode(postcode)) {
+      setFieldErrors({ postcode: 'Please enter a valid 4-digit Australian postcode (e.g. 2000, 3000, 4000)' });
+      setErrorMsg('Please enter a valid 4-digit Australian postcode');
       return;
     }
+    setFieldErrors({});
     setErrorMsg('');
     setStep(2);
   };
 
   const handleStep2Submit = (e: React.FormEvent) => {
     e.preventDefault();
+    setFieldErrors({});
     setErrorMsg('');
     setStep(3);
   };
 
   const handleFinalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!contactData.fullName.trim()) {
-      setErrorMsg('Please enter your full name');
-      return;
+    const errors: Record<string, string> = {};
+
+    if (!contactData.fullName.trim() || contactData.fullName.trim().length < 2) {
+      errors.fullName = 'Please enter your full name (minimum 2 characters)';
     }
-    if (!contactData.email.trim() || !contactData.email.includes('@')) {
-      setErrorMsg('Please enter a valid email address');
-      return;
+    if (!contactData.email.trim() || !validateEmail(contactData.email)) {
+      errors.email = 'Please enter a valid email address (e.g. name@example.com.au)';
     }
-    if (!contactData.phone.trim() || contactData.phone.replace(/\D/g, '').length < 8) {
-      setErrorMsg('Please enter a valid Australian phone number');
+    if (!contactData.phone.trim() || !validatePhone(contactData.phone)) {
+      errors.phone = 'Phone number must be exactly 10 digits (e.g. 0400 123 456)';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setErrorMsg('Please correct the highlighted fields before submitting.');
       return;
     }
 
+    setFieldErrors({});
     setErrorMsg('');
     setIsSubmitting(true);
 
@@ -289,11 +321,30 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     required
                     maxLength={4}
                     value={postcode}
-                    onChange={(e) => setPostcode(e.target.value.replace(/\D/g, ''))}
+                    onChange={(e) => {
+                      setPostcode(e.target.value.replace(/\D/g, ''));
+                      if (fieldErrors.postcode) {
+                        setFieldErrors(prev => {
+                          const n = { ...prev };
+                          delete n.postcode;
+                          return n;
+                        });
+                      }
+                    }}
                     placeholder="e.g. 2000, 3000, 4000"
-                    className="w-full pl-13 pr-4 py-3 bg-slate-50/70 hover:bg-slate-50 focus:bg-white border-2 border-slate-200 focus:border-orange-500 rounded-2xl text-slate-900 font-bold text-base outline-none transition-all placeholder:text-slate-400 placeholder:font-normal focus:ring-4 focus:ring-orange-500/15"
+                    className={`w-full pl-13 pr-4 py-3 bg-slate-50/70 hover:bg-slate-50 focus:bg-white border-2 ${
+                      fieldErrors.postcode 
+                        ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                        : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                    } rounded-2xl text-slate-900 font-bold text-base outline-none transition-all placeholder:text-slate-400 placeholder:font-normal focus:ring-4`}
                   />
                 </div>
+                {fieldErrors.postcode && (
+                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>{fieldErrors.postcode}</span>
+                  </p>
+                )}
               </div>
 
               {/* System Type Selection */}
@@ -543,10 +594,37 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                   id="fullName"
                   required
                   value={contactData.fullName}
-                  onChange={(e) => setContactData({ ...contactData, fullName: e.target.value })}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setContactData({ ...contactData, fullName: val });
+                    if (fieldErrors.fullName && val.trim().length >= 2) {
+                      setFieldErrors(prev => {
+                        const n = { ...prev };
+                        delete n.fullName;
+                        return n;
+                      });
+                    }
+                  }}
+                  onBlur={() => {
+                    if (!contactData.fullName.trim()) {
+                      setFieldErrors(prev => ({ ...prev, fullName: 'Full name is required' }));
+                    } else if (contactData.fullName.trim().length < 2) {
+                      setFieldErrors(prev => ({ ...prev, fullName: 'Full name must be at least 2 characters' }));
+                    }
+                  }}
                   placeholder="e.g. Sarah Jenkins"
-                  className="w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 border-slate-200 focus:border-orange-500 rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4 focus:ring-orange-500/15"
+                  className={`w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 ${
+                    fieldErrors.fullName 
+                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                      : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                  } rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
+                {fieldErrors.fullName && (
+                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>{fieldErrors.fullName}</span>
+                  </p>
+                )}
               </div>
 
               {/* Email */}
@@ -559,26 +637,86 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                   id="email"
                   required
                   value={contactData.email}
-                  onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setContactData({ ...contactData, email: val });
+                    if (fieldErrors.email && validateEmail(val)) {
+                      setFieldErrors(prev => {
+                        const n = { ...prev };
+                        delete n.email;
+                        return n;
+                      });
+                    }
+                  }}
+                  onBlur={() => {
+                    if (!contactData.email.trim()) {
+                      setFieldErrors(prev => ({ ...prev, email: 'Email address is required' }));
+                    } else if (!validateEmail(contactData.email)) {
+                      setFieldErrors(prev => ({ ...prev, email: 'Please enter a valid email address (e.g. name@example.com.au)' }));
+                    }
+                  }}
                   placeholder="sarah.jenkins@example.com.au"
-                  className="w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 border-slate-200 focus:border-orange-500 rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4 focus:ring-orange-500/15"
+                  className={`w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 ${
+                    fieldErrors.email 
+                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                      : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                  } rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
+                {fieldErrors.email && (
+                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>{fieldErrors.email}</span>
+                  </p>
+                )}
               </div>
 
               {/* Phone */}
               <div>
                 <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
-                  Contact Phone <span className="text-orange-500">*</span>
+                  Contact Phone (10 Digits) <span className="text-orange-500">*</span>
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   required
+                  inputMode="numeric"
+                  maxLength={12}
                   value={contactData.phone}
-                  onChange={(e) => setContactData({ ...contactData, phone: e.target.value })}
-                  placeholder="0400 000 000"
-                  className="w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 border-slate-200 focus:border-orange-500 rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4 focus:ring-orange-500/15"
+                  onChange={(e) => {
+                    const formatted = formatAustralianPhone(e.target.value);
+                    const rawDigits = formatted.replace(/\D/g, '');
+                    setContactData({ ...contactData, phone: formatted });
+                    if (rawDigits.length > 0 && rawDigits.length < 10) {
+                      setFieldErrors(prev => ({ ...prev, phone: `Please enter 10 digits (${rawDigits.length}/10 entered)` }));
+                    } else {
+                      setFieldErrors(prev => {
+                        const n = { ...prev };
+                        delete n.phone;
+                        return n;
+                      });
+                    }
+                  }}
+                  onBlur={() => {
+                    const rawDigits = contactData.phone.replace(/\D/g, '');
+                    if (!rawDigits) {
+                      setFieldErrors(prev => ({ ...prev, phone: 'Contact phone number is required' }));
+                    } else if (rawDigits.length !== 10) {
+                      setFieldErrors(prev => ({ ...prev, phone: 'Phone number must be exactly 10 digits (e.g. 0400 123 456)' }));
+                    }
+                  }}
+                  placeholder="0400 123 456"
+                  className={`w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 ${
+                    fieldErrors.phone 
+                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                      : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
+                  } rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
+                {fieldErrors.phone && (
+                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>{fieldErrors.phone}</span>
+                  </p>
+                )}
               </div>
 
               {/* Privacy Guarantee */}
