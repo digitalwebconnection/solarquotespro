@@ -15,13 +15,13 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-amber-50">
+    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-linear-to-br from-slate-50 via-white to-amber-50">
       {/* Grid Pattern */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] bg-amber-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-30"></div>
-        <div className="absolute top-[20%] left-[-10%] w-[35rem] h-[35rem] bg-sky-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-160 h-160 bg-amber-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-30"></div>
+        <div className="absolute top-[20%] left-[-10%] w-140 h-140 bg-sky-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -85,7 +85,7 @@ export default function Hero() {
             className="relative hidden lg:block"
           >
             {/* Subtle glow behind the card to make it pop off the white background without being a colored blob */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-amber-50 to-slate-50 rounded-[2.5rem] blur-2xl opacity-70"></div>
+            <div className="absolute -inset-4 bg-linear-to-r from-amber-50 to-slate-50 rounded-[2.5rem] blur-2xl opacity-70"></div>
 
             <div className="relative w-full max-w-lg mx-auto bg-white rounded-md border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] p-8">
               {/* Header */}
@@ -132,7 +132,7 @@ export default function Hero() {
               {/* Animated Progress/Steps */}
               <div className="relative">
                 {/* Connecting line */}
-                <div className="absolute left-[19px] top-6 bottom-6 w-[2px] bg-slate-100"></div>
+                <div className="absolute left-4.75 top-6 bottom-6 w-0.5 bg-slate-100"></div>
 
                 <div className="space-y-4 relative">
                   <div className="flex items-center gap-4 group">
@@ -186,7 +186,7 @@ export default function Hero() {
       {/* Bottom Wave Divider */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
         <svg
-          className="relative block w-[calc(100%+1.3px)] h-[40px] sm:h-[70px] lg:h-[100px]"
+          className="relative block w-[calc(100%+1.3px)] h-10 sm:h-17.5 lg:h-25"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"

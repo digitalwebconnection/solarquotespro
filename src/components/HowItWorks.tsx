@@ -29,7 +29,7 @@ export default function HowItWorks() {
   return (
     <section className="py-12 lg:py-18 bg-slate-50 relative overflow-hidden">
       {/* Background decorations */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-slate-200 to-transparent" />
       <div className="absolute top-1/4 -right-24 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl opacity-50 pointer-events-none" />
       <div className="absolute bottom-1/4 -left-24 w-96 h-96 bg-blue-50/50 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
@@ -67,7 +67,7 @@ export default function HowItWorks() {
         {/* Steps Grid */}
         <div className="grid lg:grid-cols-3 gap-8 relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-14 left-[20%] right-[20%] h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent z-0" />
+          <div className="hidden lg:block absolute top-14 left-[20%] right-[20%] h-0.5 bg-linear-to-r from-transparent via-slate-200 to-transparent z-0" />
 
           {steps.map((step, index) => (
             <motion.div 

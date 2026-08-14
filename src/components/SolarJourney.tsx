@@ -6,7 +6,7 @@ const SolarJourney = () => {
   return (
     <>
       <section 
-        className="relative h-80 min-h-[450px] flex flex-col justify-center items-center bg-slate-900 overflow-hidden mt-12 bg-fixed bg-center bg-cover bg-no-repeat"
+        className="relative h-80 min-h-112.5 flex flex-col justify-center items-center bg-slate-900 overflow-hidden mt-12 bg-fixed bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop')" }}
       >
         {/* Dark overlay to ensure text readability */}
@@ -31,7 +31,7 @@ const SolarJourney = () => {
 
           <h2 className="text-4xl md:text-5xl font-serif lg:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
             Your Solar Journey <br className="hidden sm:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Starts Here</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-amber-200">Starts Here</span>
           </h2>
           
           <div className="space-y-2 text-lg md:text-xl lg:text-2xl text-slate-100 font-light max-w-5xl mx-auto ">
