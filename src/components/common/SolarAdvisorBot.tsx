@@ -195,81 +195,81 @@ export default function SolarAdvisorBot() {
   return (
     <>
       {/* ─── Floating Trigger Button (Bottom Right) ─── */}
-      <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-2.5">
-
-        {/* Teaser pill (when closed and not yet opened) */}
-        {!isOpen && !hasOpenedBefore && (
-          <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 2, duration: 0.4 }}
-            onClick={() => setIsOpen(true)}
-            className="bg-white/95 backdrop-blur-md text-slate-900 px-4 py-2 rounded-2xl shadow-xl border border-amber-200/80 text-xs font-bold flex items-center gap-2 cursor-pointer hover:border-amber-400 hover:shadow-2xl transition-all group"
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Have a solar question? <strong>Ask Sunny AI</strong></span>
-            <span className="text-amber-500 group-hover:translate-x-0.5 transition-transform">⚡</span>
-          </motion.div>
-        )}
+            {/* Teaser pill (when closed and not yet opened) */}
+            {!hasOpenedBefore && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 2, duration: 0.4 }}
+                onClick={() => setIsOpen(true)}
+                className="bg-white/95 backdrop-blur-md text-slate-900 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl shadow-lg border border-amber-200/80 text-[11px] sm:text-xs font-bold flex items-center gap-1.5 sm:gap-2 cursor-pointer hover:border-amber-400 hover:shadow-xl transition-all group"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Have a solar question? <strong className="text-[#00417E]">Ask Sunny AI</strong></span>
+                <span className="text-amber-500 group-hover:translate-x-0.5 transition-transform">⚡</span>
+              </motion.div>
+            )}
 
-        {/* Main Floating Trigger Button */}
-        <motion.button
-          type="button"
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.94 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center gap-2.5 p-3.5 sm:px-4 sm:py-2.5 rounded-full shadow-[0_10px_35px_-5px_rgba(249,177,34,0.5)] transition-all cursor-pointer ${isOpen
-              ? 'bg-slate-900 text-white hover:bg-slate-800 ring-2 ring-slate-700'
-              : 'bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black'
-            }`}
-          aria-label="Toggle AI Solar Advisor Chat"
-        >
-          {isOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <>
+            {/* Main Floating Trigger Button */}
+            <motion.button
+              type="button"
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.94 }}
+              onClick={() => setIsOpen(true)}
+              className="flex items-center gap-2 p-2.5 sm:px-4 sm:py-2.5 rounded-full shadow-[0_8px_25px_-4px_rgba(249,177,34,0.5)] transition-all cursor-pointer bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black"
+              aria-label="Open AI Solar Advisor Chat"
+            >
               <div className="relative flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-[#00417E] text-[#F9B122] flex items-center justify-center font-black shadow-inner">
-                  <Bot className="w-4 h-4 stroke-[2.5]" />
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#00417E] text-[#F9B122] flex items-center justify-center font-black shadow-inner">
+                  <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5]" />
                 </div>
-                <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#0A6702] border-2 border-[#F9B122] animate-pulse" />
+                <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-[#0A6702] border-2 border-[#F9B122] animate-pulse" />
               </div>
               <span className="hidden sm:inline text-sm font-black tracking-tight">Ask Sunny • Solar AI</span>
-            </>
-          )}
-        </motion.button>
-      </div>
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* ─── Floating Chat Popup Window (Bottom Right) ─── */}
+      {/* ─── Floating Chat Popup Window (Responsive Mobile & Desktop) ─── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.92 }}
+            initial={{ opacity: 0, y: 20, scale: 0.94 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 25, scale: 0.92 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-50 w-90 sm:w-102.5 max-w-[calc(100vw-2rem)] h-135 max-h-[calc(100vh-7rem)] bg-white rounded-3xl shadow-[0_25px_70px_-15px_rgba(15,23,42,0.4)] border border-slate-200/90 overflow-hidden flex flex-col backdrop-blur-xl"
+            exit={{ opacity: 0, y: 20, scale: 0.94 }}
+            transition={{ type: 'spring', damping: 26, stiffness: 320 }}
+            className="fixed bottom-3 right-3 left-3 sm:left-auto sm:right-6 sm:bottom-20 z-50 sm:w-96 h-105 max-h-[70vh] sm:h-130 sm:max-h-[calc(100vh-7rem)] bg-white rounded-2xl sm:rounded-3xl shadow-[0_20px_60px_-15px_rgba(15,23,42,0.35)] border border-slate-200/90 overflow-hidden flex flex-col backdrop-blur-xl"
           >
             {/* Chat Header */}
-            <div className="bg-linear-to-r from-slate-950 via-[#00417E] to-slate-950 text-white p-4 sm:p-5 border-b border-slate-800 relative flex items-center justify-between shrink-0">
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#0A6702]/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="bg-linear-to-r from-slate-950 via-[#00417E] to-slate-950 text-white p-3 sm:p-4 border-b border-slate-800 relative flex items-center justify-between shrink-0">
+              <div className="absolute -top-10 -right-10 w-28 h-28 bg-[#0A6702]/20 rounded-full blur-xl pointer-events-none" />
 
-              <div className="flex items-center gap-3 relative z-10">
+              <div className="flex items-center gap-2.5 relative z-10">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-2xl bg-[#F9B122] flex items-center justify-center text-[#00417E] font-black shadow-md">
-                    <Bot className="w-5 h-5 stroke-[2.5]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#F9B122] flex items-center justify-center text-[#00417E] font-black shadow-md">
+                    <Bot className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2.5]" />
                   </div>
-                  <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#0A6702] border-2 border-slate-900 flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#0A6702] border-2 border-slate-900 flex items-center justify-center">
+                    <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
                   </span>
                 </div>
 
                 <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-sm text-white">Sunny</h3>
-                    <span className="text-[10px] bg-[#0A6702]/20 text-[#0A6702] border border-[#0A6702]/40 px-1.5 py-0.2 rounded font-bold">True Solar AI</span>
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="font-bold text-xs sm:text-sm text-white">Sunny</h3>
+                    <span className="text-[9px] bg-[#0A6702]/25 text-[#0A6702] border border-[#0A6702]/40 px-1.5 py-0.2 rounded font-bold">Solar AI</span>
                   </div>
-                  <p className="text-[11px] text-slate-300 flex items-center gap-1 mt-0.5">
+                  <p className="text-[10px] text-slate-300 flex items-center gap-1">
                     <ShieldCheck className="w-3 h-3 text-[#0A6702]" />
                     <span>CEC-Accredited Guidance</span>
                   </p>
@@ -277,66 +277,68 @@ export default function SolarAdvisorBot() {
               </div>
 
               {/* Top Controls */}
-              <div className="flex items-center gap-1 relative z-10">
+              <div className="flex items-center gap-0.5 relative z-10">
                 <button
                   type="button"
                   onClick={handleResetChat}
-                  className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer"
                   title="Restart Conversation"
+                  aria-label="Restart Conversation"
                 >
-                  <RotateCcw className="w-4 h-4" />
+                  <RotateCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer"
                   title="Close Chat"
+                  aria-label="Close Chat"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </button>
               </div>
             </div>
 
             {/* Chat Message Stream */}
-            <div className="flex-1 p-4 overflow-y-auto bg-linear-to-b from-slate-50/80 via-white to-slate-50/50 space-y-3.5 text-xs">
+            <div className="flex-1 p-3 sm:p-4 overflow-y-auto bg-linear-to-b from-slate-50/80 via-white to-slate-50/50 space-y-3 text-xs">
 
               {messages.map((msg) => (
                 <div
                   key={msg.id}
-                  className={`flex items-start gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                  className={`flex items-start gap-2 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   {msg.sender === 'bot' && (
-                    <div className="w-7 h-7 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+                    <div className="w-6 h-6 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-[10px] shrink-0 shadow-2xs">
                       ☀️
                     </div>
                   )}
 
-                  <div className={`space-y-2 max-w-[85%] ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
+                  <div className={`space-y-1.5 max-w-[88%] ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
                     <div
-                      className={`p-3.5 rounded-2xl leading-relaxed shadow-xs ${msg.sender === 'user'
+                      className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl leading-relaxed shadow-2xs text-xs ${msg.sender === 'user'
                           ? 'bg-slate-900 text-white rounded-tr-xs font-medium'
-                          : 'bg-white border border-slate-200/80 text-slate-800 rounded-tl-xs'
+                          : 'bg-white border border-slate-200/90 text-slate-800 rounded-tl-xs'
                         }`}
                     >
                       <p>{msg.text}</p>
 
                       {msg.highlight && (
-                        <div className="mt-2 p-2 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 text-[11px] font-semibold flex items-center gap-1.5">
-                          <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                        <div className="mt-1.5 p-1.5 bg-amber-50 border border-amber-200 rounded-lg text-amber-900 text-[10px] font-semibold flex items-center gap-1">
+                          <Sparkles className="w-3 h-3 text-amber-600 shrink-0" />
                           <span>{msg.highlight}</span>
                         </div>
                       )}
                     </div>
 
-                    {/* Interactive Action Pills */}
+                    {/* Interactive Action Pills - 2 column compact grid on mobile */}
                     {msg.options && (
-                      <div className="flex flex-wrap gap-1.5 pt-1">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
                         {msg.options.map((opt, i) => (
                           <button
                             key={i}
                             type="button"
                             onClick={opt.action}
-                            className="bg-white hover:bg-amber-500 hover:text-slate-950 text-slate-700 border border-slate-200 hover:border-amber-500 px-3 py-1.5 rounded-xl font-bold transition-all text-[11px] shadow-xs cursor-pointer active:scale-95 text-left flex items-center gap-1"
+                            className="bg-white hover:bg-[#F9B122] hover:text-[#00417E] text-slate-700 border border-slate-200/90 hover:border-[#F9B122] px-2.5 py-1.5 rounded-xl font-bold transition-all text-[11px] shadow-2xs cursor-pointer active:scale-95 text-left flex items-center gap-1.5 leading-snug"
                           >
                             <span>{opt.label}</span>
                           </button>
@@ -349,13 +351,13 @@ export default function SolarAdvisorBot() {
 
               {/* Typing Indicator */}
               {isTyping && (
-                <div className="flex items-center gap-2 pl-9 text-slate-400">
-                  <div className="bg-white border border-slate-200 px-3 py-1.5 rounded-full shadow-xs flex items-center gap-1">
+                <div className="flex items-center gap-2 pl-8 text-slate-400">
+                  <div className="bg-white border border-slate-200 px-2.5 py-1 rounded-full shadow-2xs flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
                     <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
                     <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
                   </div>
-                  <span className="text-[11px]">Sunny is typing...</span>
+                  <span className="text-[10px]">Sunny is typing...</span>
                 </div>
               )}
 
@@ -363,22 +365,22 @@ export default function SolarAdvisorBot() {
             </div>
 
             {/* Chat Input Bar */}
-            <form onSubmit={handleSendMessage} className="p-3 bg-white border-t border-slate-200 shrink-0">
+            <form onSubmit={handleSendMessage} className="p-2.5 sm:p-3 bg-white border-t border-slate-200 shrink-0">
               <div className="relative flex items-center">
                 <input
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Ask a solar question..."
-                  className="w-full pl-4 pr-11 py-3 bg-slate-50 focus:bg-white border border-slate-200 focus:border-amber-500 rounded-2xl text-xs text-slate-900 font-medium outline-none transition-all focus:ring-2 focus:ring-amber-500/20"
+                  className="w-full pl-3.5 pr-10 py-2 sm:py-2.5 bg-slate-50 focus:bg-white border border-slate-200 focus:border-amber-500 rounded-xl text-xs text-slate-900 font-medium outline-none transition-all focus:ring-2 focus:ring-amber-500/20"
                 />
                 <button
                   type="submit"
                   disabled={!inputText.trim()}
-                  className="absolute right-1.5 w-8 h-8 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-40 disabled:hover:bg-amber-500 text-slate-950 flex items-center justify-center transition-all cursor-pointer disabled:cursor-not-allowed shadow-xs"
+                  className="absolute right-1 sm:right-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-500 hover:bg-amber-400 disabled:opacity-40 disabled:hover:bg-amber-500 text-slate-950 flex items-center justify-center transition-all cursor-pointer disabled:cursor-not-allowed shadow-2xs"
                   aria-label="Send message"
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-3.5 h-3.5" />
                 </button>
               </div>
             </form>

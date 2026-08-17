@@ -49,39 +49,39 @@ export default function WhyCompare() {
                 Smart Consumer Strategy
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-slate-900 leading-[1.1] mb-4 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 leading-[1.15] sm:leading-[1.1] mb-3 sm:mb-4 tracking-tight">
                 Why Compare <br />
-                <span className="text-amber-500 relative whitespace-nowrap">
+                <span className="text-amber-500 relative inline-block">
                   Three Quotes?
-                  <svg className="absolute -bottom-1.5 left-0 w-full h-2.5 text-amber-200" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <svg className="absolute -bottom-1.5 left-0 w-full h-2 sm:h-2.5 text-amber-200" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
                   </svg>
                 </span>
               </h2>
 
-              <p className="text-base text-slate-900 leading-relaxed mb-6 font-medium">
+              <p className="text-sm sm:text-base text-slate-900 leading-relaxed mb-4 sm:mb-6 font-medium">
                 Many Australians accept the very first quote they receive—frequently paying up to <strong className="text-slate-950 font-bold">$3,500+ more</strong> for outdated hardware or undersized inverters.
               </p>
 
               {/* ─── Visual Comparison Infographic Graphic ─── */}
-              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3 mb-4">
+              <div className="bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 space-y-2.5 sm:space-y-3 mb-4">
                 
                 {/* 1 Quote Row */}
-                <div className="flex items-center justify-between text-xs p-2.5 rounded-lg bg-white border border-rose-200/70 shadow-xs">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 text-xs p-2.5 rounded-lg bg-white border border-rose-200/70 shadow-xs">
                   <div className="flex items-center gap-2 font-bold text-slate-800">
-                    <span className="w-2 h-2 rounded-full bg-rose-500" />
+                    <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
                     <span>Single Quote (No Competition)</span>
                   </div>
-                  <span className="font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md text-[11px]">Pay Full Retail Rate</span>
+                  <span className="font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] self-start sm:self-auto">Pay Full Retail Rate</span>
                 </div>
 
                 {/* 3 Quotes Row */}
-                <div className="flex items-center justify-between text-xs p-2.5 rounded-lg bg-emerald-50/80 border border-emerald-300 shadow-xs">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 text-xs p-2.5 rounded-lg bg-emerald-50/80 border border-emerald-300 shadow-xs">
                   <div className="flex items-center gap-2 font-bold text-slate-900">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                     <span>3 Verified Quotes (SolarQuotes Pro)</span>
                   </div>
-                  <span className="font-black text-emerald-800 bg-emerald-200/70 px-2.5 py-0.5 rounded-md text-[11px] flex items-center gap-1">
+                  <span className="font-black text-emerald-800 bg-emerald-200/70 px-2.5 py-0.5 rounded-md text-[10px] sm:text-[11px] flex items-center gap-1 self-start sm:self-auto">
                     <TrendingDown className="w-3 h-3" />
                     Save Up To 30%
                   </span>
@@ -261,17 +261,17 @@ export default function WhyCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="md:col-span-2 lg:col-span-4 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 rounded-xl p-6 lg:p-8 shadow-xl shadow-orange-500/25 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative group border border-orange-400/80"
+            className="md:col-span-2 lg:col-span-4 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-xl shadow-orange-500/25 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 overflow-hidden relative group border border-orange-400/80"
           >
             {/* Ambient Card Glow */}
             <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-white/30 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
             
-            <div className="flex items-center gap-4 sm:gap-5 relative z-10 w-full md:w-3/5">
-              <div className="w-14 h-14 rounded-2xl bg-slate-950 text-amber-400 flex items-center justify-center shrink-0 shadow-lg border border-slate-800">
-                <UserCheck className="w-7 h-7" />
+            <div className="flex items-center gap-3.5 sm:gap-5 relative z-10 w-full md:w-3/5">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-slate-950 text-amber-400 flex items-center justify-center shrink-0 shadow-lg border border-slate-800">
+                <UserCheck className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-serif font-black text-slate-950 leading-tight">
+                <h3 className="text-lg sm:text-2xl font-serif font-black text-slate-950 leading-tight">
                   Find the installer who best suits your property.
                 </h3>
                 <p className="text-slate-900 text-xs sm:text-sm font-semibold mt-1">
@@ -280,15 +280,15 @@ export default function WhyCompare() {
               </div>
             </div>
 
-            <div className="relative z-10 w-full md:w-2/5 flex flex-col items-start md:items-end gap-2">
+            <div className="relative z-10 w-full md:w-2/5 flex flex-col items-center md:items-end gap-2 text-center md:text-right">
               <button
                 onClick={() => openQuoteModal()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-bold text-sm px-7 py-3 rounded-xl transition-all shadow-xl hover:shadow-2xl cursor-pointer hover:scale-105 active:scale-100"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-bold text-sm px-6 sm:px-7 py-3 rounded-xl transition-all shadow-xl hover:shadow-2xl cursor-pointer hover:scale-105 active:scale-100"
               >
                 <span>Compare 3 Quotes Now</span>
                 <ArrowRight className="w-4 h-4 text-orange-400" />
               </button>
-              <span className="text-[11px] text-slate-900 font-bold">100% Free • No Obligation Required</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-900 font-bold">100% Free • No Obligation Required</span>
             </div>
           </motion.div>
 

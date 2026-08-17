@@ -7,7 +7,7 @@ export default function NotFound() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden bg-linear-to-b from-slate-50 via-white to-slate-50">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#F9B122]/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00417E]/10 rounded-full blur-3xl pointer-events-none" />

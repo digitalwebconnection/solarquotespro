@@ -43,6 +43,11 @@ export default function Footer() {
       if (location.pathname === '/') {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
       }
     }
   };
@@ -99,15 +104,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 relative z-10">
         
         {/* ─── Pre-Footer Trust Ribbon Graphic ─── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-5 sm:p-3 bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-200/50 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 p-3.5 sm:p-4 bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-200/50 mb-8 sm:mb-12">
           {trustGuarantees.map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3.5 p-2">
-              <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
+            <div key={idx} className="flex items-center gap-3 p-1.5 sm:p-2">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
                 {item.icon}
               </div>
               <div>
-                <div className="font-bold text-slate-900 text-sm">{item.title}</div>
-                <div className="text-xs text-slate-800 font-medium">{item.desc}</div>
+                <div className="font-bold text-slate-900 text-xs sm:text-sm">{item.title}</div>
+                <div className="text-[11px] sm:text-xs text-slate-800 font-medium">{item.desc}</div>
               </div>
             </div>
           ))}

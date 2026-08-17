@@ -87,14 +87,14 @@ export default function Hero() {
             className="lg:col-span-7 text-left"
           >
             {/* Trust Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#00417E]/25 text-[#00417E] font-bold text-xs sm:text-sm mb-6 shadow-md shadow-[#00417E]/10 backdrop-blur-sm">
-              <Award className="w-4 h-4 text-[#F9B122] shrink-0" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white border border-[#00417E]/25 text-[#00417E] font-bold text-[11px] sm:text-xs md:text-sm mb-4 sm:mb-6 shadow-md shadow-[#00417E]/10 backdrop-blur-sm">
+              <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F9B122] shrink-0" />
               <span>Australia's Trusted Way To Compare Solar Quotes</span>
-              <span className="w-2 h-2 rounded-full bg-[#0A6702] animate-pulse" />
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#0A6702] animate-pulse" />
             </div>
 
             {/* Main Headline with Custom Gradient */}
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-black font-serif text-slate-900 leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black font-serif text-slate-900 leading-[1.15] sm:leading-[1.1] tracking-tight mb-4 sm:mb-6">
               Get 3 Free Quotes From{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122]">
                 Verified
@@ -103,56 +103,56 @@ export default function Hero() {
             </h1>
 
             {/* High Readability Text */}
-            <p className="text-lg sm:text-xl text-slate-950 mb-3 max-w-2xl font-bold leading-snug">
+            <p className="text-base sm:text-lg md:text-xl text-slate-950 mb-2 sm:mb-3 max-w-2xl font-bold leading-snug">
               Stop wasting time comparing dozens of solar companies.
             </p>
-            <p className="text-base sm:text-lg text-slate-900 mb-8 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-900 mb-6 sm:mb-8 max-w-xl leading-relaxed">
               Tell us about your home once, and we'll connect you with up to 3
               carefully verified local installers who compete for your business.
             </p>
 
             {/* Features Checkpoints Grid */}
-            <ul className="grid sm:grid-cols-2 gap-3.5 mb-10 max-w-lg">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5 mb-6 sm:mb-10 max-w-lg">
               {features.map((feature, idx) => (
                 <motion.li
                   key={idx}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + idx * 0.1 }}
-                  className="flex items-center gap-3 bg-white/95 border border-slate-200/90 px-3.5 py-2.5 rounded-xl text-slate-800 font-bold text-xs sm:text-sm shadow-xs backdrop-blur-sm"
+                  className="flex items-center gap-2.5 sm:gap-3 bg-white/95 border border-slate-200/90 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl text-slate-800 font-bold text-xs sm:text-sm shadow-xs backdrop-blur-sm"
                 >
-                  <CheckCircle className="w-4.5 h-4.5 text-[#0A6702] shrink-0" />
+                  <CheckCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#0A6702] shrink-0" />
                   <span>{feature}</span>
                 </motion.li>
               ))}
             </ul>
 
             {/* CTA & Rating Proof */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => openQuoteModal()}
-                className="group relative inline-flex items-center justify-center gap-3 bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] text-base sm:text-lg font-black px-8 py-3 rounded-full transition-all duration-300 shadow-[0_10px_35px_rgba(249,177,34,0.4)] hover:shadow-[0_15px_45px_rgba(249,177,34,0.6)] cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] text-base sm:text-lg font-black px-6 sm:px-8 py-3.5 rounded-full transition-all duration-300 shadow-[0_10px_35px_rgba(249,177,34,0.4)] hover:shadow-[0_15px_45px_rgba(249,177,34,0.6)] cursor-pointer w-full sm:w-auto text-center"
               >
                 <span>Get Your Free Quotes</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1.5 transition-transform" />
               </motion.button>
 
-              <div className="flex items-center gap-3 text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-3 text-left">
                 <div className="flex -space-x-2">
-                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar1Img} alt="Verified Customer" />
-                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar2Img} alt="Verified Customer" />
-                  <img className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar3Img} alt="Verified Customer" />
+                  <img className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar1Img} alt="Verified Customer" />
+                  <img className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar2Img} alt="Verified Customer" />
+                  <img className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src={avatar3Img} alt="Verified Customer" />
                 </div>
                 <div>
                   <div className="flex items-center text-amber-500 text-xs">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-amber-400 text-amber-400" />
                     ))}
-                    <span className="text-slate-900 font-black ml-1.5">4.9 / 5</span>
+                    <span className="text-slate-900 font-black ml-1.5 text-xs">4.9 / 5</span>
                   </div>
-                  <p className="text-[11px] text-slate-500 font-semibold">10,000+ Aussie homeowners</p>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 font-semibold">10,000+ Aussie homeowners</p>
                 </div>
               </div>
             </div>

@@ -15,7 +15,7 @@ import {
   Building2,
   Sparkles,
   Layers
-} from 'lucide-react';
+} from 'lucide-react';      
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
 export default function VerificationProcess() {
@@ -177,27 +177,27 @@ export default function VerificationProcess() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-xl p-4 sm:p-5 lg:p-6 border border-slate-200/90 shadow-xl mb-8"
+              className="bg-white rounded-xl p-4 sm:p-6 lg:p-6 border border-slate-200/90 shadow-xl mb-6 sm:mb-8"
             >
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 sm:pb-6 border-b border-slate-100">
                 <div>
                   <div className="flex items-center gap-2 text-[#0A6702] text-xs font-bold uppercase tracking-wider mb-1">
                     <Sparkles className="w-4 h-4 text-[#F9B122]" />
                     <span>Audit Checklist & Verification Standards</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-serif font-black text-slate-900">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-black text-slate-900">
                     {stage.title}
                   </h3>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="px-4 py-2 rounded-xl bg-[#0A6702]/10 border border-[#0A6702]/20 text-[#0A6702] font-bold text-xs flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
+                  <div className="px-3.5 py-2 rounded-xl bg-[#0A6702]/10 border border-[#0A6702]/20 text-[#0A6702] font-bold text-xs flex items-center justify-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#0A6702]" />
                     <span>CEC Verified Standard</span>
                   </div>
                   <button
                     onClick={() => openQuoteModal()}
-                    className="bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black text-xs sm:text-sm py-2.5 px-5 rounded-xl transition-all shadow-md shadow-[#F9B122]/30 hover:scale-103 cursor-pointer flex items-center gap-1.5 shrink-0"
+                    className="bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black text-xs sm:text-sm py-2.5 px-5 rounded-xl transition-all shadow-md shadow-[#F9B122]/30 hover:scale-103 cursor-pointer flex items-center justify-center gap-1.5 shrink-0 w-full sm:w-auto text-center"
                   >
                     <span>Get Verified Quotes</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -206,20 +206,20 @@ export default function VerificationProcess() {
               </div>
 
               {/* 4 Check Points Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 pt-4 sm:pt-6">
                 {stage.checks.map((check, i) => (
                   <div 
                     key={i}
-                    className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#00417E]/30 hover:shadow-md transition-all flex items-start gap-3.5 group"
+                    className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#00417E]/30 hover:shadow-md transition-all flex items-start gap-3 group"
                   >
-                    <div className="w-8 h-8 rounded-xl bg-white border border-slate-200 group-hover:bg-[#00417E] group-hover:border-[#00417E] group-hover:text-white text-[#00417E] flex items-center justify-center shrink-0 transition-colors shadow-xs">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-[#0A6702] group-hover:text-[#F9B122] transition-colors" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-white border border-slate-200 group-hover:bg-[#00417E] group-hover:border-[#00417E] group-hover:text-white text-[#00417E] flex items-center justify-center shrink-0 transition-colors shadow-xs">
+                      <CheckCircle2 className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#0A6702] group-hover:text-[#F9B122] transition-colors" />
                     </div>
                     <div>
-                      <h4 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#00417E] transition-colors">
+                      <h4 className="text-xs sm:text-sm md:text-base font-bold text-slate-900 group-hover:text-[#00417E] transition-colors">
                         {check.title}
                       </h4>
-                      <p className="text-xs text-slate-600 mt-1 leading-relaxed font-medium">
+                      <p className="text-[11px] sm:text-xs text-slate-600 mt-1 leading-relaxed font-medium">
                         {check.detail}
                       </p>
                     </div>
@@ -306,14 +306,14 @@ export default function VerificationProcess() {
             </div>
 
             {/* Bottom CTA Row inside Banner */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <div>
                 <p className="text-sm font-bold text-white">Compare 3 Vetted Installers In Your Postcode</p>
                 <p className="text-xs text-slate-300">Takes less than 60 seconds • 100% free and no-obligation</p>
               </div>
               <button
                 onClick={() => openQuoteModal()}
-                className="bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black text-sm py-3.5 px-8 rounded-full transition-all shadow-xl shadow-[#F9B122]/30 hover:scale-105 active:scale-100 shrink-0 cursor-pointer flex items-center gap-2"
+                className="bg-[#F9B122] hover:bg-[#eab308] text-[#00417E] font-black text-sm py-3.5 px-8 rounded-full transition-all shadow-xl shadow-[#F9B122]/30 hover:scale-105 active:scale-100 shrink-0 cursor-pointer flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 <Zap className="w-4 h-4 text-[#00417E] fill-[#00417E]" />
                 <span>Get 3 Free Quotes</span>

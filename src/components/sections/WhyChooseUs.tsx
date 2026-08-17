@@ -35,9 +35,9 @@ export default function WhyChooseUs() {
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0A6702]">Trusted by Homeowners</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 leading-[1.1] mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 leading-[1.15] sm:leading-[1.1] mb-4 sm:mb-6">
               Why Thousands of Australians Choose{' '}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] relative whitespace-nowrap">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] relative inline-block">
                 True Solar Quote
                 <svg className="absolute -bottom-1 left-0 w-full h-2 text-[#F9B122]/50" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -45,17 +45,17 @@ export default function WhyChooseUs() {
               </span>
             </h2>
 
-            <div className="space-y-4 text-base lg:text-lg text-slate-900 leading-relaxed mb-8">
+            <div className="space-y-3 sm:space-y-4 text-sm sm:text-base lg:text-lg text-slate-900 leading-relaxed mb-6 sm:mb-8">
               <p>
                 Buying solar is one of the biggest investments you'll make for your home. Unfortunately,{" "}
                 <strong className="text-slate-900 font-bold">not every installer delivers the same quality, pricing or service.</strong>
               </p>
-              <p>
+              <p className="text-xs sm:text-sm md:text-base">
                 That's where True Solar Quote helps. We match homeowners with trusted solar professionals who have been verified for licensing, experience and customer satisfaction—so you receive competitive quotes from installers you can trust.
               </p>
             </div>
 
-            <div className="space-y-4 pt-6 border-t border-slate-100">
+            <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6 border-t border-slate-100">
               {[
                 { icon: <PhoneOff className="w-4 h-4" />, text: "No endless phone calls.", muted: true },
                 { icon: <SearchX className="w-4 h-4" />, text: "No searching through hundreds of companies.", muted: true },
@@ -65,16 +65,16 @@ export default function WhyChooseUs() {
                   key={idx}
                   whileHover={{ x: 5 }}
                   onClick={() => openQuoteModal()}
-                  className="flex items-center gap-4 group cursor-pointer"
+                  className="flex items-center gap-3 sm:gap-4 group cursor-pointer"
                 >
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors border ${
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-colors border ${
                     item.muted 
                       ? 'bg-slate-50 border-slate-400 text-slate-900 group-hover:bg-slate-100' 
                       : 'bg-amber-50 border-amber-200 text-amber-500 group-hover:bg-amber-100'
                   }`}>
                     {item.icon}
                   </div>
-                  <p className={`font-bold text-base lg:text-lg leading-tight pt-1 ${item.muted ? 'text-slate-900' : 'text-slate-950'}`}>
+                  <p className={`font-bold text-sm sm:text-base lg:text-lg leading-tight pt-0.5 sm:pt-1 ${item.muted ? 'text-slate-900' : 'text-slate-950'}`}>
                     {item.text}
                   </p>
                 </motion.div>
@@ -88,40 +88,40 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative lg:h-full flex items-center mt-12 lg:mt-0"
+            className="relative lg:h-full flex items-center mt-8 lg:mt-0"
           >
             {/* Soft background shape */}
-            <div className="absolute inset-0 bg-slate-50 rounded-md border border-slate-100 transform -z-10" />
+            <div className="absolute inset-0 bg-slate-50 rounded-xl border border-slate-100 transform -z-10" />
             
-            <div className="relative w-full p-8 lg:p-10">
-              <div className="mb-10 text-center sm:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold text-xs tracking-wider uppercase mb-4 shadow-sm">
+            <div className="relative w-full p-4 sm:p-8 lg:p-10">
+              <div className="mb-6 sm:mb-10 text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold text-xs tracking-wider uppercase mb-3 sm:mb-4 shadow-sm">
                   <ShieldCheck className="w-4 h-4" />
                   3-Point Verification
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif font-black text-slate-900 mb-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-black text-slate-900 mb-1.5 sm:mb-2">
                   Our Installer Standards
                 </h3>
-                <p className="text-slate-800">
+                <p className="text-xs sm:text-sm text-slate-800">
                   Every partner must pass our strict vetting process.
                 </p>
               </div>
 
-              <div className="space-y-5 relative">
+              <div className="space-y-3.5 sm:space-y-5 relative">
                
                 {/* Card 1 */}
                 <div 
                   onClick={() => openQuoteModal()}
-                  className="relative bg-white rounded-md p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-emerald-500 flex flex-col sm:flex-row items-start gap-5 sm:ml-0 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 group cursor-pointer"
+                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-emerald-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-0 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 group cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-md bg-emerald-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition-colors shadow-sm border border-emerald-100/50">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-md bg-emerald-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition-colors shadow-sm border border-emerald-100/50">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
                   <div className="pt-0.5">
-                    <h4 className="font-bold text-slate-900 text-lg mb-1 group-hover:text-emerald-700 transition-colors">
+                    <h4 className="font-bold text-slate-900 text-base sm:text-lg mb-1 group-hover:text-emerald-700 transition-colors">
                       Verified License & Insurance
                     </h4>
-                    <p className="text-slate-800 leading-relaxed text-sm">
+                    <p className="text-slate-800 leading-relaxed text-xs sm:text-sm">
                       Fully licensed electricians and CEC accredited designers & installers.
                     </p>
                   </div>
@@ -130,16 +130,16 @@ export default function WhyChooseUs() {
                 {/* Card 2 */}
                 <div 
                   onClick={() => openQuoteModal()}
-                  className="relative bg-white rounded-md p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-blue-500 flex flex-col sm:flex-row items-start gap-5 sm:ml-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200 group z-10 cursor-pointer"
+                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-blue-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200 group z-10 cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-md bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors shadow-sm border border-blue-100/50">
-                    <CheckCircle2 className="w-6 h-6 text-blue-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-md bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors shadow-sm border border-blue-100/50">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                   </div>
                   <div className="pt-0.5">
-                    <h4 className="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-700 transition-colors">
+                    <h4 className="font-bold text-slate-900 text-base sm:text-lg mb-1 group-hover:text-blue-700 transition-colors">
                       Proven Track Record
                     </h4>
-                    <p className="text-slate-800 leading-relaxed text-sm">
+                    <p className="text-slate-800 leading-relaxed text-xs sm:text-sm">
                       Minimum years of continuous operation and financial stability checked.
                     </p>
                   </div>
@@ -148,16 +148,16 @@ export default function WhyChooseUs() {
                 {/* Card 3 */}
                 <div 
                   onClick={() => openQuoteModal()}
-                  className="relative bg-white rounded-md p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-amber-500 flex flex-col sm:flex-row items-start gap-5 sm:ml-12 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-amber-200 group z-20 cursor-pointer"
+                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-amber-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-12 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-amber-200 group z-20 cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-md bg-amber-50 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors shadow-sm border border-amber-100/50">
-                    <Star className="w-6 h-6 text-amber-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-md bg-amber-50 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors shadow-sm border border-amber-100/50">
+                    <Star className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
                   </div>
                   <div className="pt-0.5">
-                    <h4 className="font-bold text-slate-900 text-lg mb-1 group-hover:text-amber-700 transition-colors">
+                    <h4 className="font-bold text-slate-900 text-base sm:text-lg mb-1 group-hover:text-amber-700 transition-colors">
                       High Customer Satisfaction
                     </h4>
-                    <p className="text-slate-800 leading-relaxed text-sm">
+                    <p className="text-slate-800 leading-relaxed text-xs sm:text-sm">
                       Consistent positive reviews and a commitment to post-install support.
                     </p>
                   </div>
@@ -166,19 +166,19 @@ export default function WhyChooseUs() {
 
               {/* Floating badge */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                 onClick={() => openQuoteModal()}
-                className="absolute -bottom-6 -right-2 sm:-right-6 bg-white rounded-md shadow-xl p-4 border border-slate-100 flex flex-col sm:flex-row items-center gap-4 z-30 cursor-pointer hover:scale-105 transition-transform"
+                className="mt-6 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 bg-white rounded-xl shadow-xl p-3 sm:p-4 border border-slate-100 flex items-center justify-center sm:justify-start gap-3 sm:gap-4 z-30 cursor-pointer hover:scale-105 transition-transform"
               >
-                <div className="-ml-2 flex items-center justify-center">
-                  <MaskedAvatars size={40} column={24} />
+                <div className="flex items-center justify-center">
+                  <MaskedAvatars size={36} column={20} />
                 </div>
-                <div className="text-sm pr-2 text-center sm:text-left">
-                  <div className="flex justify-center sm:justify-start text-amber-400 mb-1">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                <div className="text-xs sm:text-sm text-left">
+                  <div className="flex text-amber-400 mb-0.5">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
                   </div>
-                  <p className="text-slate-900 font-bold leading-tight">10,000+ matched</p>
+                  <p className="text-slate-900 font-bold leading-tight text-xs">10,000+ matched</p>
                 </div>
               </motion.div>
               

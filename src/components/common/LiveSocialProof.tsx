@@ -67,7 +67,7 @@ export default function LiveSocialProof() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 max-w-[calc(100vw-2rem)] sm:max-w-sm"
+          className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-30 max-w-[calc(100vw-5.5rem)] sm:max-w-sm"
         >
           <div 
             onClick={() => openQuoteModal()}

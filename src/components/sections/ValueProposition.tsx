@@ -10,7 +10,7 @@ import {
   SearchSlash,
 } from 'lucide-react';
 import { useQuoteModal } from '../../context/QuoteModalContext';
-import { solarRoofImg } from '../../assets/images';
+import  solarRoofImg  from '../../assets/images/about.webp';
 
 export default function ValueProposition() {
   const { openQuoteModal } = useQuoteModal();
@@ -41,7 +41,7 @@ export default function ValueProposition() {
             <div className="absolute -inset-3 bg-linear-to-tr from-amber-300/30 via-emerald-200/30 to-sky-200/30 rounded-3xl blur-xl opacity-80 pointer-events-none" />
 
             {/* Main High-Definition Rooftop Image */}
-            <div className="relative rounded-xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 min-h-95 sm:min-h-160 group">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 min-h-72 sm:min-h-120 md:min-h-140 group">
               <img
                 src={solarRoofImg}
                 alt="Australian clean energy residential rooftop solar installation"
@@ -53,33 +53,33 @@ export default function ValueProposition() {
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/20 to-transparent pointer-events-none" />
 
               {/* Floating Graphic Badge: CEC Accredited */}
-              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md border border-slate-200 text-slate-900 px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 shadow-lg">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur-md border border-slate-200 text-slate-900 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold flex items-center gap-1.5 sm:gap-2 shadow-lg">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
                 <span>100% CEC-Accredited Only</span>
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse" />
               </div>
 
               {/* Live Solar Analytics HUD Card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur-xl border border-slate-700/80 p-4 rounded-2xl shadow-2xl text-white space-y-3">
-                <div className="flex items-center justify-between text-xs font-bold pb-2 border-b border-slate-800">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-slate-950/90 backdrop-blur-xl border border-slate-700/80 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-2xl text-white space-y-2 sm:space-y-3">
+                <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold pb-2 border-b border-slate-800">
                   <span className="text-slate-300 flex items-center gap-1.5">
-                    <Sun className="w-4 h-4 text-amber-400" />
+                    <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
                     Live System Generation
                   </span>
                   <span className="text-emerald-400 font-mono font-black">6.8 kW Active</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2.5 text-[11px]">
-                  <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5 text-[10px] sm:text-[11px]">
+                  <div className="bg-slate-900/80 p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-800">
                     <div className="text-slate-400 font-medium">Home Consumption</div>
-                    <div className="text-sm font-black text-white mt-0.5">1.8 kW <span className="text-[10px] text-emerald-400 font-bold">(Free Solar)</span></div>
+                    <div className="text-xs sm:text-sm font-black text-white mt-0.5">1.8 kW <span className="text-[9px] sm:text-[10px] text-emerald-400 font-bold">(Free)</span></div>
                   </div>
-                  <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+                  <div className="bg-slate-900/80 p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-800">
                     <div className="text-slate-400 font-medium flex items-center gap-1">
-                      <BatteryCharging className="w-3.5 h-3.5 text-amber-400" />
+                      <BatteryCharging className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />
                       Battery Storage
                     </div>
-                    <div className="text-sm font-black text-amber-400 mt-0.5">96% Charged</div>
+                    <div className="text-xs sm:text-sm font-black text-amber-400 mt-0.5">96% Charged</div>
                   </div>
                 </div>
               </div>
@@ -103,29 +103,29 @@ export default function ValueProposition() {
             </div>
 
             {/* Heading with Underline Curve */}
-            <h2 className="text-3xl font-serif sm:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.1] mb-5 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-slate-900 leading-[1.15] sm:leading-[1.1] mb-4 sm:mb-5 tracking-tight">
               Why Thousands of Australians Choose{' '}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 via-orange-500 to-amber-600 relative whitespace-nowrap">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 via-orange-500 to-amber-600 relative inline-block">
                 True Solar Quote
-                <svg className="absolute -bottom-1 left-0 w-full h-2.5 text-orange-300" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <svg className="absolute -bottom-1 left-0 w-full h-2 sm:h-2.5 text-orange-300" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
                 </svg>
               </span>
             </h2>
 
             {/* Copy */}
-            <div className="space-y-2.5 text-base sm:text-lg text-slate-900 leading-relaxed mb-6">
+            <div className="space-y-2 text-sm sm:text-base md:text-lg text-slate-900 leading-relaxed mb-5 sm:mb-6">
               <p>
                 Solar is one of the highest-yield financial investments for your home. However,{' '}
                 <strong className="text-slate-900 font-bold">pricing and installer quality can vary by over $4,000 for the exact same system.</strong>
               </p>
-              <p className="text-slate-900 text-sm sm:text-base">
+              <p className="text-slate-900 text-xs sm:text-sm md:text-base">
                 We match homeowners with trusted, verified solar professionals who compete transparently—so you receive the absolute best equipment and price.
               </p>
             </div>
 
             {/* Value Checkpoints */}
-            <div className="space-y-3 mb-6">
+            <div className="space-y-2.5 sm:space-y-3 mb-6">
               {[
                 { icon: <PhoneOff className="w-4 h-4" />, text: "No spam or endless aggressive telemarketing calls.", color: "text-slate-500 bg-slate-100" },
                 { icon: <SearchSlash className="w-4 h-4" />, text: "No wasting hours researching hundreds of different companies.", color: "text-slate-500 bg-slate-100" },
@@ -137,9 +137,9 @@ export default function ValueProposition() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + idx * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200 shadow-xs"
+                  className="flex items-center gap-3 sm:gap-3.5 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs"
                 >
-                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border ${item.color}`}>
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 border ${item.color}`}>
                     {item.icon}
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-slate-800">
@@ -154,7 +154,7 @@ export default function ValueProposition() {
             {/* Primary Section CTA */}
             <button
               onClick={() => openQuoteModal()}
-              className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-black text-base px-8 py-3 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-black text-sm sm:text-base px-6 sm:px-8 py-3 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto active:translate-y-0 text-center"
             >
               <span>Get 3 Free Quotes Now</span>
               <ArrowRight className="w-4 h-4" />

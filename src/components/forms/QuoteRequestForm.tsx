@@ -201,10 +201,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-[0_25px_70px_-15px_rgba(15,23,42,0.35)] border border-slate-200/90 overflow-hidden w-full max-w-lg mx-auto relative">
+    <div className="bg-white rounded-2xl sm:rounded-3xl shadow-[0_25px_70px_-15px_rgba(15,23,42,0.35)] border border-slate-200/90 overflow-hidden w-full max-w-lg mx-auto relative flex flex-col max-h-[92dvh]">
       
-      {/* ─── Clean, Refined Premium Header ─── */}
-      <div className="relative bg-linear-to-r from-slate-950 via-[#003B73] to-slate-950 text-white p-6 sm:p-7 border-b border-slate-800">
+      {/* ─── Clean, Refined Premium Header (Mobile Optimized) ─── */}
+      <div className="relative bg-linear-to-r from-slate-950 via-[#003B73] to-slate-950 text-white p-4 sm:p-6 border-b border-slate-800 shrink-0">
         
         {/* Subtle Warm Accent Glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
@@ -215,26 +215,26 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
           <button
             type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/70 rounded-full p-2 transition-all cursor-pointer hover:scale-105 active:scale-95 z-20"
+            className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/70 rounded-full p-1.5 sm:p-2 transition-all cursor-pointer hover:scale-105 active:scale-95 z-20"
             aria-label="Close dialog"
           >
-            <X className="w-4 h-4" />
+            <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         )}
 
-        <div className="relative z-10 pr-8">
+        <div className="relative z-10 pr-6 sm:pr-8">
           {/* Status Trust Pill */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-amber-300 text-[11px] font-bold uppercase tracking-wider mb-3">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900/90 border border-slate-700 text-amber-300 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             100% Free & Independent Match
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-serif font-black text-white tracking-tight leading-tight">
+          <h3 className="text-lg sm:text-2xl font-serif font-black text-white tracking-tight leading-tight">
             {isSubmitted ? 'Request Confirmed!' : 'Get 3 Free Solar Quotes'}
           </h3>
           
-          <p className="text-xs sm:text-sm text-slate-300 mt-1.5 flex items-center gap-1.5 font-medium">
-            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <p className="text-[11px] sm:text-xs text-slate-300 mt-1 flex items-center gap-1.5 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             {isSubmitted 
               ? 'Connecting you with local CEC-accredited installers.' 
               : 'Compare verified, top-rated local installers in your area.'}
@@ -243,10 +243,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
         {/* ─── 3-Step Clean Segmented Progress Bar ─── */}
         {!isSubmitted && (
-          <div className="mt-5 pt-4 border-t border-slate-800/80 relative z-10">
-            <div className="flex items-center justify-between text-xs font-semibold mb-2">
+          <div className="mt-3 pt-2.5 sm:mt-4 sm:pt-3 border-t border-slate-800/80 relative z-10">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold mb-1.5">
               <span className="text-amber-400 font-bold">Step {step} of 3</span>
-              <span className="text-slate-300 text-[11px]">
+              <span className="text-slate-300 text-[10px] sm:text-[11px]">
                 {step === 1 && 'System & Location'}
                 {step === 2 && 'Energy & Property'}
                 {step === 3 && 'Contact Details'}
@@ -258,7 +258,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               {[1, 2, 3].map((s) => (
                 <div 
                   key={s} 
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${
                     s < step 
                       ? 'bg-emerald-500' 
                       : s === step 
@@ -272,15 +272,15 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
         )}
       </div>
 
-      {/* ─── Form Body ─── */}
-      <div className="p-6 sm:p-7 max-h-[calc(85vh-160px)] overflow-y-auto bg-linear-to-b from-white to-slate-50/40">
+      {/* ─── Form Body (Responsive Scrolling) ─── */}
+      <div className="p-4 sm:p-6 overflow-y-auto bg-linear-to-b from-white to-slate-50/40 flex-1">
         {errorMsg && (
           <motion.div 
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-5 p-3.5 bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm rounded-2xl flex items-center gap-2.5 shadow-xs"
+            className="mb-3.5 p-2.5 sm:p-3 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl sm:rounded-2xl flex items-center gap-2 shadow-2xs"
           >
-            <span className="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-xs shrink-0">!</span>
+            <span className="w-4 h-4 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[10px] shrink-0">!</span>
             <span className="font-medium">{errorMsg}</span>
           </motion.div>
         )}
@@ -295,16 +295,16 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               exit={{ opacity: 0, x: -16 }}
               transition={{ duration: 0.25 }}
               onSubmit={handleStep1Submit}
-              className="space-y-5"
+              className="space-y-3.5 sm:space-y-4.5"
             >
               {/* Australian Postcode */}
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <label htmlFor="postcode" className="block text-xs font-bold uppercase tracking-wider text-slate-800">
+                <div className="flex items-center justify-between mb-1.5">
+                  <label htmlFor="postcode" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800">
                     Australian Postcode <span className="text-orange-500">*</span>
                   </label>
                   {auLocationPreview && (
-                    <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">
+                    <span className="text-[10px] sm:text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-2xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       {auLocationPreview}
                     </span>
@@ -312,8 +312,8 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-xl bg-orange-50 border border-orange-200/70 flex items-center justify-center text-orange-600 transition-colors group-focus-within:bg-orange-500 group-focus-within:text-slate-950">
-                    <MapPin className="w-4 h-4" />
+                  <div className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-orange-50 border border-orange-200/70 flex items-center justify-center text-orange-600 transition-colors group-focus-within:bg-orange-500 group-focus-within:text-slate-950">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <input
                     type="text"
@@ -332,15 +332,15 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                       }
                     }}
                     placeholder="e.g. 2000, 3000, 4000"
-                    className={`w-full pl-13 pr-4 py-3 bg-slate-50/70 hover:bg-slate-50 focus:bg-white border-2 ${
+                    className={`w-full pl-11 sm:pl-13 pr-3.5 py-2.5 sm:py-3 bg-slate-50/70 hover:bg-slate-50 focus:bg-white border-2 ${
                       fieldErrors.postcode 
                         ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
                         : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                    } rounded-2xl text-slate-900 font-bold text-base outline-none transition-all placeholder:text-slate-400 placeholder:font-normal focus:ring-4`}
+                    } rounded-xl sm:rounded-2xl text-slate-900 font-bold text-sm sm:text-base outline-none transition-all placeholder:text-slate-400 placeholder:font-normal focus:ring-4`}
                   />
                 </div>
                 {fieldErrors.postcode && (
-                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                  <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                     <span>{fieldErrors.postcode}</span>
                   </p>
@@ -349,14 +349,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
               {/* System Type Selection */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+                <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
                   What are you interested in?
                 </label>
-                <div className="grid grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5">
                   {[
-                    { id: 'solar_only', label: 'Solar Only', desc: 'Panels & Inverter', icon: <Sun className="w-5 h-5 text-amber-500" /> },
-                    { id: 'solar_battery', label: 'Solar + Battery', desc: 'Max Savings', tag: 'Popular', icon: <Zap className="w-5 h-5 text-orange-500" /> },
-                    { id: 'battery_only', label: 'Battery Only', desc: 'Add Storage', icon: <Battery className="w-5 h-5 text-blue-500" /> },
+                    { id: 'solar_only', label: 'Solar Only', desc: 'Panels & Inverter', icon: <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" /> },
+                    { id: 'solar_battery', label: 'Solar + Battery', desc: 'Max Savings', tag: 'Popular', icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" /> },
+                    { id: 'battery_only', label: 'Battery Only', desc: 'Add Storage', icon: <Battery className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" /> },
                   ].map((item) => {
                     const isSelected = systemType === item.id;
                     return (
@@ -364,24 +364,24 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setSystemType(item.id)}
-                        className={`relative flex flex-col items-center justify-center p-3 sm:p-3.5 rounded-2xl border-2 transition-all duration-200 cursor-pointer min-h-28 text-center ${
+                        className={`relative flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer min-h-20 sm:min-h-24 text-center ${
                           isSelected
-                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 shadow-sm ring-2 ring-orange-500/20'
+                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 shadow-2xs ring-2 ring-orange-500/20'
                             : 'border-slate-200 hover:border-slate-300 bg-white text-slate-700 hover:bg-slate-50'
                         }`}
                       >
                         {item.tag && (
-                          <span className="absolute -top-2.5 bg-linear-to-r from-amber-400 to-orange-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full tracking-wider shadow-xs">
+                          <span className="absolute -top-2 bg-linear-to-r from-amber-400 to-orange-500 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase px-1.5 sm:px-2 py-0.2 sm:py-0.5 rounded-full tracking-wider shadow-2xs">
                             {item.tag}
                           </span>
                         )}
-                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-1.5 transition-all ${
-                          isSelected ? 'bg-white shadow-xs border border-orange-200' : 'bg-slate-100'
+                        <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl flex items-center justify-center mb-1 transition-all ${
+                          isSelected ? 'bg-white shadow-2xs border border-orange-200' : 'bg-slate-100'
                         }`}>
                           {item.icon}
                         </div>
-                        <span className="text-xs font-bold leading-tight text-slate-900">{item.label}</span>
-                        <span className="text-[10px] text-slate-500 font-medium mt-0.5">{item.desc}</span>
+                        <span className="text-[11px] sm:text-xs font-bold leading-tight text-slate-900">{item.label}</span>
+                        <span className="text-[9px] sm:text-[10px] text-slate-500 font-medium leading-tight mt-0.5">{item.desc}</span>
                       </button>
                     );
                   })}
@@ -390,13 +390,13 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
               {/* Property Type Selection */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+                <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
                   Property Type
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {[
-                    { id: 'residential', label: 'Residential Home', desc: 'House / Townhouse', icon: <Home className="w-5 h-5 text-orange-600" /> },
-                    { id: 'commercial', label: 'Commercial Building', desc: 'Business / Warehouse', icon: <Building2 className="w-5 h-5 text-slate-600" /> },
+                    { id: 'residential', label: 'Residential Home', desc: 'House / Townhouse', icon: <Home className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" /> },
+                    { id: 'commercial', label: 'Commercial Building', desc: 'Business / Warehouse', icon: <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" /> },
                   ].map((item) => {
                     const isSelected = propertyType === item.id;
                     return (
@@ -404,20 +404,20 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setPropertyType(item.id)}
-                        className={`flex items-center gap-3 p-3.5 rounded-2xl border-2 transition-all duration-200 cursor-pointer text-left ${
+                        className={`flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer text-left ${
                           isSelected
-                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 shadow-sm ring-2 ring-orange-500/20'
+                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 shadow-2xs ring-2 ring-orange-500/20'
                             : 'border-slate-200 hover:border-slate-300 bg-white text-slate-700 hover:bg-slate-50'
                         }`}
                       >
-                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                          isSelected ? 'bg-white shadow-xs border border-orange-200' : 'bg-slate-100'
+                        <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                          isSelected ? 'bg-white shadow-2xs border border-orange-200' : 'bg-slate-100'
                         }`}>
                           {item.icon}
                         </div>
                         <div>
                           <span className="block text-xs sm:text-sm font-bold text-slate-900 leading-tight">{item.label}</span>
-                          <span className="text-[10px] text-slate-500 font-medium">{item.desc}</span>
+                          <span className="text-[9px] sm:text-[10px] text-slate-500 font-medium leading-tight">{item.desc}</span>
                         </div>
                       </button>
                     );
@@ -428,7 +428,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               {/* Continue CTA */}
               <button
                 type="submit"
-                className="w-full bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-base py-3.5 px-6 rounded-2xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                className="w-full bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-sm sm:text-base py-3 sm:py-3.5 px-4 sm:px-6 rounded-xl sm:rounded-2xl shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer mt-1"
               >
                 <span>Continue to Step 2</span>
                 <ArrowRight className="w-4 h-4" />
@@ -445,18 +445,18 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               exit={{ opacity: 0, x: -16 }}
               transition={{ duration: 0.25 }}
               onSubmit={handleStep2Submit}
-              className="space-y-5"
+              className="space-y-3.5 sm:space-y-4.5"
             >
               {/* Electricity Bill */}
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-800">
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800">
                     Quarterly Electricity Bill
                   </label>
-                  <span className="text-[11px] font-semibold text-orange-700">Helps size system</span>
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-orange-700">Helps size system</span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                   {[
                     { bill: 'Under $400', est: 'Small System' },
                     { bill: '$400 - $800', est: 'Avg (6.6-10kW)' },
@@ -468,14 +468,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.bill}
                         type="button"
                         onClick={() => setQuarterlyBill(item.bill)}
-                        className={`p-3 rounded-2xl border-2 text-center transition-all duration-200 cursor-pointer ${
+                        className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border-2 text-center transition-all duration-200 cursor-pointer ${
                           isSelected
-                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-sm'
+                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-2xs'
                             : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
                         }`}
                       >
-                        <div className="text-xs font-bold text-slate-900">{item.bill}</div>
-                        <div className="text-[10px] text-slate-500 mt-0.5 font-medium">{item.est}</div>
+                        <div className="text-[11px] sm:text-xs font-bold text-slate-900">{item.bill}</div>
+                        <div className="text-[9px] sm:text-[10px] text-slate-500 mt-0.5 font-medium">{item.est}</div>
                       </button>
                     );
                   })}
@@ -484,12 +484,12 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
               {/* Ownership */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+                <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
                   Property Ownership
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {[
-                    { id: 'own', label: 'I Own the Property', desc: 'Owner-Occupier' },
+                    { id: 'own', label: 'I Own Property', desc: 'Owner-Occupier' },
                     { id: 'renting', label: 'I am Renting', desc: 'Tenant' },
                   ].map((item) => {
                     const isSelected = ownership === item.id;
@@ -498,14 +498,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setOwnership(item.id)}
-                        className={`p-3.5 rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${
+                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${
                           isSelected
-                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-sm'
+                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-2xs'
                             : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
                         }`}
                       >
                         <div className="text-xs sm:text-sm font-bold text-slate-900">{item.label}</div>
-                        <div className="text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
+                        <div className="text-[9px] sm:text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
                       </button>
                     );
                   })}
@@ -514,13 +514,13 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
               {/* Roof Layout */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
+                <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
                   Roof Storey / Layout
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {[
                     { id: 'single_storey', label: 'Single Storey', desc: 'Standard Access' },
-                    { id: 'multi_storey', label: 'Double / Multi Storey', desc: 'Multi-Level Roof' },
+                    { id: 'multi_storey', label: 'Double / Multi', desc: 'Multi-Level Roof' },
                   ].map((item) => {
                     const isSelected = roofType === item.id;
                     return (
@@ -528,14 +528,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setRoofType(item.id)}
-                        className={`p-3.5 rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${
+                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${
                           isSelected
-                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-sm'
+                            ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-2xs'
                             : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
                         }`}
                       >
                         <div className="text-xs sm:text-sm font-bold text-slate-900">{item.label}</div>
-                        <div className="text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
+                        <div className="text-[9px] sm:text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
                       </button>
                     );
                   })}
@@ -543,21 +543,21 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               </div>
 
               {/* Navigation Action */}
-              <div className="flex items-center gap-3 pt-2">
+              <div className="flex items-center gap-2 sm:gap-3 pt-1">
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="w-1/3 py-3.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-2xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
+                  className="w-1/3 py-3 sm:py-3.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm rounded-xl sm:rounded-2xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
                 >
-                  <ArrowLeft className="w-4 h-4" />
+                  <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Back
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-base py-3.5 px-4 rounded-2xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-2/3 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-base py-3 sm:py-3.5 px-3 rounded-xl sm:rounded-2xl shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Continue</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
               </div>
             </motion.form>
@@ -572,21 +572,21 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               exit={{ opacity: 0, x: -16 }}
               transition={{ duration: 0.25 }}
               onSubmit={handleFinalSubmit}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-3.5"
             >
-              <div className="bg-orange-50/80 border border-orange-200/90 rounded-2xl p-3.5 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-700 shrink-0 font-black text-sm">
+              <div className="bg-orange-50/80 border border-orange-200/90 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 flex items-center gap-2.5">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-700 shrink-0 font-black text-xs sm:text-sm">
                   ⚡
                 </div>
-                <div className="text-xs text-slate-800">
+                <div className="text-[11px] sm:text-xs text-slate-800 leading-tight">
                   <span className="font-bold text-slate-900 block">Almost Finished!</span>
-                  Where should our vetted local installers send your 3 custom solar proposals?
+                  Where should local vetted installers send your 3 custom solar quotes?
                 </div>
               </div>
 
               {/* Full Name */}
               <div>
-                <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
+                <label htmlFor="fullName" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1">
                   Full Name <span className="text-orange-500">*</span>
                 </label>
                 <input
@@ -613,14 +613,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     }
                   }}
                   placeholder="e.g. Sarah Jenkins"
-                  className={`w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 ${
+                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${
                     fieldErrors.fullName 
                       ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
                       : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                  } rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
+                  } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
                 {fieldErrors.fullName && (
-                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                  <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                     <span>{fieldErrors.fullName}</span>
                   </p>
@@ -629,7 +629,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
+                <label htmlFor="email" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1">
                   Email Address <span className="text-orange-500">*</span>
                 </label>
                 <input
@@ -656,14 +656,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     }
                   }}
                   placeholder="sarah.jenkins@example.com.au"
-                  className={`w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 ${
+                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${
                     fieldErrors.email 
                       ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
                       : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                  } rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
+                  } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
                 {fieldErrors.email && (
-                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                  <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                     <span>{fieldErrors.email}</span>
                   </p>
@@ -672,7 +672,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5">
+                <label htmlFor="phone" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-1">
                   Contact Phone (10 Digits) <span className="text-orange-500">*</span>
                 </label>
                 <input
@@ -705,14 +705,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     }
                   }}
                   placeholder="0400 123 456"
-                  className={`w-full px-4 py-3 bg-slate-50/70 focus:bg-white border-2 ${
+                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${
                     fieldErrors.phone 
                       ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
                       : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                  } rounded-2xl text-slate-900 font-semibold text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
+                  } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
                 {fieldErrors.phone && (
-                  <p className="text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                  <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                     <span>{fieldErrors.phone}</span>
                   </p>
@@ -720,33 +720,33 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               </div>
 
               {/* Privacy Guarantee */}
-              <div className="flex items-start gap-2.5 pt-1 text-[11px] text-slate-500 leading-relaxed bg-slate-100/70 p-3 rounded-xl border border-slate-200/60">
-                <Lock className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 pt-0.5 text-[10px] sm:text-[11px] text-slate-500 leading-tight bg-slate-100/70 p-2.5 rounded-xl border border-slate-200/60">
+                <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                 <span>
-                  <strong className="text-slate-800 font-bold">100% Privacy Guarantee:</strong> Your information is strictly protected and only shared with up to 3 CEC-accredited installers for quoting.
+                  <strong className="text-slate-800 font-bold">100% Privacy:</strong> Only shared with up to 3 CEC-accredited installers.
                 </span>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-3 pt-2">
+              <div className="flex items-center gap-2 sm:gap-3 pt-1">
                 <button
                   type="button"
                   disabled={isSubmitting}
                   onClick={() => setStep(2)}
-                  className="w-1/3 py-3.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-2xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                  className="w-1/3 py-3 sm:py-3.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm rounded-xl sm:rounded-2xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
                 >
-                  <ArrowLeft className="w-4 h-4" />
+                  <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Back
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-2/3 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-base py-3.5 px-4 rounded-2xl shadow-lg shadow-orange-500/30 hover:shadow-orange-500/45 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                  className="w-2/3 bg-linear-to-r from-amber-400 via-orange-500 to-amber-500 hover:from-amber-300 hover:via-orange-400 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-base py-3 sm:py-3.5 px-3 rounded-xl sm:rounded-2xl shadow-md shadow-orange-500/30 hover:shadow-orange-500/45 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                 >
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></span>
-                      Matching Installers...
+                      Matching...
                     </span>
                   ) : (
                     'Get My Free Quotes ⚡'
@@ -763,30 +763,30 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-center py-4 space-y-5"
+              className="text-center py-2 sm:py-4 space-y-3.5 sm:space-y-4.5"
             >
-              <div className="relative mx-auto w-20 h-20">
+              <div className="relative mx-auto w-14 h-14 sm:w-18 sm:h-18">
                 <div className="absolute inset-0 bg-emerald-400/30 rounded-full blur-xl animate-pulse" />
-                <div className="relative w-20 h-20 bg-emerald-100 border-2 border-emerald-300 text-emerald-600 rounded-full flex items-center justify-center shadow-lg">
-                  <CheckCircle2 className="w-11 h-11" />
+                <div className="relative w-14 h-14 sm:w-18 sm:h-18 bg-emerald-100 border-2 border-emerald-300 text-emerald-600 rounded-full flex items-center justify-center shadow-md">
+                  <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
               </div>
 
               <div>
-                <h4 className="text-2xl font-serif font-black text-slate-900">
+                <h4 className="text-xl sm:text-2xl font-serif font-black text-slate-900">
                   Great news, {contactData.fullName.split(' ')[0] || 'there'}!
                 </h4>
-                <p className="text-sm text-slate-600 mt-1 max-w-sm mx-auto font-medium">
+                <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-sm mx-auto font-medium">
                   We've matched your property in <strong className="text-slate-900 font-bold">{postcode}</strong> with verified CEC-accredited solar specialists.
                 </p>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-left text-xs space-y-2.5 shadow-inner">
-                <div className="flex justify-between items-center text-slate-600 pb-2 border-b border-slate-200">
+              <div className="bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-left text-xs space-y-2 shadow-inner">
+                <div className="flex justify-between items-center text-slate-600 pb-1.5 border-b border-slate-200">
                   <span>Selected Setup:</span>
                   <span className="font-bold text-slate-900 uppercase">{systemType.replace('_', ' + ')}</span>
                 </div>
-                <div className="flex justify-between items-center text-slate-600 pb-2 border-b border-slate-200">
+                <div className="flex justify-between items-center text-slate-600 pb-1.5 border-b border-slate-200">
                   <span>Target Area:</span>
                   <span className="font-bold text-slate-900">Postcode {postcode}</span>
                 </div>
@@ -796,16 +796,16 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                 </div>
               </div>
 
-              <div className="bg-orange-50 border border-orange-200/80 rounded-2xl p-3.5 text-xs text-slate-700 flex items-center gap-3 text-left">
-                <Award className="w-5 h-5 text-orange-600 shrink-0" />
-                <span>Installers will review your roof orientation and prepare transparent, itemized quotes.</span>
+              <div className="bg-orange-50 border border-orange-200/80 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 text-xs text-slate-700 flex items-center gap-2.5 text-left">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 shrink-0" />
+                <span className="text-[11px] sm:text-xs">Installers will review your roof layout and prepare transparent quotes.</span>
               </div>
 
               {onClose && (
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-full bg-slate-950 hover:bg-slate-800 text-white font-bold text-sm py-3.5 px-6 rounded-2xl transition-all shadow-lg hover:shadow-xl cursor-pointer mt-2 active:scale-98"
+                  className="w-full bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-3 sm:py-3.5 px-6 rounded-xl sm:rounded-2xl transition-all shadow-md hover:shadow-lg cursor-pointer mt-1 active:scale-98"
                 >
                   Done & Return to Site
                 </button>

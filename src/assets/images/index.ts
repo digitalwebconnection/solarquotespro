@@ -1,6 +1,6 @@
 import solarRoofImg from './solar-roof.jpg';
 import solarSavingsImg from './solar-savings.jpg';
-import installerHandshakeImg from './installer-handshake.jpg';
+import installerHandshakeImg from './installer-handshake.webp';
 import modernHomeImg from './modern-home.jpg';
 import solarInspectionImg from './solar-inspection.jpg';
 import avatar1Img from './avatar1.jpg';

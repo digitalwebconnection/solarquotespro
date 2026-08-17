@@ -80,23 +80,23 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-serif md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-5 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black text-slate-900 leading-[1.15] sm:leading-[1.1] mb-3 sm:mb-5 tracking-tight"
           >
-            How It <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 via-orange-500 to-amber-600 relative whitespace-nowrap">
+            How It <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 via-orange-500 to-amber-600 relative inline-block">
               Works
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-orange-300" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2 sm:h-3 text-orange-300" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
             </span>
           </motion.h2>
 
-          <p className="text-base sm:text-lg text-slate-900 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-slate-900 max-w-3xl mx-auto">
             Get transparent, competitive quotes from verified local solar installers in 3 effortless steps.
           </p>
         </div>
 
         {/* Steps Grid with Auto & Manual Hover Background Images */}
-        <div className="grid lg:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-8 relative">
           
           {/* Connecting Line (Desktop) */}
           <div className="hidden lg:block absolute top-16 left-[15%] right-[15%] h-0.5 bg-linear-to-r from-amber-300 via-orange-400 to-emerald-400 z-0 opacity-60" />
@@ -114,10 +114,10 @@ export default function HowItWorks() {
                 onClick={() => openQuoteModal()}
                 onMouseEnter={() => setHoveredCardIndex(index)}
                 onMouseLeave={() => setHoveredCardIndex(null)}
-                className={`relative bg-white rounded-xl p-4 lg:p-6 shadow-xl border transition-all duration-500 z-10 overflow-hidden cursor-pointer flex flex-col justify-between min-h-85 ${
+                className={`relative bg-white rounded-xl p-5 lg:p-6 shadow-xl border transition-all duration-500 z-10 overflow-hidden cursor-pointer flex flex-col justify-between min-h-70 sm:min-h-85 ${
                   isCardActive 
-                    ? '-translate-y-2 shadow-2xl border-orange-400 ring-2 ring-orange-400/30' 
-                    : 'shadow-slate-200/50 border-slate-200/90 hover:-translate-y-2 hover:border-orange-400'
+                    ? '-translate-y-1 sm:-translate-y-2 shadow-2xl border-orange-400 ring-2 ring-orange-400/30' 
+                    : 'shadow-slate-200/50 border-slate-200/90 hover:-translate-y-1 sm:hover:-translate-y-2 hover:border-orange-400'
                 }`}
               >
                 {/* ─── Active/Hover 6s Progress Bar Indicator ─── */}
@@ -150,7 +150,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Massive background number */}
-                <div className={`absolute -right-3 -bottom-4 text-[9rem] font-black transition-colors duration-500 z-0 select-none leading-none tracking-tighter ${
+                <div className={`absolute -right-2 -bottom-3 text-7xl sm:text-[9rem] font-black transition-colors duration-500 z-0 select-none leading-none tracking-tighter ${
                   isCardActive ? 'text-white/10' : 'text-slate-100'
                 }`}>
                   {step.num}
