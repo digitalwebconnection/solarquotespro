@@ -10,8 +10,8 @@ import {
   CheckCircle2, 
   Scale
 } from 'lucide-react';
-import { useQuoteModal } from '../../context/QuoteModalContext';
-import { solarSavingsImg, solarRoofImg, installerHandshakeImg, modernHomeImg } from '../../assets/images';
+import { useQuoteModal } from '../../../context/QuoteModalContext';
+import { solarSavingsImg, solarRoofImg, installerHandshakeImg, modernHomeImg } from '../../../assets/images';
 
 export default function WhyCompare() {
   const { openQuoteModal } = useQuoteModal();

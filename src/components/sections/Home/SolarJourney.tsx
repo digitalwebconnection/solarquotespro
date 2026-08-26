@@ -7,8 +7,8 @@ import {
   Star, 
   TrendingDown 
 } from 'lucide-react';
-import { useQuoteModal } from '../../context/QuoteModalContext';
-import { solarRoofImg } from '../../assets/images';
+import { useQuoteModal } from '../../../context/QuoteModalContext';
+import { solarRoofImg } from '../../../assets/images';
 
 const SolarJourney = () => {
   const { openQuoteModal } = useQuoteModal();

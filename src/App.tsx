@@ -2,18 +2,17 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import ValueProposition from './components/sections/ValueProposition';
-import HowItWorks from './components/sections/HowItWorks';
-import WhyChooseUs from './components/sections/WhyChooseUs';
-import VerificationProcess from './components/sections/VerificationProcess';
-import WhyCompare from './components/sections/WhyCompare';
-import SolarJourney from './components/sections/SolarJourney';
-import FAQ from './components/sections/FAQ';
+
+import HomePage from "./pages/Home/HomePage"
+import AboutPage from './pages/About/AboutPage';
+import ServicePage from './pages/Services/ServicePage'; 
+import BlogPage from './pages/Blogs/BlogPage';
+
 import SolarAdvisorBot from './components/common/SolarAdvisorBot';
 import LiveSocialProof from './components/common/LiveSocialProof';
 import ScrollToTop from './components/common/ScrollToTop';
 import { QuoteModalProvider } from './context/QuoteModalContext';
+
 
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
@@ -28,20 +27,7 @@ function PageLoader() {
   );
 }
 
-function HomePage() {
-  return (
-    <main>
-      <Hero />
-      <ValueProposition />
-      <HowItWorks />
-      <WhyChooseUs />
-      <VerificationProcess />
-      <WhyCompare />
-      <SolarJourney />
-      <FAQ />
-    </main>
-  );
-}
+
 
 function App() {
   return (
@@ -53,6 +39,9 @@ function App() {
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/about-us" element={<AboutPage />} />
+              <Route path='/service-page' element={<ServicePage/>} />
+              <Route path='/blog-page' element={<BlogPage/>} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />

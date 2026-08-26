@@ -8,8 +8,8 @@ import {
   TrendingDown,
   Zap,
 } from "lucide-react";
-import { useQuoteModal } from "../../context/QuoteModalContext";
-import { solarRoofImg, avatar1Img, avatar2Img, avatar3Img } from "../../assets/images";
+import { useQuoteModal } from "../../../context/QuoteModalContext";
+import { solarRoofImg, avatar1Img, avatar2Img, avatar3Img } from "../../../assets/images";
 
 export default function Hero() {
   const { openQuoteModal } = useQuoteModal();

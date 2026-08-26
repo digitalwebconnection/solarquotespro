@@ -11,7 +11,7 @@ import {
   DollarSign, 
   Scale 
 } from 'lucide-react';
-import { useQuoteModal } from '../../context/QuoteModalContext';
+import { useQuoteModal } from '../../../context/QuoteModalContext';
 
 export default function FAQ() {
   const { openQuoteModal } = useQuoteModal();

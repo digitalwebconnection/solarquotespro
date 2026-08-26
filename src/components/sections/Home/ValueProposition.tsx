@@ -9,8 +9,8 @@ import {
   PhoneOff,
   SearchSlash,
 } from 'lucide-react';
-import { useQuoteModal } from '../../context/QuoteModalContext';
-import  solarRoofImg  from '../../assets/images/about.webp';
+import { useQuoteModal } from '../../../context/QuoteModalContext';
+import  solarRoofImg  from '../../../assets/images/about.webp';
 
 export default function ValueProposition() {
   const { openQuoteModal } = useQuoteModal();

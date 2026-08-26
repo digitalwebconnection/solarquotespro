@@ -7,8 +7,8 @@ import {
   CheckCircle2,
   Star,
 } from "lucide-react";
-import { MaskedAvatars } from "../common/MaskedAvatars";
-import { useQuoteModal } from "../../context/QuoteModalContext";
+import { MaskedAvatars } from "../../common/MaskedAvatars";
+import { useQuoteModal } from "../../../context/QuoteModalContext";
 
 export default function WhyChooseUs() {
   const { openQuoteModal } = useQuoteModal();

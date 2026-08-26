@@ -16,7 +16,7 @@ import {
   Sparkles,
   Layers
 } from 'lucide-react';      
-import { useQuoteModal } from '../../context/QuoteModalContext';
+import { useQuoteModal } from '../../../context/QuoteModalContext';
 
 export default function VerificationProcess() {
   const { openQuoteModal } = useQuoteModal();

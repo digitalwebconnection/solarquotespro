@@ -42,6 +42,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Services', href: '/service-page' },
+    { name: 'Blog', href: '/blog-page' },
     { name: 'How It Works', href: '/#how-it-works' },
     { name: 'Why Choose Us', href: '/#why-choose-us' },
     { name: 'FAQ', href: '/#faq' },
@@ -146,7 +149,7 @@ export default function Header() {
                   className="text-slate-800 hover:text-[#00417E] font-bold text-sm tracking-tight transition-colors relative group py-1"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] group-hover:w-full transition-all duration-300 rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] group-hover:w-full transition-all duration-600 rounded-full" />
                 </Link>
               ))}
 

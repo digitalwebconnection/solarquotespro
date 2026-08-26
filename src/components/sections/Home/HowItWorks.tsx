@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, FileText, Users, ArrowRightLeft, ShieldCheck, Zap } from 'lucide-react';
-import { useQuoteModal } from '../../context/QuoteModalContext';
-import { solarRoofImg, solarInspectionImg, installerHandshakeImg } from '../../assets/images';
+import { useQuoteModal } from '../../../context/QuoteModalContext';
+import { solarRoofImg, solarInspectionImg, installerHandshakeImg } from '../../../assets/images';
 
 export default function HowItWorks() {
   const { openQuoteModal } = useQuoteModal();
