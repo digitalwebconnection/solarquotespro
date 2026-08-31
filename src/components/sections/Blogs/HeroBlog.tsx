@@ -1,70 +1,92 @@
-import { Dot, ArrowRight, BookOpen, Clock, Flame, Tag } from "lucide-react";
+import {Dot, ArrowRight, BookOpen, Clock, Flame, Landmark,  Search } from "lucide-react";
 
 export default function HeroBlog() {
   const highlights = [
     {
       icon: <Flame className="w-4 h-4 text-orange-400" />,
-      text: "Latest Clean-Tech Guides",
+      text: "Solar & Battery Guides",
     },
     {
       icon: <Clock className="w-4 h-4 text-cyan-400" />,
-      text: "Updated Weekly",
+      text: "Regularly Updated",
     },
     {
       icon: <BookOpen className="w-4 h-4 text-emerald-400" />,
-      text: "Expert Insights & Reviews",
+      text: "Reviews & Comparisons",
     },
     {
-      icon: <Tag className="w-4 h-4 text-yellow-400" />,
-      text: "Government Rebates & Savings",
+      icon: <Landmark className="w-4 h-4 text-yellow-400" />,
+      text: "Rebates & Pricing",
     },
   ];
 
   return (
-    <section className="relative h-130 w-full overflow-hidden flex items-center bg-slate-900">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNBYWoL81tQE1y2HUSppSAsvmZqpcEPTytWgWRobVvQ&s=10" alt="Solar energy and smart grid technology concept"
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-40" />
+    <section className="relative h-auto min-h-130 w-full overflow-hidden flex items-center bg-slate-900">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNBYWoL81tQE1y2HUSppSAsvmZqpcEPTytWgWRobVvQ&s=10" alt="Solar energy and smart grid technology"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-50"/>
 
-      <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-900/70 to-slate-800/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-900/65 to-slate-900/50 z-0" />
+      {/* <div className="absolute -top-20 right-1/4 w-100 h-100 bg-amber-400/10 blur-[120px] rounded-full" /> */}
 
-      <div className="relative z-10 grid grid-cols-2 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 ">
-        <div className="max-w-4xl text-white space-y-5">
-          
-          <p className="font-bold text-xs sm:text-sm uppercase tracking-wider  px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-amber-500/20 text-amber-300 border border-amber-400/40 backdrop-blur-md">
-            <Dot strokeWidth={8} className="w-5 h-5  text-amber-400 animate-pulse" />
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-7 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl text-white mt-5 space-y-7">
+          <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-flex items-center gap-1 bg-amber-400/10 text-amber-300 border border-amber-400/40 backdrop-blur-md">
+            <Dot strokeWidth={8} className="w-5 h-5 text-amber-400 animate-pulse"/>
             <span>Energy Knowledge Hub</span>
-          </p>
-
+          </p>                    
           <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold font-serif leading-tight">
-            Insights & Guides on{" "}<br/>
-            <span className="bg-linear-to-r from-amber-300 via-orange-300 to-emerald-400 bg-clip-text text-transparent">
-              Smart Clean Energy
-            </span>
+            Learn Before You{" "}
+            <span className="bg-linear-to-r from-amber-300 via-orange-300 to-emerald-400 bg-clip-text text-transparent">Make an Energy Decision</span>
           </h1>
-
-          <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed max-w-2xl">
-            Stay ahead of rising energy costs. Explore practical installation tips, solar rebate updates, battery buying guides, and EV charging strategies from our industry experts.
-          </p>
-
+          <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed max-w-3xl">Explore guides, reviews, comparisons, pricing information and practical advice to help you understand solar, batteries, EV
+          charging and other home-energy technologies.</p>
           <div className="pt-2 flex flex-wrap items-center gap-4">
-            <a
-              href="#latest-posts"
-              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3.5 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2.5 cursor-pointer active:scale-95 group">
-              <span>Explore Articles</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+            <a href="#latest-posts"
+              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-2.5 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-400/20 inline-flex items-center gap-2.5 cursor-pointer active:scale-95 group">
+              <BookOpen className="w-4 h-4" />
+              <span>Explore Energy Guides</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"/>
             </a>
-          </div>        
+          </div>
         </div>
-        <div>
-            <div className=" grid grid-cols-1 items-center gap-2 px-42 mt-10 sm:gap-5">
-            {highlights.map((item, index) => (
-              <div key={index}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 backdrop-blur-md text-xs sm:text-sm font-semibold text-slate-200">
-                {item.icon}
-                <span className="absolute w-2 h-2 top-2.5 -left-1 animate-pulse rounded-full bg-white"></span>
-                <span>{item.text}</span>
+
+
+        <div className="flex items-center justify-end">
+          <div className="w-full max-w-sm">
+            <div className="relative bg-slate-950/75 backdrop-blur-md border border-white/10 rounded-2xl p-5 ">
+    
+              <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/20 flex items-center justify-center"><Search className="w-5 h-5 text-amber-400" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white">What are you researching?</h3>
+                  <p className="text-xs text-slate-500 mt-0.5">Explore before comparing quotes</p>
+                </div>
               </div>
-            ))}
+
+              <div className="grid grid-cols-1 gap-2.5 mt-5">
+                {highlights.map((item, index) => (
+                  <div key={index} className="group flex items-center gap-3 px-3.5 py-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/15 hover:bg-white/10 transition-all duration-300">
+                    <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center ">
+                      {item.icon}
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold text-slate-300">
+                      {item.text}
+                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-auto text-slate-600 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"/>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/10">
+                <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500">
+                  Research - Compare - Decide
+                </p>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed"> Get the information you need to make a more informed home-energy choice.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

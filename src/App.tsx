@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 import HomePage from "./pages/Home/HomePage"
 import AboutPage from './pages/About/AboutPage';
 import ServicePage from './pages/Services/ServicePage'; 
+import ProjectPage from './pages/Projects/ProjectPage';
 import BlogPage from './pages/Blogs/BlogPage';
 
 import SolarAdvisorBot from './components/common/SolarAdvisorBot';
@@ -28,7 +29,6 @@ function PageLoader() {
 }
 
 
-
 function App() {
   return (
     <QuoteModalProvider>
@@ -41,6 +41,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about-us" element={<AboutPage />} />
               <Route path='/service-page' element={<ServicePage/>} />
+              <Route path='/project-page' element={<ProjectPage/>} />
               <Route path='/blog-page' element={<BlogPage/>} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

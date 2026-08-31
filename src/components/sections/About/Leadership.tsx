@@ -2,37 +2,37 @@ import { UserCheck, ArrowRight } from "lucide-react";
 
 export default function LeadershipSection() {
   const leaders = [
-    {
-      name: "Trevor",
-      role: "General Manager",
-      image: "https://www.finnpeacock.com/wp-content/uploads/2018/04/section-image.jpg",
-      bio: "Award-winning tech entrepreneur leading operational strategy and smart automation tools since 2021.",
-      linkText: "LinkedIn",
-      linkUrl: "#linkedIn",
-      isMiddle: false,
-    },
-    {
-      name: "Finn Peacock",
-      role: "Founder of Solar Quotes Pro",
-      image: "https://www.finnpeacock.com/wp-content/uploads/2018/04/section-image.jpg",
-      bio: "Ex-CSIRO engineer who started SolarQuotes in 2009. Helped over 1 million Aussies transition to clean energy.",
-      linkText: "Learn more",
-      linkUrl: "#finn",
-      isMiddle: true,
-    },
-    {
-      name: "Tam (Tamara)",
-      role: "Operations Manager",
-      image: "https://www.finnpeacock.com/wp-content/uploads/2018/04/section-image.jpg",
-      bio: "Electrical & renewable energy background. Streamlines support and installation workflows for homeowners and partners.",
-      linkText: null,
-      linkUrl: null,
-      isMiddle: false,
-    },
-  ];
+  {
+    name: "Trevor",
+    role: "General Manager",
+    image: "https://www.finnpeacock.com/wp-content/uploads/2018/04/section-image.jpg",
+    bio: "Oversees the platform's overall direction, focusing on transparent quote comparisons, homeowner education, and creating a simple experience for Australians exploring solar and home-energy options.",
+    linkText: "LinkedIn",
+    linkUrl: "#linkedIn",
+    isMiddle: false,
+  },
+  {
+    name: "Finn Peacock",
+    role: "Founder of Solar Quotes Pro",
+    image: "https://www.finnpeacock.com/wp-content/uploads/2018/04/section-image.jpg",
+    bio: "Provides industry insight and helps shape the platform's approach to solar research, energy education, installer comparisons, and practical resources for Australian homeowners.",
+    linkText: "Learn more",
+    linkUrl: "#finn",
+    isMiddle: true,
+  },
+  {
+    name: "Tam (Tamara)",
+    role: "Operations Manager",
+    image: "https://www.finnpeacock.com/wp-content/uploads/2018/04/section-image.jpg",
+    bio: "Supports the day-to-day platform experience by helping manage partner relationships, quote enquiries, and the processes that connect homeowners with suitable energy professionals.",
+    linkText: null,
+    linkUrl: null,
+    isMiddle: false,
+  },
+];
 
   return (
-    <section className="bg-slate-950 py-20 text-white relative timeline-view animate-blurred-fade-in animate-range-[entry_20%_contain_100%]">
+    <section className="bg-slate-950 py-20 text-white relative timeline-view animate-blurred-fade-in animate-range-[entry_20%_contain_20%]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center auto mb-16">

@@ -1,79 +1,87 @@
-import { ShieldCheck, Award, Zap, HeartHandshake, CircleCheck } from "lucide-react";
-
+import { ShieldCheck, Search, BarChart3,  Users, CircleCheck, BookOpen } from "lucide-react";
 
 export default function MiniWhyTrueSolarQuotes() {
-  
+    const highlights = [
+        {
+            title: "Independent Information",
+            desc: "Explore solar and home-energy information designed to help you understand your options before making a decision.",
+            icon: <ShieldCheck className="w-7 h-7 text-emerald-400" />,
+            style: "border-emerald-500/30 hover:border-emerald-400/60",
+            badge: "Research",
+            badgeColor: "bg-emerald-500/10 text-emerald-300",
+        },
+        {
+            title: "Compare Your Options",
+            desc: "Compare installers, products, technologies and pricing considerations so you can make a more informed choice.",
+            icon: <Search className="w-7 h-7 text-blue-400" />,
+            style: "border-blue-500/30 hover:border-blue-400/60",
+            badge: "Compare",
+            badgeColor: "bg-blue-500/10 text-blue-300",
+        },
+        {
+            title: "Understand the Numbers",
+            desc: "Learn about system sizes, electricity usage, potential savings, payback periods and other important factors.",
+            icon: <BarChart3 className="w-7 h-7 text-amber-400" />,
+            style: "border-amber-500/30 hover:border-amber-400/60",
+            badge: "Understand",
+            badgeColor: "bg-amber-500/10 text-amber-300",
+        },
+        {
+            title: "Connect With Installers",
+            desc: "When you're ready to take the next step, connect with suitable solar and energy professionals for quotes.",
+            icon: <Users className="w-7 h-7 text-indigo-400" />,
+            style: "border-indigo-500/30 hover:border-indigo-400/60",
+            badge: "Connect",
+            badgeColor: "bg-indigo-500/10 text-indigo-300",
+        },
+    ];
 
-  const highlights = [
-    {
-      title: "100% Unbiased",
-      desc: "Independent quotes with zero pushy sales commissions.",
-      icon: <ShieldCheck className="w-8 h-8 text-emerald-400" />,
-      style: "border-emerald-500/30 hover:border-emerald-400/60",
-      badge: "Honest",
-      badgeColor: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20"
-    },
-    {
-      title: "CEC Accredited",
-      desc: "Fully vetted, licensed local electrical experts.",
-      icon: <Award className="w-8 h-8 text-blue-400" />,
-      style: "border-blue-500/30 hover:border-blue-400/60",
-      badge: "Verified",
-      badgeColor: "bg-blue-500/10 text-blue-300 border-blue-500/20"
-    },
-    {
-      title: "Tier-1 Hardware",
-      desc: "Top-tier panels built for harsh Aussie climates.",
-      icon: <Zap className="w-8 h-8 text-amber-400" />,
-      style: "border-amber-500/30 hover:border-amber-400/60",
-      badge: "Quality",
-      badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/20"
-    },
-    {
-      title: "Full Care Support",
-      desc: "From bill assessment to final grid connection.",
-      icon: <HeartHandshake className="w-8 h-8 text-indigo-400" />,
-      style: "border-indigo-500/30 hover:border-indigo-400/60",
-      badge: "End-to-End",
-      badgeColor: "bg-indigo-500/10 text-indigo-300 border-indigo-500/20"
-    }
-  ];
+    return (
+        <section className="relative bg-slate-900 py-14 text-white ">
+            <div className="absolute -top-40  left-20 w-200 h-100 bg-linear-to-r from-amber-400/20 to-emerald-500/20 rounded-full blur-[130px]" />
 
-  return (
-    <section className="bg-slate-900 py-16 text-white overflow-hidden timeline-view animate-blurred-fade-in animate-range-[entry_10%_contain_60%]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-2xl mx-auto mb-13">
-          <span className=" bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full inline-flex items-center gap-1"><CircleCheck  strokeWidth={2} className="w-4 h-4"/> why True solar Quote </span>
-          <h2 className="text-3xl sm:text-5xl font-bold mt-6 font-serif bg-linear-to-r from-amber-300 from-35% to-emerald-400 bg-clip-text text-transparent"> Australia's Most Trusted Solar Company </h2>
-          <p className="text-slate-400 mt-4 text-sm sm:text-base"> From a small local team to one of Australia's most trusted solar networks. </p>
-        </div>
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-3xl mx-auto mb-14">
+                    <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">
+                        <BookOpen className="w-4 h-4" />Why Use True Solar Quote
+                    </span>
 
-        <div className="max-w-7xl mx-auto flex gap-4 items-center justify-center">
-          {highlights.map((item, index) => (
-            <div key={index} className={`bg-slate-950/80 border rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group ${item.style}`}>
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 group-hover:border-transparent group-hover:bg-transparent transition-all duration-250 group-hover:-translate-y-1 ease-in-out">
-                    {item.icon}
-                  </div>
-                  <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border uppercase tracking-wider ${item.badgeColor}`}>
-                    {item.badge}
-                  </span>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-5 font-serif">
+                        Make a More{" "}
+                        <span className="bg-linear-to-r from-amber-400 via-orange-300 to-emerald-400 bg-clip-text text-transparent">
+                            Informed Energy Decision
+                        </span>
+                    </h2>
+
+                    <p className="text-slate-400 mt-5 text-sm sm:text-base leading-7 max-w-2xl mx-auto">Solar and home-energy decisions can involve significant costs and long-term commitments. We provide useful
+                    information, comparisons and tools to help you understand the market before choosing an installer or energy solution.
+                    </p>
                 </div>
-                <h3 className="text-base font-bold text-white mb-1">{item.title}</h3>
-                <p className="text-slate-400 text-xs leading-relaxed"> {item.desc} </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                <span className="text-[10px] text-slate-500 font-semibold tracking-wider uppercase">True Solar Promise
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-700 transition-all duration-200 group-hover:bg-yellow-300" />
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {highlights.map((item, index) => (
+                        <div key={index} className={` group relative bg-slate-950/80 backdrop-blur-md border  rounded-2xl p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
+                            <div className="flex items-center justify-between mb-5">
+                                <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800  flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}            
+                                </div>
+                                <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase  tracking-wider ${item.badgeColor}`}>{item.badge}
+                                </span>
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
 
-      </div>
-    </section>
-  );
+                            <p className="text-slate-400 text-sm leading-6">{item.desc}</p>
+
+                            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2">
+                                <CircleCheck className="w-4 h-4 text-emerald-400 " />
+                                <span className="text-[11px] text-slate-500 font-medium"> Helping you research with confidence</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-12 max-w-4xl mx-auto text-center">
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">Our goal is to help homeowners understand solar,batteries and other energy technologies so they cancompare their choices and decide what works best for their circumstances.
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
 }

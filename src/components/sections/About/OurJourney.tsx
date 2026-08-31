@@ -2,34 +2,34 @@ import { Zap, ShieldCheck, BatteryCharging, Trophy } from "lucide-react";
 
 export default function OurJourney() {
   const steps = [
-    {
-      year: "2018",
-      title: "Started with Honesty",
-      desc: "Launched to eliminate pushy tactics and bring transparent solar quotes to Aussie homeowners.",
-      icon: Zap,
-    },
-    {
-      year: "2020",
-      title: "1,000+ Homes Powered",
-      desc: "Expanded across NSW & QLD with 100% CEC-accredited installer teams and Tier-1 hardware.",
-      icon: ShieldCheck,
-    },
-    {
-      year: "2023",
-      title: "Battery Revolution",
-      desc: "Helped thousands add battery storage to protect against rising electricity prices.",
-      icon: BatteryCharging,
-    },
-    {
-      year: "2026",
-      title: "10,000+ Installations",
-      desc: "Now delivering trusted, clean energy solutions nationwide with top customer satisfaction.",
-      icon: Trophy,
-    },
-  ];
+  {
+    year: "2018",
+    title: "Started with Transparency",
+    desc: "Launched with a simple goal: make solar information and pricing easier for Australian homeowners to understand.",
+    icon: Zap,
+  },
+  {
+    year: "2020",
+    title: "Building a Trusted Network",
+    desc: "Expanded our platform to connect homeowners with a growing network of trusted solar and energy professionals across Australia.",
+    icon: ShieldCheck,
+  },
+  {
+    year: "2023",
+    title: "Beyond Solar",
+    desc: "Expanded our research and comparison resources to include batteries, EV chargers, hot-water heat pumps and other home-energy solutions.",
+    icon: BatteryCharging,
+  },
+  {
+    year: "2026",
+    title: "A Smarter Way to Compare",
+    desc: "Today, True Solar Quote helps Australian homeowners research their options, compare providers and request competitive quotes — all in one place.",
+    icon: Trophy,
+  },
+];
 
   return (
-    <section className="bg-slate-900 py-16 text-white overflow-hidden">
+    <section className="relative z-20 bg-slate-900 py-16 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-16">

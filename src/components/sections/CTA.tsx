@@ -17,7 +17,7 @@ const CTA = () => {
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 sm:gap-10">
 
             <div className="flex-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 border border-white/15 text-[#F9B122] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/20 border border-white/15 text-[#F9B122] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-[#0A6702] ring-2 ring-white/30 animate-pulse"></span>
                 100% Free & Independent Comparison
               </div>

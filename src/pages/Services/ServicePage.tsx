@@ -11,7 +11,7 @@ export default function ServicePage(){
             <HeroService/>
             <AllServices/>
             <WhyTrueSolar/>
-            <ExploreSolar/>
+            {/* <ExploreSolar/> */}
             <CTA/>
         </section>
     )
