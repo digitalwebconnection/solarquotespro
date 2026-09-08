@@ -1,5 +1,5 @@
 import { ArrowRight, Mail, Phone, ShieldCheck, Zap, Award, Lock } from 'lucide-react';
-import { href, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/truesolar.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -184,21 +184,21 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {serviceLinks.map((item) => (
                 <li key={item.label}>
-                  {/* <button 
+                  <button 
                     onClick={item.action} 
                     className="text-slate-700 font-semibold hover:text-[#0A6702] transition-colors duration-300 text-sm flex items-center gap-2 group cursor-pointer text-left"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#0A6702] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
-                  </button> */}
-                   <Link 
+                  </button>
+                   {/* <Link 
                     to={item.href} 
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#F9B122] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
-                  </Link>
+                  </Link> */}
                 </li>
               ))}
             </ul>
