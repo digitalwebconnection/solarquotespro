@@ -1,6 +1,6 @@
 export { default as Hero } from '../../components/sections/Home/Hero';
 export { default as ValueProposition } from '../../components/sections/Home/ValueProposition';
-export { default as HowItWorks } from '../../components/sections/Home/HowItWorks';
+export { default as HowItWorks } from './Home/HowItWorks';
 export { default as WhyChooseUs } from '../../components/sections/Home/WhyChooseUs';
 export { default as VerificationProcess } from '../../components/sections/Home/VerificationProcess';
 export { default as WhyCompare } from '../../components/sections/Home/WhyCompare';

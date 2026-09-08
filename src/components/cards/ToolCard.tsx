@@ -1,4 +1,3 @@
-
 import Card from '../common/Card';
 import { Link } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';

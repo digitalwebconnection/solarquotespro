@@ -1,5 +1,5 @@
 import { ArrowRight, Mail, Phone, ShieldCheck, Zap, Award, Lock } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { href, Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/truesolar.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -77,17 +77,17 @@ export default function Footer() {
 
   const quickLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Why Choose Us', href: '/#why-choose-us' },
-    { label: 'How It Works', href: '/#how-it-works' },
+    { label: 'Why Choose Us', href: '/why-choose-us' },
+    { label: 'How It Works', href: '/how-it-works' },
     { label: 'Our Standards', href: '/cec-standards' },
     { label: 'Frequently Asked Questions', href: '/#faq' }
   ];
 
   const serviceLinks = [
-    { label: 'Residential Solar Quotes', action: () => openQuoteModal() },
-    { label: 'Commercial Solar Quotes', action: () => openQuoteModal() },
-    { label: 'Battery Storage Comparison', action: () => openQuoteModal() },
-    { label: 'Solar & Battery Combos', action: () => openQuoteModal() },
+    { label: 'Residential Solar Quotes', href: '/explore-solar' },
+    { label: 'Commercial Solar Quotes', href : 'explore-solar' },
+    { label: 'Battery Storage Comparison', href : '/explore-battery' },
+    { label: 'Solar & Battery Combos', href :'/explore-battery' },
     { label: 'Get 3 Free Installer Quotes', action: () => openQuoteModal() }
   ];
 
@@ -184,13 +184,21 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {serviceLinks.map((item) => (
                 <li key={item.label}>
-                  <button 
+                  {/* <button 
                     onClick={item.action} 
                     className="text-slate-700 font-semibold hover:text-[#0A6702] transition-colors duration-300 text-sm flex items-center gap-2 group cursor-pointer text-left"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#0A6702] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
-                  </button>
+                  </button> */}
+                   <Link 
+                    to={item.href} 
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="w-3.5 h-3.5 text-[#F9B122] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

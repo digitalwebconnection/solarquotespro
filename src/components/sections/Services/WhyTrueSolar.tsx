@@ -38,36 +38,31 @@ export default function MiniWhyTrueSolarQuotes() {
 
     return (
         <section className="relative bg-slate-900 py-14 text-white ">
-            <div className="absolute -top-40  left-20 w-200 h-100 bg-linear-to-r from-amber-400/20 to-emerald-500/20 rounded-full blur-[130px]" />
+            <div className="absolute -top-10 left-20 w-150 h-100 bg-linear-to-r from-amber-300/20 to-emerald-500/20 rounded-full blur-[120px]" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-14">
                     <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">
                         <BookOpen className="w-4 h-4" />Why Use True Solar Quote
                     </span>
-
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-5 font-serif">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold mt-5 font-serif">
                         Make a More{" "}
-                        <span className="bg-linear-to-r from-amber-400 via-orange-300 to-emerald-400 bg-clip-text text-transparent">
-                            Informed Energy Decision
+                        <span className="bg-linear-to-r from-amber-400 via-orange-400 to-emerald-400 bg-clip-text text-transparent"> Informed Energy Decision
                         </span>
                     </h2>
-
-                    <p className="text-slate-400 mt-5 text-sm sm:text-base leading-7 max-w-2xl mx-auto">Solar and home-energy decisions can involve significant costs and long-term commitments. We provide useful
+                    <p className="text-slate-300 mt-5 text-sm sm:text-base leading-7 mx-auto">Solar and home-energy decisions can involve significant costs and long-term commitments. We provide useful
                     information, comparisons and tools to help you understand the market before choosing an installer or energy solution.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {highlights.map((item, index) => (
-                        <div key={index} className={` group relative bg-slate-950/80 backdrop-blur-md border  rounded-2xl p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
-                            <div className="flex items-center justify-between mb-5">
-                                <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800  flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}            
-                                </div>
-                                <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase  tracking-wider ${item.badgeColor}`}>{item.badge}
-                                </span>
-                            </div>
-                            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {highlights.map((item, index) => (
+                        <div key={index} className={` group relative bg-slate-950/90 border rounded-2xl p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
+                            <div className="flex items-center justify-between mb-5">
+                                <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800  flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}</div>
+                                <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase  tracking-wider ${item.badgeColor}`}>{item.badge} </span>
+                            </div>
+                            <h3 className="text-lg font-bold tracking-wide text-white mb-2">{item.title}</h3>   
                             <p className="text-slate-400 text-sm leading-6">{item.desc}</p>
 
                             <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2">
@@ -78,7 +73,7 @@ export default function MiniWhyTrueSolarQuotes() {
                     ))}
                 </div>
                 <div className="mt-12 max-w-4xl mx-auto text-center">
-                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">Our goal is to help homeowners understand solar,batteries and other energy technologies so they cancompare their choices and decide what works best for their circumstances.
+                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">Our goal is to help homeowners understand solar,batteries and other energy technologies so they cancompare their choices and decide what works best for their circumstances.
                     </p>
                 </div>
             </div>

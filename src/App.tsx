@@ -6,13 +6,19 @@ import Footer from './components/layout/Footer';
 import HomePage from "./pages/Home/HomePage"
 import AboutPage from './pages/About/AboutPage';
 import ServicePage from './pages/Services/ServicePage'; 
-import ProjectPage from './pages/Projects/ProjectPage';
+import HowItWorksPage from './pages/HowItWorks/HowItWorksPage';
 import BlogPage from './pages/Blogs/BlogPage';
+
+import ExploreSolarPage from './pages/Services/subpages/ExploreSolarPage';
+import ExploreBattery from './pages/Services/subpages/ExploreBattery';
+import ExploreEvCharging from './pages/Services/subpages/ExploreEvCharging';
+import ExploreHeatPumps from './pages/Services/subpages/ExploreHeatPump';
 
 import SolarAdvisorBot from './components/common/SolarAdvisorBot';
 import LiveSocialProof from './components/common/LiveSocialProof';
 import ScrollToTop from './components/common/ScrollToTop';
 import { QuoteModalProvider } from './context/QuoteModalContext';
+import WhyChooseUsPage from './pages/WhyChooseUsPage/WhyChooseUsPage';
 
 
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -28,7 +34,6 @@ function PageLoader() {
   );
 }
 
-
 function App() {
   return (
     <QuoteModalProvider>
@@ -40,9 +45,16 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about-us" element={<AboutPage />} />
+              <Route path="/how-it-works" element={<HowItWorksPage />} />
+              <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
+
               <Route path='/service-page' element={<ServicePage/>} />
-              <Route path='/project-page' element={<ProjectPage/>} />
+              <Route path='/explore-solar' element={<ExploreSolarPage/>} />
+              <Route path='/explore-battery' element={<ExploreBattery/>} />
+              <Route path='/explore-evcharging' element={<ExploreEvCharging/>} />
+              <Route path='/explore-heatpumps' element={<ExploreHeatPumps/>} />
               <Route path='/blog-page' element={<BlogPage/>} />
+              
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />

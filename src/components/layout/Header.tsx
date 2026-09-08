@@ -44,11 +44,10 @@ export default function Header() {
   const navLinks = [
     { name: 'About Us', href: '/about-us' },
     { name: 'Services', href: '/service-page' },
-    { name: 'Projects', href: '/project-page' },
+    { name: 'How It Works', href: '/how-it-works' },
     { name: 'Blog', href: '/blog-page' },
-    { name: 'How It Works', href: '/#how-it-works' },
-    // { name: 'Why Choose Us', href: '/#why-choose-us' },
-    { name: 'FAQ', href: '/#faq' },
+    { name: 'Why Choose Us', href: '/why-choose-us' },
+    // { name: 'FAQ', href: '/#faq' },
   ];
 
   const handleLogoClick = (e: React.MouseEvent) => {

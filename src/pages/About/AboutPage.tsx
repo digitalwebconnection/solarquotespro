@@ -9,7 +9,7 @@ import  CTA  from "../../components/sections/CTA";
 
 export default function AboutPage(){
     return (
-        <div>
+        <main>
             <AboutHero/>
             <AboutCompany/>
             <OurJourney/>
@@ -17,7 +17,7 @@ export default function AboutPage(){
             <OurNumbers/>
             <Leadership/>
             <CTA/>
-        </div>    
+        </main>    
     )
 
 }

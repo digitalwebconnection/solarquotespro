@@ -5,10 +5,10 @@ import HeroBlog from "../../components/sections/Blogs/HeroBlog";
 
 export default function BlogPage(){
     return(
-        <section>
+        <main>
             <HeroBlog/>
             <Blog/>
             <CTA/>
-        </section>
+        </main>
     )
 }
