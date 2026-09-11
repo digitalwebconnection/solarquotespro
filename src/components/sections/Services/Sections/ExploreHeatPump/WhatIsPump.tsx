@@ -1,4 +1,4 @@
-import { Zap , Flame , X , Check , ArrowRight } from "lucide-react"
+import { Zap , Flame , X , Check } from "lucide-react"
 
 
 const WhatIsPump = () => {
@@ -71,9 +71,8 @@ const WhatIsPump = () => {
     <section className="py-14 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif bg-linear-to-r from-amber-500 from-40% to-blue-800 bg-clip-text text-transparent capitalize"> What is a hot water heat pump? </h2>
-
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif text-blue-950 capitalize"> What is a hot water heat pump? </h2>
           <p className="text-lg text-slate-700 font-semibold leading-7 mt-5"> Solar panels produce electricity when the sun is shining, but your home's energy consumption doesn't stop when the sun goes down. </p>
         </div>
 
@@ -100,8 +99,7 @@ const WhatIsPump = () => {
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-14 mt-10">
-          <span className="text-sm font-semibold uppercase tracking-wider text-orange-500 px-3 py-0.5 bg-amber-400/7 border rounded-full"> Quick Comparison </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-serif text-transparent bg-linear-to-r from-blue-700 from-20%  to-orange-400   bg-clip-text mt-5"> Conventional Electric vs Heat Pump </h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-serif text-black mt-5"> Conventional  <span className="text-orange-400">  Electric vs Heat Pump </span> </h2>
           <p className="text-lg text-slate-600 mt-3 "> Both systems use electricity, but they use it in very different ways to heat your hot water. </p>
         </div>
 
@@ -109,7 +107,7 @@ const WhatIsPump = () => {
           {comparisonData.map((item, index) => {    
             const Icon = item.icon;
             return (
-              <div key={index} className={`bg-white rounded-3xl overflow-hidden ${item.border} shadow-lg shadow-black/30`} >
+              <div key={index} className={`bg-white rounded-xl overflow-hidden ${item.border} shadow-lg shadow-black/30`} >
                 <div className="relative h-60">
                   <img src={item.image} alt={item.alt} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent"/>
@@ -122,14 +120,12 @@ const WhatIsPump = () => {
                     <h3 className="text-2xl font-bold text-white">{item.title}</h3>
                   </div>
                 </div>
-                
                 <div className="p-8">
                   <p className="text-slate-600 leading-relaxed mb-6"> {item.description} </p>
                   <div className="space-y-4">
                     {item.points.map((point, pointIndex) => {
                       const PointIcon = point.type === "check" ? Check : X;
                       const iconColor = point.type ===  "check" ? "text-emerald-500" : "text-red-500"  ;
-                        
                       return (
                         <div  key={pointIndex} className="flex items-center gap-4" >
                           <PointIcon className={`${iconColor} `}size={25}/>
@@ -145,22 +141,6 @@ const WhatIsPump = () => {
               </div>
             );
           })}
-        </div>
-
-        <div className="mt-12 bg-slate-900 rounded-3xl p-8 sm:p-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div className="col-span-2">
-              <p className="text-sm font-bold uppercase tracking-widest text-emerald-400">The Bottom Line </p>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-3">Heat pumps cost more upfront, but use far less electricity.</h3>
-              <p className="text-slate-300  leading-7 mt-4"> For many homes, the lower energy consumption of a heat pump can make it a more economical option over its lifetime, particularly when paired with rooftop solar. </p>
-            </div>
-
-            <div className="flex ml-auto">
-              <button className="flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-5 py-4 rounded-xl transition-all">Compare Running Costs
-                <ArrowRight size={20} />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

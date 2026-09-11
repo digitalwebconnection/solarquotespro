@@ -61,9 +61,9 @@ const WhyBattery = () => {
             <div className="absolute z-0 top-14 left-50 w-130 h-100 bg-amber-300/15 rounded-full blur-[120px] " />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
 
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif bg-linear-to-r from-amber-500 from-40% to-blue-800 bg-clip-text text-transparent">Why Get a Home Battery?</h2>
-                    <p className="text-lg text-slate-700 font-semibold leading-7 mt-5 ">Solar panels produce electricity when the sun is shining, but your home's energy consumption doesn't stop when the sun goes down.</p> 
+                <div className="text-center max-w-3xl mx-auto mb-14">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif text-black">Why Get a Home Battery?</h2>
+                    <p className="text-lg text-slate-600  leading-7 mt-5 ">Solar panels produce electricity when the sun is shining, but your home's energy consumption doesn't stop when the sun goes down.</p> 
                 </div>
 
                 <div className="relative">
@@ -71,7 +71,7 @@ const WhyBattery = () => {
                         {content.map((step) => {
                             const Icon = step.icon;
                             return (
-                                <div key={step.id} className={`relative overflow-hidden bg-white px-5 py-4 rounded-xl hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-lg gorup-hover:border-transparent ease-in-out shadow-black/40 group ${step.boxStyle}`}>
+                                <div key={step.id} className={`relative overflow-hidden bg-white px-5 py-4 rounded-lg hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-lg gorup-hover:border-transparent ease-in-out shadow-black/40 group ${step.boxStyle}`}>
                                     <div className="absolute inset-0 w-full h-full z-0">
                                         <img src={step.image} className="w-full h-full object-cover opacity-0 group-hover:opacity-80 duration-500 transition-all ease-in-out" alt=""/>
                                     </div>

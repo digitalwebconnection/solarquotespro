@@ -84,10 +84,10 @@ export default function Footer() {
   ];
 
   const serviceLinks = [
-    { label: 'Residential Solar Quotes', href: '/explore-solar' },
-    { label: 'Commercial Solar Quotes', href : 'explore-solar' },
-    { label: 'Battery Storage Comparison', href : '/explore-battery' },
-    { label: 'Solar & Battery Combos', href :'/explore-battery' },
+    { label: 'Residential Solar Quotes', href: '/service/explore-solar' },
+    { label: 'Commercial Solar Quotes', href : '/service/explore-solar' },
+    { label: 'Battery Storage Comparison', href : '/service/explore-battery' },
+    { label: 'Solar & Battery Combos', href :'/service/explore-battery' },
     { label: 'Get 3 Free Installer Quotes', action: () => openQuoteModal() }
   ];
 
@@ -182,15 +182,29 @@ export default function Footer() {
               <span className="w-1.5 h-4 bg-[#0A6702] rounded-full"></span> Solar Quotes
             </h3>
             <ul className="space-y-2.5">
-              {serviceLinks.map((item) => (
+              {serviceLinks.map((item ) => (
                 <li key={item.label}>
-                  <button 
+                  {/* <button 
                     onClick={item.action} 
                     className="text-slate-700 font-semibold hover:text-[#0A6702] transition-colors duration-300 text-sm flex items-center gap-2 group cursor-pointer text-left"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#0A6702] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
-                  </button>
+                  </button> */}
+                 {item.href ? (
+                   <Link
+                    to={item.href}
+                    className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group" >
+                      {item.label}
+                   </Link>
+                 ) : (
+                   <button
+                    type="button"
+                    onClick={item.action}
+                    className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group text-left" >
+                      {item.label}
+                   </button>
+                 )}
                    {/* <Link 
                     to={item.href} 
                     onClick={(e) => handleNavClick(e, item.href)}

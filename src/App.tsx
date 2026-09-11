@@ -8,17 +8,20 @@ import AboutPage from './pages/About/AboutPage';
 import ServicePage from './pages/Services/ServicePage'; 
 import HowItWorksPage from './pages/HowItWorks/HowItWorksPage';
 import BlogPage from './pages/Blogs/BlogPage';
+import WhyChooseUsPage from './pages/WhyChoose/WhyChooseUsPage';
 
-import ExploreSolarPage from './pages/Services/subpages/ExploreSolarPage';
+import ExploreSolarPage from './pages/Services/subpages/ExploreSolar';
 import ExploreBattery from './pages/Services/subpages/ExploreBattery';
 import ExploreEvCharging from './pages/Services/subpages/ExploreEvCharging';
 import ExploreHeatPumps from './pages/Services/subpages/ExploreHeatPump';
+import ExploreAirConditionar from './pages/Services/subpages/ExploreAirConditioner';
+import ExploreInverters from './pages/Services/subpages/ExploreInverters';
 
 import SolarAdvisorBot from './components/common/SolarAdvisorBot';
 import LiveSocialProof from './components/common/LiveSocialProof';
 import ScrollToTop from './components/common/ScrollToTop';
 import { QuoteModalProvider } from './context/QuoteModalContext';
-import WhyChooseUsPage from './pages/WhyChooseUsPage/WhyChooseUsPage';
+
 
 
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -48,13 +51,18 @@ function App() {
               <Route path="/how-it-works" element={<HowItWorksPage />} />
               <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
 
-              <Route path='/service-page' element={<ServicePage/>} />
-              <Route path='/explore-solar' element={<ExploreSolarPage/>} />
-              <Route path='/explore-battery' element={<ExploreBattery/>} />
-              <Route path='/explore-evcharging' element={<ExploreEvCharging/>} />
-              <Route path='/explore-heatpumps' element={<ExploreHeatPumps/>} />
-              <Route path='/blog-page' element={<BlogPage/>} />
+              <Route path='/service' element={<ServicePage/>} />
+              <Route path='/service/explore-solar' element={<ExploreSolarPage/>} />
+              <Route path='/service/explore-battery' element={<ExploreBattery/>} />
+              <Route path='/service/explore-evcharging' element={<ExploreEvCharging/>} />
+              <Route path='/service/explore-heatpumps' element={<ExploreHeatPumps/>} />
+              <Route path='/service/explore-airconditionar' element={<ExploreAirConditionar/>} />
+              <Route path='/service/explore-inverters' element={<ExploreInverters/>} />
+              <Route path='/blog' element={<BlogPage/>} />
+{/*  */}
               
+
+              {/* <Route path="/faq" element={< FAQ />} /> */}
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />

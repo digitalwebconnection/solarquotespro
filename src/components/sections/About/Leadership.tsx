@@ -32,7 +32,7 @@ export default function LeadershipSection() {
 ];
 
   return (
-    <section className="bg-slate-950 py-20 text-white relative timeline-view animate-blurred-fade-in animate-range-[entry_20%_contain_10%]">
+    <section className="bg-slate-950 py-20 text-white relative ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center auto mb-16">

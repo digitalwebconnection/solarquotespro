@@ -1,13 +1,13 @@
-import HeroExploreHeatPumps from "../../../components/sections/Services/Sections/exploreheatpumps/HeroExploreHeatPump"
-import HowPumpsWork from "../../../components/sections/Services/Sections/exploreheatpumps/HowPumpsWork"
-import WhatIsPump from "../../../components/sections/Services/Sections/exploreheatpumps/WhatIsPump"
+import HeroExploreHeatPump from "../../../components/sections/Services/Sections/ExploreHeatPump/HeroExploreHeatPump"
+import HowPumpsWork from "../../../components/sections/Services/Sections/ExploreHeatPump/HowPumpsWork"
+import WhatIsPump from "../../../components/sections/Services/Sections/ExploreHeatPump/WhatIsPump"
 
 
 
 const ExploreHeatPumps = () => {
     return(
         <>
-        <HeroExploreHeatPumps/>
+        <HeroExploreHeatPump/>
         <WhatIsPump/>
         <HowPumpsWork/>
         </>

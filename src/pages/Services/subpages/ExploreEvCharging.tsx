@@ -1,5 +1,6 @@
-import HeroExploreEvCh from "../../../components/sections/Services/Sections/exploreevcharging/HeroExploreEvCh"
-import HowChargerWorks from "../../../components/sections/Services/Sections/exploreevcharging/HowChargerWorks"
+import HeroExploreEvCh from "../../../components/sections/Services/Sections/ExploreEvCharging/HeroExploreEvCh"
+import HowChargerWorks from "../../../components/sections/Services/Sections/ExploreEvCharging/HowChargerWorks"
+import TypesOfEv from "../../../components/sections/Services/Sections/ExploreEvCharging/TypesOfEv"
 
 
 const ExploreEvCharging = () => {
@@ -7,6 +8,7 @@ const ExploreEvCharging = () => {
         <>
         <HeroExploreEvCh/>
         <HowChargerWorks/>
+        <TypesOfEv/>
         </>
     )
 }

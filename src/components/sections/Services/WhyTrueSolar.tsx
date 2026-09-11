@@ -41,7 +41,7 @@ export default function MiniWhyTrueSolarQuotes() {
             <div className="absolute -top-10 left-20 w-150 h-100 bg-linear-to-r from-amber-300/20 to-emerald-500/20 rounded-full blur-[120px]" />
 
             <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-14">
+                <div className="text-center max-w-4xl mx-auto mb-14">
                     <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">
                         <BookOpen className="w-4 h-4" />Why Use True Solar Quote
                     </span>

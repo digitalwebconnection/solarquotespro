@@ -18,7 +18,7 @@ export default function AllServices() {
         "Solar pricing & value",
       ],
       linkText: "Explore Solar",
-      linkUrl: "/explore-solar",
+      linkUrl: "/service/explore-solar",
     },
     {
       title: "Home Batteries",
@@ -33,7 +33,7 @@ export default function AllServices() {
         "Backup & energy storage",
       ],
       linkText: "Explore Batteries",
-      linkUrl: "/explore-battery",
+      linkUrl: "/service/explore-battery",
     },
     {
       title: "EV Charging",
@@ -48,7 +48,7 @@ export default function AllServices() {
         "Solar EV charging",
       ],
       linkText: "Explore EV Charging",
-      linkUrl: "/explore-evcharging",
+      linkUrl: "/service/explore-evcharging",
     },
     {
       title: "Hot Water Heat Pumps",
@@ -63,7 +63,7 @@ export default function AllServices() {
         "Rebates & incentives",
       ],
       linkText: "Explore Heat Pumps",
-      linkUrl: "/explore-heatpumps",
+      linkUrl: "/service/explore-heatpumps",
     },
     {
       title: "Air Conditioning",
@@ -78,7 +78,7 @@ export default function AllServices() {
         "Smart climate control",
       ],
       linkText: "Explore Air Conditioning",
-      linkUrl: "/air-conditioning",
+      linkUrl: "/service/explore-airconditionar",
     },
     {
       title: "Inverters",
@@ -93,7 +93,7 @@ export default function AllServices() {
         "Battery compatibility & backup time",
       ],
       linkText: "Explore Inverters",
-      linkUrl: "/inverters",
+      linkUrl: "/service/explore-inverters",
     }
   ];
 
@@ -109,8 +109,8 @@ export default function AllServices() {
             <BookOpen className="w-4 h-4 text-amber-500" />Home Energy Guide
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900">
-            Explore Your{" "} <span className="bg-linear-to-r from-amber-400 via-orange-400 to-emerald-600 bg-clip-text text-transparent">Energy Options</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-950">
+            Explore Your Energy Options
           </h2>
           <p className="mt-5 text-slate-700 text-sm sm:text-base leading-6 max-w-2xl mx-auto">Research the technologies available for your home, understand the important factors and compare your options before speaking with an energy professional.
           </p>

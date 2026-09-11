@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap, ArrowRight, Award, Mail, ChevronRight, ShieldCheck } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/truesolar.png';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -43,9 +43,9 @@ export default function Header() {
 
   const navLinks = [
     { name: 'About Us', href: '/about-us' },
-    { name: 'Services', href: '/service-page' },
+    { name: 'Services', href: '/service' },
     { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Blog', href: '/blog-page' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Why Choose Us', href: '/why-choose-us' },
     // { name: 'FAQ', href: '/#faq' },
   ];
@@ -142,15 +142,20 @@ export default function Header() {
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-slate-800 hover:text-[#00417E] font-bold text-sm tracking-tight transition-colors relative group py-1"
-                >
-                  {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] group-hover:w-full transition-all duration-600 rounded-full" />
-                </Link>
+              <NavLink  
+              key={link.name}
+              to={link.href}                           
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={({ isActive }) =>
+              ` ${ isActive ? "text-slate-900 font-bold" : "text-slate-700 font-bold" } hover:text-slate-800 text-sm tracking-tight transition-colors relative group py-1}`} >
+              {({ isActive }) => (
+              <>
+              {link.name}
+              <span className={` absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] rounded-full transition-all duration-600
+              ${isActive ? "w-full" : "w-0 group-hover:w-full"} `} />
+              </>
+              )}
+              </NavLink>
               ))}
 
               {/* Glowing CTA Button */}
@@ -243,7 +248,7 @@ export default function Header() {
                         key={link.name} 
                         to={link.href}
                         onClick={(e) => handleNavClick(e, link.href)}
-                        className="flex items-center justify-between px-3.5 py-3 rounded-xl text-slate-800 hover:text-[#00417E] hover:bg-slate-50 font-bold text-base transition-colors group"
+                        className="flex  items-center justify-between px-3.5 py-3 rounded-xl text-slate-800 hover:text-[#00417E] hover:bg-slate-50 font-bold text-base transition-colors group"
                       >
                         <span>{link.name}</span>
                         <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-[#00417E] group-hover:translate-x-0.5 transition-all" />

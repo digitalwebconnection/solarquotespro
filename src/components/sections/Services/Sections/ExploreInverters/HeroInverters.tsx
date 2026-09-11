@@ -1,0 +1,67 @@
+import { Dot, ArrowRight } from "lucide-react";
+import { useQuoteModal } from "../../../../../context/QuoteModalContext";
+
+const HeroInverters = () => {
+  const { openQuoteModal } = useQuoteModal();
+
+  return (
+    <section
+      className="relative h-auto w-full overflow-hidden"
+      id="inverters"
+    >
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpLr0iubG7qTWT3QTJdKXMm3A0czLxKavCXsK_I3r6Rw&s=10"
+        alt="Solar inverter installation"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+
+      <div className="absolute inset-0 bg-linear-to-r from-black/90 to-black/60" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-14">
+        <div className="max-w-4xl text-white space-y-4.5">
+
+          <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-yellow-500/20 text-yellow-300 border border-yellow-400/40 backdrop-blur-md">
+            <Dot
+              strokeWidth={8}
+              className="w-5 h-5 text-yellow-400 animate-pulse"
+            />
+            <span>Explore Inverters</span>
+          </p>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight">
+            The Essential Link
+            <span className="bg-linear-to-r from-yellow-300 via-amber-300 to-green-400 bg-clip-text text-transparent">
+              {" "}Between Solar Panels and Your Home
+            </span>
+          </h1>
+
+          <p className="text-base sm:text-lg text-white font-medium leading-relaxed max-w-3xl">
+            A solar inverter converts the direct current (DC) electricity
+            produced by your solar panels into alternating current (AC)
+            electricity that your home can use.
+          </p>
+
+          <p className="mt-1.5 text-slate-200">
+            Inverters also play an important role in monitoring system
+            performance, managing energy flow and, depending on the system,
+            working with batteries and the electricity grid.
+          </p>
+
+          <div className="py-4 flex gap-3">
+            <button
+              onClick={() => openQuoteModal()}
+              type="button"
+              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent"
+            >
+              <span>Get Your Free Solar Quote</span>
+
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+export default HeroInverters

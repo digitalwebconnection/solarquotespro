@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, User, BookOpen } from "lucide-react";
+import { ArrowRight, Calendar, User } from "lucide-react";
 
 export default function Blog() {
   const posts = [
@@ -71,26 +71,21 @@ export default function Blog() {
   ];
 
   return (
-    <section className="relative bg-slate-50 text-slate-900 py-12 sm:py-14 overflow-hidden" id="blogs">
+    <section className="relative bg-slate-50 text-slate-900 py-14 sm:py-16 overflow-hidden" id="blogs">
       <div className="absolute z-0 -top-4 -left-50 w-130 h-100 bg-amber-300/20 rounded-full blur-[120px]" />
       <div className="absolute z-0 bottom-0 -right-10 w-150 h-120 bg-blue-600/20 rounded-full blur-[120px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-9">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 text-xs font-semibold tracking-wide uppercase">
-            <BookOpen className="w-4 h-4" />
-            <span>Energy Knowledge Hub</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold bg-linear-to-r from-blue-900 via-blue-700 to-orange-600 bg-clip-text text-transparent">Guides, Reviews & Energy Insights </h2>
-          <p className="text-slate-600 text-sm sm:text-base font-medium mt-2">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-blue-900">Guides, Reviews & Energy Insights </h2>
+          <p className="text-slate-600 text-sm sm:text-lg font-medium mt-2">
             Helpful information to understand, compare and research your home-energy options.
           </p>
         </div>
 
         <div className="relative z-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-8">
           {posts.map((post) => (
-            <div key={post.id} className="group rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 shadow-gray-500/30 shadow-md hover:shadow-lg hover:shadow-gray-500/50 transition-all duration-300 flex flex-col hover:-translate-y-1 bg-slate-50">
+            <div key={post.id} className="group rounded-lg overflow-hidden border border-slate-200 hover:border-slate-300 shadow-gray-500/30 shadow-md hover:shadow-lg hover:shadow-gray-500/50 transition-all duration-300 flex flex-col hover:-translate-y-1 bg-slate-50">
               <div className="relative h-48 w-full overflow-hidden">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/30 to-transparent" />

@@ -11,34 +11,33 @@ const PowerVsEnergy = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-slate-300 p-7 bg-linear-to-br from-slate-950 to-slate-900 flex flex-col">
-            <div className="flex items-center gap-4">
+          <div className="rounded-2xl border grid grid-cols-2 border-slate-300 overflow-hidden bg-linear-to-br from-slate-950 to-slate-900 ">
+            <div className="w-full">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmwgKUlqG3mdfJr4cy7rN9mO_yQsBUKmKdrnC03rJ1w&s=10"
+                className="rounded-2xl w-full h-48 object-cover" alt="Electric power flow"/>
+            </div>
+            <div className="">
               <div className="bg-amber-400/10 p-4 rounded-2xl text-amber-400 shrink-0">
-                <Zap className="w-14 h-14" />
+                <Zap className="w-7 h-7" />
               </div>
               <div>
                 <span className="text-3xl sm:text-4xl text-amber-500 font-extrabold tracking-wide">POWER</span>
                 <div className="font-black text-5xl text-amber-400">kW</div>
               </div>
-            </div>
 
-            <div className="mt-6">
               <h2 className="text-xl text-white font-bold">HOW FAST?</h2>
               <p className="text-slate-300 font-medium tracking-wide text-lg mt-1">How quickly electricity can flow.
               </p>
-            </div>
-            <div className="w-full mt-5">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmwgKUlqG3mdfJr4cy7rN9mO_yQsBUKmKdrnC03rJ1w&s=10"
-                className="rounded-2xl w-full h-48 object-cover" alt="Electric power flow"/>
-            </div>
-
-            <div className="mt-5">
               <h2 className="font-extrabold text-xl text-amber-300"> Higher kW </h2>
               <p className="font-medium text-lg text-slate-300 mt-1"> More appliances can potentially run at the same time.</p>
             </div>
          </div>
         
-        <div className="rounded-2xl border border-slate-300 p-7 bg-linear-to-br from-slate-950 to-slate-900 flex flex-col">
+        <div className="rounded-2xl border grid grid-cols-2 border-slate-300 overflow-hidden bg-linear-to-br from-slate-950 to-slate-900 ">
+            <div className="w-full mt-5">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQrUW1EcOxt5Hzn7PWk55VmhFSk--f_rrUWyDKebw3A&s=10"
+                className="rounded-2xl w-full h-48 object-cover" alt="Battery energy storage"/>
+            </div>
 
             <div className="flex items-center gap-4">
               <div className="bg-emerald-400/10 p-4 rounded-2xl text-emerald-400 shrink-0">
@@ -48,18 +47,10 @@ const PowerVsEnergy = () => {
                 <span className="text-3xl sm:text-4xl text-emerald-500 font-extrabold tracking-wide">ENERGY </span>
                 <div className="font-black text-5xl text-emerald-400"> kWh</div>
               </div>
-            </div>
 
-            <div className="mt-6">
               <h2 className="text-xl text-white font-bold">HOW MUCH?</h2>
               <p className="text-slate-300 font-medium tracking-wide text-lg mt-1">How much electricity the battery can store.</p>
-            </div>
-            <div className="w-full mt-5">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQrUW1EcOxt5Hzn7PWk55VmhFSk--f_rrUWyDKebw3A&s=10"
-                className="rounded-2xl w-full h-48 object-cover" alt="Battery energy storage"/>
-            </div>
 
-            <div className="mt-5">
               <h2 className="font-extrabold text-xl text-emerald-300">Higher kWh </h2>
               <p className="font-medium text-lg text-slate-300 mt-1"> More stored energy available for longer use.</p>
             </div>

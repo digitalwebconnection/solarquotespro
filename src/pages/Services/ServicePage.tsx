@@ -1,4 +1,4 @@
-import { CTA } from "../../components";
+// import { CTA } from "../../components";
 import AllServices from "../../components/sections/Services/AllServices";
 import HeroService from "../../components/sections/Services/HeroService";
 import WhyTrueSolar from "../../components/sections/Services/WhyTrueSolar";
@@ -12,7 +12,7 @@ export default function ServicePage(){
             <HeroService/>
             <AllServices/>
             <WhyTrueSolar/>
-            <CTA/>
+            {/* <CTA/> */}
         </main>
     )
 }
