@@ -1,13 +1,13 @@
-import HeroInverters from "../../../components/sections/Services/Sections/ExploreInverters/HeroInverters"
-import HowInverterWork from "../../../components/sections/Services/Sections/ExploreInverters/HowInverterWork"
-import InverterCapacity from "../../../components/sections/Services/Sections/ExploreInverters/InverterCapacity"
+import HeroExploreInverters from "../../../components/sections/Services/ExploreInverters/HeroExploreInverters"
+import HowInverterWork from "../../../components/sections/Services/ExploreInverters/HowInverterWork"
+import InverterCapacity from "../../../components/sections/Services/ExploreInverters/InverterCapacity"
 
 const ExploreInverters = () => {
-    return(
+    return (
         <>
-        <HeroInverters/>
-        <HowInverterWork/>
-        <InverterCapacity/>
+            <HeroExploreInverters />
+            <HowInverterWork />
+            <InverterCapacity />
         </>
     )
 }

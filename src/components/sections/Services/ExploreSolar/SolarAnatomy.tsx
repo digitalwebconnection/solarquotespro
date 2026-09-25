@@ -1,6 +1,6 @@
 import { Sun, PlugZap, Zap, Home, BarChart3, Globe, ArrowRight, PanelsTopLeft } from "lucide-react";
-import { motion } from "framer-motion"; 
-const SolarEnatomy = () => {
+import { motion } from "framer-motion";
+const SolarAnatomy = () => {
     const systemComponents = [
         {
             number: "01",
@@ -92,17 +92,18 @@ const SolarEnatomy = () => {
                     </div>
 
                     <div className="max-w-5xl relative pl-8">
-                        {systemComponents.map((item , index) => {
+                        {systemComponents.map((item, index) => {
                             const Icon = item.icon;
                             return (
                                 <motion.div
-                                initial={{ opacity: 0 , x: -20}}
-                                whileInView={{ opacity: 1 , x: 0}}
-                                viewport={{ once: true}}
-                                transition={{ duration : 0.5 ,
-                                    delay : index * 0.10
-                                }}
-                                 key={item.number} className="flex items-center  gap-12 pb-12 group" >
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.5,
+                                        delay: index * 0.10
+                                    }}
+                                    key={item.number} className="flex items-center  gap-12 pb-12 group" >
                                     <div className="text-2xl md:text-3xl font-black text-slate-200 group-hover:text-blue-500/50 duration-250 transition-colors">{item.number}</div>
                                     <div className="flex flex-col">
                                         <Icon className="w-7 h-7 text-blue-600 mb-2" />
@@ -122,7 +123,7 @@ const SolarEnatomy = () => {
                         style={{
                             backgroundImage:
                                 "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuj9njscT1XMFlSxTVmlErblHlukT6ah_8gMHsuIyBJQ&s=10')",
-                        }}/>
+                        }} />
                     <div className="absolute inset-0 z-0 bg-slate-950/57" />
                     <div className="relative z-10">
                         <h3 className="text-center text-xl md:text-2xl font-bold mb-7">From Sunlight to Electricity </h3>
@@ -188,8 +189,8 @@ const SolarEnatomy = () => {
 
                     <div className="mt-14 py-10 max-w-2xl mx-auto shadow-black border-y  border-slate-200">
                         <div className="grid grid-cols-1 md:grid-cols-2 text-center">
-                            <div 
-                            className="border-r border-slate-200 py-4 pr-2    ">
+                            <div
+                                className="border-r border-slate-200 py-4 pr-2    ">
                                 <p className="text-5xl font-black text-orange-500 mb-3"> kW</p>
                                 <p className="text-xl font-bold text-blue-950">How Fast?</p>
                                 <p className="text-slate-500 mt-2">Rate of electricity generation or consumption</p>
@@ -207,4 +208,4 @@ const SolarEnatomy = () => {
     );
 };
 
-export default SolarEnatomy;
+export default SolarAnatomy;

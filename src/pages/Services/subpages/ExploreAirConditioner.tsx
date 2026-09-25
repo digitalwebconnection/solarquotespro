@@ -1,17 +1,17 @@
 // import { CTA } from "../../../components"
-import AcProcess from "../../../components/sections/Services/Sections/ExploreAirConditioner/AcProcess"
-import HeroExploreAirConditioner from "../../../components/sections/Services/Sections/ExploreAirConditioner/HeroExploreAirConditioner"
-import HowAcWorks from "../../../components/sections/Services/Sections/ExploreAirConditioner/HowAcWorks"
-import WhatIsAc from "../../../components/sections/Services/Sections/ExploreAirConditioner/WhatIsAc"
+import AcProcess from "../../../components/sections/Services/ExploreAirConditioner/AcProcess"
+import HeroExploreAirConditioner from "../../../components/sections/Services/ExploreAirConditioner/HeroExploreAirConditioner"
+import HowAcWorks from "../../../components/sections/Services/ExploreAirConditioner/HowAcWorks"
+import WhatIsAc from "../../../components/sections/Services/ExploreAirConditioner/WhatIsAc"
 
 const ExploreAirConditionar = () => {
-    return(
+    return (
         <>
-        <HeroExploreAirConditioner/>
-        <WhatIsAc/>
-        <HowAcWorks/>
-        <AcProcess/>
-        {/* <CTA/> */}
+            <HeroExploreAirConditioner />
+            <WhatIsAc />
+            <HowAcWorks />
+            <AcProcess />
+            {/* <CTA/> */}
         </>
     )
 }

@@ -1,18 +1,18 @@
-import  HowSolarWorks  from "../../../components/sections/Services/Sections/ExploreSolar/HowSolarWork"
-import ExploreSolar from "../../../components/sections/Services/Sections/ExploreSolar/ExploreSolar"
+import HowSolarWorks from "../../../components/sections/Services/ExploreSolar/HowSolarWork"
+import ExploreSolar from "../../../components/sections/Services/ExploreSolar/ExploreSolar"
 import OurNumbers from "../../../components/sections/About/OurNumbers"
-import SolarEnatomy from "../../../components/sections/Services/Sections/ExploreSolar/SolarEnatomy"
+import SolarAnatomy from "../../../components/sections/Services/ExploreSolar/SolarAnatomy"
 // import { CTA } from "../../../components"
 
 
 const ExploreSolarPage = () => {
-    return(
+    return (
         <>
-        <ExploreSolar/>
-        <HowSolarWorks/>
-        <SolarEnatomy/>
-        <OurNumbers/>
-        {/* <CTA/> */}
+            <ExploreSolar />
+            <HowSolarWorks />
+            <SolarAnatomy />
+            <OurNumbers />
+            {/* <CTA/> */}
         </>
     )
 }

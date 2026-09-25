@@ -1,14 +1,14 @@
-import HeroExploreEvCh from "../../../components/sections/Services/Sections/ExploreEvCharging/HeroExploreEvCh"
-import HowChargerWorks from "../../../components/sections/Services/Sections/ExploreEvCharging/HowChargerWorks"
-import TypesOfEv from "../../../components/sections/Services/Sections/ExploreEvCharging/TypesOfEv"
+import HeroExploreEvCharging from "../../../components/sections/Services/ExploreEvCharging/HeroExploreEvCharging"
+import HowChargerWorks from "../../../components/sections/Services/ExploreEvCharging/HowChargerWorks"
+import TypesOfEv from "../../../components/sections/Services/ExploreEvCharging/TypesOfEv"
 
 
 const ExploreEvCharging = () => {
-    return(
+    return (
         <>
-        <HeroExploreEvCh/>
-        <HowChargerWorks/>
-        <TypesOfEv/>
+            <HeroExploreEvCharging />
+            <HowChargerWorks />
+            <TypesOfEv />
         </>
     )
 }

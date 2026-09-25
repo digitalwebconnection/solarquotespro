@@ -1,19 +1,19 @@
 // import { CTA } from "../../../components"
-import HeroBattery from "../../../components/sections/Services/Sections/ExploreBattery/HeroBattery"
-import WhyBattery from "../../../components/sections/Services/Sections/ExploreBattery/WhyBattery"
-import HowBatteryWorks from "../../../components/sections/Services/Sections/ExploreBattery/HowBatteryWorks"
-// import PowerVsEnergy from "../../../components/sections/Services/Sections/explorebattery/PowerVsEnergy"
-import BatteryTechnologies from "../../../components/sections/Services/Sections/ExploreBattery/BatteryTechnologies"
 
+import WhyBattery from "../../../components/sections/Services/ExploreBattery/WhyBattery"
+import HowBatteryWorks from "../../../components/sections/Services/ExploreBattery/HowBatteryWorks"
+// import PowerVsEnergy from "../../../components/sections/Services/Sections/explorebattery/PowerVsEnergy"
+import BatteryTechnologies from "../../../components/sections/Services/ExploreBattery/BatteryTechnologies"
+import HeroExploreBattery from "../../../components/sections/Services/ExploreBattery/HeroExploreBattery";
 const ExploreBattery = () => {
-    return(
+    return (
         <>
-        <HeroBattery/>
-        <WhyBattery/>
-        <HowBatteryWorks/>
-        {/* <PowerVsEnergy/> */}
-        <BatteryTechnologies/>
-        {/* <CTA/> */}
+            <HeroExploreBattery />
+            <WhyBattery />
+            <HowBatteryWorks />
+            {/* <PowerVsEnergy/> */}
+            <BatteryTechnologies />
+            {/* <CTA/> */}
         </>
     )
 }

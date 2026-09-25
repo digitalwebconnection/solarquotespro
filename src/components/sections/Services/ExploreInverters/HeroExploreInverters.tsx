@@ -1,7 +1,7 @@
 import { Dot, ArrowRight } from "lucide-react";
-import { useQuoteModal } from "../../../../../context/QuoteModalContext";
+import { useQuoteModal } from "../../../../context/QuoteModalContext";
 
-const HeroInverters = () => {
+const HeroExploreInverters = () => {
   const { openQuoteModal } = useQuoteModal();
 
   return (
@@ -64,4 +64,4 @@ const HeroInverters = () => {
     </section>
   );
 }
-export default HeroInverters
+export default HeroExploreInverters

@@ -1,5 +1,5 @@
 import { Dot, ArrowRight } from "lucide-react";
-import { useQuoteModal } from "../../../../../context/QuoteModalContext";
+import { useQuoteModal } from "../../../../context/QuoteModalContext";
 
 const HeroExploreAirConditioner = () => {
   const { openQuoteModal } = useQuoteModal();
@@ -7,7 +7,7 @@ const HeroExploreAirConditioner = () => {
   return (
     <section className="relative h-auto w-full overflow-hidden" >
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDALngIlulIDwanZjOXTuMpv81UJic2k_RGFPIOL_XPw&s=10"  alt="Modern air conditioner installation"
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDALngIlulIDwanZjOXTuMpv81UJic2k_RGFPIOL_XPw&s=10" alt="Modern air conditioner installation"
         className="absolute inset-0 w-full h-full object-cover object-center" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/80 to-slate-900/60" />
