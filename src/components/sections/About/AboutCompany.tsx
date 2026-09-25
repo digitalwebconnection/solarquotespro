@@ -37,7 +37,7 @@ export default function AboutCompany() {
                         <div className="absolute z-0 -top-15 -left-20 w-70 h-70 bg-blue-800/35  rounded-full blur-[120px]">
                         </div>
                         <img src="https://www.solarquotes.com.au/wp-content/uploads/2024/01/solarquotes-team.jpg"
-                            alt="Solar panels on an Australian home" className="absolute z-1 rounded-lg shadow-xl shadow-slate-500 w-130  h-70 object-cover" />
+                            alt="Solar panels on an Australian home" className="absolute z-1  shadow-xl shadow-black/20 w-130  h-70 object-cover" />
                     </div>
                 </motion.section>
             </div>

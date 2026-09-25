@@ -32,7 +32,8 @@ export default function LeadershipSection() {
   ];
 
   return (
-    <section className="bg-slate-950 py-20 text-white relative ">
+    <section className="bg-white py-20 text-slate-950 relative">
+      <div className="" />
       <motion.section
         initial={{ opacity: 0.50, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,32 +44,38 @@ export default function LeadershipSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center auto mb-16">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase">
-              <UserCheck className="w-3.5 h-3.5 text-amber-400" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-4 tracking-[2px]  text-amber-500 text-xs font-semibold uppercase">
+              <UserCheck className="w-4 h-4 text-amber-500" />
               <span>Leadership</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3 font-serif">
-              Guided by <span className="bg-linear-to-r from-amber-300 to-emerald-400 bg-clip-text text-transparent"> Solar Experts</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-950 mb-3 font-serif">
+              Guided by <span className="bg-linear-to-r from-amber-300 to-emerald-700  bg-clip-text text-transparent"> Solar Experts</span>
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base">Setting direction, making big calls, and upholding our core values.</p>
+            <p className="text-slate-600 text-sm sm:text-base">Setting direction, making big calls, and upholding our core values.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
-            {leaders.map((item) => (
-              <div key={item.name} className={`bg-slate-900 border rounded-2xl overflow-hidden flex flex-col  transition-all duration-300 shadow-xl  ${item.isMiddle ? "-translate-y-7 border-amber-400/40 shadow-amber-500/10" : "border-slate-800 hover:border-slate-700"
-                }`}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+            {leaders.map((item, index) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: item.isMiddle ? -48 : 24 }}
+                whileInView={{ opacity: 1, y: item.isMiddle ? -24 : 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
+                className={`bg-white border rounded-lg overflow-hidden flex flex-col transition-all duration-300 shadow-lg ${item.isMiddle ? "-translate-y-6 border-amber-200 shadow-amber-500/10" : "border-slate-200 hover:border-slate-300"
+                  }`}>
                 <div className="flex flex-col ">
-                  <div className="relative h-48 w-full overflow-hidden bg-slate-800 ">
+                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                     <img src={item.image}
                       alt={item.name} className="w-full h-full object-cover object-top" />
                   </div>
 
                   <div className="p-5 flex flex-col ">
-                    <h3 className="text-lg font-bold text-white mb-0.5">{item.name}</h3>
-                    <p className="text-amber-400 font-medium text-xs uppercase tracking-wider mb-3">
+                    <h3 className="text-lg font-bold text-slate-950 mb-0.5">{item.name}</h3>
+                    <p className="text-amber-600 font-medium text-xs uppercase tracking-wider mb-3">
                       {item.role}
                     </p>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       {item.bio}
                     </p>
                   </div>
@@ -76,13 +83,13 @@ export default function LeadershipSection() {
 
                 <div className="px-5 pb-5 pt-1 h-9 flex items-center">
                   {item.linkText && item.linkUrl ? (
-                    <a href={item.linkUrl} className="inline-flex items-center gap-1 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors">
+                    <a href={item.linkUrl} className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 hover:text-amber-800 transition-colors">
                       <span>{item.linkText}</span>
                       <ArrowRight className="w-3 h-3" />
                     </a>
                   ) : null}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -90,3 +97,5 @@ export default function LeadershipSection() {
     </section>
   );
 }
+
+

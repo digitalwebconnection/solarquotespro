@@ -10,16 +10,16 @@ const HowBatteryWorks = () => {
         <div className="text-center  mx-auto mb-14">
           <h1 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif text-black">How Does a Home Battery Work?</h1>
 
-          <p className="max-w-6xl mx-auto text-lg text-slate-600  leading-7 mt-5"> A home battery stores electricity so it can be used when you need it most. During the day, your solar panels can produce more electricity than your home needs. Instead of sending all that excess energy to the grid, the battery can store it for later.
+          <p className="max-w-4xl mx-auto text-lg text-slate-600  leading-7 mt-5"> A home battery stores electricity so it can be used when you need it most. During the day, your solar panels can produce more electricity than your home needs. Instead of sending all that excess energy to the grid, the battery can store it for later.
           </p>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <motion.div 
-      initial={{opacity: 0.20 , x: -20}}
-      whileInView={{opacity: 1 , x:0}}
-      viewport={{ once: true}}
-      transition={{ duration: 0.5}} className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0.20, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }} className="space-y-4">
             <h2 className="text-3xl font-extrabold font-serif text-blue-900 mb-6 border-b-3 border-blue-800   inline-flex ">Battery Components</h2>
             <div className="group">
               <h3 className="text-xl font-serif font-bold mb-1 text-slate-900 group-hover:text-orange-500">Anode</h3>
@@ -38,10 +38,10 @@ const HowBatteryWorks = () => {
           </motion.div>
 
           <motion.div
-      initial={{opacity: 0.20 , x: 20}}
-      whileInView={{opacity: 1 , x:0}}
-      viewport={{ once: true}}
-      transition={{ duration: 0.5}} className="flex justify-center">
+            initial={{ opacity: 0.20, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }} className="flex justify-center">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Gd_kkaarPArbaNjs7XCI6AJDUZ5YHwh9DuNfOTO24Q&s=10" className="rounded-lg shadow-xl" alt="Home battery" />
           </motion.div>
 
