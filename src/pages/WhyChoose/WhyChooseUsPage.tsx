@@ -1,6 +1,6 @@
 import { WhyChooseUs } from "../../components"
-import HeroWhyChooseUs from "../../components/sections/WhyChooseUS/HeroWhyChooseUs"
-import SolarDesicion from "../../components/sections/WhyChooseUS/SolarDecision"
+import HeroWhyChooseUs from "../../components/sections/WhyChoose/HeroWhyChooseUs"
+import SolarDesicion from "../../components/sections/WhyChoose/SolarDecision"
 
 const WhyChooseUsPage = () => {
     return(

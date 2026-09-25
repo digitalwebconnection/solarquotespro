@@ -1,7 +1,7 @@
 import { ArrowRight, Dot } from "lucide-react";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 export default function AboutHero() {
     const { openQuoteModal } = useQuoteModal();
 
@@ -10,24 +10,28 @@ export default function AboutHero() {
 
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhhFiv9fDLXV4fAAXav-Ji5Q66etB0DVGpZnZ-qtszQ&s=10"
                 alt="Australian home with solar panels"
-                className="absolute inset-0 w-full h-auto object-cover opacity-80"/>
+                className="absolute inset-0 w-full h-auto object-cover opacity-70"/>
 
-            <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 to-slate-950/30"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-slate-950/70 to-slate-950/50"></div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex">
+            <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex">
                 <div className="max-w-4xl text-white mt-9">
 
-                    <p className="font-bold text-base uppercase mt-8 tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-2 bg-amber-500/10 text-amber-300 border-amber-400 border backdrop-blur-md">
+                    <p className="font-bold text-sm uppercase mt-8 tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-2 bg-amber-500/10 text-amber-300 border-amber-400 border backdrop-blur-md">
                         <Dot strokeWidth={10} className="w-4 h-4 animate-pulse"/>About True Solar Quote
                     </p>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif tracking-tight leading-17 text-white mt-6">
+                    <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold font-serif tracking-tight leading-17 text-white mt-6">
                         Helping Australians Make{" "}
                         <span className="bg-linear-to-r from-amber-300 from-40% to-green-400 bg-clip-text text-transparent">Smarter Energy Decisions
                         </span>
                     </h1>
 
-                    <p className="text-lg text-white/90 mt-5 font-semibold">At True Solar Quote, we make it easier for Australians to research solar and home-energy solutions, compare trusted installers, and find the right options for their homes. We bring together useful information, customer reviews
+                    <p className="text-lg text-white/90 mt-5 font-medium">At True Solar Quote, we make it easier for Australians to research solar and home-energy solutions, compare trusted installers, and find the right options for their homes. We bring together useful information, customer reviews
                     and competitive quotes so you can make an informed decision with confidence.
                     </p>
 
@@ -44,7 +48,7 @@ export default function AboutHero() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

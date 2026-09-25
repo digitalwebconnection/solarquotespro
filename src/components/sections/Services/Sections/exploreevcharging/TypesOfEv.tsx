@@ -62,7 +62,6 @@ const TypesOfEv = () => {
                   and public charging locations.</span>
               </p>
             </div>
-
             <div className="h-56 overflow-hidden rounded-xl">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoB8qUlIeolZsyNDvjL-kvNufUwWmzQ5Zb2RTPdwc5Q&s=10"
                 alt="DC fast charging"   className="w-full h-full object-cover"

@@ -1,7 +1,7 @@
 
 import { Dot, ArrowRight } from "lucide-react";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
-
+import { motion } from "framer-motion";
 const HeroHowItWorks = () =>  {
   const { openQuoteModal } = useQuoteModal();
 
@@ -16,9 +16,14 @@ const HeroHowItWorks = () =>  {
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      <div className="absolute inset-0 bg-linear-to-r from-black/90 to-black/60" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/80 to-black/50" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-18">
+   <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                >
         <div className="max-w-3xl text-white space-y-5">
           <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-yellow-500/20 text-yellow-300 border border-yellow-400/40 backdrop-blur-md">
             <Dot
@@ -61,6 +66,7 @@ const HeroHowItWorks = () =>  {
             </button>
           </div>
         </div>
+        </motion.div>
       </div>
     </section>
   );

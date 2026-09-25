@@ -1,5 +1,5 @@
-    import {  Gauge, PanelsTopLeft,  Home,  CheckCircle2 } from "lucide-react";
-
+import {  Gauge, PanelsTopLeft,  Home,  CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 export default function InverterCapacity() {
   const points = [
     {
@@ -55,7 +55,12 @@ export default function InverterCapacity() {
             {points.map((point) => {
               const Icon = point.icon;
               return (
-                <div key={point.number} className="group flex gap-3 border-b border-slate-200 py-8   md:items-start">
+                <motion.div  
+                initial={{opacity:0 , x : -20}}
+                whileInView={{ opacity: 1 , x : 0 }}
+                viewport={{ once: true}}
+                transition={{ duration: 0.6}}
+                key={point.number} className="group flex gap-3 border-b border-slate-200 py-8   md:items-start">
                   <div className="w-20 text-3xl font-bold text-slate-200 transition-colors group-hover:text-amber-400">
                     {point.number}
                   </div>
@@ -68,7 +73,7 @@ export default function InverterCapacity() {
                   <p className="max-w-2xl text-base leading-7 text-slate-600">
                     {point.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

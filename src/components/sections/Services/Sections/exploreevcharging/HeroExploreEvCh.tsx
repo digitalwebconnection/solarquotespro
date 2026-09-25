@@ -1,6 +1,6 @@
 import { Dot, ArrowRight} from "lucide-react";
 import { useQuoteModal } from "../../../../../context/QuoteModalContext";
-
+import { motion } from "framer-motion";
 export default function HeroExploreEvCh() {
   const { openQuoteModal } = useQuoteModal();
 
@@ -10,7 +10,12 @@ export default function HeroExploreEvCh() {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8zm8mdxbneCBL5YcZv5eExvuzHwWpYjUz0tqXObdvdw&s=10" alt="Solar panel installation"  className="absolute inset-0 w-full h-full object-cover  object-center" />
 
       <div className="absolute inset-0 bg-linear-to-r from-black/90  to-black/60" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8 sm:py-14 lg:py-14">
+      <motion.div 
+      initial ={{ opacity:0.50 , y:10 }}
+      whileInView={{ opacity: 1 , y: 0}}
+      viewport={{ once: true}}
+      transition={{ duration : 0.5}}
+       className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8 sm:py-14 lg:py-14">
         <div className="max-w-3xl text-white space-y-5">
           <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 backdrop-blur-md">
             <Dot strokeWidth={8} className ="w-5 h-5 text-emerald-400 animate-pulse" />
@@ -34,7 +39,7 @@ export default function HeroExploreEvCh() {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }         

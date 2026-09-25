@@ -1,5 +1,5 @@
-import { ShieldCheck, Search, BarChart3,  Users, CircleCheck, BookOpen } from "lucide-react";
-
+import { ShieldCheck, Search, BarChart3, Users, CircleCheck, BookOpen } from "lucide-react";
+import { motion } from "framer-motion";
 export default function MiniWhyTrueSolarQuotes() {
     const highlights = [
         {
@@ -41,7 +41,12 @@ export default function MiniWhyTrueSolarQuotes() {
             <div className="absolute -top-10 left-20 w-150 h-100 bg-linear-to-r from-amber-300/20 to-emerald-500/20 rounded-full blur-[120px]" />
 
             <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-4xl mx-auto mb-14">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center max-w-4xl mx-auto mb-14">
                     <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">
                         <BookOpen className="w-4 h-4" />Why Use True Solar Quote
                     </span>
@@ -51,25 +56,34 @@ export default function MiniWhyTrueSolarQuotes() {
                         </span>
                     </h2>
                     <p className="text-slate-300 mt-5 text-sm sm:text-base leading-7 mx-auto">Solar and home-energy decisions can involve significant costs and long-term commitments. We provide useful
-                    information, comparisons and tools to help you understand the market before choosing an installer or energy solution.
+                        information, comparisons and tools to help you understand the market before choosing an installer or energy solution.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {highlights.map((item, index) => (
-                        <div key={index} className={` group relative bg-slate-950/90 border rounded-2xl p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.15
+                            }}
+                            className={` group relative bg-slate-950/90 border rounded-lg p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
                             <div className="flex items-center justify-between mb-5">
                                 <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800  flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}</div>
                                 <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase  tracking-wider ${item.badgeColor}`}>{item.badge} </span>
                             </div>
-                            <h3 className="text-lg font-bold tracking-wide text-white mb-2">{item.title}</h3>   
+                            <h3 className="text-lg font-bold tracking-wide text-white mb-2">{item.title}</h3>
                             <p className="text-slate-400 text-sm leading-6">{item.desc}</p>
 
                             <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2">
                                 <CircleCheck className="w-4 h-4 text-emerald-400 " />
                                 <span className="text-[11px] text-slate-500 font-medium"> Helping you research with confidence</span>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <div className="mt-12 max-w-4xl mx-auto text-center">

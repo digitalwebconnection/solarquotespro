@@ -1,5 +1,5 @@
 import {Sun, ArrowRight, BatteryCharging,  Zap } from "lucide-react";
-
+import { motion } from "framer-motion";
 const HowInverterWork = () => {
   const steps = [
     {
@@ -55,11 +55,20 @@ const HowInverterWork = () => {
         </div>
 
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => {
+        <div  className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step , index) => {
             const Icon = step.icon;
             return (
-              <div key={step.number} className={`group relative rounded-lg border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 400 hover:shadow-lg shadow-black/40 ${step.boxStyle} `}
+              <motion.div 
+              initial={{ opacity :0 , y :20}}
+              whileInView={{ opacity :1 , y:0 }}
+              viewport={{ once:true }}
+              transition ={{
+                  duration : 0.6,
+                  delay : index * 0.14
+
+              }}
+              key={step.number} className={`group relative rounded-lg border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 400 hover:shadow-lg shadow-black/40 ${step.boxStyle} `}
               >
                 <div className="absolute right-5 top-5 text-3xl font-bold group-hover:text-slate-300/50 text-slate-100 font-serif transition-colors duration-300">
                   {step.number} </div>
@@ -72,7 +81,7 @@ const HowInverterWork = () => {
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

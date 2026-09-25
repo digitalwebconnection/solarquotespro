@@ -1,5 +1,5 @@
 import { Sun, PlugZap, Zap, Home, BarChart3, Globe, ArrowRight, PanelsTopLeft } from "lucide-react";
-
+import { motion } from "framer-motion"; 
 const SolarEnatomy = () => {
     const systemComponents = [
         {
@@ -92,11 +92,18 @@ const SolarEnatomy = () => {
                     </div>
 
                     <div className="max-w-5xl relative pl-8">
-                        {systemComponents.map((item) => {
+                        {systemComponents.map((item , index) => {
                             const Icon = item.icon;
                             return (
-                                <div key={item.number} className="flex items-center  gap-12 pb-12 group" >
-                                    <div className="text-2xl md:text-3xl font-black text-slate-200 group-hover:text-slate-300 transition-colors">{item.number}</div>
+                                <motion.div
+                                initial={{ opacity: 0 , x: -20}}
+                                whileInView={{ opacity: 1 , x: 0}}
+                                viewport={{ once: true}}
+                                transition={{ duration : 0.5 ,
+                                    delay : index * 0.10
+                                }}
+                                 key={item.number} className="flex items-center  gap-12 pb-12 group" >
+                                    <div className="text-2xl md:text-3xl font-black text-slate-200 group-hover:text-blue-500/50 duration-250 transition-colors">{item.number}</div>
                                     <div className="flex flex-col">
                                         <Icon className="w-7 h-7 text-blue-600 mb-2" />
                                         <h3 className="text-xl  w-36  font-bold text-blue-950">{item.title}</h3>
@@ -104,7 +111,7 @@ const SolarEnatomy = () => {
                                     <div>
                                         <p className="text-slate-600 leading-7 max-w-2xl pl-auto">{item.description}</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             );
                         })}
                     </div>
@@ -181,7 +188,8 @@ const SolarEnatomy = () => {
 
                     <div className="mt-14 py-10 max-w-2xl mx-auto shadow-black border-y  border-slate-200">
                         <div className="grid grid-cols-1 md:grid-cols-2 text-center">
-                            <div className="border-r border-slate-200 py-4 pr-2    ">
+                            <div 
+                            className="border-r border-slate-200 py-4 pr-2    ">
                                 <p className="text-5xl font-black text-orange-500 mb-3"> kW</p>
                                 <p className="text-xl font-bold text-blue-950">How Fast?</p>
                                 <p className="text-slate-500 mt-2">Rate of electricity generation or consumption</p>

@@ -1,5 +1,5 @@
 import { Sun, Zap, PanelsTopLeft, Home  } from "lucide-react";
-
+import { motion } from "framer-motion";
 const HowSolarWorks = () => {
 
     const solarWorkingSteps = [
@@ -81,13 +81,20 @@ const HowSolarWorks = () => {
                         const Icon = item.icon
                         return (
                             <>
-                                <div key={index} className={`bg-white rounded-2xl p-6 border border-slate-200 shadow-lg ${item.bg} ${item.border} ${item.hover} transition-all group duration-300 shadow-md shadow-black/40 hover:shadow-lg`}>
+                                <motion.div 
+                                initial={{ opacity: 0 , y:20}}
+                                whileInView={{ opacity : 1 , y:0 }}
+                                viewport={{ once:true }}
+                                transition={{ duration : 0.5 ,
+                                    delay : index * 0.10
+                                }}
+                                key={index} className={`bg-white rounded-lg p-6 border border-slate-200 shadow-lg ${item.bg} ${item.border} ${item.hover} transition-all group duration-300 shadow-md shadow-black/40 hover:shadow-lg`}>
                                     <div className={`w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center   mb-5 ${item.iconColor} ${item.iconBg} `}> < Icon className="group-hover:scale-110 transition-transform duration-300"/>
                                     </div>
                                     <span className="text-sm font-bold text-amber-500">{item.number}</span>
                                     <h3 className="text-xl font-bold text-blue-950 mt-2 mb-3">{item.title}</h3>
                                     <p className="text-slate-600 leading-relaxed">{item.description}</p>
-                                </div>
+                                </motion.div>
                             </>
                         )
                     })}

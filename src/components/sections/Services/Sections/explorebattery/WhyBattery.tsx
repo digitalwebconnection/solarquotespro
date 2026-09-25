@@ -1,5 +1,5 @@
 import { Moon, Clock3, Zap, Network } from "lucide-react";
-
+import { motion } from "framer-motion";
 const WhyBattery = () => {
     const content = [
         {
@@ -63,17 +63,26 @@ const WhyBattery = () => {
 
                 <div className="text-center max-w-3xl mx-auto mb-14">
                     <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif text-black">Why Get a Home Battery?</h2>
-                    <p className="text-lg text-slate-600  leading-7 mt-5 ">Solar panels produce electricity when the sun is shining, but your home's energy consumption doesn't stop when the sun goes down.</p> 
+                    <p className="text-lg text-slate-600  leading-7 mt-5 ">Solar panels produce electricity when the sun is shining, but your home's energy consumption doesn't stop when the sun goes down.</p>
                 </div>
 
                 <div className="relative">
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 relative z-10">
-                        {content.map((step) => {
+                        {content.map((step, index) => {
                             const Icon = step.icon;
                             return (
-                                <div key={step.id} className={`relative overflow-hidden bg-white px-5 py-4 rounded-lg hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-lg gorup-hover:border-transparent ease-in-out shadow-black/40 group ${step.boxStyle}`}>
+                                <motion.div
+                                    key={step.id}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.5,
+                                        delay: index * 0.14
+                                    }}
+                                    className={`relative overflow-hidden bg-white px-5 py-4 rounded-lg hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-lg gorup-hover:border-transparent ease-in-out shadow-black/40 group ${step.boxStyle}`}>
                                     <div className="absolute inset-0 w-full h-full z-0">
-                                        <img src={step.image} className="w-full h-full object-cover opacity-0 group-hover:opacity-80 duration-500 transition-all ease-in-out" alt=""/>
+                                        <img src={step.image} className="w-full h-full object-cover opacity-0 group-hover:opacity-80 duration-500 transition-all ease-in-out" alt="" />
                                     </div>
 
                                     <div className="absolute inset-0 group-hover:bg-radial-[at_50%_85%] from-black/30  to-black/70 to-80% z-10 ease-in-out"></div>
@@ -84,9 +93,9 @@ const WhyBattery = () => {
                                         </div>
                                         <h3 className="text-xl font-extrabold font-serif mb-2 text-black group-hover:text-white transition-all duration-300"> {step.title}</h3>
                                         <h3 className="text-lg font-semibold mb-3 text-slate-700 group-hover:text-slate-200 transition-all duration-300"> {step.highlight}</h3>
-                                        <p className="text-slate-600 group-hover:text-slate-200 transition-all duration-300 text-sm leading-relaxed"> {step.description}</p>    
+                                        <p className="text-slate-600 group-hover:text-slate-200 transition-all duration-300 text-sm leading-relaxed"> {step.description}</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             );
                         })}
                     </div>

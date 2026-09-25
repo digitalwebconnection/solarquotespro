@@ -1,7 +1,7 @@
 import { Sun, BatteryCharging, Zap, Snowflake, Droplets, ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
-
+import { motion } from "framer-motion";
 export default function AllServices() {
   const { openQuoteModal } = useQuoteModal();
   const solutions = [
@@ -104,22 +104,37 @@ export default function AllServices() {
       <div className="absolute z-0 top-20 -right-30 w-130 h-100 rounded-full  bg-blue-600/10 blur-[120px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+
+          className="max-w-3xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-200/20 border border-amber-300 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-5 backdrop-blur-sm">
             <BookOpen className="w-4 h-4 text-amber-500" />Home Energy Guide
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-950">
-            Explore Your Energy Options
+            Explore <span className="text-amber-500"> Your Energy Options </span>
           </h2>
           <p className="mt-5 text-slate-700 text-sm sm:text-base leading-6 max-w-2xl mx-auto">Research the technologies available for your home, understand the important factors and compare your options before speaking with an energy professional.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {solutions.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className={`group relative overflow-hidden bg-white border border-slate-300/70 shadow-gray-500 shadow-lg hover:shadow-xl rounded-2xl p-6 space-y-4 transition-all duration-300  hover:-translate-y-1 ${item.borderStyle}`}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.14
+                }}
+                className={`group relative overflow-hidden bg-white border border-slate-300/70 shadow-gray-500 shadow-lg hover:shadow-xl rounded-lg p-6 space-y-4 transition-all duration-300  hover:-translate-y-1 ${item.borderStyle}`}>
 
                 <div className="absolute top-5 right-5 text-xs font-bold text-slate-300">0{index + 1}</div>
                 <div className={`w-12 h-12 rounded-xl flex justify-center items-center mb-5 ${item.iconStyle}`}>
@@ -141,7 +156,7 @@ export default function AllServices() {
                   <ArrowRight className="w-4  h-4  transition-transform  duration-300  group-hover:translate-x-1.5"
                   />
                 </Link>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -158,7 +173,6 @@ export default function AllServices() {
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
-
       </div>
     </section>
   );

@@ -1,29 +1,12 @@
 
-
+import { motion } from "framer-motion";
 import { Dot, ArrowRight} from "lucide-react";
 import { useQuoteModal } from "../../../../../context/QuoteModalContext";
 
 export default function BatteryHero() {
   const { openQuoteModal } = useQuoteModal();
 
-  // const badges = [
-  //   {
-  //     icon: <Award className="w-4 h-4 text-yellow-400" />,
-  //     text: "CEC-Accredited Installers",
-  //   },
-  //   {
-  //     icon: <ShieldCheck className="w-4 h-4 text-green-400" />,
-  //     text: "25-Yr Performance Warranty",
-  //   },
-  //   {
-  //     icon: <Zap className="w-4 h-4 text-amber-400" />,
-  //     text: "Tier-1 Solar Hardware",
-  //   },
-  //   {
-  //     icon: <DollarSign className="w-4 h-4 text-emerald-400" />,
-  //     text: "$0 Deposit Financing",
-  //   },
-  // ];
+
 
   return (
     <section className="relative h-screen w-full overflow-hidden " id="solar">
@@ -31,7 +14,12 @@ export default function BatteryHero() {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw099mQOi0VIlE5P4Ztqn-5CC5Ng0RX4ZbBezxKitenQ&s=10" alt="Solar panel installation"  className="absolute inset-0 w-full h-full object-cover opacity-85 object-center" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/75 via-slate-950/70  to-slate-950/50" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-14">
+      <motion.div 
+      initial={{opacity: 0.20 , y: 20}}
+      whileInView={{opacity: 1 , y:0}}
+      viewport={{ once: true}}
+      transition={{ duration: 0.5}}
+      className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-14">
         <div className="max-w-3xl text-white space-y-7">
           <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-flex items-center gap-1 bg-amber-500/20 text-amber-300 border border-amber-400/40 backdrop-blur-md">
             <Dot strokeWidth={8} className ="w-5 h-5 text-amber-400 animate-pulse" />
@@ -53,7 +41,7 @@ export default function BatteryHero() {
         </div>
 
         {/* <div className="flex items-center justify-center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeHSCN6BhLLbB_0rUxVBHBD0wTcAsi1JOB-QmTOZWi9g&s=10" className=" rounded-4xl border border-white shadow-2xl/60 max-w-100 max-h-100 shadow-white" alt="solar battery image" /></div> */}
-      </div>
+      </motion.div>
     </section>
   );
 }         

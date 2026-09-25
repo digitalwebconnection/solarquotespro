@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const HowBatteryWorks = () => {
   return (
     <section className="relative py-14 bg-slate-50 ">
@@ -13,7 +15,11 @@ const HowBatteryWorks = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div className="space-y-4">
+          <motion.div 
+      initial={{opacity: 0.20 , x: -20}}
+      whileInView={{opacity: 1 , x:0}}
+      viewport={{ once: true}}
+      transition={{ duration: 0.5}} className="space-y-4">
             <h2 className="text-3xl font-extrabold font-serif text-blue-900 mb-6 border-b-3 border-blue-800   inline-flex ">Battery Components</h2>
             <div className="group">
               <h3 className="text-xl font-serif font-bold mb-1 text-slate-900 group-hover:text-orange-500">Anode</h3>
@@ -29,11 +35,15 @@ const HowBatteryWorks = () => {
                 cathode inside the battery. </p>
             </div>
 
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center">
+          <motion.div
+      initial={{opacity: 0.20 , x: 20}}
+      whileInView={{opacity: 1 , x:0}}
+      viewport={{ once: true}}
+      transition={{ duration: 0.5}} className="flex justify-center">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Gd_kkaarPArbaNjs7XCI6AJDUZ5YHwh9DuNfOTO24Q&s=10" className="rounded-lg shadow-xl" alt="Home battery" />
-          </div>
+          </motion.div>
 
         </div>
       </div>

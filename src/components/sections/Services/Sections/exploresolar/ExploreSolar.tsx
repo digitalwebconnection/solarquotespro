@@ -1,16 +1,21 @@
 import { Dot, ArrowRight} from "lucide-react";
 import { useQuoteModal } from "../../../../../context/QuoteModalContext";
-
+import { motion } from "framer-motion";
 export default function ExploreSolar() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <section className="relative h-auto  w-full overflow-hidden " id="solar">
+    <section 
+    className="relative h-auto  w-full overflow-hidden " id="solar">
 
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHh_Z24J3CHTIVArwg1kxroBuF27Zm8HUzWR7bI6Ujw&s=10" alt="Solar panel installation"  className="absolute inset-0 w-full h-full object-cover  object-bottom" />  
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/65  to-slate-900/55" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-14 lg:py-14">
+      <motion.div 
+    initial={{ opacity: 0.50 , y: 10}}
+    whileInView={{ opacity: 1 , y: 0}}
+    viewport={{ once : true}}
+    transition={{ duration : 0.5}} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-14 lg:py-14">
         <div className="max-w-3xl text-white space-y-5">
           <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-amber-500/10 text-amber-300 border border-amber-400/40 backdrop-blur-md">
             <Dot strokeWidth={8} className ="w-5 h-5 text-amber-400 animate-pulse" />
@@ -29,11 +34,8 @@ export default function ExploreSolar() {
             </button>
           </div>
         </div>
-{/* 
-        <div className="flex items-center justify-center">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZc8CcxDxernZKWLDrtE_zOWoM8U4EnTjM7H9GbrNfQ&s=10" className="rounded-4xl border border-white/40 shadow-2xl/60 shadow-white" alt="solar grid image" />
-        </div> */}
-      </div>
+
+      </motion.div>
     </section>
   );
 }

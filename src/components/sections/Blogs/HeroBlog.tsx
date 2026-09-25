@@ -1,6 +1,6 @@
 import {Dot, ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 export default function HeroBlog() {
   // const highlights = [
   //   {
@@ -27,9 +27,12 @@ export default function HeroBlog() {
         className="absolute inset-0 w-full h-full object-cover object-center opacity-50"/>
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/70 via-slate-900/65 to-slate-900/50 z-0" />
-      <div className="absolute -top-20 right-1/4 w-100 h-100 bg-amber-400/7 blur-[120px] rounded-full" />
-
       <div className="relative  max-w-7xl mx-auto  py-16 px-4 sm:px-6 lg:px-8">
+        <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                >
         <div className="max-w-3xl text-white mt-5 space-y-7">
           <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-flex items-center gap-1 bg-amber-400/10 text-amber-300 border border-amber-400/40 backdrop-blur-md">
             <Dot strokeWidth={8} className="w-5 h-5 text-amber-400 animate-pulse"/>
@@ -49,7 +52,7 @@ export default function HeroBlog() {
             </Link>
           </div>
         </div>
-
+</motion.div>
 
         {/* <div className="flex items-center justify-end ">
             <div className="relative bg-slate-950/75 backdrop-blur-md border border-white/20 rounded-2xl p-5 ">
