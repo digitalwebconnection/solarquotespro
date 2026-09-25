@@ -3,12 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
-import HomePage from "./pages/Home/HomePage"
-import AboutPage from './pages/About/AboutPage';
-import ServicePage from './pages/Services/ServicePage'; 
-import HowItWorksPage from './pages/HowItWorks/HowItWorksPage';
-import BlogPage from './pages/Blogs/BlogPage';
-import WhyChooseUsPage from './pages/WhyChoose/WhyChooseUsPage';
+import HomePage from "./pages/HomePage"
+import AboutPage from './pages/AboutPage';
+import ServicePage from './pages/Services/ServicePage';
+import HowItWorksPage from './pages/HowItWorksPage';
+import BlogPage from './pages/BlogPage';
+import WhyChooseUsPage from './pages/WhyChooseUsPage';
 
 import ExploreSolarPage from './pages/Services/subpages/ExploreSolar';
 import ExploreBattery from './pages/Services/subpages/ExploreBattery';
@@ -51,16 +51,16 @@ function App() {
               <Route path="/how-it-works" element={<HowItWorksPage />} />
               <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
 
-              <Route path='/service' element={<ServicePage/>} />
-              <Route path='/service/explore-solar' element={<ExploreSolarPage/>} />
-              <Route path='/service/explore-battery' element={<ExploreBattery/>} />
-              <Route path='/service/explore-evcharging' element={<ExploreEvCharging/>} />
-              <Route path='/service/explore-heatpumps' element={<ExploreHeatPumps/>} />
-              <Route path='/service/explore-airconditionar' element={<ExploreAirConditionar/>} />
-              <Route path='/service/explore-inverters' element={<ExploreInverters/>} />
-              <Route path='/blog' element={<BlogPage/>} />
-{/*  */}
-              
+              <Route path='/service' element={<ServicePage />} />
+              <Route path='/service/explore-solar' element={<ExploreSolarPage />} />
+              <Route path='/service/explore-battery' element={<ExploreBattery />} />
+              <Route path='/service/explore-evcharging' element={<ExploreEvCharging />} />
+              <Route path='/service/explore-heatpumps' element={<ExploreHeatPumps />} />
+              <Route path='/service/explore-airconditionar' element={<ExploreAirConditionar />} />
+              <Route path='/service/explore-inverters' element={<ExploreInverters />} />
+              <Route path='/blog' element={<BlogPage />} />
+              {/*  */}
+
 
               {/* <Route path="/faq" element={< FAQ />} /> */}
               <Route path="/privacy" element={<PrivacyPolicy />} />
