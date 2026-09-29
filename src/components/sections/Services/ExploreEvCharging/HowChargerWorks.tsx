@@ -132,7 +132,7 @@ const HowChargerWorks = () => {
           </div>
         </div>
 
-        <div className="w-full mb-14">
+        <div className="w-full mb-12">
           <div className="bg-slate-900  py-7 px-15 text-white">
             <div className="flex gap-5 items-start">
               <div className="bg-blue-400/10 p-3 rounded-xl shrink-0"> <Zap className="text-blue-400" size={30} />
@@ -158,16 +158,17 @@ const HowChargerWorks = () => {
 
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {chargingFactors.map((factor , index) => {
+          {chargingFactors.map((factor, index) => {
             const Icon = factor.icon;
             return (
               <motion.div
                 key={factor.number}
-                initial={{ opacity : 0 , y: 20 }}
-                whileInView={{ opacity:1 , y: 0}}
-                viewport={{ once: true}}
-                transition={{ duration: 0.5 , 
-                  delay : index * 0.16
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.16
                 }}
                 className={`bg-white rounded-lg border border-slate-200 ${factor.shadow} hover:-translate-y-1.5 duration-200 transition-transform group p-7 relative`}
               >

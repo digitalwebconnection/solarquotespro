@@ -1,4 +1,4 @@
-import { Sun, Zap, PanelsTopLeft, Home  } from "lucide-react";
+import { Sun, Zap, PanelsTopLeft, Home } from "lucide-react";
 import { motion } from "framer-motion";
 const HowSolarWorks = () => {
 
@@ -10,11 +10,11 @@ const HowSolarWorks = () => {
                 "Silicon solar cells absorb energy from sunlight and begin the electricity-generation process.",
             icon: Sun,
             bg: "bg-amber-50",
-            iconBg: "bg-amber-100",
+            iconBg: "bg-amber-100/50",
             iconColor: "text-amber-500",
             border: "border-amber-200",
             hover:
-                "hover:border-amber-400 hover:bg-amber-100/50 hover:-translate-y-2",
+                "hover:border-amber-400 hover:bg-amber-100/20 hover:-translate-y-2",
         },
 
         {
@@ -23,13 +23,13 @@ const HowSolarWorks = () => {
             description:
                 "Energy from sunlight excites electrons inside the cell, creating an electrical current.",
             icon: Zap,
-             bg: "bg-blue-50",
+            bg: "bg-blue-50",
             iconBg: "bg-blue-100 ",
             iconColor: "text-blue-600",
             border: "border-blue-200",
             hover:
-                "hover:border-blue-400 hover:bg-blue-100/50 hover:-translate-y-2",
-            
+                "hover:border-blue-400 hover:bg-blue-100/20 hover:-translate-y-2",
+
         },
 
         {
@@ -43,23 +43,22 @@ const HowSolarWorks = () => {
             iconColor: "text-yellow-500",
             border: "border-amber-200",
             hover:
-                "hover:border-amber-400 hover:bg-amber-100/50 hover:-translate-y-2",
+                "hover:border-amber-400 hover:bg-amber-100/20 hover:-translate-y-2",
         },
 
         {
             number: "04",
             title: "Power Reaches Your Home",
-            description:"Multiple panels form an array, and an inverter converts DC electricity into usable AC power.",
+            description: "Multiple panels form an array, and an inverter converts DC electricity into usable AC power.",
             icon: Home,
             bg: "bg-emerald-50",
             iconBg: "bg-emerald-100",
             iconColor: "text-emerald-600",
             border: "border-emerald-200",
             hover:
-                "hover:border-emerald-400 hover:bg-emerald-100/50 hover:-translate-y-2",
+                "hover:border-emerald-400 hover:bg-emerald-100/20 hover:-translate-y-2",
         },
     ];
-
 
 
     return (
@@ -70,8 +69,8 @@ const HowSolarWorks = () => {
                     <p className="text-sm font-semibold uppercase tracking-widest text-amber-500 mb-3"></p>
                     <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-4 font-serif">How Do Solar Panels Work?</h2>
                     <p className="text-lg text-slate-600"> Solar panels convert sunlight into electricity through the <span className="font-semibold text-slate-800">
-                            {" "}photovoltaic (PV) effect
-                        </span>.Sunlight gives energy to electrons inside solar cells, creating
+                        {" "}photovoltaic (PV) effect
+                    </span>.Sunlight gives energy to electrons inside solar cells, creating
                         electrical current.
                     </p>
                 </div>
@@ -81,15 +80,16 @@ const HowSolarWorks = () => {
                         const Icon = item.icon
                         return (
                             <>
-                                <motion.div 
-                                initial={{ opacity: 0 , y:20}}
-                                whileInView={{ opacity : 1 , y:0 }}
-                                viewport={{ once:true }}
-                                transition={{ duration : 0.5 ,
-                                    delay : index * 0.10
-                                }}
-                                key={index} className={`bg-white rounded-lg p-6 border border-slate-200 shadow-lg ${item.bg} ${item.border} ${item.hover} transition-all group duration-300 shadow-md shadow-black/40 hover:shadow-lg`}>
-                                    <div className={`w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center   mb-5 ${item.iconColor} ${item.iconBg} `}> < Icon className="group-hover:scale-110 transition-transform duration-300"/>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.5,
+                                        delay: index * 0.10
+                                    }}
+                                    key={index} className={`bg-white rounded-lg p-6 border border-slate-200 shadow-lg ${item.bg} ${item.border} ${item.hover} transition-all group duration-300 shadow-md shadow-black/40 hover:shadow-lg`}>
+                                    <div className={`w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center   mb-5 ${item.iconColor} ${item.iconBg} `}> < Icon className="group-hover:scale-110 transition-transform duration-300" />
                                     </div>
                                     <span className="text-sm font-bold text-amber-500">{item.number}</span>
                                     <h3 className="text-xl font-bold text-blue-950 mt-2 mb-3">{item.title}</h3>
@@ -100,8 +100,6 @@ const HowSolarWorks = () => {
                     })}
                 </div>
             </div>
-                
-                
         </section>
     );
 };

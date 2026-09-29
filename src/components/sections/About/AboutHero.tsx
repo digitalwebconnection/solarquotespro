@@ -24,16 +24,16 @@ export default function AboutHero() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="relative h-auto inset-0 w-full overflow-hidden">
+        <section className="relative h-130 inset-0 w-full overflow-hidden">
 
             <motion.img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhhFiv9fDLXV4fAAXav-Ji5Q66etB0DVGpZnZ-qtszQ&s=10"
                 alt="Australian home with solar panels"
                 initial={{ scale: 1.08, opacity: 0.5 }}
                 animate={{ scale: 1, opacity: 0.8 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-auto object-cover" />
+                transition={{ duration: 1.2 }}
+                className="absolute inset-0 w-full h-130 object-cover" />
 
-            <div className="absolute inset-0 bg-linear-to-r from-slate-950/70 to-slate-950/50"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-950/75 to-slate-950/50"></div>
 
             <motion.div
                 variants={contentVariants}
@@ -46,7 +46,7 @@ export default function AboutHero() {
                         <Dot strokeWidth={10} className="w-4 h-4 animate-pulse" />About True Solar Quote
                     </motion.p>
 
-                    <motion.h1 variants={itemVariants} className="text-4xl sm:text-4xl lg:text-5xl font-bold font-serif tracking-tight leading-17 text-white mt-6">
+                    <motion.h1 variants={itemVariants} className="text-4xl sm:text-4xl lg:text-5xl font-bold font-serif tracking-tight leading-15 text-white mt-6">
                         Helping Australians Make{" "}
                         <span className="bg-linear-to-r from-amber-300 from-40% to-green-400 bg-clip-text text-transparent">Smarter Energy Decisions
                         </span>

@@ -57,7 +57,7 @@ const WhatYoullNeed = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-5">
                     {items.map((item, index) => (
                         <motion.article
                             key={item.id}
@@ -65,10 +65,9 @@ const WhatYoullNeed = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.06 }}
-                            whileHover={{ y: -6 }}
-                            className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-lg shadow-amber-900/5 transition-shadow duration-300 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-900/10 sm:p-8"
+                            className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-lg shadow-amber-900/5  hover:border-amber-300 hover:shadow-xl hover:shadow-amber-400/10 sm:p-6 hover:-translate-y-1 transition-all duration-200"
                         >
-                            <div className="relative flex items-baseline gap-5">
+                            <div className="relative flex items-baseline gap-5 ">
                                 <span className="font-serif text-3xl text-amber-400/40 transition-colors duration-300 group-hover:text-amber-400">
                                     {item.number}
                                 </span>

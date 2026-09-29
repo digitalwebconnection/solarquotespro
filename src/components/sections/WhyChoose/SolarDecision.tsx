@@ -29,7 +29,7 @@ const SolarDesicion = () => {
     {
       no: "04",
       title: "Understand Your Solar Options",
-      stepStyle: "text-purple-600",
+      stepStyle: "text-indigo-600",
       titleStyle: "text-slate-900 capitalize",
       discription:
         "Compare your quotes, including system size, equipment, pricing, rebates and other details, so you can understand the value of each option before deciding.",
@@ -67,7 +67,7 @@ const SolarDesicion = () => {
           </div>
 
           <div className="sticky top-35 h-fit ">
-            <div className="absolute bg-emerald-500/12 z-0 -right-40 -bottom-30 w-120 h-120 rounded-full blur-[120px]" />
+            <div className="absolute bg-emerald-500/10   z-0 -right-40 -bottom-30 w-120 h-120 rounded-full blur-[120px]" />
 
             <p className="text-sm font-bold uppercase tracking-widest    text-emerald-600 mb-4">The Process
             </p>

@@ -118,13 +118,13 @@ const SolarAnatomy = () => {
                     </div>
                 </div>
 
-                <div className="relative w-full mt-12 p-6 md:p-9 text-white overflow-hidden">
-                    <div className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-75"
+                <div className="relative w-full mt-12 p-7 md:p-12 text-white overflow-hidden">
+                    <div className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-85 "
                         style={{
                             backgroundImage:
-                                "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuj9njscT1XMFlSxTVmlErblHlukT6ah_8gMHsuIyBJQ&s=10')",
+                                "url('https://images.unsplash.com/photo-1730807908064-c087959dd52c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNvbGFyJTIwaG9tZXxlbnwwfHwwfHx8MA%3D%3D')",
                         }} />
-                    <div className="absolute inset-0 z-0 bg-slate-950/57" />
+                    <div className="absolute inset-0 z-0 bg-slate-950/58 backdrop-blur-[1.5px]" />
                     <div className="relative z-10">
                         <h3 className="text-center text-xl md:text-2xl font-bold mb-7">From Sunlight to Electricity </h3>
 
@@ -159,7 +159,7 @@ const SolarAnatomy = () => {
 
                 <div className="max-w-7xl px-8 py-14 mx-auto">
                     <div className="max-w-3xl mb-10">
-                        <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-4">Solar Fundamentals
+                        <p className="text-sm font-semibold uppercase tracking-[2px] text-blue-600 mb-4">Solar Fundamentals
                         </p>
                         <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-5">Power vs Energy</h2>
                         <p className="text-lg text-slate-600 leading-8"> One of the most important concepts in solar is understanding the difference between power and energy. Although they are closely related, they describe two different things. </p>
@@ -187,7 +187,7 @@ const SolarAnatomy = () => {
                         })}
                     </div>
 
-                    <div className="mt-14 py-10 max-w-2xl mx-auto shadow-black border-y  border-slate-200">
+                    <div className="mt-14 py-7 max-w-2xl mx-auto shadow-black border-y  border-slate-200">
                         <div className="grid grid-cols-1 md:grid-cols-2 text-center">
                             <div
                                 className="border-r border-slate-200 py-4 pr-2    ">

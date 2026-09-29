@@ -42,7 +42,7 @@ export default function HowItWorks() {
   // Auto-hover rotation every 6 seconds
   useEffect(() => {
     if (hoveredCardIndex !== null) return; // Pause auto-rotation when user is hovering manually
-    
+
     const interval = setInterval(() => {
       setActiveCardIndex((prev) => (prev + 1) % steps.length);
     }, 6000);
@@ -52,7 +52,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-8 lg:py-14 bg-linear-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden scroll-mt-20">
-      
+
       {/* ─── Background Graphic Elements ─── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-slate-200 to-transparent" />
@@ -97,7 +97,7 @@ export default function HowItWorks() {
 
         {/* Steps Grid with Auto & Manual Hover Background Images */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-8 relative">
-          
+
           {/* Connecting Line (Desktop) */}
           <div className="hidden lg:block absolute top-16 left-[15%] right-[15%] h-0.5 bg-linear-to-r from-amber-300 via-orange-400 to-emerald-400 z-0 opacity-60" />
 
@@ -114,11 +114,10 @@ export default function HowItWorks() {
                 onClick={() => openQuoteModal()}
                 onMouseEnter={() => setHoveredCardIndex(index)}
                 onMouseLeave={() => setHoveredCardIndex(null)}
-                className={`relative bg-white rounded-xl p-5 lg:p-6 shadow-xl border transition-all duration-500 z-10 overflow-hidden cursor-pointer flex flex-col justify-between min-h-70 sm:min-h-85 ${
-                  isCardActive 
-                    ? '-translate-y-1 sm:-translate-y-2 shadow-2xl border-orange-400 ring-2 ring-orange-400/30' 
+                className={`relative bg-white rounded-xl p-5 lg:p-6 shadow-xl border transition-all duration-500 z-10 overflow-hidden cursor-pointer flex flex-col justify-between min-h-70 sm:min-h-85 ${isCardActive
+                    ? '-translate-y-1 sm:-translate-y-2 shadow-2xl border-orange-400 ring-2 ring-orange-400/30'
                     : 'shadow-slate-200/50 border-slate-200/90 hover:-translate-y-1 sm:hover:-translate-y-2 hover:border-orange-400'
-                }`}
+                  }`}
               >
                 {/* ─── Active/Hover 6s Progress Bar Indicator ─── */}
                 {isCardActive && (
@@ -138,75 +137,66 @@ export default function HowItWorks() {
                   <img
                     src={step.bgImage}
                     alt={step.title}
-                    className={`w-full h-full object-cover object-center transition-all duration-700 ease-out ${
-                      isCardActive ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
-                    }`}
+                    className={`w-full h-full object-cover object-center transition-all duration-700 ease-out ${isCardActive ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+                      }`}
                     loading="lazy"
                   />
                   {/* Dark Vignette Overlay so photo is visible & text is 100% readable */}
-                  <div className={`absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-950/75 to-slate-900/60 transition-opacity duration-500 ${
-                    isCardActive ? 'opacity-100' : 'opacity-0'
-                  }`} />
+                  <div className={`absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-950/75 to-slate-900/60 transition-opacity duration-500 ${isCardActive ? 'opacity-100' : 'opacity-0'
+                    }`} />
                 </div>
 
                 {/* Massive background number */}
-                <div className={`absolute -right-2 -bottom-3 text-7xl sm:text-[9rem] font-black transition-colors duration-500 z-0 select-none leading-none tracking-tighter ${
-                  isCardActive ? 'text-white/10' : 'text-slate-100'
-                }`}>
+                <div className={`absolute -right-2 -bottom-3 text-7xl sm:text-[9rem] font-black transition-colors duration-500 z-0 select-none leading-none tracking-tighter ${isCardActive ? 'text-white/10' : 'text-slate-100'
+                  }`}>
                   {step.num}
                 </div>
 
                 {/* Top Row: Icon Capsule + Step Tag */}
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
-                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-md border transition-all duration-300 ${
-                      isCardActive
+                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-md border transition-all duration-300 ${isCardActive
                         ? (step.color === 'amber' ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-amber-500/40 scale-110' :
-                           step.color === 'emerald' ? 'bg-emerald-500 text-slate-950 border-emerald-400 shadow-emerald-500/40 scale-110' :
-                           'bg-sky-500 text-slate-950 border-sky-400 shadow-sky-500/40 scale-110')
+                          step.color === 'emerald' ? 'bg-emerald-500 text-slate-950 border-emerald-400 shadow-emerald-500/40 scale-110' :
+                            'bg-sky-500 text-slate-950 border-sky-400 shadow-sky-500/40 scale-110')
                         : (step.color === 'amber' ? 'bg-amber-50 border-amber-200 text-amber-600' :
-                           step.color === 'emerald' ? 'bg-emerald-50 border-emerald-200 text-emerald-600' :
-                           'bg-blue-50 border-blue-200 text-blue-600')
-                    }`}>
+                          step.color === 'emerald' ? 'bg-emerald-50 border-emerald-200 text-emerald-600' :
+                            'bg-blue-50 border-blue-200 text-blue-600')
+                      }`}>
                       {step.icon}
                     </div>
 
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full border shadow-xs transition-colors duration-300 ${
-                      isCardActive
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full border shadow-xs transition-colors duration-300 ${isCardActive
                         ? (step.color === 'amber' ? 'bg-amber-500/20 border-amber-400 text-amber-300' :
-                           step.color === 'emerald' ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300' :
-                           'bg-sky-500/20 border-sky-400 text-sky-300')
+                          step.color === 'emerald' ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300' :
+                            'bg-sky-500/20 border-sky-400 text-sky-300')
                         : (step.color === 'amber' ? 'bg-amber-50 border-amber-200 text-amber-800' :
-                           step.color === 'emerald' ? 'bg-emerald-50 border-emerald-200 text-emerald-800' :
-                           'bg-blue-50 border-blue-200 text-blue-800')
-                    }`}>
+                          step.color === 'emerald' ? 'bg-emerald-50 border-emerald-200 text-emerald-800' :
+                            'bg-blue-50 border-blue-200 text-blue-800')
+                      }`}>
                       {step.tag}
                     </span>
                   </div>
 
-                  <div className={`text-xs font-bold tracking-widest uppercase mb-1.5 transition-colors duration-300 ${
-                    isCardActive ? 'text-amber-400' : 'text-slate-400'
-                  }`}>
+                  <div className={`text-xs font-bold tracking-widest uppercase mb-1.5 transition-colors duration-300 ${isCardActive ? 'text-amber-400' : 'text-slate-400'
+                    }`}>
                     STEP {step.num}
                   </div>
 
-                  <h3 className={`text-2xl font-bold transition-colors duration-300 mb-3 leading-snug ${
-                    isCardActive ? 'text-white' : 'text-slate-900'
-                  }`}>
+                  <h3 className={`text-2xl font-bold transition-colors duration-300 mb-3 leading-snug ${isCardActive ? 'text-white' : 'text-slate-900'
+                    }`}>
                     {step.title}
                   </h3>
 
-                  <p className={`leading-relaxed text-sm sm:text-base mb-6 font-medium transition-colors duration-300 ${
-                    isCardActive ? 'text-slate-200' : 'text-slate-600'
-                  }`}>
+                  <p className={`leading-relaxed text-sm sm:text-base mb-6 font-medium transition-colors duration-300 ${isCardActive ? 'text-slate-200' : 'text-slate-600'
+                    }`}>
                     {step.description}
                   </p>
                 </div>
 
                 {/* Card Footer Link */}
-                <div className={`relative z-10 pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors duration-300 ${
-                  isCardActive ? 'border-slate-800 text-amber-400' : 'border-slate-100 text-amber-600'
-                }`}>
+                <div className={`relative z-10 pt-4 border-t flex items-center justify-between text-xs font-bold transition-colors duration-300 ${isCardActive ? 'border-slate-800 text-amber-400' : 'border-slate-100 text-amber-600'
+                  }`}>
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 className={`w-4 h-4 ${isCardActive ? 'text-emerald-400' : 'text-emerald-500'}`} />
                     100% Free & No Obligation
@@ -251,3 +241,5 @@ export default function HowItWorks() {
     </section>
   );
 }
+
+

@@ -4,11 +4,11 @@ const HeroWhyChooseUs = () => {
   const { openQuoteModal } = useQuoteModal()
   return (
     <section className="relative  bg-white py-14 sm:py-16 lg:py-18">
-      <div className="absolute w-150 h-150 blur-[120px] rounded-full left-1/4 -top-30 z-0 bg-emerald-200/10"/>
+      <div className="absolute w-150 h-150 blur-[120px] rounded-full left-1/4 -top-30 z-0 bg-emerald-300/12" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5}} 
+        transition={{ duration: 0.5 }}
         className="relative"
       >
         <div className="max-w-3xl mx-auto px-5 text-center">

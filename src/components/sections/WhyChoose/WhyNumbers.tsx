@@ -56,34 +56,31 @@ export default function WhyNumbers() {
                     transition={{ staggerChildren: 0.15 }}
                 >
                     {stats.map((stat) => (
-                        <motion.article
+                        <motion.div
                             key={stat.label}
-                            className="rounded-lg border border-slate-200 bg-white p-7 shadow-black/10 shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-black/30"
+                            className="rounded-lg border border-slate-200 bg-white p-7 shadow-black/10 shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-black/20"
                             variants={{
                                 hidden: { opacity: 0, y: 30 },
                                 visible: {
                                     opacity: 1,
                                     y: 0,
-                                    transition: { duration: 0.5, ease: "easeOut" },
+                                    transition: { duration: 0.5 },
                                 },
                             }}
-                            whileHover={{ y: -8, scale: 1.02 }}
+                            whileHover={{ y: -8, scale: 1.03 }}
                             transition={{ duration: 0.25 }}
                         >
                             <div className="mb-8 h-1 w-12 rounded-full bg-amber-300" />
-
-                            <p className="text-4xl font-bold tracking-tight text-slate-950">
+                            <p className="text-4xl font-extrabold tracking-tight font-serif text-slate-950">
                                 {stat.value}
                             </p>
-
-                            <h3 className="mt-3 text-lg font-semibold text-emerald-700">
+                            <h3 className="mt-3 text-lg font-semibold text-emerald-600">
                                 {stat.label}
                             </h3>
-
                             <p className="mt-3 text-sm leading-6 text-slate-600">
                                 {stat.description}
                             </p>
-                        </motion.article>
+                        </motion.div>
                     ))}
                 </motion.div>
             </div>

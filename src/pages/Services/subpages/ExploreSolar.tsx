@@ -2,7 +2,7 @@ import HowSolarWorks from "../../../components/sections/Services/ExploreSolar/Ho
 import ExploreSolar from "../../../components/sections/Services/ExploreSolar/ExploreSolar"
 import OurNumbers from "../../../components/sections/About/OurNumbers"
 import SolarAnatomy from "../../../components/sections/Services/ExploreSolar/SolarAnatomy"
-// import { CTA } from "../../../components"
+import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 
 
 const ExploreSolarPage = () => {
@@ -12,7 +12,7 @@ const ExploreSolarPage = () => {
             <HowSolarWorks />
             <SolarAnatomy />
             <OurNumbers />
-            {/* <CTA/> */}
+            <ServiceCTA service="solar" />
         </>
     )
 }

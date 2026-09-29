@@ -43,7 +43,7 @@ export default function HowItWorksInfo() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
             <div className="sticky top-35 h-fit ">
-              <div className="absolute w-100 h-70 bg-amber-400/15 blur-[120px] rounded-full top-0 -left-50"/>
+              <div className="absolute w-100 h-70 bg-amber-400/15 blur-[120px] rounded-full top-0 -left-30" />
               <p className="text-sm font-bold uppercase tracking-widest    text-amber-600 mb-4">The Process
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 leading-tight">
@@ -55,11 +55,11 @@ export default function HowItWorksInfo() {
             </div>
 
             <div className="space-y-10">
-              {processStep.map((item , index) => (
+              {processStep.map((item, index) => (
                 <motion.div initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.5 , delay: index * 0.12 }} 
+                  transition={{ duration: 0.5, delay: index * 0.12 }}
                   key={item.no} className="border-b border-slate-200 pb-10">
                   <div className="flex gap-5">
                     <span className={`${item.stepStyle} text-sm font-bold text-amber-500 pt-1`}> {item.no}</span>

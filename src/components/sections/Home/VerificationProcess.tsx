@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ShieldCheck, 
-  Award, 
-  CheckCircle2, 
+import {
+  ShieldCheck,
+  Award,
+  CheckCircle2,
   XCircle,
-  ArrowRight, 
-  Cpu, 
-  FileCheck2, 
-  Star, 
-  DollarSign, 
+  ArrowRight,
+  Cpu,
+  FileCheck2,
+  Star,
+  DollarSign,
   Zap,
   Lock,
   Building2,
   Sparkles,
   Layers
-} from 'lucide-react';      
+} from 'lucide-react';
 import { useQuoteModal } from '../../../context/QuoteModalContext';
 
 export default function VerificationProcess() {
@@ -81,7 +81,7 @@ export default function VerificationProcess() {
 
   return (
     <section id="standards" className="py-12 lg:py-20 bg-linear-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden scroll-mt-20">
-      
+
       {/* ─── Ambient Glow Effects ─── */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-175 bg-[#00417E]/5 rounded-full blur-[140px]" />
@@ -89,7 +89,7 @@ export default function VerificationProcess() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 relative z-10">
-        
+
         {/* ─── Section Header ─── */}
         <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#00417E]/20 text-[#00417E] text-xs font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-sm">
@@ -111,7 +111,7 @@ export default function VerificationProcess() {
         </div>
 
         {/* ─── 3-Stage Interactive Stepper Header (Auto 8s Rotation) ─── */}
-        <div 
+        <div
           className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mb-8"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -125,18 +125,16 @@ export default function VerificationProcess() {
                   setActiveStage(stage.id);
                   setIsPaused(false);
                 }}
-                className={`text-left p-4 sm:p-5 rounded-xl border-2 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between ${
-                  isActive
+                className={`text-left p-4 sm:p-5 rounded-xl border-2 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between ${isActive
                     ? 'bg-[#00417E] border-[#00417E] text-white shadow-xl shadow-[#00417E]/20 scale-101'
                     : 'bg-white border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50/80 shadow-xs'
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between w-full mb-3">
-                  <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full ${
-                    isActive 
-                      ? 'bg-[#F9B122] text-[#00417E]' 
+                  <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full ${isActive
+                      ? 'bg-[#F9B122] text-[#00417E]'
                       : 'bg-slate-100 text-slate-600 font-semibold'
-                  }`}>
+                    }`}>
                     {stage.badge}
                   </span>
                   <span className={`text-xl font-black font-mono ${isActive ? 'text-[#F9B122]' : 'text-slate-300'}`}>
@@ -155,12 +153,12 @@ export default function VerificationProcess() {
 
                 {/* Animated 8s Progress Bar on Active Tab */}
                 {isActive && (
-                  <motion.div 
+                  <motion.div
                     key={`bar-${stage.id}`}
                     initial={{ width: "0%" }}
                     animate={{ width: isPaused ? undefined : "100%" }}
                     transition={{ duration: 8, ease: "linear" }}
-                    className="absolute bottom-0 left-0 h-1.5 bg-linear-to-r from-[#F9B122] via-emerald-400 to-[#F9B122]" 
+                    className="absolute bottom-0 left-0 h-1.5 bg-linear-to-r from-[#F9B122] via-emerald-400 to-[#F9B122]"
                   />
                 )}
               </button>
@@ -208,7 +206,7 @@ export default function VerificationProcess() {
               {/* 4 Check Points Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 pt-4 sm:pt-6">
                 {stage.checks.map((check, i) => (
-                  <div 
+                  <div
                     key={i}
                     className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#00417E]/30 hover:shadow-md transition-all flex items-start gap-3 group"
                   >
@@ -232,7 +230,7 @@ export default function VerificationProcess() {
 
         {/* ─── High-Contrast Direct Comparison: True Solar vs Average Market ─── */}
         <div className="bg-linear-to-br from-[#00417E] via-[#002f5a] to-slate-950 text-white rounded-xl p-4 sm:p-5 lg:p-6 shadow-2xl border border-slate-800 relative overflow-hidden">
-          
+
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#F9B122]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0A6702]/15 rounded-full blur-3xl pointer-events-none" />
 
@@ -250,7 +248,7 @@ export default function VerificationProcess() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              
+
               {/* Unvetted Market Risks */}
               <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-sm space-y-3.5">
                 <div className="flex items-center gap-2 text-rose-400 font-bold text-sm border-b border-white/10 pb-3">
@@ -347,7 +345,7 @@ export default function VerificationProcess() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div 
+                <div
                   key={idx}
                   onClick={() => openQuoteModal()}
                   className="bg-white p-3 rounded-xl border border-slate-400/90 shadow-lg hover:shadow-xl shadow-black/60 hover:border-[#00417E]/40 transition-all flex items-center gap-2.5 cursor-pointer group"
