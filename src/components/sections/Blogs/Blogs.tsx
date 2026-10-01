@@ -71,7 +71,7 @@ export default function Blog() {
   ];
 
   return (
-    <section className="relative bg-slate-50 text-slate-900 py-14 sm:py-16 overflow-hidden" id="blogs">
+    <section className="relative z-2 bg-slate-50 text-slate-900 py-14 sm:py-16 overflow-hidden" id="blogs">
       <div className="absolute z-0 -top-4 -left-50 w-130 h-100 bg-amber-300/20 rounded-full blur-[120px]" />
       <div className="absolute z-0 bottom-0 -right-10 w-150 h-120 bg-blue-600/20 rounded-full blur-[120px]" />
 

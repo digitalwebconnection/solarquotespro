@@ -85,15 +85,15 @@ export default function Footer() {
 
   const serviceLinks = [
     { label: 'Residential Solar Quotes', href: '/service/explore-solar' },
-    { label: 'Commercial Solar Quotes', href : '/service/explore-solar' },
-    { label: 'Battery Storage Comparison', href : '/service/explore-battery' },
-    { label: 'Solar & Battery Combos', href :'/service/explore-battery' },
+    { label: 'Commercial Solar Quotes', href: '/service/explore-solar' },
+    { label: 'Battery Storage Comparison', href: '/service/explore-battery' },
+    { label: 'Solar & Battery Combos', href: '/service/explore-battery' },
     { label: 'Get 3 Free Installer Quotes', action: () => openQuoteModal() }
   ];
 
   return (
     <footer className="relative bg-linear-to-b from-slate-50 via-white to-slate-50 text-slate-600 pt-4 pb-6 overflow-hidden border-t border-slate-200">
-      
+
       {/* ─── Ambient Background Glows & Pattern ─── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         <div className="absolute top-10 left-1/4 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
@@ -102,7 +102,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 relative z-10">
-        
+
         {/* ─── Pre-Footer Trust Ribbon Graphic ─── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 p-3.5 sm:p-4 bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-200/50 mb-8 sm:mb-12">
           {trustGuarantees.map((item, idx) => (
@@ -123,8 +123,8 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="space-y-4 lg:pr-6">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               onClick={(e) => handleNavClick(e, '/')}
               className="inline-block py-1"
             >
@@ -134,20 +134,20 @@ export default function Footer() {
               Empowering Australian homeowners with transparent, competitive, and verified solar energy quotes from CEC-accredited professionals nationwide.
             </p>
             <div className="flex space-x-2.5 pt-2">
-              <a 
-                href="https://www.facebook.com/profile.php?id=61592788688425" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="True Solar Quote Facebook" 
+              <a
+                href="https://www.facebook.com/profile.php?id=61592788688425"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="True Solar Quote Facebook"
                 className="text-slate-800 bg-white border border-slate-300 hover:bg-linear-to-r hover:from-amber-400 hover:to-orange-500 hover:text-slate-950 hover:border-orange-400 transition-all duration-300 p-2.5 rounded-xl hover:-translate-y-1 hover:shadow-md"
               >
                 <Facebook className="w-4 h-4" />
               </a>
-              <a 
-                href="https://www.instagram.com/truesolarquote/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="True Solar Quote Instagram" 
+              <a
+                href="https://www.instagram.com/truesolarquote/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="True Solar Quote Instagram"
                 className="text-slate-800 bg-white border border-slate-300 hover:bg-[#F9B122] hover:text-[#00417E] hover:border-[#F9B122] transition-all duration-300 p-2.5 rounded-xl hover:-translate-y-1 hover:shadow-md"
               >
                 <Instagram className="w-4 h-4" />
@@ -163,8 +163,8 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((item) => (
                 <li key={item.label}>
-                  <Link 
-                    to={item.href} 
+                  <Link
+                    to={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
                   >
@@ -182,7 +182,7 @@ export default function Footer() {
               <span className="w-1.5 h-4 bg-[#0A6702] rounded-full"></span> Solar Quotes
             </h3>
             <ul className="space-y-2.5">
-              {serviceLinks.map((item ) => (
+              {serviceLinks.map((item) => (
                 <li key={item.label}>
                   {/* <button 
                     onClick={item.action} 
@@ -191,21 +191,23 @@ export default function Footer() {
                     <ArrowRight className="w-3.5 h-3.5 text-[#0A6702] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
                   </button> */}
-                 {item.href ? (
-                   <Link
-                    to={item.href}
-                    className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group" >
+                  {item.href ? (
+                    <Link
+                      to={item.href}
+                      className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
+                    >
                       {item.label}
-                   </Link>
-                 ) : (
-                   <button
-                    type="button"
-                    onClick={item.action}
-                    className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group text-left" >
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={item.action}
+                      className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group text-left"
+                    >
                       {item.label}
-                   </button>
-                 )}
-                   {/* <Link 
+                    </button>
+                  )}
+                  {/* <Link 
                     to={item.href} 
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"

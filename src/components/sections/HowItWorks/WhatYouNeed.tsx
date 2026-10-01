@@ -29,6 +29,20 @@ const items = [
         description:
             "Whether you want to cut bills, add battery storage or prepare for an EV, this helps installers tailor their recommendations.",
     },
+    {
+        id: 5,
+        number: "05",
+        title: "Your Current Energy Setup",
+        description:
+            "Let us know about your existing solar panels, battery, inverter, EV charger, air conditioning or hot-water system so installers can understand what you already have and what may work with it.",
+    },
+    {
+        id: 6,
+        number: "06",
+        title: "The Energy Solutions You're Exploring",
+        description:
+            "Tell us which solutions you're considering, whether it's solar, battery storage, EV charging, inverters, air conditioning or a heat-pump hot-water system, so your options can be matched to your needs.",
+    },
 ];
 
 const WhatYoullNeed = () => {
@@ -36,13 +50,17 @@ const WhatYoullNeed = () => {
         <section className="relative overflow-hidden bg-linear-to-br from-slate-50 via-white  to-amber-50 py-20">
             <div
                 aria-hidden="true"
-                className="absolute -top-24 -right-24 w-100 h-100 bg-amber-400/10 rounded-full blur-[140px]"
+                className="absolute -top-24 -right-24 w-100 h-100 bg-amber-500/20 rounded-full blur-[120px] z-0"
+            />
+            <div
+                aria-hidden="true"
+                className="absolute -top-24 -left-24 w-150 h-170 bg-blue-600/12 rounded-full blur-[120px] z-0"
             />
 
             <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.1fr] gap-12 lg:gap-20 mb-14">
+                <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.1fr] gap-12 lg:gap-20 mb-10">
                     <div>
-                        <p className="text-amber-600 uppercase text-sm font-medium tracking-[2px] mb-4">
+                        <p className="text-amber-500 uppercase text-sm font-medium tracking-[2px] mb-4">
                             Before you start
                         </p>
                         <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 leading-tight">

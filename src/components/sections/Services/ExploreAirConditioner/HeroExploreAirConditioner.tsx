@@ -7,8 +7,8 @@ const HeroExploreAirConditioner = () => {
   return (
     <section className="relative h-auto w-full overflow-hidden" >
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDALngIlulIDwanZjOXTuMpv81UJic2k_RGFPIOL_XPw&s=10" alt="Modern air conditioner installation"
-        className="absolute inset-0 w-full h-full object-cover object-center" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLsu5NM0Jm5NodSFFfMohCCsVVkAHxOmlY1PvJkPh6jA&s" alt="Modern air conditioner installation"
+        className="absolute inset-0 w-full h-full object-cover object-bottom" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/80 to-slate-900/60" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8 sm:py-14 lg:py-14">

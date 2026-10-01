@@ -7,7 +7,7 @@ export default function CTAHowItWorks() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="relative overflow-hidden bg-cover bg-center bg-fixed py-14 sm:py-20"
+        <section className="sticky top-35 z-0 overflow-hidden bg-cover bg-center py-14 sm:py-14 min-h-[55vh] flex items-center"
             style={{ backgroundImage: `url(https://plus.unsplash.com/premium_photo-1678743133528-9afcd2b72b70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHNvbGFyfGVufDB8fDB8fHww)` }}
         >
             <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-black/70 to-slate-200/20" />
@@ -17,7 +17,7 @@ export default function CTAHowItWorks() {
                         <div className="pt-1">
                             <p className="mb-3 text-xs font-bold uppercase tracking-[3px] text-amber-400">Make your move</p>
                             <h2 className="max-w-3xl font-serif text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">Your best solar decision starts with a better comparison.</h2>
-                            <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100 sm:text-base">Share a few details about your home and let the right options come to you.</p>
+                            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-50 sm:text-base">Share a few details about your home and let the right options come to you.</p>
                         </div>
 
                         <div className="flex  flex-col items-start  gap-3 mr-30">

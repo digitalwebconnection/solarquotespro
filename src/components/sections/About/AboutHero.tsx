@@ -42,7 +42,7 @@ export default function AboutHero() {
                 className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex">
                 <div className="max-w-4xl text-white mt-9">
 
-                    <motion.p variants={itemVariants} className="font-bold text-sm uppercase mt-8 tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-2 bg-amber-500/10 text-amber-300 border-amber-400 border backdrop-blur-md">
+                    <motion.p variants={itemVariants} className="font-bold text-xs uppercase mt-8 tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-2 bg-amber-500/8 text-amber-300 border-amber-400/80 border backdrop-blur-md">
                         <Dot strokeWidth={10} className="w-4 h-4 animate-pulse" />About True Solar Quote
                     </motion.p>
 

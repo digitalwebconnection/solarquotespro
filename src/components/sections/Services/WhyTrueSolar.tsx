@@ -50,13 +50,12 @@ export default function MiniWhyTrueSolarQuotes() {
                     <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">
                         <BookOpen className="w-4 h-4" />Why Use True Solar Quote
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold mt-5 font-serif">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-2xl mx-auto  font-bold mt-5 font-serif">
                         Make a More{" "}
                         <span className="bg-linear-to-r from-amber-400 via-orange-400 to-emerald-400 bg-clip-text text-transparent"> Informed Energy Decision
                         </span>
                     </h2>
-                    <p className="text-slate-300 mt-5 text-sm sm:text-base leading-7 mx-auto">Solar and home-energy decisions can involve significant costs and long-term commitments. We provide useful
-                        information, comparisons and tools to help you understand the market before choosing an installer or energy solution.
+                    <p className="text-slate-300 max-w-4xl mt-5 text-sm sm:text-base leading-7 mx-auto">Solar and home-energy decisions can involve significant costs and long-term commitments. We provide useful information, comparisons and tools to help you understand the market before choosing an installer or energy solution.
                     </p>
                 </motion.div>
 
@@ -71,7 +70,7 @@ export default function MiniWhyTrueSolarQuotes() {
                                 duration: 0.5,
                                 delay: index * 0.15
                             }}
-                            className={` group relative bg-slate-950/90 border rounded-lg p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
+                            className={` group relative bg-slate-950/90 border rounded-xl p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
                             <div className="flex items-center justify-between mb-5">
                                 <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800  flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}</div>
                                 <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase  tracking-wider ${item.badgeColor}`}>{item.badge} </span>

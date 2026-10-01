@@ -1,10 +1,11 @@
+import { ArrowRight } from "lucide-react"
 import { useQuoteModal } from "../../../context/QuoteModalContext"
 import { motion } from "framer-motion"
 const HeroWhyChooseUs = () => {
   const { openQuoteModal } = useQuoteModal()
   return (
     <section className="relative  bg-white py-14 sm:py-16 lg:py-18">
-      <div className="absolute w-150 h-150 blur-[120px] rounded-full left-1/4 -top-30 z-0 bg-emerald-300/12" />
+      <div className="absolute w-150 h-150 blur-[120px] rounded-full left-1/4 -top-30 z-0 bg-emerald-300/10" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +25,7 @@ const HeroWhyChooseUs = () => {
             <span className="text-emerald-600"> Just trusted solar options.</span>
           </p>
           <button
-            onClick={() => openQuoteModal()} className="mt-8 px-6 py-3 rounded-lg bg-linear-to-r from-emerald-500 to-emerald-400 text-white font-bold cursor-pointer hover:from-emerald-400 hover:to-emerald-500 active:scale-96 transition-colors duration-400">Get Your Solar Quotes</button>
+            onClick={() => openQuoteModal()} className="mt-8 px-6 py-3 rounded-lg bg-linear-to-r from-emerald-500 to-emerald-400 text-white font-bold cursor-pointer hover:from-emerald-400 hover:to-emerald-500 active:scale-96 inline-flex items-center gap-1 hover:shadow-emerald-500/30 shadow-xl transition-all duration-300 group hover:-translate-y-1">Get Your Solar Quotes <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" /></button>
         </div>
       </motion.div>
     </section>

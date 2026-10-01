@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const accents = {
     amber: { text: "text-amber-500/80", border: "border-amber-400", iconBorder: "border-amber-400/40", bgColor: "bg-amber-300", },
     emerald: { text: "text-emerald-300", border: "border-emerald-400", iconBorder: "border-emerald-400/40", bgColor: "bg-emerald-500" },
-    sky: { text: "text-sky-400", border: "border-sky-400", iconBorder: "border-sky-400/40", bgColor: "bg-sky-600" },
+    sky: { text: "text-sky-300", border: "border-sky-400", iconBorder: "border-sky-400/40", bgColor: "bg-sky-500" },
     orange: { text: "text-orange-600", border: "border-orange-400", iconBorder: "border-orange-400/40", bgColor: "bg-orange-400" },
 } as const;
 
@@ -37,12 +37,11 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
             gsap.to(cardRef.current, {
                 scale: 1 - (total - index) * 0.05,
                 transformOrigin: "center top",
-                ease: "none",
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top center",
                     end: "bottom center",
-                    scrub: 2,
+                    scrub: 1,
                 },
             });
         }, containerRef);
@@ -63,7 +62,7 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
                     </div>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800 sm:text-3xl">{title}</h3>
-                <p className="max-w-xl text-sm leading-relaxed text-slate-700 sm:text-base">{desc}</p>
+                <p className="max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">{desc}</p>
             </div>
         </div>
     );

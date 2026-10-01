@@ -1,5 +1,6 @@
 
 import { WhyChooseUs } from "../components"
+import Testimonials from "../components/sections/Testimonials"
 import CTAWhyUs from "../components/sections/WhyChoose/CTAWhyUs"
 import HeroWhyChooseUs from "../components/sections/WhyChoose/HeroWhyChooseUs"
 import SolarDesicion from "../components/sections/WhyChoose/SolarDecision"
@@ -13,6 +14,7 @@ const WhyChooseUsPage = () => {
             <WhyNumbers />
             <CTAWhyUs />
             <SolarDesicion />
+            <Testimonials />
         </main>
     )
 }

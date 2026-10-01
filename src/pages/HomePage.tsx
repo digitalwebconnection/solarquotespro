@@ -6,6 +6,7 @@ import VerificationProcess from '../components/sections/Home/VerificationProcess
 import WhyCompare from '../components/sections/Home/WhyCompare';
 import SolarJourney from '../components/sections/Home/SolarJourney';
 import FAQ from '../components/sections/Home/FAQ';
+import Testimonials from '../components/sections/Testimonials';
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <VerificationProcess />
       <WhyCompare />
       <SolarJourney />
+      <Testimonials />
       <FAQ />
     </main>
   );

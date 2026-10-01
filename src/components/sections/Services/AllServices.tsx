@@ -99,7 +99,7 @@ export default function AllServices() {
 
   return (
     <section className="relative  bg-slate-50 py-14">
-      <div className="absolute z-0 top-40 -left-50 w-140 h-90 rounded-full bg-amber-300/20  blur-[120px]" />
+      <div className="absolute z-0 top-40 -left-50 w-110 h-100 rounded-full bg-amber-300/20  blur-[120px]" />
       <div className="absolute z-0 bottom-3 -right-10 w-250 h-170 rounded-full bg-amber-300/20  blur-[120px]" />
       <div className="absolute z-0 top-20 -right-30 w-130 h-100 rounded-full  bg-blue-600/10 blur-[120px]" />
 

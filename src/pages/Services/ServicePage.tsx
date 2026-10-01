@@ -6,12 +6,12 @@ import WhyTrueSolar from "../../components/sections/Services/WhyTrueSolar";
 // import HowSolarWork from "../../components/sections/Services/Sections/exploresolar/sections/HowSolarWork";
 
 
-export default function ServicePage(){
-    return(
+export default function ServicePage() {
+    return (
         <main>
-            <HeroService/>
-            <AllServices/>
-            <WhyTrueSolar/>
+            <HeroService />
+            <AllServices />
+            <WhyTrueSolar />
             {/* <CTA/> */}
         </main>
     )

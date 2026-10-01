@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { UserCheck, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 export default function LeadershipSection() {
   const leaders = [
     {
@@ -42,19 +42,18 @@ export default function LeadershipSection() {
       >
 
         <div className="max-w-7xl relative mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 h-150 w-150 -left-40 -top-25 bg-blue-600/8 blur-[120px] z-0" />
+          <div className="absolute inset-0 h-150 w-150 -left-40 -top-25 bg-blue-700/14 blur-[120px] z-0" />
           <div className="text-center auto mb-16 relative z-10  ">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-4 tracking-[2px]  text-amber-500 text-xs font-semibold uppercase">
-              <UserCheck className="w-4 h-4 text-amber-500" />
-              <span>Leadership</span>
+            <div className=" mb-4 tracking-[2px]  text-amber-500 text-xs font-semibold uppercase">
+              Leadership
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-950 mb-3 font-serif">
-              Guided by <span className="bg-linear-to-r from-amber-300 to-emerald-700  bg-clip-text text-transparent"> Solar Experts</span>
+              Guided by <span className="bg-linear-to-r from-amber-400 to-emerald-600  bg-clip-text text-transparent"> Solar Experts</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">Setting direction, making big calls, and upholding our core values.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 relative gap-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 relative gap-8 py-12 ">
             {leaders.map((item, index) => (
               <motion.div
                 key={item.name}

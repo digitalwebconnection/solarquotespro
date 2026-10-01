@@ -1,14 +1,14 @@
 
-import { ArrowDown, ArrowUp, Fan, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowUp, Fan, ArrowRight, Thermometer, Zap } from "lucide-react";
 
 const WhatIsAc = () => {
   return (
-    <section className="w-full py-10 sm:py-12 lg:py-14 bg-slate-50">
+    <section className="w-full py-6 sm:py-8 lg:py-10 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-200/20 text-blue-900 border border-blue-100 text-xs sm:text-sm font-bold uppercase tracking-wider">
-            <Fan className="w-4 h-4" /> Understanding Air Conditioners </span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-200/20 text-blue-900 border border-blue-100 text-xs sm:text-xs group font-bold uppercase tracking-wider">
+            <Fan className="w-4 h-4 group-hover:rotate-360 duration-500 ease-in-out transition-transform" /> Understanding Air Conditioners </span>
 
           <h2 className="mt-4 text-3xl sm:text-3xl lg:text-4xl font-bold font-serif text-slate-900  ">
             What Is an
@@ -60,10 +60,10 @@ const WhatIsAc = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
                 <span className="px-4 py-2 rounded-xl bg-sky-200/40 text-sky-700 font-bold text-sm">
                   Outdoor Air</span>
-                  <span className="text-slate-500"><ArrowRight size={15} /></span>
+                <span className="text-slate-500"><ArrowRight size={15} /></span>
                 <span className="px-4 py-2 rounded-xl bg-amber-200/40 text-amber-400 font-bold text-sm">
                   Heat Extracted</span>
-                  <span className="text-slate-500"><ArrowRight size={15} /></span>
+                <span className="text-slate-500"><ArrowRight size={15} /></span>
                 <span className="px-4 py-2 rounded-xl bg-orange-200/40 text-orange-500 font-bold text-sm">
                   Transferred Indoors
                 </span>
@@ -75,24 +75,24 @@ const WhatIsAc = () => {
           </div>
         </div>
 
-        {/* <div className="rounded-3xl bg-linear-to-br from-slate-900 to-slate-800 text-white p-6 sm:p-8 lg:p-10">
-            <div className="flex gap-4 ">
-            <div className="w-14 h-14 rounded-2xl bg-yellow-400/15 border border-yellow-400/30 flex items-center justify-center"> <Zap className="w-7 h-7 text-yellow-400" /> </div>
+        <div className="rounded-xl bg-linear-to-br from-slate-900 to-slate-800 text-white p-6 sm:p-8 lg:p-10">
+          <div className="flex gap-4 ">
+            <div className="w-14 h-14 rounded-xl bg-yellow-400/15 border border-yellow-400/30 flex items-center justify-center"> <Zap className="w-7 h-7 text-yellow-400" /> </div>
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold font-serif mb-4"> Why Air Conditioners Use Electricity
               </h3>
               <p className="text-slate-300 leading-relaxed max-w-4xl"> powers components such as the compressor, fans and control systems. The system uses this electrical energy to operate the refrigeration cycle and transfer heat rather than directly creating cooling. </p>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10">
                   <Zap className="w-5 h-5 text-yellow-400 " />
                   <span className="text-sm font-semibold"> Electrical Energy </span>
                 </div>
-                <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10">
                   <Fan className="w-5 h-5 text-sky-400 " />
                   <span className="text-sm font-semibold"> Refrigeration Cycle </span>
                 </div>
-                <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10">
                   <Thermometer className="w-5 h-5 text-orange-400 " />
                   <span className="text-sm font-semibold">Heating & Cooling
                   </span>
@@ -101,9 +101,9 @@ const WhatIsAc = () => {
               <p className="mt-6 text-slate-300 leading-relaxed"> This is why the efficiency of an air conditioner depends on how much heating or cooling it can provide compared with the electricity it consumes.
               </p>
             </div>
-            </div>
-          </div> */}
+          </div>
         </div>
+      </div>
     </section>
   );
 }

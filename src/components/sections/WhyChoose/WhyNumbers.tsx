@@ -25,7 +25,7 @@ const stats = [
 export default function WhyNumbers() {
     return (
         <motion.section
-            className="bg-white px-6 py-20 sm:px-10 lg:px-14 lg:py-16"
+            className="bg-linear-to-br from-emerald-500/8 via-emerald-500/12 to-white px-6 py-20 sm:px-10 lg:px-14 lg:py-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -42,7 +42,7 @@ export default function WhyNumbers() {
                         Why SolarQuotePro
                     </span>
 
-                    <h2 className="mt-3 capitalize text-3xl font-bold tracking-wide text-slate-950 font-serif sm:text-4xl lg:text-4xl">
+                    <h2 className="mt-3 capitalize text-3xl font-bold  text-slate-950 font-serif sm:text-4xl lg:text-4xl">
                         Know what you're really saving.
                     </h2>
 

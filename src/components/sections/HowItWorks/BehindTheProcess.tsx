@@ -25,9 +25,16 @@ export default function HowItWorksInfo() {
       titleStyle: "text-slate-900 capitalize",
       discription:
         "Your quotes give you the information needed to make a confident choice. Compare the system size, equipment, pricing, rebates and other details to understand the value of each option before deciding."
+    },
+    {
+      no: "04",
+      title: "Choose Your Installer And Go Solar",
+      stepStyle: "text-orange-500 ",
+      titleStyle: "text-slate-900 capitalize",
+      discription:
+        "Once you have compared your quotes, pick the installer that best fits your needs and budget. They will guide you through the final design, installation and system activation so you can start saving on your energy bills."
     }
   ];
-
 
   return (
     <section className="w-full bg-slate-50 py-16 sm:py-20 lg:py-24">
@@ -42,11 +49,11 @@ export default function HowItWorksInfo() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
-            <div className="sticky top-35 h-fit ">
-              <div className="absolute w-100 h-70 bg-amber-400/15 blur-[120px] rounded-full top-0 -left-30" />
+            <div className="sticky top-35 h-fit  ">
+              <div className="absolute w-100 h-70 bg-amber-400/20 blur-[120px] rounded-full top-0 -left-30 z-0" />
               <p className="text-sm font-bold uppercase tracking-widest    text-amber-600 mb-4">The Process
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 leading-tight">
                 A simpler way to find and compare
                 <span className="text-amber-500"> solar quotes.</span>
               </h2>
@@ -54,7 +61,7 @@ export default function HowItWorksInfo() {
               </p>
             </div>
 
-            <div className="space-y-10">
+            <div className="space-y-10 relative">
               {processStep.map((item, index) => (
                 <motion.div initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
