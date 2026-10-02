@@ -49,10 +49,10 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
     }, [index, total]);
 
     return (
-        <div ref={containerRef} className="sticky top-0 flex h-screen items-center justify-center">
+        <div ref={containerRef} className="sticky top-22 flex h-screen items-center justify-center">
             <div
                 ref={cardRef}
-                className={`relative flex h-[380px] w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-[420px] sm:p-14 md:w-[70%] ${a.border}`}
+                className={`relative flex h-[380px] w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-[420px] sm:p-12 md:w-[70%] ${a.border}`}
                 style={{ top: `calc(-5vh + ${index * 25}px)` }}
             >
                 <div className="flex items-center justify-between">

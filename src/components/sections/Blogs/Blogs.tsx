@@ -77,7 +77,7 @@ export default function Blog() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-9">
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-blue-900">Guides, Reviews & Energy Insights </h2>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900">Guides, Reviews & Energy Insights </h2>
           <p className="text-slate-600 text-sm sm:text-lg font-medium mt-2">
             Helpful information to understand, compare and research your home-energy options.
           </p>

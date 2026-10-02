@@ -50,7 +50,7 @@ export default function Testimonials() {
                             key={t.id}
                             onClick={() => setActive(i)}
                             className={`absolute left-1/2 top-1/2 cursor-pointer border-2 p-5 transition-all duration-500 ease-in-out sm:p-7 ${isCenter
-                                ? 'z-10 border-blue-950 bg-blue-950 text-white'
+                                ? 'z-10 border-blue-950 bg-linear-to-br from-blue-950 to-blue-900 text-white'
                                 : 'z-0 border-slate-200 bg-white text-slate-700 hover:border-blue-900 '
                                 }`}
                             style={{
@@ -87,14 +87,12 @@ export default function Testimonials() {
                                     ))}
                                 </div>
                             </div>
-                            <p
-                                className={`mb-2 text-[11px] font-bold uppercase tracking-wide ${isCenter ? 'text-emerald-400' : 'text-emerald-700'
-                                    }`}
-                            >
+                            <p className={`mb-2 text-[11px] font-bold uppercase tracking-wide 
+                            ${isCenter ? 'text-emerald-400' : 'text-emerald-700'
+                                }`} >
                                 {t.service}
                             </p>
                             <p className="text-sm leading-relaxed">“{t.quote}”</p>
-
                             <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
                                 <p className={`text-sm font-semibold ${isCenter ? 'text-white' : 'text-slate-900'}`}>
                                     {t.name}

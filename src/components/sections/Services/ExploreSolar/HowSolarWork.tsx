@@ -1,7 +1,7 @@
 import { Sun, Zap, PanelsTopLeft, Home } from "lucide-react";
 import { motion } from "framer-motion";
-const HowSolarWorks = () => {
 
+const HowSolarWorks = () => {
     const solarWorkingSteps = [
         {
             number: "01",
@@ -16,7 +16,6 @@ const HowSolarWorks = () => {
             hover:
                 "hover:border-amber-400 hover:bg-amber-100/20 hover:-translate-y-2",
         },
-
         {
             number: "02",
             title: "Electrons Start Moving",
@@ -24,14 +23,12 @@ const HowSolarWorks = () => {
                 "Energy from sunlight excites electrons inside the cell, creating an electrical current.",
             icon: Zap,
             bg: "bg-blue-50",
-            iconBg: "bg-blue-100 ",
+            iconBg: "bg-blue-100",
             iconColor: "text-blue-600",
             border: "border-blue-200",
             hover:
                 "hover:border-blue-400 hover:bg-blue-100/20 hover:-translate-y-2",
-
         },
-
         {
             number: "03",
             title: "Electricity Is Collected",
@@ -45,11 +42,11 @@ const HowSolarWorks = () => {
             hover:
                 "hover:border-amber-400 hover:bg-amber-100/20 hover:-translate-y-2",
         },
-
         {
             number: "04",
             title: "Power Reaches Your Home",
-            description: "Multiple panels form an array, and an inverter converts DC electricity into usable AC power.",
+            description:
+                "Multiple panels form an array, and an inverter converts DC electricity into usable AC power.",
             icon: Home,
             bg: "bg-emerald-50",
             iconBg: "bg-emerald-100",
@@ -60,43 +57,49 @@ const HowSolarWorks = () => {
         },
     ];
 
-
     return (
-        <section className="w-full py-14 bg-slate-50">
-            <div className="max-w-7xl mx-auto px-8">
+        <section className="relative overflow-hidden bg-slate-50 py-14">
 
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <p className="text-sm font-semibold uppercase tracking-widest text-amber-500 mb-3"></p>
-                    <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-4 font-serif">How Do Solar Panels Work?</h2>
-                    <p className="text-lg text-slate-600"> Solar panels convert sunlight into electricity through the <span className="font-semibold text-slate-800">
-                        {" "}photovoltaic (PV) effect
-                    </span>.Sunlight gives energy to electrons inside solar cells, creating
-                        electrical current.
+            <div className="absolute -left-16 top-15 h-60 w-60 rounded-full bg-amber-300/30 blur-[120px]" />
+            <div className="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-emerald-300/20 blur-3xl" />
+
+            <div className="relative mx-auto max-w-7xl px-8">
+                <div className="mx-auto mb-12 max-w-3xl text-center">
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-500">
+                        Simple process
+                    </p>
+                    <h2 className="mb-4 font-serif text-3xl font-bold text-slate-900 md:text-4xl">
+                        How Do Solar Panels Work?
+                    </h2>
+                    <p className="text-lg text-slate-600">
+                        Solar panels convert sunlight into electricity through the{" "}
+                        <span className="font-semibold text-slate-800">photovoltaic (PV) effect</span>.
+                        Sunlight gives energy to electrons inside solar cells, creating electrical current.
                     </p>
                 </div>
 
-                <div className=" grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
                     {solarWorkingSteps.map((item, index) => {
-                        const Icon = item.icon
+                        const Icon = item.icon;
                         return (
-                            <>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.5,
-                                        delay: index * 0.10
-                                    }}
-                                    key={index} className={`bg-white rounded-lg p-6 border border-slate-200 shadow-lg ${item.bg} ${item.border} ${item.hover} transition-all group duration-300 shadow-md shadow-black/40 hover:shadow-lg`}>
-                                    <div className={`w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center   mb-5 ${item.iconColor} ${item.iconBg} `}> < Icon className="group-hover:scale-110 transition-transform duration-300" />
-                                    </div>
-                                    <span className="text-sm font-bold text-amber-500">{item.number}</span>
-                                    <h3 className="text-xl font-bold text-blue-950 mt-2 mb-3">{item.title}</h3>
-                                    <p className="text-slate-600 leading-relaxed">{item.description}</p>
-                                </motion.div>
-                            </>
-                        )
+                            <motion.div
+                                key={item.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className={`rounded-xl border bg-white p-6 shadow-lg shadow-slate-200/70 ${item.bg} ${item.border} ${item.hover} transition-all duration-300 group hover:shadow-xl`}
+                            >
+                                <div
+                                    className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${item.iconBg} ${item.iconColor}`}
+                                >
+                                    <Icon className="transition-transform duration-300 group-hover:scale-110" />
+                                </div>
+                                <span className="text-sm font-bold text-amber-500">{item.number}</span>
+                                <h3 className="mt-2 mb-3 text-xl font-bold text-blue-950">{item.title}</h3>
+                                <p className="leading-relaxed text-slate-600">{item.description}</p>
+                            </motion.div>
+                        );
                     })}
                 </div>
             </div>

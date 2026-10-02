@@ -34,13 +34,12 @@ export default function HeroExploreEvCharging() {
               <span>Get Your Free Solar Quote</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>
-            <button onClick={() => openQuoteModal()} type="button" className="bg-white/ ring-2 ring-emerald-400 text-emerald-400 font-bold text-base py-3 px-4 backdrop-blur-md rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group">
+            <a href="#types-of-ev-chargers" type="button" className="bg-white/ ring-2 ring-emerald-400 text-emerald-400 font-bold text-base py-3 px-4 backdrop-blur-md rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group">
               <span>Explore EV charging Options</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-            </button>
+            </a>
           </div>
         </div>
-
       </motion.div>
     </section>
   );

@@ -15,11 +15,11 @@ export default function AboutCompany() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="max-w-2xl"
                     >
-                        <div className=" text-xs font-bold uppercase tracking-[2px] text-blue-800">
+                        <div className=" text-xs font-bold uppercase tracking-[2px] text-amber-500">
                             About Our Company
                         </div>
-                        <h2 className="mt-4 font-serif text-4xl font-extrabold leading-tight text-blue-950 sm:text-5xl">
-                            Helping homeowners make smarter energy decisions.
+                        <h2 className="mt-4 font-serif text-4xl font-extrabold leading-14 text-slate-900 sm:text-5xl">
+                            Helping homeowners make <span className="bg-linear-to-r  from-amber-400 from-20% via-blue-800  to-emerald-600 bg-clip-text text-transparent">smarter energy decisions. </span>
                         </h2>
                         <p className="mt-5 text-lg leading-8  text-slate-600">
                             Choosing solar, batteries or other home-energy solutions can be confusing. There are different products, installers, prices, warranties and incentives to consider.
@@ -31,7 +31,7 @@ export default function AboutCompany() {
                             From solar panels and batteries to EV chargers, hot-water heat pumps and air conditioning, our goal is to give homeowners the information and comparison tools they need to make confident decisions.
                         </p>
 
-                        <div className="mt-8 rounded-2xl inline-flex border border-blue-100 bg-white/80 py-4 px-7 shadow-lg ">
+                        <div className="mt-8 rounded-xl inline-flex border border-blue-100 bg-white/80 py-3 px-5 shadow-lg ">
                             <p className="text-lg font-bold text-blue-900">
                                 Research. Compare. Choose with confidence.
                             </p>

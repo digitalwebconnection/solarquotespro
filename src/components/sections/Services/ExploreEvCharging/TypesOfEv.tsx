@@ -1,15 +1,38 @@
-import { Zap, Rocket, Plug } from "lucide-react"
+import { motion, type Variants } from "framer-motion";
+import { Zap, Rocket, Plug } from "lucide-react";
+
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" },
+  }),
+};
 
 const TypesOfEv = () => {
   return (
-    <section className="py-6 bg-slate-50">
-      <div className="text-center max-w-3xl mx-auto mt-5 py-10">
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-blue-950 font-serif">Types of EV charger  </h3>
+    <section className="py-6 bg-slate-50" id="types-of-ev-chargers">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+        className="text-center max-w-3xl mx-auto py-5"
+      >
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">Types of EV charger</h3>
         <p className="text-slate-600 text-lg mt-2">Not every charger is designed for the same situation.</p>
-      </div>
+      </motion.div>
 
-      <div className="max-w-7xl mx-auto px-8 py-8">
-        <div className="grid md:grid-cols-2 gap-8 items-center py-10 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-8 py-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="grid md:grid-cols-2 gap-8 items-center py-10 border-b border-slate-200"
+        >
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Plug className="text-orange-500" size={28} />
@@ -27,9 +50,15 @@ const TypesOfEv = () => {
             <img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RVYlMjBjaGFyZ2VyfGVufDB8fDB8fHww" alt="Portable EV charging"
               className="w-full h-full object-cover" />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center py-10 border-b border-slate-200">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="grid md:grid-cols-2 gap-8 items-center py-10 border-b border-slate-200"
+        >
           <div className="h-56 overflow-hidden rounded-xl ">
             <img src="https://images.unsplash.com/photo-1600490819528-42405785433a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RVYlMjBob21lJTIwY2hhcmdpbmd8ZW58MHx8MHx8fDA%3D"
               alt="Level 2 home charging" className="w-full h-full object-cover" />
@@ -46,9 +75,15 @@ const TypesOfEv = () => {
               <span className=" text-slate-600"> daily home charging, overnight charging and solar-integrated charging.</span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center py-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="grid md:grid-cols-2 gap-8 items-center py-10"
+        >
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="text-orange-500" size={28} />
@@ -67,17 +102,29 @@ const TypesOfEv = () => {
               alt="DC fast charging" className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="text-center max-w-3xl mx-auto my-14">
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-blue-950 font-serif">How Fast Can an EV Charge?</h2>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+        className="text-center max-w-3xl mx-auto my-8"
+      >
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-serif">How Fast Can an EV Charge?</h2>
         <p className="text-lg text-slate-700 font-semibold mt-3">Charging speed is measured in kilowatts (kW).
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
-        <div className="bg-white rounded-lg border border-slate-200 shadow-md p-7 flex flex-col justify-between">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="bg-linear-to-r from-amber-300/10 to-white rounded-lg border border-slate-200 shadow-md p-7 flex flex-col justify-between shadow-amber-300/50"
+        >
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-bold tracking-widest uppercase text-amber-500 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">Standard Home Charging</span>
@@ -88,9 +135,15 @@ const TypesOfEv = () => {
               40 km of driving range per hour, depending on the vehicle's efficiency.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="bg-white rounded-lg border border-slate-200 shadow-md p-7 flex flex-col justify-between">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="bg-linear-to-l from-emerald-300/10 to-white rounded-lg border border-slate-200 shadow-md shadow-emerald-600/60 p-7 flex flex-col justify-between"
+        >
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-bold tracking-widest uppercase text-emerald-500 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">High-Power AC Charging</span>
@@ -101,9 +154,15 @@ const TypesOfEv = () => {
               A 22 kW charger can potentially add around 125 km of range per hour, but only when the vehicle and electrical supply support that charging rate.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="max-w-5xl mx-auto">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+        className="max-w-5xl mx-auto"
+      >
         <div className="bg-slate-900 rounded-2xl p-6 sm:p-7 text-white shadow-lg border-l-4 border-orange-500">
           <div className="flex gap-4 items-start">
             <div className="bg-orange-500/10 p-3 rounded-xl ">
@@ -116,10 +175,8 @@ const TypesOfEv = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
-
   )
 }
-
 export default TypesOfEv

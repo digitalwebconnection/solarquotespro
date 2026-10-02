@@ -2,6 +2,7 @@ import { Dot, ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 export default function HeroBlog() {
+
   const contentVariants = {
     hidden: { opacity: 0, y: 16 },
     visible: { opacity: 1, y: 0 },

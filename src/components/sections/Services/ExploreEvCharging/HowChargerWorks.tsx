@@ -79,8 +79,8 @@ const HowChargerWorks = () => {
   return (
     <section className="py-14 bg-slate-50">
       <div className=" ">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-4xl font-serif font-extrabold  text-blue-950">How Does EV Charging Work?</h2>
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h2 className="text-2xl sm:text-4xl font-serif font-extrabold  text-blue-950">How Does <span className="text-emerald-500"> EV Charging </span> Work?</h2>
           <p className="text-lg text-slate-600 font-md mt-3"> Understanding how electricity moves from your energy source to your electric vehicle. </p>
         </div>
 
@@ -90,7 +90,7 @@ const HowChargerWorks = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }} >
-            <span className="text-sm font-bold tracking-widest uppercase text-orange-500">Understanding EV Charging</span>
+            <span className="text-sm font-semibold tracking-[2px] uppercase text-orange-500">Understanding EV Charging</span>
             <h3 className="text-3xl sm:text-4xl font-extrabold font-serif text-slate-900 mt-2">How electricity reaches your EV</h3>
             <p className="text-lg text-slate-600 leading-7 mt-4">An EV charger connects your electric vehicle to an electricity supply and manages the delivery of electricity to the vehicle's battery.</p>
             <p className="text-lg text-slate-600 leading-7 mt-4"> Electricity can come from the{" "}
@@ -133,7 +133,7 @@ const HowChargerWorks = () => {
         </div>
 
         <div className="w-full mb-12">
-          <div className="bg-slate-900  py-7 px-15 text-white">
+          <div className="bg-slate-900  py-10 px-15 text-white">
             <div className="flex gap-5 items-start">
               <div className="bg-blue-400/10 p-3 rounded-xl shrink-0"> <Zap className="text-blue-400" size={30} />
               </div>
@@ -148,7 +148,7 @@ const HowChargerWorks = () => {
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h3 className="text-2xl sm:text-4xl font-extrabold text-blue-950 font-serif">
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-serif">
             Three Things Determine Charging Speed
           </h3>
           <p className="text-slate-600 text-lg mt-2">

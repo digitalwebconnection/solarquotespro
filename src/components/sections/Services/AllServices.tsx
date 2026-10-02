@@ -1,4 +1,4 @@
-import { Sun, BatteryCharging, Zap, Snowflake, Droplets, ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
+import { Sun, BatteryCharging, Zap, Snowflake, Droplets, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
 import { motion } from "framer-motion";
@@ -98,10 +98,10 @@ export default function AllServices() {
   ];
 
   return (
-    <section className="relative  bg-slate-50 py-14">
-      <div className="absolute z-0 top-40 -left-50 w-110 h-100 rounded-full bg-amber-300/20  blur-[120px]" />
+    <section className="relative  bg-white py-14">
+      <div className="absolute z-0 top-40 -left-50 w-150 h-120 rounded-full bg-amber-300/20  blur-[120px]" />
       <div className="absolute z-0 bottom-3 -right-10 w-250 h-170 rounded-full bg-amber-300/20  blur-[120px]" />
-      <div className="absolute z-0 top-20 -right-30 w-130 h-100 rounded-full  bg-blue-600/10 blur-[120px]" />
+      <div className="absolute z-0 top-20 -right-30 w-130 h-100 rounded-full  bg-blue-600/15 blur-[120px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -111,8 +111,7 @@ export default function AllServices() {
           transition={{ duration: 0.6 }}
 
           className="max-w-3xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-200/20 border border-amber-300 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-5 backdrop-blur-sm">
-            <BookOpen className="w-4 h-4 text-amber-500" />Home Energy Guide
+          <div className=" text-amber-500 text-xs font- semibold uppercase tracking-[2px] mb-5 backdrop-blur-sm">Home Energy Guide
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-950">

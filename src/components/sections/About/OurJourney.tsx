@@ -36,7 +36,7 @@ const steps: JourneyStep[] = [
 ];
 export default function OurJourney() {
   return (
-    <section className="relative z-20 bg-slate-900 text-white">
+    <section className="relative top-10 z-20 bg-slate-900 text-white ">
       <div className="mx-auto max-w-2xl px-4 pb-5 pt-20 text-center">
         <h2 className="font-serif text-3xl sm:text-5xl font-bold bg-linear-to-r from-amber-300 from-35% to-emerald-400 bg-clip-text text-transparent">
           Our Journey So Far

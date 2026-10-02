@@ -25,7 +25,7 @@ const stats = [
 export default function WhyNumbers() {
     return (
         <motion.section
-            className="bg-linear-to-br from-emerald-500/8 via-emerald-500/12 to-white px-6 py-20 sm:px-10 lg:px-14 lg:py-16"
+            className="bg-linear-to-br from-white via-emerald-500/12 to-white px-6 py-20 sm:px-10 lg:px-14 lg:py-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

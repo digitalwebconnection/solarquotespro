@@ -1,5 +1,11 @@
+import { motion, type Variants } from "framer-motion";
 import { Dot, ArrowRight } from "lucide-react";
 import { useQuoteModal } from "../../../../context/QuoteModalContext";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
 
 export default function HeroExploreHeatPumps() {
   const { openQuoteModal } = useQuoteModal();
@@ -11,8 +17,13 @@ export default function HeroExploreHeatPumps() {
 
       <div className="absolute inset-0 bg-linear-to-r from-black/90  to-black/60" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-14">
-        <div className="max-w-4xl text-white space-y-4.5">
-          <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-yellow-500/20 text-yellow-300 border border-yellow-400/40 backdrop-blur-md">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="max-w-4xl text-white space-y-4.5"
+        >
+          <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-yellow-500/10 text-yellow-300 border border-yellow-400/40 backdrop-blur-md">
             <Dot strokeWidth={8} className="w-5 h-5 text-yellow-400 animate-pulse" />
             <span>Explore Heat Pumps</span>
           </p>
@@ -29,7 +40,7 @@ export default function HeroExploreHeatPumps() {
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

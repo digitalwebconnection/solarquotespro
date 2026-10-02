@@ -37,7 +37,7 @@ export default function HowItWorksInfo() {
   ];
 
   return (
-    <section className="w-full bg-slate-50 py-16 sm:py-20 lg:py-24">
+    <section className="w-full bg-slate-50 py-16 sm:py-20 lg:py-20">
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export default function HowItWorksInfo() {
 
             <div className="sticky top-35 h-fit  ">
               <div className="absolute w-100 h-70 bg-amber-400/20 blur-[120px] rounded-full top-0 -left-30 z-0" />
-              <p className="text-sm font-bold uppercase tracking-widest    text-amber-600 mb-4">The Process
+              <p className="text-sm font-semibold uppercase tracking-[2px]    text-amber-600 mb-4">The Process
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 leading-tight">
                 A simpler way to find and compare

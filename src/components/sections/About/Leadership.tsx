@@ -32,7 +32,7 @@ export default function LeadershipSection() {
   ];
 
   return (
-    <section className="bg-white py-20 text-slate-950 relative">
+    <section className="bg-white py-16 text-slate-950 relative">
       <div className="" />
       <motion.section
         initial={{ opacity: 0.50, y: 20 }}
@@ -41,13 +41,13 @@ export default function LeadershipSection() {
         transition={{ duration: 0.5 }}
       >
 
-        <div className="max-w-7xl relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl relative mx-auto px-4 sm:px-6 lg:px-8 z-5">
           <div className="absolute inset-0 h-150 w-150 -left-40 -top-25 bg-blue-700/14 blur-[120px] z-0" />
           <div className="text-center auto mb-16 relative z-10  ">
             <div className=" mb-4 tracking-[2px]  text-amber-500 text-xs font-semibold uppercase">
               Leadership
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-950 mb-3 font-serif">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-950 mb-3 font-serif">
               Guided by <span className="bg-linear-to-r from-amber-400 to-emerald-600  bg-clip-text text-transparent"> Solar Experts</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">Setting direction, making big calls, and upholding our core values.</p>
@@ -61,7 +61,7 @@ export default function LeadershipSection() {
                 whileInView={{ opacity: 1, y: item.isMiddle ? -24 : 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
-                className={`bg-white border rounded-lg overflow-hidden flex flex-col transition-all duration-300 shadow-lg ${item.isMiddle ? "-translate-y-6 border-amber-200 shadow-amber-500/10" : "border-slate-200 hover:border-slate-300"
+                className={`bg-white border  rounded-lg overflow-hidden flex flex-col transition-all duration-300 shadow-lg ${item.isMiddle ? "-translate-y-6 border-amber-200 shadow-amber-500/10" : "border-slate-200 hover:border-slate-300 h-110"
                   }`}>
                 <div className="flex flex-col ">
                   <div className="relative h-48 w-full overflow-hidden bg-slate-100">
@@ -74,13 +74,13 @@ export default function LeadershipSection() {
                     <p className="text-amber-600 font-medium text-xs uppercase tracking-wider mb-3">
                       {item.role}
                     </p>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                       {item.bio}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-5 pb-5 pt-1 h-9 flex items-center">
+                <div className="p-5 pt-1 h-9 flex items-center">
                   {item.linkText && item.linkUrl ? (
                     <a href={item.linkUrl} target="_blank" rel="" className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 hover:text-amber-800 transition-colors">
                       <span>{item.linkText}</span>
