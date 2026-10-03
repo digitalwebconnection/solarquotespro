@@ -1,12 +1,12 @@
 
-import { ArrowDown, ArrowUp, Fan, ArrowRight, Thermometer, Zap } from "lucide-react";
+import { ArrowDown, ArrowUp, Fan, ArrowRight } from "lucide-react";
 
 const WhatIsAc = () => {
   return (
-    <section className="w-full py-6 sm:py-8 lg:py-10 bg-slate-50">
+    <section className="w-full py-6 sm:py-6 lg:py-8 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-4xl mx-auto text-center mb-12">
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-200/20 text-blue-900 border border-blue-100 text-xs sm:text-xs group font-bold uppercase tracking-wider">
             <Fan className="w-4 h-4 group-hover:rotate-360 duration-500 ease-in-out transition-transform" /> Understanding Air Conditioners </span>
 
@@ -17,6 +17,49 @@ const WhatIsAc = () => {
           <p className="mt-5 text-base sm:text-lg text-slate-700 leading-relaxed"> An air conditioner is a system designed to control the temperature and comfort of an indoor space. Rather than simply creating cold
             air, an air conditioner moves heat from one place to another.
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-center mb-12">
+          <div className="pr-0 lg:pr-10">
+
+            <h3 className="mt-5 text-3xl font-bold text-slate-900 font-serif leading-tight">Heat is moved, not just created.</h3>
+
+            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              An air conditioner does not create cold air in the traditional sense. Instead, it removes heat from one space and transfers it elsewhere, which is why it can cool a room efficiently even on warm days.
+            </p>
+
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Inside the system, a refrigerant absorbs heat from indoor air and carries it to the outdoor unit, where the heat is released. In reverse-cycle systems, the process can also work in reverse, drawing warmth from outside air and moving it inside to provide heating.
+            </p>
+
+            <div className="mt-5 space-y-3">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                  <ArrowDown className="h-4 w-4" />
+                </div>
+                <p className="text-base leading-relaxed text-slate-600">
+                  <span className="font-semibold text-slate-900">Cooling mode:</span> the system removes indoor heat and pushes it outdoors.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                  <ArrowUp className="h-4 w-4" />
+                </div>
+                <p className="text-base leading-relaxed text-slate-600">
+                  <span className="font-semibold text-slate-900">Heating mode:</span> reverse-cycle units extract warmth from outside air and transfer it indoors.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-xl shadow-2xl shadow-black/40">
+            <img
+              src="https://images.unsplash.com/photo-1780445392698-646b69b12dd5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Air conditioner indoor system"
+              className="h-full min-h-[400px] w-full object-cover rounded-xl"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 mb-10">
@@ -33,22 +76,22 @@ const WhatIsAc = () => {
             </div>
             <div className="bg-slate-100/50 rounded-2xl  p-5 mb-5">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-                <span className="px-4 py-2 rounded-xl bg-sky-200/40 text-sky-700 font-bold text-sm">  Indoor Air
+                <span className="px-4 py-2 rounded-lg bg-sky-200/40 text-sky-700 font-bold text-sm">  Indoor Air
                 </span>
                 <span className="text-slate-500"><ArrowRight size={15} /></span>
-                <span className="px-4 py-2 rounded-xl bg-amber-200/40 text-amber-400 font-bold text-sm"> Heat Removed
+                <span className="px-4 py-2 rounded-lg bg-amber-200/20 text-amber-500 font-bold text-sm"> Heat Removed
                 </span>
                 <span className="text-slate-500"><ArrowRight size={15} /></span>
-                <span className="px-4 py-2 rounded-xl bg-orange-200/40 text-orange-500 font-bold text-sm">Released Outdoors
+                <span className="px-4 py-2 rounded-lg bg-orange-200/40 text-orange-500 font-bold text-sm">Released Outdoors
                 </span>
               </div>
             </div>
-            <p className="text-slate-600 leading-relaxed"> The air conditioner absorbs heat from the indoor air and transfers it outside. This lowers the indoor temperature while the indoor unit circulates cooler air through the room. </p>
+            <p className="text-slate-600  text-base leading-relaxed"> The air conditioner absorbs heat from the indoor air and transfers it outside. This lowers the indoor temperature while the indoor unit circulates cooler air through the room. </p>
           </div>
 
           <div className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-orange-100 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-lg bg-orange-100 flex items-center justify-center">
                 <ArrowUp className="w-5 h-5 text-orange-600" />
               </div>
               <div>
@@ -58,13 +101,13 @@ const WhatIsAc = () => {
             </div>
             <div className="rounded-2xl bg-slate-100/40 p-5 mb-5">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-                <span className="px-4 py-2 rounded-xl bg-sky-200/40 text-sky-700 font-bold text-sm">
+                <span className="px-4 py-2 rounded-lg bg-sky-200/40 text-sky-700 font-bold text-sm">
                   Outdoor Air</span>
                 <span className="text-slate-500"><ArrowRight size={15} /></span>
-                <span className="px-4 py-2 rounded-xl bg-amber-200/40 text-amber-400 font-bold text-sm">
+                <span className="px-4 py-2 rounded-lg bg-amber-200/20 text-amber-500 font-bold text-sm">
                   Heat Extracted</span>
                 <span className="text-slate-500"><ArrowRight size={15} /></span>
-                <span className="px-4 py-2 rounded-xl bg-orange-200/40 text-orange-500 font-bold text-sm">
+                <span className="px-4 py-2 rounded-lg bg-orange-200/40 text-orange-500 font-bold text-sm">
                   Transferred Indoors
                 </span>
               </div>
@@ -75,34 +118,6 @@ const WhatIsAc = () => {
           </div>
         </div>
 
-        <div className="rounded-xl bg-linear-to-br from-slate-900 to-slate-800 text-white p-6 sm:p-8 lg:p-10">
-          <div className="flex gap-4 ">
-            <div className="w-14 h-14 rounded-xl bg-yellow-400/15 border border-yellow-400/30 flex items-center justify-center"> <Zap className="w-7 h-7 text-yellow-400" /> </div>
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold font-serif mb-4"> Why Air Conditioners Use Electricity
-              </h3>
-              <p className="text-slate-300 leading-relaxed max-w-4xl"> powers components such as the compressor, fans and control systems. The system uses this electrical energy to operate the refrigeration cycle and transfer heat rather than directly creating cooling. </p>
-
-              <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10">
-                  <Zap className="w-5 h-5 text-yellow-400 " />
-                  <span className="text-sm font-semibold"> Electrical Energy </span>
-                </div>
-                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10">
-                  <Fan className="w-5 h-5 text-sky-400 " />
-                  <span className="text-sm font-semibold"> Refrigeration Cycle </span>
-                </div>
-                <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10">
-                  <Thermometer className="w-5 h-5 text-orange-400 " />
-                  <span className="text-sm font-semibold">Heating & Cooling
-                  </span>
-                </div>
-              </div>
-              <p className="mt-6 text-slate-300 leading-relaxed"> This is why the efficiency of an air conditioner depends on how much heating or cooling it can provide compared with the electricity it consumes.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

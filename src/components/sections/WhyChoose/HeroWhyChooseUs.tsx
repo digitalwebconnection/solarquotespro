@@ -14,7 +14,7 @@ const HeroWhyChooseUs = () => {
       >
         <div className="max-w-3xl mx-auto px-5 text-center">
           <div className="mb-5">
-            <span className="text-xs font-bold tracking-wider uppercase text-emerald-500">Why Choose Us</span>
+            <span className="text-xs font-bold tracking-[2px] uppercase text-emerald-500">Why Choose Us</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-slate-900 leading-tight">
             A Better Way to Choose Your <span className="bg-linear-to-r text-transparent bg-clip-text from-emerald-500 via-green-400 to-amber-600"> Solar Installer</span>

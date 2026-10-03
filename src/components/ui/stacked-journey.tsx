@@ -50,10 +50,11 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
 
     return (
         <div ref={containerRef} className="sticky top-22 flex h-screen items-center justify-center">
+
             <div
                 ref={cardRef}
-                className={`relative flex h-[380px] w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-[420px] sm:p-12 md:w-[70%] ${a.border}`}
-                style={{ top: `calc(-5vh + ${index * 25}px)` }}
+                className={`relative flex h-[350px] w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-[420px] sm:p-12 md:w-[70%] ${a.border}`}
+                style={{ top: `calc(-5vh + ${index * 30}px)` }}
             >
                 <div className="flex items-center justify-between">
                     <span className={`text-4xl font-black sm:text-6xl ${a.text}`}>{year}</span>
@@ -71,6 +72,9 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
 export function StackedJourney({ steps }: { steps: JourneyStep[] }) {
     return (
         <div className="relative">
+            <div className="sticky top-50 pointer-events-none">
+                <span className="absolute left-30 h-3 w-3 rounded-full bg-amber-400 opacity-75 animate-ping" />
+            </div>
             {steps.map((s, i) => (
                 <Card key={s.year} {...s} index={i} total={steps.length} />
             ))}

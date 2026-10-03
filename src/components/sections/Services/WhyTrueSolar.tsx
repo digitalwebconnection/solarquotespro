@@ -1,5 +1,7 @@
 import { ShieldCheck, Search, BarChart3, Users, CircleCheck, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
+import { GlowCard } from "../../ui/spotlight-card";
+
 export default function MiniWhyTrueSolarQuotes() {
     const highlights = [
         {
@@ -7,6 +9,7 @@ export default function MiniWhyTrueSolarQuotes() {
             desc: "Explore solar and home-energy information designed to help you understand your options before making a decision.",
             icon: <ShieldCheck className="w-7 h-7 text-emerald-400" />,
             style: "border-emerald-500/30 hover:border-emerald-400/60",
+            glowColor: "emerald" as const,
             badge: "Research",
             badgeColor: "bg-emerald-500/10 text-emerald-300",
         },
@@ -15,6 +18,7 @@ export default function MiniWhyTrueSolarQuotes() {
             desc: "Compare installers, products, technologies and pricing considerations so you can make a more informed choice.",
             icon: <Search className="w-7 h-7 text-blue-400" />,
             style: "border-blue-500/30 hover:border-blue-400/60",
+            glowColor: "blue" as const,
             badge: "Compare",
             badgeColor: "bg-blue-500/10 text-blue-300",
         },
@@ -23,6 +27,7 @@ export default function MiniWhyTrueSolarQuotes() {
             desc: "Learn about system sizes, electricity usage, potential savings, payback periods and other important factors.",
             icon: <BarChart3 className="w-7 h-7 text-amber-400" />,
             style: "border-amber-500/30 hover:border-amber-400/60",
+            glowColor: "amber" as const,
             badge: "Understand",
             badgeColor: "bg-amber-500/10 text-amber-300",
         },
@@ -31,6 +36,7 @@ export default function MiniWhyTrueSolarQuotes() {
             desc: "When you're ready to take the next step, connect with suitable solar and energy professionals for quotes.",
             icon: <Users className="w-7 h-7 text-indigo-400" />,
             style: "border-indigo-500/30 hover:border-indigo-400/60",
+            glowColor: "indigo" as const,
             badge: "Connect",
             badgeColor: "bg-indigo-500/10 text-indigo-300",
         },
@@ -70,18 +76,26 @@ export default function MiniWhyTrueSolarQuotes() {
                                 duration: 0.5,
                                 delay: index * 0.15
                             }}
-                            className={` group relative bg-slate-950/90 border rounded-xl p-6 min-h-65 transition-all duration-300  hover:-translate-y-1.5  hover:shadow-xl ${item.style} `}>
-                            <div className="flex items-center justify-between mb-5">
-                                <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800  flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}</div>
-                                <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase  tracking-wider ${item.badgeColor}`}>{item.badge} </span>
-                            </div>
-                            <h3 className="text-lg font-bold tracking-wide text-white mb-2">{item.title}</h3>
-                            <p className="text-slate-400 text-sm leading-6">{item.desc}</p>
+                            className="h-full">
+                            <GlowCard
+                                customSize
+                                glowColor={item.glowColor}
+                                className={`group h-full min-h-65  gap-0 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${item.style}`}
+                            >
+                                <div>
+                                    <div className="flex items-center justify-between mb-5">
+                                        <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-slate-700 transition-all duration-300">{item.icon}</div>
+                                        <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider ${item.badgeColor}`}>{item.badge}</span>
+                                    </div>
+                                    <h3 className="text-lg font-bold tracking-wide text-white mb-2">{item.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-6">{item.desc}</p>
 
-                            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2">
-                                <CircleCheck className="w-4 h-4 text-emerald-400 " />
-                                <span className="text-[11px] text-slate-500 font-medium"> Helping you research with confidence</span>
-                            </div>
+                                    <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2">
+                                        <CircleCheck className="w-4 h-4 text-amber-400" />
+                                        <span className="text-[11px] text-slate-500 font-medium">Helping you research with confidence</span>
+                                    </div>
+                                </div>
+                            </GlowCard>
                         </motion.div>
                     ))}
                 </div>

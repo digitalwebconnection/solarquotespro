@@ -48,7 +48,7 @@ const HowAcWorks = () => {
     },
   ];
   return (
-    <section className="w-full py-6 sm:py-6 lg:py-8 bg-slate-50">
+    <section className="w-full py-6  sm:py-6 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-3xl mx-auto text-center mb-12">
@@ -72,7 +72,7 @@ const HowAcWorks = () => {
                 <div className="absolute top-5 right-5 text-4xl text-blue-600/5 font-serif font-black text-slate group-hover:text-blue-600/10 transition-colors">
                   {step.number}
                 </div>
-                <div className="relative w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-900 transition-colors duration-300">
+                <div className="relative w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5 group-hover:bg-blue-900 transition-colors duration-300">
                   <Icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div className="relative">

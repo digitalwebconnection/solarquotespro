@@ -54,7 +54,7 @@ const WhatYoullNeed = () => {
             />
             <div
                 aria-hidden="true"
-                className="absolute -top-24 -left-24 w-150 h-170 bg-blue-600/12 rounded-full blur-[120px] z-0"
+                className="absolute -top-24 -left-24 w-150 h-170 bg-amber-400/10 rounded-full blur-[120px] z-0"
             />
 
             <div className="relative max-w-7xl mx-auto px-6 sm:px-8">

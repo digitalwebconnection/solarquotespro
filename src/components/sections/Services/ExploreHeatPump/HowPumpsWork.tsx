@@ -3,11 +3,21 @@ import { Fan, Thermometer, Gauge, Waves, Droplets } from "lucide-react";
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 24 },
-    visible: ({
+    visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.55, ease: "easeOut" },
-    }),
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
+};
+
+const staggerContainer: Variants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.08,
+        },
+    },
 };
 
 const HowPumpsWork = () => {
@@ -63,16 +73,19 @@ const HowPumpsWork = () => {
                     <p className=" text-lg text-slate-600 leading-7 mt-5"> A hot water heat pump uses a refrigeration cycle to transfer heat from the surrounding air into the water stored in the tank.The process happens continuously while the system is heating the water.</p>
                 </motion.div>
 
-                <div className="grid grid-cols-5 gap-5 relative">
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="grid grid-cols-5 gap-5 relative"
+                >
                     <div className="max-w-7xl absolute z-0 inset-0 top-15 border-t-2 border-blue-300"></div>
                     {processSteps.map((item) => {
                         const Icon = item.icon;
                         return (
                             <motion.div
                                 key={item.title}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.2 }}
                                 variants={fadeUp}
                                 className="relative px-6 py-8 bg-white rounded-lg shadow-lg/40 duration-200 shadow-black/50 hover:-translate-y-1.5 transition-all group "
                             >
@@ -83,7 +96,7 @@ const HowPumpsWork = () => {
                             </motion.div>
                         )
                     })}
-                </div>
+                </motion.div>
             </div>
         </section>
     )

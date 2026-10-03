@@ -25,7 +25,7 @@ const stats = [
 export default function WhyNumbers() {
     return (
         <motion.section
-            className="bg-linear-to-br from-white via-emerald-500/12 to-white px-6 py-20 sm:px-10 lg:px-14 lg:py-16"
+            className="bg-linear-to-br from-white via-emerald-500/8 to-white px-6 py-20 sm:px-10 lg:px-14 lg:py-18"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -43,7 +43,7 @@ export default function WhyNumbers() {
                     </span>
 
                     <h2 className="mt-3 capitalize text-3xl font-bold  text-slate-950 font-serif sm:text-4xl lg:text-4xl">
-                        Know what you're really saving.
+                        Know what you're really <span className="text-emerald-500 ">saving</span>.
                     </h2>
 
                 </motion.div>
@@ -58,7 +58,7 @@ export default function WhyNumbers() {
                     {stats.map((stat) => (
                         <motion.div
                             key={stat.label}
-                            className="rounded-lg border border-slate-200 bg-white p-7 shadow-black/10 shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-black/20"
+                            className="rounded-lg border border-slate-200 bg-white p-6   shadow-black/10 shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-black/20"
                             variants={{
                                 hidden: { opacity: 0, y: 30 },
                                 visible: {

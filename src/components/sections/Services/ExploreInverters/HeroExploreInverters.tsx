@@ -6,7 +6,7 @@ const HeroExploreInverters = () => {
 
   return (
     <section
-      className="relative h-auto w-full overflow-hidden"
+      className="relative h-124 w-full overflow-hidden"
       id="inverters"
     >
       <img

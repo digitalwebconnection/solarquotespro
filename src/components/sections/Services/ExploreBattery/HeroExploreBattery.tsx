@@ -7,7 +7,7 @@ export default function HeroExploreBattery() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <section className="relative h-screen w-full overflow-hidden " id="solar">
+    <section className="relative h-124 w-full overflow-hidden " id="solar">
 
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw099mQOi0VIlE5P4Ztqn-5CC5Ng0RX4ZbBezxKitenQ&s=10" alt="Solar panel installation" className="absolute inset-0 w-full h-full object-cover opacity-85 object-center" />
 

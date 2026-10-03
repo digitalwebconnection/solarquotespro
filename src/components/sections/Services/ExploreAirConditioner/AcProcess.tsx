@@ -59,9 +59,8 @@ const AcProcess = () => {
             {coolingSteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div key={step.number} className={`relative bg-slate-50 rounded-lg group p-6 hover:-translate-y-1.5 transition-all duration-300 ${index % 2 !== 0 ? "translate-y-4" : ""}`}
-                >
-                  <div className="relative z-10 w-14 h-14 mx-auto rounded-2xl bg-white border border-slate-200 flex items-center justify-center group-hover:bg-blue-800/90 text-blue-800 group-hover:text-white transition-all duration-300">
+                <div key={step.number} className={`relative bg-slate-50 rounded-lg group p-6 hover:-translate-y-1.5 transition-all duration-300 ${index % 2 !== 0 ? "translate-y-4" : ""}`}>
+                  <div className="relative z-10 w-14 h-14 mx-auto rounded-2xl bg-white border border-slate-200 flex items-center justify-center group-hover:bg-blue-800/90 text-blue-800 group-hover:text-white transition-all duration-300 shadow-sm">
                     <Icon className="w-7 h-7 " />
                   </div>
                   <p className="text-center mt-5 text-xs font-bold uppercase tracking-widest text-slate-700 ">

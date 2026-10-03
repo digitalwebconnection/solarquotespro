@@ -1,4 +1,4 @@
-import {  Gauge, PanelsTopLeft,  Home,  CheckCircle2 } from "lucide-react";
+import { Gauge, PanelsTopLeft, Home, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 export default function InverterCapacity() {
   const points = [
@@ -33,10 +33,12 @@ export default function InverterCapacity() {
   ];
 
   return (
-    <section className="w-full bg-slate-50 py-14">
+    <section className="w-full bg-slate-50 py-14 relative">
+      <div className="absolute  z-0 bg-amber-400/10 h-100 w-150 blur-[120px] right-20 top-20" />
+      <div className="absolute  z-0 bg-amber-400/10 h-100 w-150 blur-[120px] left-20 top-80" />
       <div className=" max-w-7xl mx-auto px-6 lg:px-8">
 
-        <div className="max-w-4xl ml-4">
+        <div className="max-w-4xl ml-4 relative z-10">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-amber-500">Inverter Capacity
           </p>
           <h2 className="font-serif text-3xl font-bold text-slate-950 md:text-3xl lg:text-4xl">Understanding Inverter Size and Capacity
@@ -47,24 +49,24 @@ export default function InverterCapacity() {
 
         <div className="max-w-6xl mt-12 px-3">
           <div className="mb-8 flex justify-center">
-           <span className="text-sm font-semibold uppercase tracking-wider text-amber-500">What Determines Inverter Size?
+            <span className="text-sm font-semibold uppercase tracking-wider text-amber-500">What Determines Inverter Size?
             </span>
           </div>
 
-          <div>
+          <div className="relative z-10 ">
             {points.map((point) => {
               const Icon = point.icon;
               return (
-                <motion.div  
-                initial={{opacity:0 , x : -20}}
-                whileInView={{ opacity: 1 , x : 0 }}
-                viewport={{ once: true}}
-                transition={{ duration: 0.6}}
-                key={point.number} className="group flex gap-3 border-b border-slate-200 py-8   md:items-start">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  key={point.number} className="group flex gap-3 border-b border-slate-200 py-8   md:items-start">
                   <div className="w-20 text-3xl font-bold text-slate-200 transition-colors group-hover:text-amber-400">
                     {point.number}
                   </div>
-                 <div className="w-60 flex items-start gap-3">
+                  <div className="w-60 flex items-start gap-3">
                     <Icon className="mt-1 h-5 w-5 shrink-0 text-amber-500" />
                     <h3 className="text-lg font-semibold leading-7 text-slate-900">
                       {point.title}

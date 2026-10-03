@@ -4,7 +4,7 @@ import { CheckCheck } from "lucide-react";
 export default function AboutCompany() {
     return (
         <section className="relative overflow-hidden  bg-slate-50  py-20 sm:py-20">
-            <div className="absolute inset-0 bg-amber-400/12 z-0 h-150 w-150 rounded-full  blur-[120px]" />
+            <div className="absolute inset-0 bg-amber-400/10 z-0 h-150 w-170 rounded-full  blur-[120px]" />
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -18,8 +18,8 @@ export default function AboutCompany() {
                         <div className=" text-xs font-bold uppercase tracking-[2px] text-amber-500">
                             About Our Company
                         </div>
-                        <h2 className="mt-4 font-serif text-4xl font-extrabold leading-14 text-slate-900 sm:text-5xl">
-                            Helping homeowners make <span className="bg-linear-to-r  from-amber-400 from-20% via-blue-800  to-emerald-600 bg-clip-text text-transparent">smarter energy decisions. </span>
+                        <h2 className="mt-4 font-serif text-4xl font-extrabold leading-14 text-slate-900 sm:text-5xl capitalize">
+                            Helping homeowners make <span className="bg-linear-to-r  from-emerald-600  via-blue-900  to-amber-400 bg-clip-text text-transparent">smarter energy decisions. </span>
                         </h2>
                         <p className="mt-5 text-lg leading-8  text-slate-600">
                             Choosing solar, batteries or other home-energy solutions can be confusing. There are different products, installers, prices, warranties and incentives to consider.

@@ -32,7 +32,6 @@ export default function AboutHero() {
                 animate={{ scale: 1, opacity: 0.8 }}
                 transition={{ duration: 1.2 }}
                 className="absolute inset-0 w-full h-130 object-cover" />
-
             <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-950/75 to-slate-950/50"></div>
 
             <motion.div

@@ -5,13 +5,13 @@ const HeroExploreAirConditioner = () => {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <section className="relative h-auto w-full overflow-hidden" >
+    <section className="relative h-130 w-full overflow-hidden" >
 
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLsu5NM0Jm5NodSFFfMohCCsVVkAHxOmlY1PvJkPh6jA&s" alt="Modern air conditioner installation"
         className="absolute inset-0 w-full h-full object-cover object-bottom" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/80 to-slate-900/60" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8 sm:py-14 lg:py-14">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8 sm:py-14 lg:py-10">
         <div className="max-w-3xl text-white space-y-5 py-8">
           <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-blue-600/20 text-blue-300 border border-blue-400/40 backdrop-blur-md">
             <Dot strokeWidth={8} className="w-5 h-5 text-blue-200 animate-pulse" />

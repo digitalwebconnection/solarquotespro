@@ -32,8 +32,8 @@ export default function LeadershipSection() {
   ];
 
   return (
-    <section className="bg-white py-16 text-slate-950 relative">
-      <div className="" />
+    <section className="bg-white py-16 text-slate-900 relative">
+
       <motion.section
         initial={{ opacity: 0.50, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,8 @@ export default function LeadershipSection() {
       >
 
         <div className="max-w-7xl relative mx-auto px-4 sm:px-6 lg:px-8 z-5">
-          <div className="absolute inset-0 h-150 w-150 -left-40 -top-25 bg-blue-700/14 blur-[120px] z-0" />
+          <div className="absolute  h-150 w-150 -left-40 -top-25 bg-amber-400/14 blur-[120px] z-0" />
+          <div className="absolute h-150 w-150 -right-40 -bottom-50 bg-blue-500/14 blur-[120px] z-0" />
           <div className="text-center auto mb-16 relative z-10  ">
             <div className=" mb-4 tracking-[2px]  text-amber-500 text-xs font-semibold uppercase">
               Leadership
