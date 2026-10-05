@@ -53,9 +53,9 @@ export default function HowItWorksInfo() {
               <div className="absolute w-100 h-70 bg-amber-400/20 blur-[120px] rounded-full top-0 -left-30 z-0" />
               <p className="text-sm font-semibold uppercase tracking-[2px]    text-amber-600 mb-4">The Process
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 leading-tight capitalize">
                 A simpler way to find and compare
-                <span className="text-amber-500"> solar quotes.</span>
+                <span className="bg-linear-to-r from-emerald-600 to-amber-500 text-transparent bg-clip-text"> solar quotes.</span>
               </h2>
               <p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed "> Getting solar quotes can involve a lot of research and contacting different installers. Our process brings the important steps together, making it easier to understand your options and make an informed decision.
               </p>

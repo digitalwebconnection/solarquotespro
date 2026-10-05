@@ -53,7 +53,7 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
 
             <div
                 ref={cardRef}
-                className={`relative flex h-[350px] w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-[420px] sm:p-12 md:w-[70%] ${a.border}`}
+                className={`relative flex h-88 w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-105 sm:p-12 md:w-[70%] ${a.border}`}
                 style={{ top: `calc(-5vh + ${index * 30}px)` }}
             >
                 <div className="flex items-center justify-between">

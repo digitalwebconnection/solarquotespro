@@ -1,18 +1,18 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  X, 
-  MapPin, 
-  Sun, 
-  Battery, 
-  Zap, 
-  Home, 
-  Building2, 
-  CheckCircle2, 
-  ArrowRight, 
-  ArrowLeft, 
-  ShieldCheck, 
-  Lock, 
+import {
+  X,
+  MapPin,
+  Sun,
+  Battery,
+  Zap,
+  Home,
+  Building2,
+  CheckCircle2,
+  ArrowRight,
+  ArrowLeft,
+  ShieldCheck,
+  Lock,
   Award,
   AlertCircle
 } from 'lucide-react';
@@ -202,10 +202,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
 
   return (
     <div className="bg-white rounded-2xl sm:rounded-3xl shadow-[0_25px_70px_-15px_rgba(15,23,42,0.35)] border border-slate-200/90 overflow-hidden w-full max-w-lg mx-auto relative flex flex-col max-h-[92dvh]">
-      
+
       {/* ─── Clean, Refined Premium Header (Mobile Optimized) ─── */}
       <div className="relative bg-linear-to-r from-slate-950 via-[#003B73] to-slate-950 text-white p-4 sm:p-6 border-b border-slate-800 shrink-0">
-        
+
         {/* Subtle Warm Accent Glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-400/15 rounded-full blur-2xl pointer-events-none" />
@@ -232,11 +232,11 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
           <h3 className="text-lg sm:text-2xl font-serif font-black text-white tracking-tight leading-tight">
             {isSubmitted ? 'Request Confirmed!' : 'Get 3 Free Solar Quotes'}
           </h3>
-          
+
           <p className="text-[11px] sm:text-xs text-slate-300 mt-1 flex items-center gap-1.5 font-medium">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-            {isSubmitted 
-              ? 'Connecting you with local CEC-accredited installers.' 
+            {isSubmitted
+              ? 'Connecting you with local CEC-accredited installers.'
               : 'Compare verified, top-rated local installers in your area.'}
           </p>
         </div>
@@ -256,15 +256,14 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
             {/* 3 Step Pill Segments */}
             <div className="grid grid-cols-3 gap-1.5">
               {[1, 2, 3].map((s) => (
-                <div 
-                  key={s} 
-                  className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${
-                    s < step 
-                      ? 'bg-emerald-500' 
-                      : s === step 
-                      ? 'bg-linear-to-r from-amber-400 via-amber-500 to-emerald-500' 
-                      : 'bg-slate-800'
-                  }`}
+                <div
+                  key={s}
+                  className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${s < step
+                      ? 'bg-emerald-500'
+                      : s === step
+                        ? 'bg-linear-to-r from-amber-400 via-amber-500 to-emerald-500'
+                        : 'bg-slate-800'
+                    }`}
                 />
               ))}
             </div>
@@ -275,7 +274,7 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
       {/* ─── Form Body (Responsive Scrolling) ─── */}
       <div className="p-4 sm:p-6 overflow-y-auto bg-linear-to-b from-white to-slate-50/40 flex-1">
         {errorMsg && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-3.5 p-2.5 sm:p-3 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl sm:rounded-2xl flex items-center gap-2 shadow-2xs"
@@ -332,11 +331,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                       }
                     }}
                     placeholder="e.g. 2000, 3000, 4000"
-                    className={`w-full pl-11 sm:pl-13 pr-3.5 py-2.5 sm:py-3 bg-slate-50/70 hover:bg-slate-50 focus:bg-white border-2 ${
-                      fieldErrors.postcode 
-                        ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                    className={`w-full pl-11 sm:pl-13 pr-3.5 py-2.5 sm:py-3 bg-slate-50/70 hover:bg-slate-50 focus:bg-white border-2 ${fieldErrors.postcode
+                        ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15'
                         : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                    } rounded-xl sm:rounded-2xl text-slate-900 font-bold text-sm sm:text-base outline-none transition-all placeholder:text-slate-400 placeholder:font-normal focus:ring-4`}
+                      } rounded-xl sm:rounded-2xl text-slate-900 font-bold text-sm sm:text-base outline-none transition-all placeholder:text-slate-400 placeholder:font-normal focus:ring-4`}
                   />
                 </div>
                 {fieldErrors.postcode && (
@@ -364,20 +362,18 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setSystemType(item.id)}
-                        className={`relative flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer min-h-20 sm:min-h-24 text-center ${
-                          isSelected
+                        className={`relative flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer min-h-20 sm:min-h-24 text-center ${isSelected
                             ? 'border-orange-500 bg-orange-50/60 text-slate-950 shadow-2xs ring-2 ring-orange-500/20'
                             : 'border-slate-200 hover:border-slate-300 bg-white text-slate-700 hover:bg-slate-50'
-                        }`}
+                          }`}
                       >
                         {item.tag && (
                           <span className="absolute -top-2 bg-linear-to-r from-amber-400 to-orange-500 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase px-1.5 sm:px-2 py-0.2 sm:py-0.5 rounded-full tracking-wider shadow-2xs">
                             {item.tag}
                           </span>
                         )}
-                        <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl flex items-center justify-center mb-1 transition-all ${
-                          isSelected ? 'bg-white shadow-2xs border border-orange-200' : 'bg-slate-100'
-                        }`}>
+                        <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl flex items-center justify-center mb-1 transition-all ${isSelected ? 'bg-white shadow-2xs border border-orange-200' : 'bg-slate-100'
+                          }`}>
                           {item.icon}
                         </div>
                         <span className="text-[11px] sm:text-xs font-bold leading-tight text-slate-900">{item.label}</span>
@@ -404,15 +400,13 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setPropertyType(item.id)}
-                        className={`flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer text-left ${
-                          isSelected
+                        className={`flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer text-left ${isSelected
                             ? 'border-orange-500 bg-orange-50/60 text-slate-950 shadow-2xs ring-2 ring-orange-500/20'
                             : 'border-slate-200 hover:border-slate-300 bg-white text-slate-700 hover:bg-slate-50'
-                        }`}
+                          }`}
                       >
-                        <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                          isSelected ? 'bg-white shadow-2xs border border-orange-200' : 'bg-slate-100'
-                        }`}>
+                        <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 transition-all ${isSelected ? 'bg-white shadow-2xs border border-orange-200' : 'bg-slate-100'
+                          }`}>
                           {item.icon}
                         </div>
                         <div>
@@ -468,11 +462,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.bill}
                         type="button"
                         onClick={() => setQuarterlyBill(item.bill)}
-                        className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border-2 text-center transition-all duration-200 cursor-pointer ${
-                          isSelected
+                        className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border-2 text-center transition-all duration-200 cursor-pointer ${isSelected
                             ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-2xs'
                             : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-                        }`}
+                          }`}
                       >
                         <div className="text-[11px] sm:text-xs font-bold text-slate-900">{item.bill}</div>
                         <div className="text-[9px] sm:text-[10px] text-slate-500 mt-0.5 font-medium">{item.est}</div>
@@ -498,11 +491,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setOwnership(item.id)}
-                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${
-                          isSelected
+                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${isSelected
                             ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-2xs'
                             : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-                        }`}
+                          }`}
                       >
                         <div className="text-xs sm:text-sm font-bold text-slate-900">{item.label}</div>
                         <div className="text-[9px] sm:text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
@@ -528,11 +520,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                         key={item.id}
                         type="button"
                         onClick={() => setRoofType(item.id)}
-                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${
-                          isSelected
+                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer ${isSelected
                             ? 'border-orange-500 bg-orange-50/60 text-slate-950 font-bold ring-2 ring-orange-500/20 shadow-2xs'
                             : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-                        }`}
+                          }`}
                       >
                         <div className="text-xs sm:text-sm font-bold text-slate-900">{item.label}</div>
                         <div className="text-[9px] sm:text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
@@ -613,11 +604,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     }
                   }}
                   placeholder="e.g. Sarah Jenkins"
-                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${
-                    fieldErrors.fullName 
-                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${fieldErrors.fullName
+                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15'
                       : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                  } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
+                    } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
                 {fieldErrors.fullName && (
                   <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">
@@ -656,11 +646,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     }
                   }}
                   placeholder="sarah.jenkins@example.com.au"
-                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${
-                    fieldErrors.email 
-                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${fieldErrors.email
+                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15'
                       : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                  } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
+                    } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
                 {fieldErrors.email && (
                   <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">
@@ -705,11 +694,10 @@ export default function QuoteRequestForm({ onClose, initialPostcode = '' }: Quot
                     }
                   }}
                   placeholder="0400 123 456"
-                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${
-                    fieldErrors.phone 
-                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15' 
+                  className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50/70 focus:bg-white border-2 ${fieldErrors.phone
+                      ? 'border-rose-400 focus:border-rose-500 focus:ring-rose-500/15'
                       : 'border-slate-200 focus:border-orange-500 focus:ring-orange-500/15'
-                  } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
+                    } rounded-xl sm:rounded-2xl text-slate-900 font-semibold text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400 focus:ring-4`}
                 />
                 {fieldErrors.phone && (
                   <p className="text-xs text-rose-600 font-semibold mt-1 flex items-center gap-1">

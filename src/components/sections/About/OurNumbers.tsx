@@ -75,7 +75,7 @@ export default function OurNumbers() {
 
 
   return (
-    <section className="relative z-4 pb-16 bg-white pt-25">
+    <section className="relative z-4 pb-12  bg-white pt-28">
       <div className="absolute right-10 -top-5 bg-amber-400/15 -z-10  h-120 w-200 rounded-full  blur-[120px]" />
       <motion.div
         initial={{ opacity: 0.50, y: 20 }}

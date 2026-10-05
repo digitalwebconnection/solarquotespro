@@ -45,7 +45,7 @@ export default function AboutHero() {
                         <Dot strokeWidth={10} className="w-4 h-4 animate-pulse" />About True Solar Quote
                     </motion.p>
 
-                    <motion.h1 variants={itemVariants} className="text-4xl sm:text-4xl lg:text-5xl font-bold font-serif tracking-tight leading-15 text-white mt-6">
+                    <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl  font-bold font-serif tracking-tight leading-15 text-white mt-6">
                         Helping Australians Make{" "}
                         <span className="bg-linear-to-r from-amber-300 from-40% to-green-400 bg-clip-text text-transparent">Smarter Energy Decisions
                         </span>

@@ -25,7 +25,7 @@ const stats = [
 export default function WhyNumbers() {
     return (
         <motion.section
-            className="bg-linear-to-br from-white via-emerald-500/8 to-white px-6 py-20 sm:px-10 lg:px-14 lg:py-18"
+            className="bg-linear-to-br from-white from-20% to-amber-400/14 px-6 py-20 sm:px-10 lg:px-14 lg:py-18"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -38,12 +38,12 @@ export default function WhyNumbers() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <span className="inline-flex uppercase px-4 py-2 text-sm font-semibold text-emerald-500 tracking-[2px]">
+                    <span className="inline-flex uppercase px-4 py-2 text-sm font-semibold text-amber-500 tracking-[2px]">
                         Why SolarQuotePro
                     </span>
 
                     <h2 className="mt-3 capitalize text-3xl font-bold  text-slate-950 font-serif sm:text-4xl lg:text-4xl">
-                        Know what you're really <span className="text-emerald-500 ">saving</span>.
+                        Know what you're really <span className="text-amber-500 ">saving</span>.
                     </h2>
 
                 </motion.div>
@@ -74,7 +74,7 @@ export default function WhyNumbers() {
                             <p className="text-4xl font-extrabold tracking-tight font-serif text-slate-950">
                                 {stat.value}
                             </p>
-                            <h3 className="mt-3 text-lg font-semibold text-emerald-600">
+                            <h3 className="mt-3 text-lg font-semibold text-amber-500">
                                 {stat.label}
                             </h3>
                             <p className="mt-3 text-sm leading-6 text-slate-600">

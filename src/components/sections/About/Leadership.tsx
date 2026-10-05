@@ -32,7 +32,7 @@ export default function LeadershipSection() {
   ];
 
   return (
-    <section className="bg-white py-16 text-slate-900 relative">
+    <section className="bg-white py-10  text-slate-900 relative">
 
       <motion.section
         initial={{ opacity: 0.50, y: 20 }}

@@ -37,7 +37,7 @@ async function main() {
 
     const fileBlob = await fs.openAsBlob(inputPath);
     const rbgResultData = await removeBg(fileBlob);
-    
+
     fs.writeFileSync(outputPath, Buffer.from(rbgResultData));
     console.log(`Success! Background removed and saved to ${outputPath}`);
   } catch (error) {

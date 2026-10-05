@@ -51,7 +51,7 @@ export default function HeroBlog() {
               variants={contentVariants}
               transition={{ duration: 0.65 }}
               className="pt-2 flex items-center">
-              <Link to="/service/explore-solar" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-400/20 inline-flex items-center gap-2.5 cursor-pointer active:scale-95 group">
+              <Link to="#blogs" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-400/20 inline-flex items-center gap-2.5 cursor-pointer active:scale-95 group">
                 <BookOpen className="w-4 h-4" />
                 <span>Explore Energy Guides</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />

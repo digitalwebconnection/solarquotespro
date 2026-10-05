@@ -19,7 +19,7 @@ export default function AboutCompany() {
                             About Our Company
                         </div>
                         <h2 className="mt-4 font-serif text-4xl font-extrabold leading-14 text-slate-900 sm:text-5xl capitalize">
-                            Helping homeowners make <span className="bg-linear-to-r  from-emerald-600  via-blue-900  to-amber-400 bg-clip-text text-transparent">smarter energy decisions. </span>
+                            Helping homeowners make <span className="bg-linear-to-r  from-blue-900  via-emerald-700  to-amber-400 bg-clip-text text-transparent">smarter energy decisions. </span>
                         </h2>
                         <p className="mt-5 text-lg leading-8  text-slate-600">
                             Choosing solar, batteries or other home-energy solutions can be confusing. There are different products, installers, prices, warranties and incentives to consider.
@@ -32,7 +32,7 @@ export default function AboutCompany() {
                         </p>
 
                         <div className="mt-8 rounded-xl inline-flex border border-blue-100 bg-white/80 py-3 px-5 shadow-lg ">
-                            <p className="text-lg font-bold text-blue-900">
+                            <p className="text-lg font-bold text-amber-500">
                                 Research. Compare. Choose with confidence.
                             </p>
                         </div>

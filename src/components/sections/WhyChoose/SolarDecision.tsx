@@ -66,12 +66,12 @@ const SolarDesicion = () => {
           </div>
 
           <div className="sticky top-35 h-fit ">
-            <div className="absolute bg-emerald-500/10   z-0 -right-40 -bottom-30 w-120 h-120 rounded-full blur-[120px]" />
+            <div className="absolute bg-amber-500/10   z-0 -right-40 -bottom-30 w-120 h-120 rounded-full blur-[120px]" />
 
-            <p className="text-sm font-bold uppercase tracking-widest    text-emerald-600 mb-4">The Process
+            <p className="text-sm font-bold uppercase tracking-widest    text-amber-500 mb-4">The Process
             </p>
             <h2 className="text-3xl sm:text-4xl relative lg:text-5xl font-serif font-bold text-slate-900 leading-tight">
-              Know What You're Comparing <span className="text-emerald-500">Before You Choose</span>
+              Know What You're Comparing <span className="bg-linear-to-r from-emerald-600 to-amber-500 text-transparent bg-clip-text">Before You Choose</span>
             </h2>
             <p className="mt-6 text-base sm:text-lg relative text-slate-600 leading-relaxed "> Getting solar quotes can involve a lot of research and contacting different installers. Our process brings the important steps together, making it easier to understand your options and make an informed decision.
             </p>

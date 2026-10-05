@@ -10,7 +10,7 @@ export default function CTAHowItWorks() {
         <section className="sticky top-35 z-0 overflow-hidden bg-cover bg-center py-14 sm:py-14 min-h-[55vh] flex items-center"
             style={{ backgroundImage: `url(https://plus.unsplash.com/premium_photo-1678743133528-9afcd2b72b70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHNvbGFyfGVufDB8fDB8fHww)` }}
         >
-            <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-black/70 to-slate-200/20" />
+            <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/20" />
             <div className="relative mx-auto w-full px-6 sm:px-8 lg:px-12">
                 <div className="mx-auto max-w-7xl">
                     <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

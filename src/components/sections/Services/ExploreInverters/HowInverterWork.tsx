@@ -41,7 +41,7 @@ const HowInverterWork = () => {
   ];
 
   return (
-    <section className="w-full bg-slate-50 py-16 relative">
+    <section className="w-full bg-slate-50 py-12 relative">
 
       <div className="absolute inset-0 z-0 bg-amber-400/10 h-100 w-150 blur-[120px] top-20" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
@@ -86,11 +86,6 @@ const HowInverterWork = () => {
               </motion.div>
             );
           })}
-        </div>
-
-        <div className="mx-auto mt-14 max-w-4xl text-center">
-          <p className="text-lg leading-8 text-slate-700"> The inverter acts as the central link between your solar panels and your home's electrical system, helping turn solar generation into usable household energy.
-          </p>
         </div>
 
       </div>
