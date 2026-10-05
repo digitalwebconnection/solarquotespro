@@ -124,8 +124,13 @@ export default function AllServices() {
           {solutions.map((item, index) => {
             const Icon = item.icon;
             return (
+              <Link
+                key={item.linkUrl}
+                to={item.linkUrl}
+                aria-label={`${item.linkText}: ${item.title}`}
+                className="group block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00417E]"
+              >
               <motion.div
-                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -133,7 +138,7 @@ export default function AllServices() {
                   duration: 0.5,
                   delay: index * 0.14
                 }}
-                className={`group relative overflow-hidden bg-white border border-slate-300/70 shadow-gray-500 shadow-lg hover:shadow-xl rounded-lg p-6 space-y-4 transition-all duration-300  hover:-translate-y-1 ${item.borderStyle}`}>
+                className={`relative h-full overflow-hidden bg-white border border-slate-300/70 shadow-gray-500 shadow-lg hover:shadow-xl rounded-lg p-6 space-y-4 transition-all duration-300 hover:-translate-y-1 ${item.borderStyle}`}>
 
                 <div className="absolute top-5 right-5 text-xs font-bold text-slate-300">0{index + 1}</div>
                 <div className={`w-12 h-12 rounded-xl flex justify-center items-center mb-5 ${item.iconStyle}`}>
@@ -150,12 +155,13 @@ export default function AllServices() {
                     </li>
                   ))}
                 </ul>
-                <Link key={item.linkText} to={item.linkUrl} className=" pt-6 flex items-center justify-between text-sm font-bold  text-blue-900  group-hover:text-amber-600 transition-colors cursor-pointer">
+                <span className="pt-6 flex items-center justify-between text-sm font-bold text-blue-900 group-hover:text-amber-600 transition-colors">
                   <span>{item.linkText}</span>
                   <ArrowRight className="w-4  h-4  transition-transform  duration-300  group-hover:translate-x-1.5"
                   />
-                </Link>
+                </span>
               </motion.div>
+              </Link>
             );
           })}
         </div>

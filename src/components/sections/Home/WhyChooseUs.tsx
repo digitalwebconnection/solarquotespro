@@ -21,7 +21,6 @@ export default function WhyChooseUs() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
           {/* Left Column - Copy */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -68,8 +67,8 @@ export default function WhyChooseUs() {
                   className="flex items-center gap-3 sm:gap-4 group cursor-pointer"
                 >
                   <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-colors border ${
-                    item.muted 
-                      ? 'bg-slate-50 border-slate-400 text-slate-900 group-hover:bg-slate-100' 
+                    item.muted
+                      ? 'bg-slate-50 border-slate-400 text-slate-900 group-hover:bg-slate-100'
                       : 'bg-amber-50 border-amber-200 text-amber-500 group-hover:bg-amber-100'
                   }`}>
                     {item.icon}
@@ -92,7 +91,7 @@ export default function WhyChooseUs() {
           >
             {/* Soft background shape */}
             <div className="absolute inset-0 bg-slate-50 rounded-xl border border-slate-100 transform -z-10" />
-            
+
             <div className="relative w-full p-4 sm:p-8 lg:p-10">
               <div className="mb-6 sm:mb-10 text-center sm:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold text-xs tracking-wider uppercase mb-3 sm:mb-4 shadow-sm">
@@ -108,9 +107,8 @@ export default function WhyChooseUs() {
               </div>
 
               <div className="space-y-3.5 sm:space-y-5 relative">
-               
                 {/* Card 1 */}
-                <div 
+                <div
                   onClick={() => openQuoteModal()}
                   className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-emerald-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-0 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 group cursor-pointer"
                 >
@@ -119,16 +117,16 @@ export default function WhyChooseUs() {
                   </div>
                   <div className="pt-0.5">
                     <h4 className="font-bold text-slate-900 text-base sm:text-lg mb-1 group-hover:text-emerald-700 transition-colors">
-                      Verified License & Insurance
+                      Verified License &amp; Insurance
                     </h4>
                     <p className="text-slate-800 leading-relaxed text-xs sm:text-sm">
-                      Fully licensed electricians and CEC accredited designers & installers.
+                      Fully licensed electricians and CEC accredited designers &amp; installers.
                     </p>
                   </div>
                 </div>
 
                 {/* Card 2 */}
-                <div 
+                <div
                   onClick={() => openQuoteModal()}
                   className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-blue-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200 group z-10 cursor-pointer"
                 >
@@ -146,7 +144,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Card 3 */}
-                <div 
+                <div
                   onClick={() => openQuoteModal()}
                   className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-amber-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-12 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-amber-200 group z-20 cursor-pointer"
                 >
@@ -181,10 +179,8 @@ export default function WhyChooseUs() {
                   <p className="text-slate-900 font-bold leading-tight text-xs">10,000+ matched</p>
                 </div>
               </motion.div>
-              
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

@@ -10,10 +10,10 @@ const WhyChooseUsPage = () => {
     return (
         <main>
             <HeroWhyChooseUs />
+            <SolarDesicion />
             <WhyNumbers />
             <WhyChooseUs />
             <CTAWhyUs />
-            <SolarDesicion />
             <Testimonials />
         </main>
     )

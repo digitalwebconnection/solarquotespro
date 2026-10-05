@@ -17,6 +17,7 @@ import {
     Zap,
 } from "lucide-react";
 import { useRef, useState } from "react";
+import { solarRoofImg, solarSavingsImg } from "../../../../assets/images";
 
 const systemComponents = [
     {
@@ -82,6 +83,8 @@ const powerEnergyContent = [
         icon: Zap,
         iconBg: "bg-orange-400/10",
         iconColor: "text-orange-500",
+        image: solarRoofImg,
+        imageAlt: "Rooftop solar panels generating electricity",
     },
     {
         title: "Energy",
@@ -94,6 +97,8 @@ const powerEnergyContent = [
         icon: BarChart3,
         iconBg: "bg-blue-400/10",
         iconColor: "text-blue-600",
+        image: solarSavingsImg,
+        imageAlt: "Solar energy helping power a home over time",
     },
 ];
 
@@ -151,9 +156,17 @@ const stages: Stage[] = [
 
 const SolarAnatomy = () => {
     const [active, setActive] = useState(0);
+    const [flippedPowerEnergyCards, setFlippedPowerEnergyCards] = useState([false, false]);
     const current = stages[active];
 
     const stepsRef = useRef<HTMLDivElement>(null);
+    const togglePowerEnergyCard = (cardIndex: number) => {
+        setFlippedPowerEnergyCards((flippedCards) =>
+            flippedCards.map((flipped, index) =>
+                index === cardIndex ? !flipped : flipped,
+            ),
+        );
+    };
 
     const { scrollYProgress } = useScroll({
         target: stepsRef,
@@ -306,23 +319,74 @@ const SolarAnatomy = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         {powerEnergyContent.map((item, index) => {
                             const Icon = item.icon;
+                            const isFlipped = flippedPowerEnergyCards[index];
+
                             return (
-                                <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-                                    <div className="flex items-center gap-4 mb-5">
-                                        <div className={`w-14 h-14 rounded-full flex items-center justify-center ${item.iconBg}`}>
-                                            <Icon className={`${item.iconColor}`} />
+                                <button
+                                    key={item.title}
+                                    type="button"
+                                    onClick={() => togglePowerEnergyCard(index)}
+                                    aria-label={`${isFlipped ? "Show" : "Reveal"} ${item.title} details`}
+                                    aria-pressed={flippedPowerEnergyCards[index]}
+                                    className="group w-full cursor-pointer rounded-lg text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700 perspective-distant"
+                                >
+                                    <div
+                                        className={`relative min-h-88 w-full transform-3d transition-transform duration-700 ease-in-out group-hover:rotate-y-180 ${isFlipped ? "rotate-y-180" : ""
+                                            }`}
+                                    >
+                                        <div
+                                            className="absolute inset-0 overflow-hidden rounded-lg shadow-md"
+                                            style={{ backfaceVisibility: "hidden" }}
+                                        >
+                                            <img
+                                                src={item.image}
+                                                alt={item.imageAlt}
+                                                className="absolute inset-0 h-full w-full object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
+                                            <div className="absolute inset-x-0 bottom-0 p-7 text-white sm:p-8">
+                                                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/15 backdrop-blur-sm">
+                                                    <Icon className="h-6 w-6" />
+                                                </div>
+                                                <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-300">
+                                                    {item.question}
+                                                </p>
+                                                <h3 className="mt-1 text-3xl font-bold">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="mt-1 text-sm font-semibold text-white/80">
+                                                    Measured in {item.unit}
+                                                </p>
+                                                <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-white/75">
+                                                    Hover or click to learn more
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h3 className="text-3xl font-bold text-blue-950">{item.title}</h3>
-                                            <span className="text-orange-500 font-bold">{item.unit}</span>
+
+                                        <div
+                                            className="absolute inset-0 flex rotate-y-180 flex-col justify-center rounded-lg border border-slate-200 bg-white p-7 shadow-md backface-hidden sm:p-8"
+                                        >
+                                            <div className="mb-5 flex items-center gap-4">
+                                                <div className={`flex h-14 w-14 items-center justify-center rounded-full ${item.iconBg}`}>
+                                                    <Icon className={item.iconColor} />
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-3xl font-bold text-blue-950">{item.title}</h3>
+                                                    <span className="font-bold text-orange-500">{item.unit}</span>
+                                                </div>
+                                            </div>
+                                            <p className="mb-3 text-xl font-bold text-blue-900">
+                                                {item.question}
+                                            </p>
+                                            <p className="mb-5 leading-7 text-slate-600">
+                                                {item.description}
+                                            </p>
+                                            <p className="leading-7 text-slate-700">
+                                                <span className="font-semibold">Example:</span> {item.example}
+                                            </p>
                                         </div>
                                     </div>
-                                    <p className="text-2xl font-bold text-blue-900 mb-4">{item.question}</p>
-                                    <p className="text-slate-600 leading-8 mb-5">{item.description}</p>
-                                    <p className="text-slate-700 leading-7">
-                                        <span className="font-semibold">Example:</span> {item.example}
-                                    </p>
-                                </div>
+                                </button>
                             );
                         })}
                     </div>

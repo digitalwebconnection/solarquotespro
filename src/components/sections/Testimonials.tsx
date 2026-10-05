@@ -16,12 +16,12 @@ export default function Testimonials() {
 
     return (
         <section className="relative z-4 overflow-hidden bg-white py-10 sm:py-14">
-            <div className="pointer-events-none absolute top-20 -left-15 h-150 w-170 rounded-full bg-amber-300/15 blur-[120px]" />
-            <div className="pointer-events-none absolute top-20 -right-15 h-150 w-170 rounded-full bg-emerald-600/15 blur-[120px]" />
+            <div className="pointer-events-none absolute top-20 -left-15 h-150 w-170 rounded-full bg-amber-300/15 blur-[120px] z-0" />
+            <div className="pointer-events-none absolute top-20 -right-15 h-150 w-170 rounded-full bg-emerald-600/15 blur-[120px] z-0" />
 
-            <div className="relative mx-auto max-w-7xl px-8">
-                <div className="mb-6 text-center">
-                    <h2 className="font-serif text-4xl font-extrabold text-slate-950">What Our Customers Say</h2>
+            <div className="relative mx-auto max-w-7xl px-8 z-10">
+                <div className="max-w-2xl mx-auto mb-6 text-center">
+                    <h2 className="font-serif text-5xl font-extrabold text-slate-900 leading-14">Homeowners Who Compared and Saved </h2>
                     <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-700 sm:text-base">
                         Hear from our satisfied customers who have experienced the benefits of our solar solutions.
                     </p>

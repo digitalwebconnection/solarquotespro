@@ -58,21 +58,17 @@ const WhatYoullNeed = () => {
             />
 
             <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.1fr] gap-12 lg:gap-20 mb-10">
-                    <div>
-                        <p className="text-amber-500 uppercase text-sm font-medium tracking-[2px] mb-4">
-                            Before you start
-                        </p>
-                        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 leading-tight">
-                            What You'll Need
-                        </h2>
-                    </div>
-                    <div className="flex items-end">
-                        <p className="text-lg text-slate-600 leading-8 max-w-md">
-                            Having a few details on hand makes it quicker to get accurate,
-                            relevant quotes — no paperwork required, just a rough idea.
-                        </p>
-                    </div>
+                <div className=" text-center gap-12 lg:gap-20 mb-10">
+                    <p className="text-amber-500 uppercase text-sm font-medium tracking-[2px] mb-4">
+                        Before you start
+                    </p>
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 leading-tight">
+                        What You'll Need
+                    </h2>
+                    <p className="text-lg max-w-2xl mx-auto mt-5 text-slate-600 leading-8 ">
+                        Having a few details on hand makes it quicker to get accurate,
+                        relevant quotes — no paperwork required, just a rough idea.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-5">
@@ -102,7 +98,7 @@ const WhatYoullNeed = () => {
                     ))}
                 </div>
 
-                <p className="mt-10 text-sm text-slate-500">
+                <p className="mt-10 text-sm text-center text-slate-500">
                     Don't have everything on hand?{" "}
                     <span className="text-slate-700">
                         No problem — you can still get started and fill in the rest later.

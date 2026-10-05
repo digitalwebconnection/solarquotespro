@@ -1,7 +1,7 @@
-
-import { ArrowRight } from "lucide-react";
-import { useQuoteModal } from "../../../context/QuoteModalContext";
 import { motion } from "framer-motion";
+import { ArrowRight, Dot } from "lucide-react";
+import { useQuoteModal } from "../../../context/QuoteModalContext";
+
 
 const contentVariants = {
     hidden: { opacity: 0, y: 16 },
@@ -12,65 +12,68 @@ export default function HeroService() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="w-full relative bg-slate-50">
-            <div className="absolute w-150 h-150 left-1/4 -top-30 bg-amber-500/17 blur-[120px]" />
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
+        <section className="relative min-h-115 w-full overflow-hidden bg-slate-900">
+            <img
+                src="https://images.unsplash.com/photo-1630608354129-6a7704150401?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNvbGFyJTIwcGFuZWxzfGVufDB8fDB8fHww"
+                alt="Australian home with rooftop solar panels"
+                className="absolute inset-0 h-full w-full object-cover object-bottom"
+            />
+            <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/75 to-slate-950/45" />
+
+            <div className="relative z-10 mx-auto flex min-h-115 max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={{
                         hidden: {},
-                        visible: {
-                            transition: { staggerChildren: 0.12 },
-                        },
+                        visible: { transition: { staggerChildren: 0.12 } },
                     }}
+                    className="max-w-3xl space-y-5 text-white"
                 >
-                    <div className="text-center relative text-black space-y-5">
-                        <motion.p
-                            variants={contentVariants}
-                            transition={{ duration: 0.45 }}
-                            className="font-bold text-sm uppercase tracking-widest text-orange-400 ">
-                            What We Help With
-                        </motion.p>
-                        <motion.h1
-                            variants={contentVariants}
-                            transition={{ duration: 0.5 }}
-                            className="max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight tracking-tight">
-                            Explore & Compare
-                            <span className=" bg-linear-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent"> Home Energy Solutions
-                            </span>
-                        </motion.h1>
+                    <motion.p
+                        variants={contentVariants}
+                        transition={{ duration: 0.35 }}
+                        className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-300 backdrop-blur-md"
+                    >
+                        <Dot className="h-5 w-5 animate-pulse text-amber-400" strokeWidth={8} />
+                        What We Help With
+                    </motion.p>
 
-                        <motion.p
-                            variants={contentVariants}
-                            transition={{ duration: 0.5 }}
-                            className="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed">From solar panels and home batteries to EV chargers,hot-water heat pumps and more, understand your options, compare trusted providers and find the right energy solution for your home.
-                        </motion.p>
+                    <motion.h1
+                        variants={contentVariants}
+                        transition={{ duration: 0.5 }}
+                        className="text-3xl font-bold capitalize font-serif leading-tight sm:text-4xl lg:text-5xl"
+                    >
+                        Explore and compare{" "}
+                        <span className="bg-linear-to-r from-amber-300 via-orange-400 to-emerald-400 bg-clip-text text-transparent">
+                            home energy solutions
+                        </span>
+                    </motion.h1>
 
-                        <motion.p
-                            variants={contentVariants}
-                            transition={{ duration: 0.5 }}
-                            className="max-w-2xl mx-auto text-sm sm:text-base text-slate-500 leading-relaxed"> Learn how different home energy solutions work, what they can offer and how comparing your options can help you make a more informed decision.
-                        </motion.p>
+                    <motion.p
+                        variants={contentVariants}
+                        transition={{ duration: 0.6 }}
+                        className="max-w-2xl text-base font-medium leading-relaxed text-slate-200 sm:text-lg"
+                    >
+                        Explore solar, home batteries, EV chargers, heat pumps and more. Compare trusted local providers and find the right energy solution for your home.
+                    </motion.p>
 
-                        <motion.div
-                            variants={contentVariants}
-                            transition={{ duration: 0.5, ease: "easeOut" }} className="pt-3">
-
-                            <motion.button type="button"
-                                onClick={() => openQuoteModal()}
-                                whileHover={{ y: -2, scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                transition={{ duration: 0.2, ease: "easeOut" }}
-                                className="bg-linear-to-r from-yellow-500 to-orange-500 text-white font-bold text-base py-2.5 px-5 rounded-full inline-flex items-center gap-2 cursor-pointer group" >
-                                <span>Compare Free Quotes</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 duration-300 transition-all" />
-                            </motion.button>
-                        </motion.div>
-                    </div>
+                    <motion.div
+                        variants={contentVariants}
+                        transition={{ duration: 0.65 }}
+                        className="pt-2"
+                    >
+                        <button
+                            type="button"
+                            onClick={() => openQuoteModal()}
+                            className="group inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 active:scale-95"
+                        >
+                            <span>Compare Free Quotes</span>
+                            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                        </button>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
     );
 }
-

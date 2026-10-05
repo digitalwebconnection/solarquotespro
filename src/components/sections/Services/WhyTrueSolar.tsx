@@ -54,7 +54,7 @@ export default function MiniWhyTrueSolarQuotes() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-4xl mx-auto mb-14">
                     <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">
-                        <BookOpen className="w-4 h-4" />Why Use True Solar Quote
+                        <BookOpen className="w-4 h-4" />Why Choose True Solar Quote
                     </span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-2xl mx-auto  font-bold mt-5 font-serif">
                         Make a More{" "}

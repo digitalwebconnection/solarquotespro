@@ -1,7 +1,7 @@
 import { ArrowRight, Mail, Phone, ShieldCheck, Zap, Award, Lock } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/truesolar.png';
-import { useQuoteModal } from '../../context/QuoteModalContext';
+
 
 const Facebook = (props: any) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -21,7 +21,7 @@ const Instagram = (props: any) => (
 
 
 export default function Footer() {
-  const { openQuoteModal } = useQuoteModal();
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -77,37 +77,32 @@ export default function Footer() {
 
   const quickLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Why Choose Us', href: '/why-choose-us' },
+    { label: 'About Us', href: '/about-us' },
     { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Our Standards', href: '/cec-standards' },
-    { label: 'Frequently Asked Questions', href: '/#faq' }
+    { label: 'Why Choose Us', href: '/why-choose-us' },
+    { label: 'Blog', href: '/blog' }
   ];
 
   const serviceLinks = [
-    { label: 'Residential Solar Quotes', href: '/service/explore-solar' },
-    { label: 'Commercial Solar Quotes', href: '/service/explore-solar' },
-    { label: 'Battery Storage Comparison', href: '/service/explore-battery' },
-    { label: 'Solar & Battery Combos', href: '/service/explore-battery' },
-    { label: 'Get 3 Free Installer Quotes', action: () => openQuoteModal() }
+    { label: 'Solar Energies', href: '/service/explore-solar' },
+    { label: 'Home Batteries', href: '/service/explore-batteries' },
+    { label: 'Ev Chargers', href: '/service/explore-evcharging' },
+    { label: 'Heat Pumps', href: '/service/explore-heatpumps' },
+    { label: 'Air Conditioninars', href: '/service/explore-airconditionar' },
+    { label: 'Inverters', href: '/service/explore-inverters' },
   ];
 
   return (
     <footer className="relative bg-linear-to-b from-slate-50 via-white to-slate-50 text-slate-600 pt-4 pb-6 overflow-hidden border-t border-slate-200">
 
-      {/* ─── Ambient Background Glows & Pattern ─── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-        <div className="absolute top-10 left-1/4 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-100/40 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] bg-size-[24px_24px] opacity-35" />
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 relative z-10">
 
         {/* ─── Pre-Footer Trust Ribbon Graphic ─── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 p-3.5 sm:p-4 bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-200/50 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 mb-8 sm:mb-12 mt-4">
           {trustGuarantees.map((item, idx) => (
             <div key={idx} className="flex items-center gap-3 p-1.5 sm:p-2">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-xs">
                 {item.icon}
               </div>
               <div>
@@ -179,42 +174,19 @@ export default function Footer() {
           {/* Services / Quotes */}
           <div>
             <h3 className="text-slate-900 font-serif font-black text-base mb-4 tracking-wide flex items-center gap-2">
-              <span className="w-1.5 h-4 bg-[#0A6702] rounded-full"></span> Solar Quotes
+              <span className="w-1.5 h-4 bg-[#0A6702] rounded-full"></span> Our Services
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((item) => (
                 <li key={item.label}>
-                  {/* <button 
-                    onClick={item.action} 
-                    className="text-slate-700 font-semibold hover:text-[#0A6702] transition-colors duration-300 text-sm flex items-center gap-2 group cursor-pointer text-left"
-                  >
-                    <ArrowRight className="w-3.5 h-3.5 text-[#0A6702] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {item.label}
-                  </button> */}
-                  {item.href ? (
-                    <Link
-                      to={item.href}
-                      className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={item.action}
-                      className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group text-left"
-                    >
-                      {item.label}
-                    </button>
-                  )}
-                  {/* <Link 
-                    to={item.href} 
+                  <Link
+                    to={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="text-slate-700 font-semibold hover:text-[#00417E] transition-colors duration-300 text-sm flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#F9B122] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {item.label}
-                  </Link> */}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -237,15 +209,6 @@ export default function Footer() {
                   <Mail className="w-4 h-4 text-[#0A6702]" />
                 </div>
                 <a href="mailto:hello@truesolarquote.com.au" className="hover:text-[#0A6702] transition-colors font-bold">hello@truesolarquote.com.au</a>
-              </li>
-              <li className="pt-2">
-                <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-[11px] text-slate-600 space-y-1">
-                  <p className="font-bold text-slate-800 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#0A6702]"></span>
-                    Australian Registered Entity
-                  </p>
-                  <p>Operating under Australian Consumer Law (ACL) & Clean Energy Council guidelines.</p>
-                </div>
               </li>
             </ul>
           </div>

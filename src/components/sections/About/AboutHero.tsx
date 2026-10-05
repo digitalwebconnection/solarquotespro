@@ -32,14 +32,14 @@ export default function AboutHero() {
                 animate={{ scale: 1, opacity: 0.8 }}
                 transition={{ duration: 1.2 }}
                 className="absolute inset-0 w-full h-130 object-cover" />
-            <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-950/75 to-slate-950/50"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-950/70 to-slate-950/20"></div>
 
             <motion.div
                 variants={contentVariants}
                 initial="hidden"
                 animate="visible"
                 className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex">
-                <div className="max-w-4xl text-white mt-9">
+                <div className="max-w-3xl text-white mt-9">
 
                     <motion.p variants={itemVariants} className="font-bold text-xs uppercase mt-8 tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-2 bg-amber-500/8 text-amber-300 border-amber-400/80 border backdrop-blur-md">
                         <Dot strokeWidth={10} className="w-4 h-4 animate-pulse" />About True Solar Quote

@@ -45,8 +45,8 @@ export default function Header() {
     { name: 'About Us', href: '/about-us' },
     { name: 'Services', href: '/service' },
     { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Why Choose Us', href: '/why-choose-us' },
+    { name: 'Blog', href: '/blog' },
     // { name: 'FAQ', href: '/#faq' },
   ];
 
@@ -103,8 +103,8 @@ export default function Header() {
               <span className="text-[#F9B122] font-bold">100% CEC-Accredited Installers</span>
             </div>
             <div className="flex items-center gap-4 text-slate-200 text-[11px] font-semibold">
-              <a 
-                href="mailto:hello@truesolarquote.com.au" 
+              <a
+                href="mailto:hello@truesolarquote.com.au"
                 className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-[#F9B122]" />
@@ -126,10 +126,10 @@ export default function Header() {
         {/* ─── Main Header Navigation Bar ─── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-18 sm:h-20">
-            
+
             {/* Logo with Ambient Glow & Smooth Scroll to Top */}
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               onClick={handleLogoClick}
               className="flex items-center gap-3 group relative py-1 cursor-pointer"
               title="Return to top"
@@ -138,28 +138,28 @@ export default function Header() {
               <div className="absolute -inset-2 bg-linear-to-r from-[#F9B122]/20 via-[#0A6702]/15 to-[#00417E]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               <img src={logo} alt="True Solar Quote Logo" className="h-10 sm:h-13 w-auto object-contain relative z-10 transition-transform group-hover:scale-102" />
             </Link>
-            
+
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-              <NavLink  
-              key={link.name}
-              to={link.href}                           
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={({ isActive }) =>
-              ` ${ isActive ? "text-slate-900 font-bold" : "text-slate-700 font-bold" } hover:text-slate-800 text-sm tracking-tight transition-colors relative group py-1}`} >
-              {({ isActive }) => (
-              <>
-              {link.name}
-              <span className={` absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] rounded-full transition-all duration-600
+                <NavLink
+                  key={link.name}
+                  to={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={({ isActive }) =>
+                    ` ${isActive ? "text-slate-900 font-bold" : "text-slate-700 font-bold"} hover:text-slate-800 text-sm tracking-tight transition-colors relative group py-1}`} >
+                  {({ isActive }) => (
+                    <>
+                      {link.name}
+                      <span className={` absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-[#00417E] via-[#0A6702] to-[#F9B122] rounded-full transition-all duration-600
               ${isActive ? "w-full" : "w-0 group-hover:w-full"} `} />
-              </>
-              )}
-              </NavLink>
+                    </>
+                  )}
+                </NavLink>
               ))}
 
               {/* Glowing CTA Button */}
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => openQuoteModal()}
@@ -172,7 +172,7 @@ export default function Header() {
             </nav>
 
             {/* Mobile Menu Toggle Button */}
-            <button 
+            <button
               className="md:hidden text-slate-700 hover:text-slate-950 cursor-pointer p-2 rounded-xl hover:bg-slate-100 transition-colors focus:outline-hidden focus:ring-2 focus:ring-[#00417E]/20"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open navigation menu"
@@ -190,7 +190,7 @@ export default function Header() {
           {isMenuOpen && (
             <div className="fixed inset-0 z-9999 md:hidden">
               {/* Backdrop Dimmer Overlay */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -201,7 +201,7 @@ export default function Header() {
               />
 
               {/* Left Slide-in Drawer Container */}
-              <motion.div 
+              <motion.div
                 initial={{ x: '-100%' }}
                 animate={{ x: 0 }}
                 exit={{ x: '-100%' }}
@@ -211,8 +211,8 @@ export default function Header() {
                 {/* Drawer Top Header (Logo + Close Action) */}
                 <div>
                   <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
-                    <Link 
-                      to="/" 
+                    <Link
+                      to="/"
                       onClick={handleLogoClick}
                       className="flex items-center gap-2 cursor-pointer"
                       title="Return to top"
@@ -220,7 +220,7 @@ export default function Header() {
                     >
                       <img src={logo} alt="True Solar Quote Logo" className="h-9 w-auto object-contain" />
                     </Link>
-                    <button 
+                    <button
                       onClick={() => setIsMenuOpen(false)}
                       className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-200/60 transition-colors cursor-pointer"
                       aria-label="Close navigation menu"
@@ -242,10 +242,10 @@ export default function Header() {
 
                   {/* Navigation Links */}
                   <nav className="p-5 pt-2 flex flex-col gap-1.5">
-                   
+
                     {navLinks.map((link) => (
-                      <Link 
-                        key={link.name} 
+                      <Link
+                        key={link.name}
                         to={link.href}
                         onClick={(e) => handleNavClick(e, link.href)}
                         className="flex  items-center justify-between px-3.5 py-3 rounded-xl text-slate-800 hover:text-[#00417E] hover:bg-slate-50 font-bold text-base transition-colors group"
@@ -260,7 +260,7 @@ export default function Header() {
                 {/* Drawer Bottom (CTA Button + Contact & Trust Info) */}
                 <div className="p-5 flex flex-col gap-4 bg-slate-50/60 border-t border-slate-100">
                   {/* Quote Button */}
-                  <button 
+                  <button
                     onClick={() => {
                       setIsMenuOpen(false);
                       openQuoteModal();
@@ -274,8 +274,8 @@ export default function Header() {
 
                   {/* Contact Email & Trust Info */}
                   <div className="flex flex-col gap-2.5 pt-2 border-t border-slate-200/60">
-                    <a 
-                      href="mailto:hello@truesolarquote.com.au" 
+                    <a
+                      href="mailto:hello@truesolarquote.com.au"
                       className="flex items-center gap-2.5 text-xs text-slate-600 hover:text-[#00417E] font-medium transition-colors"
                     >
                       <div className="w-7 h-7 rounded-lg bg-[#00417E]/10 flex items-center justify-center text-[#00417E]">
