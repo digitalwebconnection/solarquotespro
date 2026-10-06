@@ -41,11 +41,11 @@ const HeroWhyChooseUs = () => {
           <motion.h1
             variants={contentVariants}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold font-serif leading-tight sm:text-4xl lg:text-5xl"
+            className="text-3xl font-bold font-serif leading-tight sm:text-4xl lg:text-5xl capitalize"
           >
-            A better way to choose your{" "}
+            A better way to choose {" "}
             <span className="bg-linear-to-r from-amber-300 via-orange-400 to-emerald-400 bg-clip-text text-transparent">
-              solar installer
+              <br />your solar installer
             </span>
           </motion.h1>
 
@@ -66,7 +66,7 @@ const HeroWhyChooseUs = () => {
             className="text-sm font-semibold text-white sm:text-base"
           >
             No endless searching. No unnecessary calls.{" "}
-            <span className="text-amber-300">Just trusted solar options.</span>
+            <span className="text-amber-400">Just trusted solar options.</span>
           </motion.p>
 
           <motion.div

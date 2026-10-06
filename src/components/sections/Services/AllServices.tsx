@@ -1,182 +1,299 @@
-import { Sun, BatteryCharging, Zap, Snowflake, Droplets, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Sun, BatteryCharging, Zap, Snowflake, Droplets, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useQuoteModal } from "../../../context/QuoteModalContext";
 import { motion } from "framer-motion";
+
+
+const solutions = [
+  {
+    title: "Solar Energy",
+    subtitle: "Generate electricity from sunlight",
+    description: "Understand how rooftop solar works, what size system suits your home, and which options give the best return before you compare quotes.",
+    detail: "The right setup depends on your roof, daytime electricity use and future plans. Comparing system designs helps you understand expected generation and what is included in a quote.",
+    goodFit: "Homes with suitable roof space and regular daytime energy use",
+    image: "https://images.unsplash.com/photo-1655300256335-beef51a914fe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNvbGFyJTIwZW5lcmd5fGVufDB8fDB8fHww",
+    imageAlt: "Solar panels installed across a rooftop",
+    icon: Sun,
+    iconStyle: "bg-amber-100 text-amber-600",
+    points: [
+      "System sizing",
+      "Panel options",
+      "Pricing & value",
+    ],
+    linkText: "Explore Solar",
+    linkUrl: "/service/explore-solar",
+  },
+  {
+    title: "Home Batteries",
+    subtitle: "Store energy for later",
+    description: "Learn how battery storage works, what capacity you need, and how backup power can improve reliability during outages or peak pricing periods.",
+    detail: "Battery size, usable capacity and backup capability all affect how a system works for your household. Consider when you use electricity and what you want the battery to support.",
+    goodFit: "Solar homes looking to use more of their own generation after sunset",
+    image: "https://plus.unsplash.com/premium_photo-1773152019508-6df3ea1ac9a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM2fHxzb2xhciUyMGJhdHRlcmllc3xlbnwwfHwwfHx8MA%3D%3D",
+    imageAlt: "Household energy costs being calculated",
+    icon: BatteryCharging,
+    iconStyle: "bg-emerald-100 text-emerald-600",
+    points: [
+      "Battery capacity",
+      "Technology types",
+      "Backup & usage",
+    ],
+    linkText: "Explore Battery",
+    linkUrl: "/service/explore-battery",
+  },
+  {
+    title: "EV Charging",
+    subtitle: "Charge your electric vehicle",
+    description: "Compare charging speeds, smart features, and ways to use your solar setup more effectively for everyday EV driving.",
+    detail: "A home charger can make everyday charging more convenient. Your vehicle, available electrical capacity and parking arrangement help determine which charger and features are appropriate.",
+    goodFit: "Households with off-street parking and a plug-in vehicle",
+    image: "https://plus.unsplash.com/premium_photo-1664283228678-b1da10cd249e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGV2JTIwY2hhcmdpbmd8ZW58MHx8MHx8fDA%3D",
+    imageAlt: "Bright modern home interior",
+    icon: Zap,
+    iconStyle: "bg-sky-100 text-sky-600",
+    points: [
+      "Charger speeds",
+      "Smart features",
+      "Solar pairing",
+    ],
+    linkText: "Explore EV Charging",
+    linkUrl: "/service/explore-evcharging",
+  },
+  {
+    title: "Heat Pumps",
+    subtitle: "Efficient hot water",
+    description: "See how heat-pump hot water systems work, how they compare with gas or electric systems, and what may qualify for rebates.",
+    detail: "When replacing a hot-water system, compare household capacity, installation requirements and running costs. Available incentives can vary by location and eligibility.",
+    goodFit: "Households planning a hot-water replacement or efficiency upgrade",
+    image: "https://plus.unsplash.com/premium_photo-1663047170515-66632d2a374d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGhlYXQlMjBwdW1wfGVufDB8fDB8fHww",
+    imageAlt: "Homeowners discussing clean energy options with an installer",
+    icon: Droplets,
+    iconStyle: "bg-amber-100 text-amber-600 ",
+    points: [
+      "Efficiency gains",
+      "Running costs",
+      "Rebates",
+    ],
+    linkText: "Explore Heat Pumps",
+    linkUrl: "/service/explore-heatpumps",
+  },
+  {
+    title: "Air Conditioning",
+    subtitle: "Heating & cooling",
+    description: "Explore efficient climate control options for comfort, running costs, and how systems work alongside the rest of your home energy setup.",
+    detail: "Room size, insulation and how you use each space influence system selection. Efficiency ratings and operating modes can help you compare options beyond the upfront price.",
+    goodFit: "Homes upgrading an older system or improving year-round comfort",
+    image: "https://plus.unsplash.com/premium_photo-1679943423706-570c6462f9a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D",
+    imageAlt: "Technician inspecting a residential rooftop",
+    icon: Snowflake,
+    iconStyle: "bg-emerald-100 text-emerald-600",
+    points: [
+      "Cooling options",
+      "Efficiency ratings",
+      "Smart control",
+    ],
+    linkText: "Explore Air Conditioning",
+    linkUrl: "/service/explore-airconditionar",
+  },
+  {
+    title: "Inverters",
+    subtitle: "Convert power for your home",
+    description: "Learn how inverters support performance, backup capability, and compatibility with solar and battery systems across different loads.",
+    detail: "Inverter choice affects how solar and storage components work together. Check system sizing, equipment compatibility and whether backup power is part of your requirements.",
+    goodFit: "Solar or battery projects where component compatibility matters",
+    image: "https://plus.unsplash.com/premium_photo-1671808063278-5ffee0bb3db7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGludmVydGVyfGVufDB8fDB8fHww",
+    imageAlt: "Solar installer discussing a home energy installation",
+    icon: Zap,
+    iconStyle: "bg-blue-100 text-blue-700",
+    points: [
+      "Inverter types",
+      "Sizing",
+      "Battery compatibility",
+    ],
+    linkText: "Explore Inverters",
+    linkUrl: "/service/explore-inverters",
+  },
+];
 export default function AllServices() {
-  const { openQuoteModal } = useQuoteModal();
-  const solutions = [
-    {
-      title: "Solar Energy",
-      subtitle: "Generate electricity from sunlight",
-      description: "Understand how rooftop solar works, how much energy a system can produce, and what to consider before comparing solar options.",
-      icon: Sun,
-      iconStyle: "text-amber-500 bg-amber-500/20",
-      borderStyle: "hover:border-amber-400",
-      points: [
-        "Solar system sizes",
-        "Panel & inverter options",
-        "Solar pricing & value",
-      ],
-      linkText: "Explore Solar",
-      linkUrl: "/service/explore-solar",
-    },
-    {
-      title: "Home Batteries",
-      subtitle: "Store energy for later",
-      description: " Learn how batteries store excess solar energy and explore capacity, battery technology, backup power and other important considerations.",
-      icon: BatteryCharging,
-      iconStyle: "text-emerald-600 bg-emerald-500/20",
-      borderStyle: "hover:border-emerald-400",
-      points: [
-        "Battery capacity",
-        "Battery technology",
-        "Backup & energy storage",
-      ],
-      linkText: "Explore Batteries",
-      linkUrl: "/service/explore-battery",
-    },
-    {
-      title: "EV Charging",
-      subtitle: "Charge your electric vehicle",
-      description: " Discover home EV charging options, charging speeds and smart features, including ways to make better use of your solar energy.",
-      icon: Zap,
-      iconStyle: "text-blue-600 bg-blue-500/20",
-      borderStyle: "hover:border-blue-400",
-      points: [
-        "Charger types & speeds",
-        "Smart charging features",
-        "Solar EV charging",
-      ],
-      linkText: "Explore EV Charging",
-      linkUrl: "/service/explore-evcharging",
-    },
-    {
-      title: "Hot Water Heat Pumps",
-      subtitle: "Efficient hot water",
-      description: "Find out how heat-pump hot-water systems work and what homeowners should consider when comparing traditional and efficient alternatives.",
-      icon: Droplets,
-      iconStyle: "text-cyan-600 bg-cyan-500/20",
-      borderStyle: "hover:border-cyan-400",
-      points: [
-        "How heat pumps work",
-        "Energy efficiency",
-        "Rebates & incentives",
-      ],
-      linkText: "Explore Heat Pumps",
-      linkUrl: "/service/explore-heatpumps",
-    },
-    {
-      title: "Air Conditioning",
-      subtitle: "Efficient heating & cooling",
-      description: "Explore heating and cooling options, efficiency ratings and ways air conditioning can work alongside a home's broader energy setup.",
-      icon: Snowflake,
-      iconStyle: "text-indigo-600 bg-indigo-500/20",
-      borderStyle: "hover:border-indigo-400",
-      points: [
-        "Energy efficiency ratings",
-        "Heating & cooling options",
-        "Smart climate control",
-      ],
-      linkText: "Explore Air Conditioning",
-      linkUrl: "/service/explore-airconditionar",
-    },
-    {
-      title: "Inverters",
-      subtitle: "Convert stored energy into AC power",
-      description: "Learn how inverters power your home during outages, select the right wattage capacity, and choose between pure sine wave and hybrid technologies.",
-      icon: Zap,
-      iconStyle: "text-blue-500 bg-blue-500/20",
-      borderStyle: "hover:border-blue-400",
-      points: [
-        "Inverter types & wave technology",
-        "Sizing & load capacity",
-        "Battery compatibility & backup time",
-      ],
-      linkText: "Explore Inverters",
-      linkUrl: "/service/explore-inverters",
-    }
-  ];
+
+  const [activeService, setActiveService] = useState(solutions[0]);
+  const ActiveIcon = activeService.icon;
+
+  useEffect(() => {
+    const rotationTimer = window.setInterval(() => {
+      setActiveService((currentService) => {
+        const currentIndex = solutions.findIndex(
+          (service) => service.linkUrl === currentService.linkUrl,
+        );
+        return solutions[(currentIndex + 1) % solutions.length];
+      });
+    }, 6000);
+
+    return () => window.clearInterval(rotationTimer);
+  }, []);
 
   return (
-    <section className="relative  bg-white py-14">
-      <div className="absolute z-0 top-40 -left-50 w-150 h-120 rounded-full bg-amber-300/20  blur-[120px]" />
-      <div className="absolute z-0 bottom-3 -right-10 w-250 h-170 rounded-full bg-amber-300/20  blur-[120px]" />
-      <div className="absolute z-0 top-20 -right-30 w-130 h-100 rounded-full  bg-blue-600/15 blur-[120px]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden  bg-slate-50 py-12 sm:py-14">
+      <div className="pointer-events-none absolute -left-16 top-20 h-100 w-100 rounded-full bg-amber-400/12 blur-[120px]" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-
-          className="max-w-3xl mx-auto text-center mb-14">
-          <div className=" text-amber-500 text-xs font- semibold uppercase tracking-[2px] mb-5 backdrop-blur-sm">Home Energy Guide
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-950">
-            Explore <span className="text-amber-500"> Your Energy Options </span>
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 text-center"
+        >
+          <p className="text-[11px] font-bold uppercase tracking-[2px] text-amber-600">Home energy guide</p>
+          <h2 className="mt-3 text-3xl font-bold font-serif text-slate-900 sm:text-5xl">
+            Explore <span className="text-amber-500">your energy options</span>
           </h2>
-          <p className="mt-5 text-slate-700 text-sm sm:text-base leading-6 max-w-2xl mx-auto">Research the technologies available for your home, understand the important factors and compare your options before speaking with an energy professional.
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-6 text-slate-600">
+            Select a solution to see what it does, what to consider, and whether it could suit your home.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {solutions.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.linkUrl}
-                to={item.linkUrl}
-                aria-label={`${item.linkText}: ${item.title}`}
-                className="group block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00417E]"
-              >
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.14
-                }}
-                className={`relative h-full overflow-hidden bg-white border border-slate-300/70 shadow-gray-500 shadow-lg hover:shadow-xl rounded-lg p-6 space-y-4 transition-all duration-300 hover:-translate-y-1 ${item.borderStyle}`}>
+        <div
+          className="grid grid-cols-1 gap-5 lg:grid-cols-[260px_1fr]"
+          style={{ gridTemplateColumns: "350px minmax(0, 1fr)" }}
+        >
 
-                <div className="absolute top-5 right-5 text-xs font-bold text-slate-300">0{index + 1}</div>
-                <div className={`w-12 h-12 rounded-xl flex justify-center items-center mb-5 ${item.iconStyle}`}>
-                  <Icon className="w-6 h-6 group-hover:-rotate-360 duration-500  ease-in-out" />
-                </div>
-                <h3 className="text-xl font-bold font-serif text-slate-900">{item.title}</h3>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 -mt-3">{item.subtitle}</p>
-                <p className="text-sm text-slate-600 leading-relaxed mt-4 mb-6">{item.description}</p>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3">What to consider</p>
-                <ul className="space-y-2">
-                  {item.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-center gap-2 text-sm text-slate-700"  >
-                      <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />{point}
-                    </li>
-                  ))}
-                </ul>
-                <span className="pt-6 flex items-center justify-between text-sm font-bold text-blue-900 group-hover:text-amber-600 transition-colors">
-                  <span>{item.linkText}</span>
-                  <ArrowRight className="w-4  h-4  transition-transform  duration-300  group-hover:translate-x-1.5"
-                  />
-                </span>
-              </motion.div>
-              </Link>
-            );
-          })}
-        </div>
+          <div className="min-w-0 border-b border-slate-200 bg-slate-50/80 lg:border-b-0 lg:border-r lg:border-slate-200">
+            {solutions.map((item, index) => {
+              const isActive = activeService.linkUrl === item.linkUrl;
+              const ItemIcon = item.icon;
+              return (
+                <button
+                  key={item.linkUrl}
+                  type="button"
+                  onClick={() => setActiveService(item)}
+                  aria-pressed={isActive}
+                  className={`group w-full border-b cursor-pointer border-slate-200/80 px-4 py-4 text-left transition-all last:border-b-0 ${isActive
+                    ? "bg-white text-slate-900 shadow-sm"
+                    : "text-slate-700 hover:bg-white/80"
+                    }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${item.iconStyle}`}
+                    >
+                      <ItemIcon className="h-5 w-5" />
+                    </span>
 
-        <div className="mt-12 rounded-2xl bg-slate-900 px-6 py-8 sm:px-10 flex items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-bold text-white font-serif">Not sure which option is right for you?
-            </h3>
-            <p className="text-slate-400 text-sm mt-1">Start by telling us about your home and energy needs.
-            </p>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-base font-semibold">
+                          {item.title}
+                        </span>
+                        <span className="text-xs font-bold tracking-[0.15em] text-slate-300">
+                          0{index + 1}
+                        </span>
+                      </div>
+                      <span className="mt-0.5 block truncate text-[10px] uppercase tracking-[0.12em] text-slate-500">
+                        {item.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
           </div>
-          <button type="button" onClick={() => openQuoteModal()} className="inline-flex items-center gap-2  bg-amber-500  hover:bg-amber-400 active:scale-97  text-white font-bold px-5 py-3 rounded-xl transition-all cursor-pointer">
-            Compare Your Options
-            <ArrowRight className="w-4 h-4" />
-          </button>
+
+
+          <Link
+            to={activeService.linkUrl}
+
+          >
+            <motion.div
+              key={activeService.linkUrl}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="relative isolate min-w-0 w-full overflow-hidden rounded-lg sm:min-h-100"
+            >
+              <img
+                src={activeService.image}
+                alt={activeService.imageAlt}
+                className="absolute inset-0 -z-20 h-full w-full object-cover"
+              />
+
+              <div className="absolute inset-0 -z-10 bg-linear-to-t from-slate-950/80 via-slate-950/45 to-slate-950/30" />
+
+              <div className="relative flex h-full flex-col p-5 sm:p-7">
+
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${activeService.iconStyle}`}
+                  >
+                    <ActiveIcon className="h-5 w-5" />
+                  </span>
+
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+                      {activeService.subtitle}
+                    </div>
+                    <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-3xl">
+                      {activeService.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="mt-7 grid min-w-0 gap-6 lg:grid-cols-2">
+                  {/* Description */}
+                  <div className="min-w-0">
+                    <p className="text-sm leading-6 text-white sm:text-base">
+                      {activeService.description}
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-white/80">
+                      {activeService.detail}
+                    </p>
+
+                    <div className="mt-4 flex items-start gap-2 rounded-2xl border border-amber-300/30 bg-black/30 p-3 backdrop-blur-sm">
+                      <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
+                      <p className="text-xs leading-5 text-white/90">
+                        <span className="font-bold text-amber-400">
+                          Worth exploring if : {" "}
+                        </span>
+                        {activeService.goodFit}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Things to compare */}
+                  <div className="min-w-0 border-l border-slate-500 p-7 ">
+                    <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-white/75">
+                      Things to compare
+                    </p>
+                    <ul className="space-y-3">
+                      {activeService.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-center gap-2.5 text-sm font-medium text-white"
+                        >
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20 text-[10px] font-bold text-white">
+                            <Check className="h-3 w-3" />
+                          </span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <p className="mt-5  text-xs leading-5 text-amber-300">
+                      Compare options based on your home, usage and budget.
+                    </p>
+
+                    <Link
+                      to={activeService.linkUrl}
+                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#00417E] px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-amber-600"
+                    >
+                      {activeService.linkText}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+
+                </div>
+              </div>
+            </motion.div>
+          </Link>
         </div>
       </div>
     </section>

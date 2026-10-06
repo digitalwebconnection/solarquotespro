@@ -84,7 +84,7 @@ export default function Footer() {
   ];
 
   const serviceLinks = [
-    { label: 'Solar Energies', href: '/service/explore-solar' },
+    { label: 'Solar Energy', href: '/service/explore-solar' },
     { label: 'Home Batteries', href: '/service/explore-batteries' },
     { label: 'Ev Chargers', href: '/service/explore-evcharging' },
     { label: 'Heat Pumps', href: '/service/explore-heatpumps' },

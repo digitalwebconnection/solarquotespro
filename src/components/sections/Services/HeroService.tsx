@@ -44,8 +44,8 @@ export default function HeroService() {
                         transition={{ duration: 0.5 }}
                         className="text-3xl font-bold capitalize font-serif leading-tight sm:text-4xl lg:text-5xl"
                     >
-                        Explore and compare{" "}
-                        <span className="bg-linear-to-r from-amber-300 via-orange-400 to-emerald-400 bg-clip-text text-transparent">
+                        Explore and compare <br />
+                        <span className="bg-linear-to-r from-orange-400 via-amber-300 to-emerald-400 bg-clip-text text-transparent">
                             home energy solutions
                         </span>
                     </motion.h1>
