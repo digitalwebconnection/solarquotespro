@@ -94,22 +94,23 @@ export default function HomeEnergySystem() {
             with how your household uses energy, then consider which solutions suit your home
             today and your plans for the future.
           </p>
-          <Link
-            to="#energy-options"
+          <a
+            href="#energy-options"
             className="group mt-8 inline-flex text-sm items-center gap-2 font-semibold px-4 py-2.5 border border-amber-500 rounded-full text-slate-900 transition-colors hover:text-amber-600  "
           >
             Explore Your Energy Options
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </a>
         </motion.div>
 
         <motion.div
+          id="energy-options"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
           aria-label="Solar energy is managed by a smart inverter and flows to your home. Depending on your setup, energy may be stored in a battery or used for EV charging, hot water, heating and cooling."
-          className="relative"
+          className="relative scroll-mt-24"
         >
           <div>
             <div className="grid grid-cols-2 gap-x-6 gap-y-5">

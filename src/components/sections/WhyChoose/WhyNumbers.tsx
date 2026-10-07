@@ -55,16 +55,17 @@ export default function WhyNumbers() {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ staggerChildren: 0.15 }}
                 >
-                    {stats.map((stat) => (
+                    {stats.map((stat, index) => (
                         <motion.div
                             key={stat.label}
                             className="rounded-lg border border-slate-200 bg-white p-6   shadow-black/10 shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-black/20"
                             variants={{
-                                hidden: { opacity: 0, y: 30 },
+                                hidden: { opacity: 0, y: -30, rotate: [-4, 3, -3, 4][index] },
                                 visible: {
                                     opacity: 1,
                                     y: 0,
-                                    transition: { duration: 0.5 },
+                                    rotate: 0,
+                                    transition: { duration: 0.3 },
                                 },
                             }}
                             whileHover={{ y: -8, scale: 1.03 }}

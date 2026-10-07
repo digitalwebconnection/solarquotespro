@@ -12,13 +12,13 @@ export default function HeroService() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="relative min-h-115 w-full overflow-hidden bg-slate-900">
+        <section className="relative min-h-115 w-full overflow-hidden ">
             <img
                 src="https://images.unsplash.com/photo-1630608354129-6a7704150401?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNvbGFyJTIwcGFuZWxzfGVufDB8fDB8fHww"
                 alt="Australian home with rooftop solar panels"
                 className="absolute inset-0 h-full w-full object-cover object-bottom"
             />
-            <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/75 to-slate-950/45" />
+            <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-950/65 to-slate-950/50" />
 
             <div className="relative z-10 mx-auto flex min-h-115 max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
                 <motion.div

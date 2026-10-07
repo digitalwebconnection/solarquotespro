@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { Fan, Thermometer, Gauge, Waves, Droplets } from "lucide-react";
+import { Fan, Thermometer, Gauge, Waves, Droplets  } from "lucide-react";
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 24 },
@@ -58,8 +58,9 @@ const HowPumpsWork = () => {
             accent: "bg-emerald-500 text-white",
         },
     ];
+
     return (
-        <section className="py-10 bg-slate-50">
+        <section className="py-8 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <motion.div
@@ -97,6 +98,7 @@ const HowPumpsWork = () => {
                         )
                     })}
                 </motion.div>
+
             </div>
         </section>
     )

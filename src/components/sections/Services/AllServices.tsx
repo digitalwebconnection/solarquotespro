@@ -135,6 +135,7 @@ export default function AllServices() {
   return (
     <section className="relative overflow-hidden  bg-slate-50 py-12 sm:py-14">
       <div className="pointer-events-none absolute -left-16 top-20 h-100 w-100 rounded-full bg-amber-400/12 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-16 top-25 h-150 w-100 rounded-full bg-orange-500/12 blur-[120px]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -156,7 +157,7 @@ export default function AllServices() {
           style={{ gridTemplateColumns: "350px minmax(0, 1fr)" }}
         >
 
-          <div className="min-w-0 border-b border-slate-200 bg-slate-50/80 lg:border-b-0 lg:border-r lg:border-slate-200">
+          <div className="flex min-h-125 min-w-0 flex-col border-b border-slate-200 bg-slate-50/80 lg:border-b-0">
             {solutions.map((item, index) => {
               const isActive = activeService.linkUrl === item.linkUrl;
               const ItemIcon = item.icon;
@@ -166,9 +167,9 @@ export default function AllServices() {
                   type="button"
                   onClick={() => setActiveService(item)}
                   aria-pressed={isActive}
-                  className={`group w-full border-b cursor-pointer border-slate-200/80 px-4 py-4 text-left transition-all last:border-b-0 ${isActive
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-700 hover:bg-white/80"
+                  className={`group w-full flex-1 cursor-pointer rounded-xl px-4 py-4 text-left transition-all ${isActive
+                    ? "border border-amber-400 bg-white text-amber-600 shadow-sm"
+                    : "border-b border-slate-200/80 text-slate-700 hover:bg-white/50 last:border-b-0"
                     }`}
                 >
                   <div className="flex items-center gap-3">
@@ -207,49 +208,49 @@ export default function AllServices() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="relative isolate min-w-0 w-full overflow-hidden rounded-lg sm:min-h-100"
+              className="relative  min-h-125 min-w-0 w-full overflow-hidden rounded-lg shadow-2xl shadow-black/30"
             >
               <img
                 src={activeService.image}
                 alt={activeService.imageAlt}
-                className="absolute inset-0 -z-20 h-full w-full object-cover"
+                className="absolute inset-0  h-full w-full object-cover"
               />
 
-              <div className="absolute inset-0 -z-10 bg-linear-to-t from-slate-950/80 via-slate-950/45 to-slate-950/30" />
+              <div className="absolute inset-0 z-1 bg-linear-to-t from-slate-950/70 via-slate-950/45 to-slate-950/70" />
 
-              <div className="relative flex h-full flex-col p-5 sm:p-7">
+              <div className="relative z-5 flex h-full flex-col p-5 sm:p-7">
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center mt-5 gap-3">
                   <span
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${activeService.iconStyle}`}
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${activeService.iconStyle}`}
                   >
-                    <ActiveIcon className="h-5 w-5" />
+                    <ActiveIcon className="h-6 w-6" />
                   </span>
 
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+                    <div className="text-xs font-bold uppercase tracking-[2px] text-white/80">
                       {activeService.subtitle}
                     </div>
-                    <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-3xl">
+                    <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-4xl">
                       {activeService.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="mt-7 grid min-w-0 gap-6 lg:grid-cols-2">
+                <div className="mt-8 grid min-w-0 px-3 gap-6 lg:grid-cols-2">
                   {/* Description */}
                   <div className="min-w-0">
-                    <p className="text-sm leading-6 text-white sm:text-base">
+                    <p className="text-base leading-7 tracking-wide text-white sm:text-lg">
                       {activeService.description}
                     </p>
-                    <p className="mt-3 text-sm leading-6 text-white/80">
+                    <p className="mt-4 text-base leading-6 text-white/80">
                       {activeService.detail}
                     </p>
 
-                    <div className="mt-4 flex items-start gap-2 rounded-2xl border border-amber-300/30 bg-black/30 p-3 backdrop-blur-sm">
-                      <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
-                      <p className="text-xs leading-5 text-white/90">
+                    <div className="mt-4 flex items-start gap-2 rounded-xl border border-amber-300/30 bg-black/30 p-3 backdrop-blur-sm">
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
+                      <p className="text-sm leading-5 text-white/90">
                         <span className="font-bold text-amber-400">
                           Worth exploring if : {" "}
                         </span>
@@ -259,8 +260,8 @@ export default function AllServices() {
                   </div>
 
                   {/* Things to compare */}
-                  <div className="min-w-0 border-l border-slate-500 p-7 ">
-                    <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-white/75">
+                  <div className="min-w-0 border-l border-slate-400 p-7 ">
+                    <p className="mb-4 text-xs font-bold uppercase tracking-[2px] text-white/75">
                       Things to compare
                     </p>
                     <ul className="space-y-3">
@@ -283,7 +284,7 @@ export default function AllServices() {
 
                     <Link
                       to={activeService.linkUrl}
-                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#00417E] px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-amber-600"
+                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-amber-500/90 shadow-lg hover:shadow-amber-500/20 active:scale-95"
                     >
                       {activeService.linkText}
                       <ArrowRight className="h-4 w-4" />

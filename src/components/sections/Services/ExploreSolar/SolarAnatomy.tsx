@@ -17,7 +17,7 @@ import {
     Zap,
 } from "lucide-react";
 import { useRef, useState } from "react";
-import { solarRoofImg, solarSavingsImg } from "../../../../assets/images";
+
 
 const systemComponents = [
     {
@@ -83,7 +83,7 @@ const powerEnergyContent = [
         icon: Zap,
         iconBg: "bg-orange-400/10",
         iconColor: "text-orange-500",
-        image: solarRoofImg,
+        image: "https://images.unsplash.com/photo-1655802326047-407fe37539ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGJhdHRlcnl8ZW58MHx8MHx8fDA%3D",
         imageAlt: "Rooftop solar panels generating electricity",
     },
     {
@@ -97,7 +97,7 @@ const powerEnergyContent = [
         icon: BarChart3,
         iconBg: "bg-blue-400/10",
         iconColor: "text-blue-600",
-        image: solarSavingsImg,
+        image: "https://images.unsplash.com/photo-1676337167752-2062c6ca7366?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmF0dGVyeSUyMGVuZXJneXxlbnwwfHwwfHx8MA%3D%3D",
         imageAlt: "Solar energy helping power a home over time",
     },
 ];
@@ -303,12 +303,9 @@ const SolarAnatomy = () => {
                     </div>
                 </MotionConfig>
 
-                <div className="max-w-7xl px-8 pt-14 mx-auto">
-                    <div className="max-w-3xl mb-10">
-                        <p className="text-sm font-semibold uppercase tracking-[2px] text-amber-500 mb-4">
-                            Solar Fundamentals
-                        </p>
-                        <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-5">
+                <div className="max-w-7xl px-8  pt-14 mx-auto">
+                    <div className="max-w-3xl mx-auto text-center mb-10">
+                        <h2 className="font-serif text-4xl md:text-5xl font-bold bg-linear-to-r bg-clip-text text-transparent from-orange-500 to-amber-400 mb-5 h-15">
                             Power vs Energy
                         </h2>
                         <p className="text-lg text-slate-600 leading-8">
@@ -351,14 +348,11 @@ const SolarAnatomy = () => {
                                                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-300">
                                                     {item.question}
                                                 </p>
-                                                <h3 className="mt-1 text-3xl font-bold">
+                                                <h3 className="mt-1 text-4xl font-bold">
                                                     {item.title}
                                                 </h3>
-                                                <p className="mt-1 text-sm font-semibold text-white/80">
+                                                <p className="mt-1 text-base font-semibold text-white/80">
                                                     Measured in {item.unit}
-                                                </p>
-                                                <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-white/75">
-                                                    Hover or click to learn more
                                                 </p>
                                             </div>
                                         </div>

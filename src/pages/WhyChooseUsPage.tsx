@@ -1,10 +1,10 @@
 
-import { WhyChooseUs } from "../components"
 import Testimonials from "../components/sections/Testimonials"
 import CTAWhyUs from "../components/sections/WhyChoose/CTAWhyUs"
 import HeroWhyChooseUs from "../components/sections/WhyChoose/HeroWhyChooseUs"
 import SolarDesicion from "../components/sections/WhyChoose/SolarDecision"
 import WhyNumbers from "../components/sections/WhyChoose/WhyNumbers"
+import WhyChooseBenefits from "../components/sections/WhyChoose/WhyChooseBenefits"
 
 const WhyChooseUsPage = () => {
     return (
@@ -12,7 +12,8 @@ const WhyChooseUsPage = () => {
             <HeroWhyChooseUs />
             <SolarDesicion />
             <WhyNumbers />
-            <WhyChooseUs />
+            <WhyChooseBenefits />
+
             <CTAWhyUs />
             <Testimonials />
         </main>
