@@ -1,8 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
 
-
-
 export default function CTAHowItWorks() {
     const { openQuoteModal } = useQuoteModal();
 
@@ -36,6 +34,3 @@ export default function CTAHowItWorks() {
         </section>
     );
 }
-
-
-

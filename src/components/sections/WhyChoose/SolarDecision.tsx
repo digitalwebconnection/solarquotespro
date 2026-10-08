@@ -39,7 +39,8 @@ const SolarDesicion = () => {
 
   return (
     <section className="relative w-full bg-white py-10 sm:py-14 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute bg-amber-400/12 h-100 w-100 blur-[120px] -top-10 left-10"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div className="space-y-10">
             {processStep.map((item, index) => (

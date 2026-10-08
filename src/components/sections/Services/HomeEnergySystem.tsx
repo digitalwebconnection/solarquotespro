@@ -95,7 +95,7 @@ export default function HomeEnergySystem() {
             today and your plans for the future.
           </p>
           <a
-            href="#energy-options"
+            href="#all-services"
             className="group mt-8 inline-flex text-sm items-center gap-2 font-semibold px-4 py-2.5 border border-amber-500 rounded-full text-slate-900 transition-colors hover:text-amber-600  "
           >
             Explore Your Energy Options

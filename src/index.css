@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import 'tailwind-animations';
 
-@theme {
+/* @theme {
   --color-brand-green: #0A6702;
   --color-brand-gold: #F9B122;
   --color-brand-navy: #00417E;
@@ -9,7 +9,7 @@
   --color-solar-green: #0A6702;
   --color-solar-gold: #F9B122;
   --color-solar-navy: #00417E;
-}
+} */
 
 @layer base {
   :root {
@@ -23,6 +23,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   @apply bg-slate-50 text-slate-800 antialiased font-sans;
-}
+} */

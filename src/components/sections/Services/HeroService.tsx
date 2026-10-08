@@ -1,79 +1,135 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Dot } from "lucide-react";
+import { motion, MotionConfig, useReducedMotion } from "framer-motion";
+import { ArrowRight, Check, Dot } from "lucide-react";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
-
 
 const contentVariants = {
     hidden: { opacity: 0, y: 16 },
     visible: { opacity: 1, y: 0 },
 };
 
+const chips = ["100% Free to Use", "No Obligation", "Trusted Local Providers"];
+
 export default function HeroService() {
     const { openQuoteModal } = useQuoteModal();
+    const reduce = useReducedMotion();
 
     return (
-        <section className="relative min-h-115 w-full overflow-hidden ">
-            <img
-                src="https://images.unsplash.com/photo-1630608354129-6a7704150401?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNvbGFyJTIwcGFuZWxzfGVufDB8fDB8fHww"
-                alt="Australian home with rooftop solar panels"
-                className="absolute inset-0 h-full w-full object-cover object-bottom"
-            />
-            <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-950/65 to-slate-950/50" />
+        <MotionConfig reducedMotion="user">
+            <section className="relative min-h-115 w-full overflow-hidden">
 
-            <div className="relative z-10 mx-auto flex min-h-115 max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+                <motion.img
+                    src="https://images.unsplash.com/photo-1630608354129-6a7704150401?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNvbGFyJTIwcGFuZWxzfGVufDB8fDB8fHww"
+                    alt="Australian home with rooftop solar panels"
+                    initial={{ scale: 1.14 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 14, ease: "easeOut" }}
+                    className="absolute inset-0 h-full w-full object-cover object-bottom"
+                />
+                <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-950/65 to-slate-950/50" />
+
+                {/* Pulsing sun glow */}
                 <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                        hidden: {},
-                        visible: { transition: { staggerChildren: 0.12 } },
-                    }}
-                    className="max-w-3xl space-y-5 text-white"
-                >
-                    <motion.p
-                        variants={contentVariants}
-                        transition={{ duration: 0.35 }}
-                        className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-300 backdrop-blur-md"
-                    >
-                        <Dot className="h-5 w-5 animate-pulse text-amber-400" strokeWidth={8} />
-                        What We Help With
-                    </motion.p>
+                    aria-hidden="true"
+                    animate={reduce ? undefined : { scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-amber-400/25 blur-3xl"
+                />
 
-                    <motion.h1
-                        variants={contentVariants}
-                        transition={{ duration: 0.5 }}
-                        className="text-3xl font-bold capitalize font-serif leading-tight sm:text-4xl lg:text-5xl"
-                    >
-                        Explore and compare <br />
-                        <span className="bg-linear-to-r from-orange-400 via-amber-300 to-emerald-400 bg-clip-text text-transparent">
-                            home energy solutions
-                        </span>
-                    </motion.h1>
-
-                    <motion.p
-                        variants={contentVariants}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-2xl text-base font-medium leading-relaxed text-slate-200 sm:text-lg"
-                    >
-                        Explore solar, home batteries, EV chargers, heat pumps and more. Compare trusted local providers and find the right energy solution for your home.
-                    </motion.p>
-
+                <div className="relative z-10 mx-auto flex min-h-115 max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
                     <motion.div
-                        variants={contentVariants}
-                        transition={{ duration: 0.65 }}
-                        className="pt-2"
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: {},
+                            visible: { transition: { staggerChildren: 0.12 } },
+                        }}
+                        className="max-w-3xl space-y-5 text-white"
                     >
-                        <button
-                            type="button"
-                            onClick={() => openQuoteModal()}
-                            className="group inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 active:scale-95"
+                        <motion.p
+                            variants={contentVariants}
+                            transition={{ duration: 0.35 }}
+                            className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-300 backdrop-blur-md"
                         >
-                            <span>Compare Free Quotes</span>
-                            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-                        </button>
+                            <Dot className="h-5 w-5 animate-pulse text-amber-400" strokeWidth={8} />
+                            What We Help With
+                        </motion.p>
+
+                        <motion.h1
+                            variants={contentVariants}
+                            transition={{ duration: 0.5 }}
+                            className="text-3xl font-bold capitalize font-serif leading-tight sm:text-4xl lg:text-5xl"
+                        >
+                            Explore and compare <br />
+                            {/* Shimmering gradient text */}
+                            <motion.span
+                                className="bg-linear-to-r from-orange-400 via-amber-300 to-emerald-400 bg-clip-text text-transparent"
+                            >
+                                home energy solutions
+                            </motion.span>
+                        </motion.h1>
+
+                        <motion.p
+                            variants={contentVariants}
+                            transition={{ duration: 0.6 }}
+                            className="max-w-2xl text-base font-medium leading-relaxed text-slate-200 sm:text-lg"
+                        >
+                            Explore solar, home batteries, EV chargers, heat pumps and more. Compare trusted local providers and find the right energy solution for your home.
+                        </motion.p>
+
+                        <motion.div
+                            variants={contentVariants}
+                            transition={{ duration: 0.65 }}
+                            className="pt-2"
+                        >
+                            <div className="relative inline-block">
+                                {/* Pulsing ring behind the button */}
+                                <motion.span
+                                    aria-hidden="true"
+                                    animate={
+                                        reduce ? undefined : { scale: [1, 1.2], opacity: [0.5, 0] }
+                                    }
+                                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                                    className="absolute inset-0 rounded-full bg-amber-500"
+                                />
+                                <motion.button
+                                    type="button"
+                                    onClick={() => openQuoteModal()}
+                                    whileHover={{ scale: 1.04 }}
+                                    whileTap={{ scale: 0.96 }}
+                                    transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                                    className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20"
+                                >
+                                    <span>Compare Free Quotes</span>
+                                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                                </motion.button>
+                            </div>
+                        </motion.div>
+
+                        {/* Trust chips, staggered */}
+                        <motion.ul
+                            variants={{
+                                hidden: {},
+                                visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+                            }}
+                            className="flex flex-wrap gap-x-5 gap-y-2 pt-1"
+                        >
+                            {chips.map((chip) => (
+                                <motion.li
+                                    key={chip}
+                                    variants={contentVariants}
+                                    transition={{ duration: 0.4 }}
+                                    className="flex items-center gap-1.5 text-sm font-medium text-slate-200"
+                                >
+                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400/20 text-amber-300">
+                                        <Check className="h-3 w-3" strokeWidth={3} />
+                                    </span>
+                                    {chip}
+                                </motion.li>
+                            ))}
+                        </motion.ul>
                     </motion.div>
-                </motion.div>
-            </div>
-        </section>
+                </div>
+            </section>
+        </MotionConfig>
     );
 }

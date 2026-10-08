@@ -11,11 +11,11 @@ const topics = [
         details: ["Licensing and credentials", "Relevant experience", "Reliability and customer satisfaction"],
         icon: BadgeCheck,
         theme: {
-            card: "border-amber-200 bg-amber-50 hover:border-amber-300",
-            activeCard: "border-amber-400 bg-amber-100/70 shadow-sm",
-            icon: "bg-amber-100 text-amber-700",
+            card: "border-amber-200/70 bg-amber-50/50 hover:border-amber-300/80",
+            activeCard: "border-amber-300/80 bg-amber-100/45 shadow-sm",
+            icon: "bg-amber-100/60 text-amber-700",
             activeIcon: "bg-amber-500 text-white",
-            detail: "border-amber-200 bg-linear-to-br from-amber-100 via-amber-50 to-white",
+            detail: "border-amber-200/70 bg-linear-to-br from-amber-100/60 via-amber-50/45 to-white",
             glow: "bg-amber-300/15",
             marker: "bg-amber-500",
         },
@@ -28,11 +28,11 @@ const topics = [
         details: ["Your roof and property", "Household energy use", "Location and available options"],
         icon: House,
         theme: {
-            card: "border-emerald-200 bg-emerald-50 hover:border-emerald-300",
-            activeCard: "border-emerald-400 bg-emerald-100/70 shadow-sm",
-            icon: "bg-emerald-100 text-emerald-700",
+            card: "border-emerald-200/70 bg-emerald-50/50 hover:border-emerald-300/80",
+            activeCard: "border-emerald-300/80 bg-emerald-100/45 shadow-sm",
+            icon: "bg-emerald-100/60 text-emerald-700",
             activeIcon: "bg-emerald-500 text-white",
-            detail: "border-emerald-200 bg-linear-to-br from-emerald-100 via-emerald-50 to-white",
+            detail: "border-emerald-200/70 bg-linear-to-br from-emerald-100/60 via-emerald-50/45 to-white",
             glow: "bg-emerald-300/15",
             marker: "bg-emerald-500",
         },
@@ -45,11 +45,11 @@ const topics = [
         details: ["System size and equipment", "Pricing and available rebates", "What is included in each proposal"],
         icon: Scale,
         theme: {
-            card: "border-blue-200 bg-blue-50 hover:border-blue-300",
-            activeCard: "border-blue-400 bg-blue-100/70 shadow-sm",
-            icon: "bg-blue-100 text-blue-700",
+            card: "border-blue-200/70 bg-blue-50/50 hover:border-blue-300/80",
+            activeCard: "border-blue-300/80 bg-blue-100/45 shadow-sm",
+            icon: "bg-blue-100/60 text-blue-700",
             activeIcon: "bg-blue-500 text-white",
-            detail: "border-blue-200 bg-linear-to-br from-blue-100 via-blue-50 to-white",
+            detail: "border-blue-200/70 bg-linear-to-br from-blue-100/60 via-blue-50/45 to-white",
             glow: "bg-blue-300/15",
             marker: "bg-blue-500",
         },
@@ -61,7 +61,7 @@ export default function WhyChooseBenefits() {
     const selectedTopic = topics[activeTopic];
 
     return (
-        <section className="relative overflow-hidden bg-white  py-12 sm:py-14  lg:py-16">
+        <section className="relative overflow-hidden bg-slate-50  py-12 sm:py-14  lg:py-16">
             <div
                 className="absolute -left-24 bottom-0 h-100 w-100 rounded-full bg-amber-300/15 blur-[120px]"
             />

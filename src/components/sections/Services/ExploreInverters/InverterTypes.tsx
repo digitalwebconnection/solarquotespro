@@ -46,9 +46,6 @@ export default function InverterTypes() {
             <div className="absolute right-0 top-20 z-0 h-100 w-150 bg-amber-400/12 blur-[120px]" />
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-amber-500">
-                        Inverter Types
-                    </p>
                     <h2 className="mt-5 font-serif text-3xl font-bold text-slate-900 md:text-4xl">
                         Types of Solar Inverters
                     </h2>

@@ -133,7 +133,7 @@ export default function AllServices() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden  bg-slate-50 py-12 sm:py-14">
+    <section className="relative overflow-hidden  bg-slate-50 py-12 sm:py-14" id="all-services">
       <div className="pointer-events-none absolute -left-16 top-20 h-100 w-100 rounded-full bg-amber-400/12 blur-[120px]" />
       <div className="pointer-events-none absolute -right-16 top-25 h-150 w-100 rounded-full bg-orange-500/12 blur-[120px]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
@@ -152,39 +152,34 @@ export default function AllServices() {
             Select a solution to see what it does, what to consider, and whether it could suit your home.
           </p>
         </motion.div>
-        <div
-          className="grid grid-cols-1 gap-5 lg:grid-cols-[260px_1fr]"
-          style={{ gridTemplateColumns: "350px minmax(0, 1fr)" }}
-        >
-
-          <div className="flex min-h-125 min-w-0 flex-col border-b border-slate-200 bg-slate-50/80 lg:border-b-0">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[290px_minmax(0,1fr)] lg:items-stretch">
+          <div className="flex min-h-125 min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/80 shadow-[0_12px_30px_rgba(15,23,42,0.03)] lg:border-0 lg:bg-transparent lg:shadow-none">
             {solutions.map((item, index) => {
               const isActive = activeService.linkUrl === item.linkUrl;
               const ItemIcon = item.icon;
+
               return (
                 <button
                   key={item.linkUrl}
                   type="button"
                   onClick={() => setActiveService(item)}
                   aria-pressed={isActive}
-                  className={`group w-full flex-1 cursor-pointer rounded-xl px-4 py-4 text-left transition-all ${isActive
-                    ? "border border-amber-400 bg-white text-amber-600 shadow-sm"
-                    : "border-b border-slate-200/80 text-slate-700 hover:bg-white/50 last:border-b-0"
+                  className={`group w-full cursor-pointer px-4 py-4 text-left transition-all duration-200 ${isActive
+                    ? "rounded-2xl border border-amber-400 bg-white text-amber-600 shadow-[0_10px_25px_rgba(245,158,11,0.12)]"
+                    : "border-b border-slate-200/80 text-slate-700 hover:bg-white/60 hover:text-slate-900 last:border-b-0"
                     }`}
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${item.iconStyle}`}
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${item.iconStyle}`}
                     >
                       <ItemIcon className="h-5 w-5" />
                     </span>
 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-base font-semibold">
-                          {item.title}
-                        </span>
-                        <span className="text-xs font-bold tracking-[0.15em] text-slate-300">
+                        <span className="text-base font-semibold">{item.title}</span>
+                        <span className="text-[10px] font-bold tracking-[0.18em] text-slate-300">
                           0{index + 1}
                         </span>
                       </div>
@@ -198,103 +193,90 @@ export default function AllServices() {
             })}
           </div>
 
-
-          <Link
-            to={activeService.linkUrl}
-
+          <motion.div
+            key={activeService.linkUrl}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="relative min-h-115 min-w-0 w-full overflow-hidden rounded-2xl shadow-[0_25px_80px_rgba(15,23,42,0.24)]"
           >
-            <motion.div
-              key={activeService.linkUrl}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45 }}
-              className="relative  min-h-125 min-w-0 w-full overflow-hidden rounded-lg shadow-2xl shadow-black/30"
-            >
-              <img
-                src={activeService.image}
-                alt={activeService.imageAlt}
-                className="absolute inset-0  h-full w-full object-cover"
-              />
+            <img
+              src={activeService.image}
+              alt={activeService.imageAlt}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
 
-              <div className="absolute inset-0 z-1 bg-linear-to-t from-slate-950/70 via-slate-950/45 to-slate-950/70" />
+            <div className="absolute inset-0 bg-linear-to-br from-slate-950/75 via-slate-950/55 to-slate-950/20" />
 
-              <div className="relative z-5 flex h-full flex-col p-5 sm:p-7">
+            <div className="relative z-10 flex h-full flex-col p-5 sm:p-7">
+              <div className="mt-4 flex items-center gap-3">
+                <span
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${activeService.iconStyle}`}
+                >
+                  <ActiveIcon className="h-6 w-6" />
+                </span>
 
-                <div className="flex items-center mt-5 gap-3">
-                  <span
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${activeService.iconStyle}`}
-                  >
-                    <ActiveIcon className="h-6 w-6" />
-                  </span>
-
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-[2px] text-white/80">
-                      {activeService.subtitle}
-                    </div>
-                    <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-4xl">
-                      {activeService.title}
-                    </h3>
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[2px] text-white/80">
+                    {activeService.subtitle}
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="mt-8 grid min-w-0 px-3 gap-6 lg:grid-cols-2">
-                  {/* Description */}
-                  <div className="min-w-0">
-                    <p className="text-base leading-7 tracking-wide text-white sm:text-lg">
-                      {activeService.description}
-                    </p>
-                    <p className="mt-4 text-base leading-6 text-white/80">
-                      {activeService.detail}
-                    </p>
-
-                    <div className="mt-4 flex items-start gap-2 rounded-xl border border-amber-300/30 bg-black/30 p-3 backdrop-blur-sm">
-                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
-                      <p className="text-sm leading-5 text-white/90">
-                        <span className="font-bold text-amber-400">
-                          Worth exploring if : {" "}
-                        </span>
-                        {activeService.goodFit}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Things to compare */}
-                  <div className="min-w-0 border-l border-slate-400 p-7 ">
-                    <p className="mb-4 text-xs font-bold uppercase tracking-[2px] text-white/75">
-                      Things to compare
-                    </p>
-                    <ul className="space-y-3">
-                      {activeService.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-center gap-2.5 text-sm font-medium text-white"
-                        >
-                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20 text-[10px] font-bold text-white">
-                            <Check className="h-3 w-3" />
-                          </span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <p className="mt-5  text-xs leading-5 text-amber-300">
-                      Compare options based on your home, usage and budget.
-                    </p>
-
-                    <Link
-                      to={activeService.linkUrl}
-                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-amber-500/90 shadow-lg hover:shadow-amber-500/20 active:scale-95"
-                    >
-                      {activeService.linkText}
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-
+                  <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-4xl">
+                    {activeService.title}
+                  </h3>
                 </div>
               </div>
-            </motion.div>
-          </Link>
+
+              <div className="mt-8 grid min-w-0 gap-6 px-3 lg:grid-cols-2">
+                <div className="min-w-0">
+                  <p className="text-base leading-7 tracking-wide text-white sm:text-lg">
+                    {activeService.description}
+                  </p>
+                  <p className="mt-4 text-base leading-6 text-white/80">
+                    {activeService.detail}
+                  </p>
+
+                  <div className="mt-4 flex items-start gap-2 rounded-xl border border-amber-300/30 bg-black/25 p-3 backdrop-blur-sm ring-1 ring-white/5">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
+                    <p className="text-sm leading-5 text-white/90">
+                      <span className="font-bold text-amber-400">Worth exploring if:</span>{" "}
+                      {activeService.goodFit}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="min-w-0 rounded-2xl border-l border-slate-400/70 bg-slate-950/10 p-6 backdrop-blur-[2px]">
+                  <p className="mb-4 text-[11px] font-bold uppercase tracking-[2px] text-white/75">
+                    Things to compare
+                  </p>
+                  <ul className="space-y-3">
+                    {activeService.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-center gap-2.5 text-sm font-medium text-white"
+                      >
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 text-[10px] font-bold text-white">
+                          <Check className="h-3 w-3" />
+                        </span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="mt-5 text-[11px] leading-5 text-amber-300">
+                    Compare options based on your home, usage and budget.
+                  </p>
+
+                  <Link
+                    to={activeService.linkUrl}
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white shadow-lg shadow-amber-500/25 transition-all hover:bg-amber-400 active:scale-95"
+                  >
+                    {activeService.linkText}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

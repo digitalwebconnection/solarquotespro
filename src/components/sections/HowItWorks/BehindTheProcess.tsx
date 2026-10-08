@@ -50,7 +50,7 @@ export default function HowItWorksInfo() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
             <div className="sticky top-35 h-fit  ">
-              <div className="absolute w-100 h-70 bg-amber-400/20 blur-[120px] rounded-full top-0 -left-30 z-0" />
+              <div className="absolute w-100 h-70 bg-amber-300/20 blur-[120px] rounded-full top-0 -left-30 z-0" />
               <p className="text-sm font-semibold uppercase tracking-[2px]    text-amber-600 mb-4">The Process
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 leading-tight capitalize">
@@ -61,13 +61,21 @@ export default function HowItWorksInfo() {
               </p>
             </div>
 
-            <div className="space-y-10 relative">
+            <div className="relative isolate space-y-10">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-8 top-8 z-0 h-75 w-75 rounded-full bg-amber-400/12 blur-[120px]"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-8 -left-8 z-0 h-80 w-80 rounded-full bg-linear-to-tr from-emerald-300/35 via-sky-200/25 to-transparent blur-[120px]"
+              />
               {processStep.map((item, index) => (
                 <motion.div initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: index * 0.12 }}
-                  key={item.no} className="border-b border-slate-200 pb-10">
+                  key={item.no} className="relative z-10 border-b border-slate-200 pb-10">
                   <div className="flex gap-5">
                     <span className={`${item.stepStyle} text-sm font-bold text-amber-500 pt-1`}> {item.no}</span>
                     <div>
@@ -78,7 +86,7 @@ export default function HowItWorksInfo() {
                 </motion.div>
               ))}
 
-              <div className="pt-2">
+              <div className="relative z-10 pt-2">
                 <p className="text-lg font-semibold text-slate-900">Simple information. Relevant options. A clearer decision.
                 </p>
               </div>
@@ -89,4 +97,3 @@ export default function HowItWorksInfo() {
     </section>
   );
 }
-

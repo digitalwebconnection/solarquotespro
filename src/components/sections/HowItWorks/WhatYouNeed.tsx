@@ -47,14 +47,14 @@ const items = [
 
 const WhatYoullNeed = () => {
     return (
-        <section className="relative overflow-hidden bg-linear-to-br from-slate-50 via-white  to-amber-50 py-20">
+        <section className="relative overflow-hidden bg-slate-50 py-20">
             <div
                 aria-hidden="true"
-                className="absolute -top-24 -right-24 w-100 h-100 bg-amber-500/20 rounded-full blur-[120px] z-0"
+                className="absolute top-24 -right-20 w-150 h-100 bg-amber-400/14 rounded-full blur-[120px] z-0"
             />
             <div
                 aria-hidden="true"
-                className="absolute -top-24 -left-24 w-150 h-170 bg-amber-400/10 rounded-full blur-[120px] z-0"
+                className="absolute top-24 -left-20 w-150 h-170 bg-amber-400/14 rounded-full blur-[120px] z-0"
             />
 
             <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
@@ -75,11 +75,26 @@ const WhatYoullNeed = () => {
                     {items.map((item, index) => (
                         <motion.article
                             key={item.id}
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{
+                                opacity: 0,
+                                x: index % 2 === 0 ? -28 : 28,
+                                y: 18,
+                                rotate: index % 2 === 0 ? -1.5 : 1.5,
+                            }}
+                            whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.06 }}
-                            className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-lg shadow-amber-900/5  hover:border-amber-300 hover:shadow-xl hover:shadow-amber-400/10 sm:p-6 hover:-translate-y-1 transition-all duration-200"
+                            transition={{
+                                type: "spring",
+                                stiffness: 110,
+                                damping: 16,
+                                delay: index * 0.08,
+                            }}
+                            whileHover={{
+                                y: -5,
+                                scale: 1.015,
+                                transition: { type: "spring", stiffness: 300, damping: 20 },
+                            }}
+                            className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-lg shadow-amber-900/5 transition-colors duration-200 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-400/10 sm:p-6"
                         >
                             <div className="relative flex items-baseline gap-5 ">
                                 <span className="font-serif text-3xl text-amber-400/40 transition-colors duration-300 group-hover:text-amber-400">
