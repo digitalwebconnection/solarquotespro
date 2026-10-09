@@ -114,7 +114,7 @@ export default function WhyNumbers() {
                                 damping: 14,
                                 delay: index * 0.12,
                             }}
-                            className="relative overflow-hidden rounded-lg border border-slate-200 bg-white px-6 pb-6 pt-10 shadow-black/10 shadow-xl transition-shadow duration-300 hover:shadow-black/30"
+                            className="relative overflow-hidden rounded-lg border border-slate-200 bg-white px-6 pb-6 pt-10 shadow-black/10 shadow-xl transition-shadow duration-300 hover:shadow-black/20 hover:shadow-2xl"
                             whileHover={{ y: -8, scale: 1.03 }}
                         >
                             <div

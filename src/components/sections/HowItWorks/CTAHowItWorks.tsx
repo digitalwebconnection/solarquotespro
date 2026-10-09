@@ -1,13 +1,20 @@
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
 
 export default function CTAHowItWorks() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="sticky top-35 z-0 overflow-hidden bg-cover bg-center py-14 sm:py-14 min-h-[55vh] flex items-center"
-            style={{ backgroundImage: `url(https://plus.unsplash.com/premium_photo-1678743133528-9afcd2b72b70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHNvbGFyfGVufDB8fDB8fHww)` }}
-        >
+        <section className="sticky top-35 z-0 overflow-hidden py-14 sm:py-14 min-h-[55vh] flex items-center">
+            <motion.div
+                aria-hidden="true"
+                initial={{ scale: 1.25 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 16, ease: "linear" }}
+                className="pointer-events-none absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(https://plus.unsplash.com/premium_photo-1678743133528-9afcd2b72b70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHNvbGFyfGVufDB8fDB8fHww)` }}
+            />
             <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/20" />
             <div className="relative mx-auto w-full px-6 sm:px-8 lg:px-12">
                 <div className="mx-auto max-w-7xl">

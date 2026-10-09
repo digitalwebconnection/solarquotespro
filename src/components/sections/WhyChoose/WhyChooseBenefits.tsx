@@ -61,7 +61,7 @@ export default function WhyChooseBenefits() {
     const selectedTopic = topics[activeTopic];
 
     return (
-        <section className="relative overflow-hidden bg-slate-50  py-12 sm:py-14  lg:py-16">
+        <section className="relative overflow-hidden bg-slate-50  py-12 sm:py-16  lg:py-20">
             <div
                 className="absolute -left-24 bottom-0 h-100 w-100 rounded-full bg-amber-300/15 blur-[120px]"
             />

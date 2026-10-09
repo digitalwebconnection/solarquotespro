@@ -2,46 +2,46 @@ import { ShieldCheck, Search, BarChart3, Users, CircleCheck } from "lucide-react
 import { motion } from "framer-motion";
 import { GlowCard } from "../../ui/spotlight-card";
 
-export default function MiniWhyTrueSolarQuotes() {
-    const highlights = [
-        {
-            title: "Independent Information",
-            desc: "Explore solar and home-energy information designed to help you understand your options before making a decision.",
-            icon: <ShieldCheck className="w-7 h-7 text-emerald-400" />,
-            style: "border-emerald-500/30 hover:border-emerald-400/60",
-            glowColor: "emerald" as const,
-            badge: "Research",
-            badgeColor: "bg-emerald-500/10 text-emerald-300",
-        },
-        {
-            title: "Compare Your Options",
-            desc: "Compare installers, products, technologies and pricing considerations so you can make a more informed choice.",
-            icon: <Search className="w-7 h-7 text-blue-400" />,
-            style: "border-blue-500/30 hover:border-blue-400/60",
-            glowColor: "blue" as const,
-            badge: "Compare",
-            badgeColor: "bg-blue-500/10 text-blue-300",
-        },
-        {
-            title: "Understand the Numbers",
-            desc: "Learn about system sizes, electricity usage, potential savings, payback periods and other important factors.",
-            icon: <BarChart3 className="w-7 h-7 text-amber-400" />,
-            style: "border-amber-500/30 hover:border-amber-400/60",
-            glowColor: "amber" as const,
-            badge: "Understand",
-            badgeColor: "bg-amber-500/10 text-amber-300",
-        },
-        {
-            title: "Connect With Installers",
-            desc: "When you're ready to take the next step, connect with suitable solar and energy professionals for quotes.",
-            icon: <Users className="w-7 h-7 text-indigo-400" />,
-            style: "border-indigo-500/30 hover:border-indigo-400/60",
-            glowColor: "indigo" as const,
-            badge: "Connect",
-            badgeColor: "bg-indigo-500/10 text-indigo-300",
-        },
-    ];
+const highlights = [
+    {
+        title: "Independent Information",
+        desc: "Explore solar and home-energy information designed to help you understand your options before making a decision.",
+        icon: <ShieldCheck className="w-7 h-7 text-emerald-400" />,
+        style: "border-emerald-500/30 hover:border-emerald-400/60",
+        glowColor: "emerald" as const,
+        badge: "Research",
+        badgeColor: "bg-emerald-500/10 text-emerald-300",
+    },
+    {
+        title: "Compare Your Options",
+        desc: "Compare installers, products, technologies and pricing considerations so you can make a more informed choice.",
+        icon: <Search className="w-7 h-7 text-blue-400" />,
+        style: "border-blue-500/30 hover:border-blue-400/60",
+        glowColor: "blue" as const,
+        badge: "Compare",
+        badgeColor: "bg-blue-500/10 text-blue-300",
+    },
+    {
+        title: "Understand the Numbers",
+        desc: "Learn about system sizes, electricity usage, potential savings, payback periods and other important factors.",
+        icon: <BarChart3 className="w-7 h-7 text-amber-400" />,
+        style: "border-amber-500/30 hover:border-amber-400/60",
+        glowColor: "amber" as const,
+        badge: "Understand",
+        badgeColor: "bg-amber-500/10 text-amber-300",
+    },
+    {
+        title: "Connect With Installers",
+        desc: "When you're ready to take the next step, connect with suitable solar and energy professionals for quotes.",
+        icon: <Users className="w-7 h-7 text-indigo-400" />,
+        style: "border-indigo-500/30 hover:border-indigo-400/60",
+        glowColor: "indigo" as const,
+        badge: "Connect",
+        badgeColor: "bg-indigo-500/10 text-indigo-300",
+    },
+];
 
+export default function MiniWhyTrueSolarQuotes() {
     return (
         <section className="relative bg-slate-900 py-10 text-white ">
             <div className="absolute -top-10 left-20 w-150 h-100 bg-linear-to-r from-amber-300/20 to-emerald-500/20 rounded-full blur-[120px]" />
@@ -66,7 +66,7 @@ export default function MiniWhyTrueSolarQuotes() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {highlights.map((item, index) => (
                         <motion.div
-                            key={index}
+                            key={item.title}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -78,7 +78,7 @@ export default function MiniWhyTrueSolarQuotes() {
                             <GlowCard
                                 customSize
                                 glowColor={item.glowColor}
-                                className={`group h-full min-h-65  gap-0 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${item.style}`}
+                                className={`group h-full min-h-65 gap-0 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${item.style}`}
                             >
                                 <div>
                                     <div className="flex items-center justify-between mb-5">

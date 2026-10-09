@@ -12,9 +12,12 @@ const HeroWhyChooseUs = () => {
 
   return (
     <section className="relative min-h-115 w-full overflow-hidden bg-slate-900">
-      <img
+      <motion.img
         src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=2200&q=85"
         alt="A solar farm generating renewable energy"
+        initial={{ scale: 1.14 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 14, ease: "easeOut" }}
         className="absolute inset-0 h-full w-full object-cover object-bottom"
       />
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/75 to-slate-950/45" />
