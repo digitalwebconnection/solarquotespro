@@ -175,7 +175,7 @@ export default function AllServices() {
                     type="button"
                     onClick={() => setActiveIndex(index)}
                     aria-pressed={isActive}
-                    className={`group relative z-10 w-full cursor-pointer px-4 py-4 text-left transition-all duration-200 ${isActive
+                    className={`group relative z-10 w-full cursor-pointer px-4 py-4 text-left transition-all duration-200 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-amber-700 ${isActive
                       ? "rounded-2xl border border-amber-300 bg-linear-to-r from-white via-amber-50 to-white text-amber-700 "
                       : "border-b border-slate-200/80 text-slate-700 hover:bg-white/60 hover:text-slate-900 last:border-b-0"
                       }`}
@@ -206,7 +206,7 @@ export default function AllServices() {
               <Link
                 to={activeService.linkUrl}
                 aria-label={`Explore ${activeService.title}`}
-                className="absolute inset-0"
+                className="absolute inset-0 focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-amber-300"
               >
                 <motion.img
                   key={activeService.image}

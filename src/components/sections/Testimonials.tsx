@@ -45,8 +45,7 @@ export default function Testimonials() {
                     return (
                         <div
                             key={t.id}
-                            onClick={() => setActive(i)}
-                            className={`absolute left-1/2 top-1/2 cursor-pointer border-2 p-5 transition-all duration-500 ease-in-out sm:p-7 ${isCenter
+                            className={`absolute left-1/2 top-1/2 border-2 p-5 transition-all duration-500 ease-in-out sm:p-7 ${isCenter
                                 ? 'z-10 border-orange-600 bg-linear-to-br from-orange-600 from-30% to-amber-500 text-white'
                                 : 'z-0 border-amber-200 bg-white text-slate-700 hover:border-orange-400 '
                                 }`}
@@ -62,6 +61,14 @@ export default function Testimonials() {
                                 boxShadow: isCenter ? '0px 8px 0px 4px #fed7aa' : 'none',
                             }}
                         >
+                            {!isCenter && abs <= 2 && (
+                                <button
+                                    type="button"
+                                    onClick={() => setActive(i)}
+                                    aria-label={`Show ${t.name}'s testimonial`}
+                                    className="absolute inset-0 z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700"
+                                />
+                            )}
                             <div className="mb-4 flex items-center gap-3">
                                 <div
                                     className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold ${isCenter ? 'bg-white text-orange-700' : 'bg-amber-100 text-amber-800'

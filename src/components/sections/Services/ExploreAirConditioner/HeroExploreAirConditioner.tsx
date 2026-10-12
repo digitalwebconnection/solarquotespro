@@ -12,7 +12,7 @@ const HeroExploreAirConditioner = () => {
         initial={{ scale: 1.06 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLsu5NM0Jm5NodSFFfMohCCsVVkAHxOmlY1PvJkPh6jA&s" alt="Modern air conditioner installation"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLsu5NM0Jm5NodSFFfMohCCsVVkAHxOmlY1PvJkPh6jA&s" alt="Air conditioning unit for home heating and cooling"
         className="absolute inset-0 w-full h-full object-cover object-bottom" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/80 to-slate-900/60" />
@@ -73,7 +73,7 @@ const HeroExploreAirConditioner = () => {
           >
             <button onClick={() => openQuoteModal()}
               type="button"
-              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent" >
+              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-base py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" >
               <span>Get Your Free Quote</span>
 
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />

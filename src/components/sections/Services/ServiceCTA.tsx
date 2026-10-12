@@ -32,7 +32,7 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
                 <button
                     onClick={() => openQuoteModal()}
                     type="button"
-                    className="shrink-0 inline-flex items-center gap-1.5 cursor-pointer rounded-xl bg-amber-500 px-6 py-3 font-semibold  text-white transition-all duration-300  md:mr-20 group hover:shadow-lg/20 hover:-translate-y-1  shadow-amber-500"
+                    className="shrink-0 inline-flex items-center gap-1.5 cursor-pointer rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 md:mr-20 group hover:shadow-lg/20 hover:-translate-y-1 shadow-amber-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                     Compare Quotes <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all" />
                 </button>

@@ -10,7 +10,7 @@ const BatteryTechnologies = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h1 className="text-3xl sm:text-3xl font-extrabold mt-2 font-serif text-black">Which Battery Technology Is Right for You?</h1>
+          <h2 className="text-3xl sm:text-3xl font-extrabold mt-2 font-serif text-black">Which Battery Technology Is Right for You?</h2>
           <p className="text-lg text-slate-600  leading-7 mt-5">Different battery technologies offer different combinations of size, performance, maintenance requirements and suitability for residential energy storage.
           </p>
         </div>

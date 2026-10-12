@@ -11,7 +11,7 @@ const HeroExploreInverters = () => {
     >
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpLr0iubG7qTWT3QTJdKXMm3A0czLxKavCXsK_I3r6Rw&s=10"
-        alt="Solar inverter installation"
+        alt="Solar inverter installed at a home"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
@@ -51,7 +51,7 @@ const HeroExploreInverters = () => {
             <button
               onClick={() => openQuoteModal()}
               type="button"
-              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent"
+              className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <span>Get Your Free Solar Quote</span>
 

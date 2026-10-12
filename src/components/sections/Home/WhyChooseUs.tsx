@@ -60,23 +60,24 @@ export default function WhyChooseUs() {
                 { icon: <SearchX className="w-4 h-4" />, text: "No searching through hundreds of companies.", muted: true },
                 { icon: <Quote className="w-4 h-4" />, text: "Just genuine quotes from quality installers.", muted: false }
               ].map((item, idx) => (
-                <motion.div
+                <motion.button
+                  type="button"
                   key={idx}
                   whileHover={{ x: 5 }}
                   onClick={() => openQuoteModal()}
-                  className="flex items-center gap-3 sm:gap-4 group cursor-pointer"
+                  className="flex w-full items-center gap-3 text-left sm:gap-4 group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
                 >
-                  <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-colors border ${
+                  <span className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-colors border ${
                     item.muted
                       ? 'bg-slate-50 border-slate-400 text-slate-900 group-hover:bg-slate-100'
                       : 'bg-amber-50 border-amber-200 text-amber-500 group-hover:bg-amber-100'
                   }`}>
                     {item.icon}
-                  </div>
-                  <p className={`font-bold text-sm sm:text-base lg:text-lg leading-tight pt-0.5 sm:pt-1 ${item.muted ? 'text-slate-900' : 'text-slate-950'}`}>
+                  </span>
+                  <span className={`font-bold text-sm sm:text-base lg:text-lg leading-tight pt-0.5 sm:pt-1 ${item.muted ? 'text-slate-900' : 'text-slate-950'}`}>
                     {item.text}
-                  </p>
-                </motion.div>
+                  </span>
+                </motion.button>
               ))}
             </div>
           </motion.div>
@@ -109,9 +110,9 @@ export default function WhyChooseUs() {
               <div className="space-y-3.5 sm:space-y-5 relative">
                 {/* Card 1 */}
                 <div
-                  onClick={() => openQuoteModal()}
-                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-emerald-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-0 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 group cursor-pointer"
+                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-emerald-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-0 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 group"
                 >
+                  <button type="button" onClick={() => openQuoteModal()} aria-label="Compare quotes from verified, licensed installers" className="absolute inset-0 z-10 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700" />
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-md bg-emerald-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition-colors shadow-sm border border-emerald-100/50">
                     <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
@@ -127,9 +128,9 @@ export default function WhyChooseUs() {
 
                 {/* Card 2 */}
                 <div
-                  onClick={() => openQuoteModal()}
-                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-blue-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200 group z-10 cursor-pointer"
+                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-blue-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200 group z-10"
                 >
+                  <button type="button" onClick={() => openQuoteModal()} aria-label="Compare quotes from established installers" className="absolute inset-0 z-10 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700" />
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-md bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors shadow-sm border border-blue-100/50">
                     <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                   </div>
@@ -145,9 +146,9 @@ export default function WhyChooseUs() {
 
                 {/* Card 3 */}
                 <div
-                  onClick={() => openQuoteModal()}
-                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-amber-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-12 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-amber-200 group z-20 cursor-pointer"
+                  className="relative bg-white rounded-xl p-4 sm:p-6 shadow-md shadow-slate-200/40 border border-slate-100 border-l-4 border-l-amber-500 flex flex-col sm:flex-row items-start gap-3.5 sm:gap-5 sm:ml-12 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-amber-200 group z-20"
                 >
+                  <button type="button" onClick={() => openQuoteModal()} aria-label="Compare quotes from highly rated installers" className="absolute inset-0 z-10 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700" />
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-md bg-amber-50 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors shadow-sm border border-amber-100/50">
                     <Star className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
                   </div>
@@ -166,9 +167,9 @@ export default function WhyChooseUs() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                onClick={() => openQuoteModal()}
-                className="mt-6 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 bg-white rounded-xl shadow-xl p-3 sm:p-4 border border-slate-100 flex items-center justify-center sm:justify-start gap-3 sm:gap-4 z-30 cursor-pointer hover:scale-105 transition-transform"
+                className="relative mt-6 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 bg-white rounded-xl shadow-xl p-3 sm:p-4 border border-slate-100 flex items-center justify-center sm:justify-start gap-3 sm:gap-4 z-30 hover:scale-105 transition-transform"
               >
+                <button type="button" onClick={() => openQuoteModal()} aria-label="Start comparing solar quotes" className="absolute inset-0 z-10 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700" />
                 <div className="flex items-center justify-center">
                   <MaskedAvatars size={36} column={20} />
                 </div>

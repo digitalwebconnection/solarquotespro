@@ -96,7 +96,7 @@ export default function HomeEnergySystem() {
           </p> */}
           <a
             href="#all-services"
-            className="group mt-8 inline-flex text-sm items-center gap-2 font-semibold px-4 py-2.5 border border-amber-500 rounded-full text-slate-900 transition-colors hover:text-amber-600  "
+            className="group mt-8 inline-flex text-sm items-center gap-2 font-semibold px-4 py-2.5 border border-amber-500 rounded-full text-slate-900 transition-colors hover:text-amber-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
             Explore Your Energy Options
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -105,6 +105,7 @@ export default function HomeEnergySystem() {
 
         <motion.div
           id="energy-options"
+          role="group"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}

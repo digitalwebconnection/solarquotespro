@@ -6,12 +6,12 @@ import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 
 const ExploreEvCharging = () => {
     return (
-        <>
+        <main>
             <HeroExploreEvCharging />
             <HowChargerWorks />
             <TypesOfEv />
             <ServiceCTA service="evCharging" />
-        </>
+        </main>
     )
 }
 

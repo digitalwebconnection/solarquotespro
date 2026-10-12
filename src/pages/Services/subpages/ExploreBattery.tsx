@@ -6,14 +6,14 @@ import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 import HeroExploreBattery from "../../../components/sections/Services/ExploreBattery/HeroExploreBattery";
 const ExploreBattery = () => {
     return (
-        <>
+        <main>
             <HeroExploreBattery />
             <WhyBattery />
             <HowBatteryWorks />
             {/* <PowerVsEnergy/> */}
             <BatteryTechnologies />
             <ServiceCTA service="battery" />
-        </>
+        </main>
     )
 }
 

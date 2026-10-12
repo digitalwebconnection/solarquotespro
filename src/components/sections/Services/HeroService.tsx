@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, Dot } from "lucide-react";
+import { ArrowRight, Check, Dot, Pause, Play } from "lucide-react";
+import { useReducedMotion } from "framer-motion";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
 import acImage from "../../../assets/images/SolarServices/ac.webp";
 import batteryImage from "../../../assets/images/SolarServices/battery.webp";
@@ -26,8 +27,12 @@ const backgrounds = [
 export default function HeroService() {
     const { openQuoteModal } = useQuoteModal();
     const [backgroundIndex, setBackgroundIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const prefersReducedMotion = useReducedMotion();
 
     useEffect(() => {
+        if (isPaused || prefersReducedMotion) return;
+
         const nextIndex = (backgroundIndex + 1) % backgrounds.length;
         const image = new Image();
         let timer: number;
@@ -43,7 +48,7 @@ export default function HeroService() {
             image.onload = null;
             image.onerror = null;
         };
-    }, [backgroundIndex]);
+    }, [backgroundIndex, isPaused, prefersReducedMotion]);
 
     return (
         <section className="relative min-h-115 w-full overflow-hidden">
@@ -136,7 +141,7 @@ export default function HeroService() {
                                 whileHover={{ scale: 1.04 }}
                                 whileTap={{ scale: 0.96 }}
                                 transition={{ type: "spring", stiffness: 350, damping: 20 }}
-                                className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20"
+                                className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             >
                                 <span>Compare Free Quotes</span>
                                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -168,6 +173,17 @@ export default function HeroService() {
                     </motion.ul>
                 </motion.div>
             </div>
+            {!prefersReducedMotion && (
+                <button
+                    type="button"
+                    onClick={() => setIsPaused((paused) => !paused)}
+                    aria-pressed={isPaused}
+                    className="absolute bottom-4 right-4 z-20 inline-flex items-center gap-2 rounded-lg bg-slate-950/80 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                    {isPaused ? <Play aria-hidden="true" className="h-4 w-4" /> : <Pause aria-hidden="true" className="h-4 w-4" />}
+                    {isPaused ? "Play background rotation" : "Pause background rotation"}
+                </button>
+            )}
         </section>
     );
 }

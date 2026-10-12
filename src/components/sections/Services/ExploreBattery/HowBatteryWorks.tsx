@@ -8,7 +8,7 @@ const HowBatteryWorks = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center  mx-auto mb-14">
-          <h1 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif text-black">How Does a Home Battery Work?</h1>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 font-serif text-black">How Does a Home Battery Work?</h2>
 
           <p className="max-w-4xl mx-auto text-lg text-slate-600  leading-7 mt-5"> A home battery stores electricity so it can be used when you need it most. During the day, your solar panels can produce more electricity than your home needs. Instead of sending all that excess energy to the grid, the battery can store it for later.
           </p>
@@ -42,7 +42,7 @@ const HowBatteryWorks = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }} className="flex justify-center">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Gd_kkaarPArbaNjs7XCI6AJDUZ5YHwh9DuNfOTO24Q&s=10" className="rounded-lg shadow-xl" alt="Home battery" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Gd_kkaarPArbaNjs7XCI6AJDUZ5YHwh9DuNfOTO24Q&s=10" className="rounded-lg shadow-xl" alt="Home battery storing electricity for later use" />
           </motion.div>
 
         </div>
@@ -51,5 +51,3 @@ const HowBatteryWorks = () => {
   );
 };
 export default HowBatteryWorks;
-
-

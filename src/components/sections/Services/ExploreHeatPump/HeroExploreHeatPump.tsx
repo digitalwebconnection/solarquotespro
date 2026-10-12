@@ -13,7 +13,7 @@ export default function HeroExploreHeatPumps() {
   return (
     <section className="relative h-auto w-full overflow-hidden " id="solar">
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGyLoysEPpGqz0sN3D5T3gkndl7WNHh4JeTviGHigbDQ&s=10" alt="Solar panel installation" className="absolute inset-0 w-full h-full object-cover  object-bottom" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGyLoysEPpGqz0sN3D5T3gkndl7WNHh4JeTviGHigbDQ&s=10" alt="Hot water heat pump system" className="absolute inset-0 w-full h-full object-cover  object-bottom" />
 
       <div className="absolute inset-0 bg-linear-to-r from-black/90  to-black/60" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-14">
@@ -35,7 +35,7 @@ export default function HeroExploreHeatPumps() {
           <p className="mt-1.5 text-slate-200">The heat pump extracts heat from the surrounding air, increases its temperature using a refrigeration cycle, and transfers that heat into the water stored in the tank.</p>
 
           <div className="py-4 flex gap-3">
-            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent">
+            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <span>Get Your Free Solar Quote</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>

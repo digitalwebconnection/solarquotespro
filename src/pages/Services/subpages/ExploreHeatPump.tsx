@@ -8,13 +8,13 @@ import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 
 const ExploreHeatPumps = () => {
     return (
-        <>
+        <main>
             <HeroExploreHeatPump />
             <WhatIsPump />
             <HowPumpsWork />
             <HeatPumpType />
             <ServiceCTA service="heatPump" />
-        </>
+        </main>
     )
 }
 

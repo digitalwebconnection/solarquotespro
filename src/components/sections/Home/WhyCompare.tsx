@@ -105,9 +105,9 @@ export default function WhyCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            onClick={() => openQuoteModal()}
-            className="relative bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-emerald-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden min-h-55"
+            className="relative bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-emerald-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden min-h-55"
           >
+            <button type="button" onClick={() => openQuoteModal()} aria-label="Compare quotes for fair market pricing" className="absolute inset-0 z-20 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700" />
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
@@ -144,9 +144,9 @@ export default function WhyCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            onClick={() => openQuoteModal()}
-            className="relative bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-blue-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden min-h-55"
+            className="relative bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-blue-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden min-h-55"
           >
+            <button type="button" onClick={() => openQuoteModal()} aria-label="Compare premium solar panel and battery brands" className="absolute inset-0 z-20 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700" />
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
@@ -183,9 +183,9 @@ export default function WhyCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            onClick={() => openQuoteModal()}
-            className="md:col-span-1 lg:col-span-1 bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-purple-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden min-h-55"
+            className="relative md:col-span-1 lg:col-span-1 bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-purple-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden min-h-55"
           >
+            <button type="button" onClick={() => openQuoteModal()} aria-label="Compare solar quotes with warranty protection" className="absolute inset-0 z-20 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700" />
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img
@@ -222,9 +222,9 @@ export default function WhyCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            onClick={() => openQuoteModal()}
-            className="md:col-span-1 lg:col-span-1 bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-amber-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden min-h-55"
+            className="relative md:col-span-1 lg:col-span-1 bg-white rounded-xl p-6 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:border-amber-400 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden min-h-55"
           >
+            <button type="button" onClick={() => openQuoteModal()} aria-label="Compare quotes for a custom solar system design" className="absolute inset-0 z-20 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700" />
             {/* Background Hover Image with Dark Vignette */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-xl">
               <img

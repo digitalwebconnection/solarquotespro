@@ -9,7 +9,7 @@ export default function HeroExploreBattery() {
   return (
     <section className="relative h-124 w-full overflow-hidden " id="solar">
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw099mQOi0VIlE5P4Ztqn-5CC5Ng0RX4ZbBezxKitenQ&s=10" alt="Solar panel installation" className="absolute inset-0 w-full h-full object-cover opacity-85 object-center" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw099mQOi0VIlE5P4Ztqn-5CC5Ng0RX4ZbBezxKitenQ&s=10" alt="Home battery storage system" className="absolute inset-0 w-full h-full object-cover opacity-85 object-center" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/75 via-slate-950/70  to-slate-950/50" />
       <motion.div
@@ -31,7 +31,7 @@ export default function HeroExploreBattery() {
           </p>
 
           <div className="pt-4">
-            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group">
+            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-base py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <span>Get Your Free Solar Quote</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>

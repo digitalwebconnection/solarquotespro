@@ -47,7 +47,7 @@ const TypesOfEv = () => {
             </p>
           </div>
           <div className="h-56 overflow-hidden rounded-xl">
-            <img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RVYlMjBjaGFyZ2VyfGVufDB8fDB8fHww" alt="Portable EV charging"
+            <img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RVYlMjBjaGFyZ2VyfGVufDB8fDB8fHww" alt="Portable electric vehicle charging"
               className="w-full h-full object-cover" />
           </div>
         </motion.div>
@@ -61,7 +61,7 @@ const TypesOfEv = () => {
         >
           <div className="h-56 overflow-hidden rounded-xl ">
             <img src="https://images.unsplash.com/photo-1600490819528-42405785433a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RVYlMjBob21lJTIwY2hhcmdpbmd8ZW58MHx8MHx8fDA%3D"
-              alt="Level 2 home charging" className="w-full h-full object-cover" />
+              alt="Level 2 electric vehicle charger for home use" className="w-full h-full object-cover" />
           </div>
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -99,7 +99,7 @@ const TypesOfEv = () => {
           </div>
           <div className="h-56 overflow-hidden rounded-xl">
             <img src="https://images.unsplash.com/photo-1766507679611-60fb2b5bc5d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8REMlMjBmYXN0JTIwY2hhcmdpbmd8ZW58MHx8MHx8fDA%3D"
-              alt="DC fast charging" className="w-full h-full object-cover"
+              alt="Electric vehicle connected to a DC fast charger" className="w-full h-full object-cover"
             />
           </div>
         </motion.div>

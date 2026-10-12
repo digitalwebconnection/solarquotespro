@@ -6,13 +6,13 @@ import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 
 const ExploreInverters = () => {
     return (
-        <>
+        <main>
             <HeroExploreInverters />
             <InverterCapacity />
             <HowInverterWork />
             <InverterTypes />
             <ServiceCTA service="inverters" />
-        </>
+        </main>
     )
 }
 export default ExploreInverters

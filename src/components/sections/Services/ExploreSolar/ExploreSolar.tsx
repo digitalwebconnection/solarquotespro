@@ -8,7 +8,7 @@ export default function ExploreSolar() {
     <section
       className="relative h-auto  w-full overflow-hidden " id="solar">
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHh_Z24J3CHTIVArwg1kxroBuF27Zm8HUzWR7bI6Ujw&s=10" alt="Solar panel installation" className="absolute inset-0 w-full h-full object-cover  object-bottom" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHh_Z24J3CHTIVArwg1kxroBuF27Zm8HUzWR7bI6Ujw&s=10" alt="Solar panels installed on a rooftop" className="absolute inset-0 w-full h-full object-cover  object-bottom" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/65  to-slate-900/55" />
       <motion.div
@@ -28,7 +28,7 @@ export default function ExploreSolar() {
           </p>
 
           <div className="pt-4">
-            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group">
+            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <span>Get Your Free Solar Quote</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>

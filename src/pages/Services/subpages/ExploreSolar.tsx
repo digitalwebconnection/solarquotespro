@@ -7,13 +7,13 @@ import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 
 const ExploreSolarPage = () => {
     return (
-        <>
+        <main>
             <ExploreSolar />
             <HowSolarWorks />
             <SolarAnatomy />
             <OurNumbers />
             <ServiceCTA service="solar" />
-        </>
+        </main>
     )
 }
 

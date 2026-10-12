@@ -111,7 +111,7 @@ const WhyBattery = () => {
                                 <div className="absolute inset-0 w-full h-full z-0">
                                     <img
                                         src={step.image}
-                                        alt=""
+                                        alt={`${step.title}: ${step.highlight}`}
                                         className="w-full h-full object-cover opacity-0 group-hover:opacity-80 duration-500 transition-all ease-in-out"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

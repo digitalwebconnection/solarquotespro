@@ -9,7 +9,7 @@ export default function HeroExploreEvCharging() {
   return (
     <section className="relative h-auto w-full overflow-hidden " id="solar">
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8zm8mdxbneCBL5YcZv5eExvuzHwWpYjUz0tqXObdvdw&s=10" alt="Solar panel installation" className="absolute inset-0 w-full h-full object-cover  object-center" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8zm8mdxbneCBL5YcZv5eExvuzHwWpYjUz0tqXObdvdw&s=10" alt="Electric vehicle charging equipment" className="absolute inset-0 w-full h-full object-cover  object-center" />
 
       <div className="absolute inset-0 bg-linear-to-r from-black/90  to-black/60" />
       <motion.div
@@ -30,11 +30,11 @@ export default function HeroExploreEvCharging() {
           </p>
 
           <div className="py-4 flex gap-3">
-            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent">
+            <button onClick={() => openQuoteModal()} type="button" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <span>Get Your Free Solar Quote</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>
-            <a href="#types-of-ev-chargers" type="button" className="bg-white/ ring-2 ring-emerald-400 text-emerald-400 font-bold text-base py-3 px-4 backdrop-blur-md rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group">
+            <a href="#types-of-ev-chargers" className="bg-white/ ring-2 ring-emerald-400 text-emerald-300 font-bold text-base py-3 px-4 backdrop-blur-md rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <span>Explore EV charging Options</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </a>

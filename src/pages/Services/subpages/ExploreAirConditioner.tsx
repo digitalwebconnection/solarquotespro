@@ -6,13 +6,13 @@ import ServiceCTA from "../../../components/sections/Services/ServiceCTA"
 
 const ExploreAirConditionar = () => {
     return (
-        <>
+        <main>
             <HeroExploreAirConditioner />
             <WhatIsAc />
             <HowAcWorks />
             <AcProcess />
             <ServiceCTA service="airConditioner" />
-        </>
+        </main>
     )
 }
 
