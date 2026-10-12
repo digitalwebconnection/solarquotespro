@@ -50,7 +50,7 @@ const WhatYoullNeed = () => {
         <section className="relative overflow-hidden bg-slate-50 py-20">
             <div
                 aria-hidden="true"
-                className="absolute top-24 -right-20 w-150 h-100 bg-amber-400/14 rounded-full blur-[120px] z-0"
+                className="absolute top-24 -right-20 w-150 h-170 bg-amber-400/14 rounded-full blur-[120px] z-0"
             />
             <div
                 aria-hidden="true"

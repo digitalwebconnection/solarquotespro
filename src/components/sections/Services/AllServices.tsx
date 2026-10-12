@@ -164,8 +164,7 @@ export default function AllServices() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_minmax(0,1fr)] lg:items-stretch">
-            <div className="flex min-h-125 min-w-0 flex-col overflow-hidden rounded-2xl relative border border-slate-200 bg-slate-50/80 lg:border-0 lg:bg-transparent lg:shadow-none">
-              <div aria-hidden="true" className="pointer-events-none absolute left-0 top-12 z-0 h-64 w-40 rounded-full bg-linear-to-br from-amber-300/35 via-orange-300/20 to-blue-600/30 blur-[90px]" />
+            <div className="relative flex min-h-125 min-w-0 flex-col overflow-hidden rounded-2xl border border-amber-100 bg-linear-to-br from-amber-100/50 via-white to-emerald-100/50 lg:border-0 lg:shadow-none">
               {solutions.map((item, index) => {
                 const ItemIcon = item.icon;
                 const isActive = index === activeIndex;
@@ -177,7 +176,7 @@ export default function AllServices() {
                     onClick={() => setActiveIndex(index)}
                     aria-pressed={isActive}
                     className={`group relative z-10 w-full cursor-pointer px-4 py-4 text-left transition-all duration-200 ${isActive
-                      ? "rounded-2xl border border-amber-300 bg-linear-to-r from-white via-amber-50 to-white text-amber-700 shadow-[0_8px_24px_rgba(245,158,11,0.12)]"
+                      ? "rounded-2xl border border-amber-300 bg-linear-to-r from-white via-amber-50 to-white text-amber-700 "
                       : "border-b border-slate-200/80 text-slate-700 hover:bg-white/60 hover:text-slate-900 last:border-b-0"
                       }`}
                   >
@@ -204,23 +203,34 @@ export default function AllServices() {
             </div>
 
             <div className="relative min-h-115 min-w-0 w-full overflow-hidden rounded-2xl bg-slate-900 lg:shadow-lg lg:shadow-amber-900/20">
-              <img
-                src={activeService.image}
-                alt={activeService.imageAlt}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              <Link
+                to={activeService.linkUrl}
+                aria-label={`Explore ${activeService.title}`}
+                className="absolute inset-0"
+              >
+                <motion.img
+                  key={activeService.image}
+                  initial={{ scale: 1.12 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 2.2, ease: "easeOut" }}
+                  src={activeService.image}
+                  alt={activeService.imageAlt}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-linear-to-tr from-slate-950/90 via-slate-950/65 to-slate-950/30"
+                />
+              </Link>
 
-              <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/65 to-slate-950/30" />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/45 via-transparent to-slate-950/10" />
-
-              <div className="relative z-10 flex h-full min-h-115 flex-col p-5 sm:p-7">
+              <div className="pointer-events-none relative z-10 flex h-full min-h-115 flex-col p-5 sm:p-7">
                 <div className="mt-4 flex items-center gap-3">
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${activeService.iconStyle}`}>
                     <ActiveIcon className="h-6 w-6" />
                   </span>
 
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[2px] text-white/80">
+                    <div className="text-[10px] font-bold uppercase tracking-[2px] text-amber-400">
                       {activeService.subtitle}
                     </div>
                     <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-4xl">
@@ -248,7 +258,7 @@ export default function AllServices() {
                   </div>
 
                   <div className="min-w-0 rounded-2xl bg-slate-950/30 p-6">
-                    <p className="mb-4 text-[11px] font-bold uppercase tracking-[2px] text-white/75">
+                    <p className="mb-4 text-[11px] font-bold uppercase tracking-[2px] text-amber-400">
                       What to compare
                     </p>
                     <ul className="space-y-3">
@@ -268,7 +278,7 @@ export default function AllServices() {
 
                     <Link
                       to={activeService.linkUrl}
-                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white shadow-lg shadow-amber-500/25 transition-colors hover:bg-amber-400 active:scale-95"
+                      className="pointer-events-auto mt-5 inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white shadow-lg shadow-amber-500/25 transition-colors hover:bg-amber-400 active:scale-95"
                     >
                       {activeService.linkText}
                       <ArrowRight className="h-4 w-4" />

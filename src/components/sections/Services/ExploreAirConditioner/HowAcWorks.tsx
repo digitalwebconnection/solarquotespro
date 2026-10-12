@@ -1,5 +1,6 @@
 
 import { AirVent, Thermometer, Gauge, Flame, Snowflake, RotateCw } from "lucide-react";
+import { motion } from "framer-motion";
 
 
 const HowAcWorks = () => {
@@ -51,7 +52,13 @@ const HowAcWorks = () => {
     <section className="w-full py-6  sm:py-6 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-12"
+        >
           <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-slate-900 leading-tight">
             How Does an
             <span className="text-blue-700"> Air Conditioner Work?
@@ -59,13 +66,18 @@ const HowAcWorks = () => {
           </h2>
 
           <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed"> Air conditioners use a refrigeration cycle to transfer heat. In cooling mode, the system takes heat from inside your home and moves it outside. </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {steps.map((step) => {
+          {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={step.number}
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 24, rotate: index % 2 === 0 ? 1 : -1 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index % 3 * 0.1 }}
                 className="group relative bg-white rounded-lg border border-slate-200 p-6 sm:p-7 shadow-lg hover:shadow-xl shadow-black/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
 
                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-linear-to-r from-blue-900 to-blue-600 group-hover:w-full transition-all duration-500" />
@@ -80,7 +92,7 @@ const HowAcWorks = () => {
                   </h3>
                   <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{step.description} </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -90,4 +102,3 @@ const HowAcWorks = () => {
   );
 }
 export default HowAcWorks
-

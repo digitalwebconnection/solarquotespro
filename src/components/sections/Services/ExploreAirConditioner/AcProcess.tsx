@@ -1,5 +1,6 @@
 
 import { ThermometerSun, Gauge, Wind, Snowflake, RotateCw } from "lucide-react";
+import { motion } from "framer-motion";
 
 
 const AcProcess = () => {
@@ -44,7 +45,13 @@ const AcProcess = () => {
     <section className="w-full py-10 sm:py-12 lg:py-14 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-12"
+        >
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-300/10 text-blue-900 border border-blue-800/20 text-xs sm:text-xs font-bold uppercase tracking-wider">
             <Snowflake className="w-4 h-4" /> Air Conditioning Basics
           </span>
@@ -52,14 +59,21 @@ const AcProcess = () => {
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold font-serif  leading-tight bg-linear-to-r from-blue-900 from-60% to-amber-400 bg-clip-text text-transparent">The Cooling Cycle </h2>
 
           <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed"> Understanding the cooling cycle makes it easier to see how an air conditioner turns a warm room into a more comfortable space. </p>
-        </div>
+        </motion.div>
 
         <div className="relative">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-4">
             {coolingSteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div key={step.number} className={`relative bg-slate-50 rounded-lg group p-6 hover:-translate-y-1.5 transition-all duration-300 ${index % 2 !== 0 ? "translate-y-4" : ""}`}>
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 24, rotate: index % 2 === 0 ? 1 : -1 }}
+                  whileInView={{ opacity: 1, y: index % 2 !== 0 ? 16 : 0, rotate: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className="relative bg-slate-50 rounded-lg group p-6 hover:-translate-y-1.5 transition-all duration-300"
+                >
                   <div className="relative z-10 w-14 h-14 mx-auto rounded-2xl bg-white border border-slate-200 flex items-center justify-center group-hover:bg-blue-800/90 text-blue-800 group-hover:text-white transition-all duration-300 shadow-sm">
                     <Icon className="w-7 h-7 " />
                   </div>
@@ -68,7 +82,7 @@ const AcProcess = () => {
                   </p>
                   <h3 className="text-center mt-2 text-xl font-bold text-slate-900">{step.title}</h3>
                   <p className="mt-3 text-center text-sm text-slate-600 leading-relaxed">{step.description}</p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

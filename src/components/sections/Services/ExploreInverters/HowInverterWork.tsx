@@ -62,8 +62,8 @@ const HowInverterWork = () => {
             const Icon = step.icon;
             return (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: -20, rotate: index % 2 === 0 ? 1 : -1 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.6,

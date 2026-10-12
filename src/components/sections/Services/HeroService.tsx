@@ -33,7 +33,7 @@ export default function HeroService() {
         let timer: number;
 
         image.onload = () => {
-            timer = window.setTimeout(() => setBackgroundIndex(nextIndex), 5000);
+            timer = window.setTimeout(() => setBackgroundIndex(nextIndex), 4000);
         };
         image.onerror = () => console.error(`Failed to load service hero background: ${image.src}`);
         image.src = backgrounds[nextIndex].src;

@@ -6,7 +6,7 @@ export default function CTAHowItWorks() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="sticky top-35 z-0 overflow-hidden py-14 sm:py-14 min-h-[55vh] flex items-center">
+        <section className="sticky top-29 z-0 overflow-hidden py-14 sm:py-25 min-h-[55vh] flex items-center">
             <motion.div
                 aria-hidden="true"
                 initial={{ scale: 1.25 }}
@@ -19,11 +19,16 @@ export default function CTAHowItWorks() {
             <div className="relative mx-auto w-full px-6 sm:px-8 lg:px-12">
                 <div className="mx-auto max-w-7xl">
                     <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-                        <div className="pt-1">
+                        <motion.div
+                            initial={{ scale: 1 }}
+                            animate={{ scale: 1.1 }}
+                            transition={{ duration: 16, ease: "linear" }}
+                            className="origin-left pt-1"
+                        >
                             <p className="mb-3 text-xs font-bold uppercase tracking-[3px] text-amber-400">Make your move</p>
                             <h2 className="max-w-3xl font-serif text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">Your best solar decision starts with a better comparison.</h2>
                             <p className="mt-3 max-w-xl text-sm leading-6 text-slate-50 sm:text-base">Share a few details about your home and let the right options come to you.</p>
-                        </div>
+                        </motion.div>
 
                         <div className="flex  flex-col items-start  gap-3 mr-30">
                             <button

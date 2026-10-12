@@ -12,29 +12,26 @@ export default function Testimonials() {
     const go = (dir: 1 | -1) => setActive((a) => (a + dir + total) % total);
 
     const btn =
-        'flex h-10 w-10 items-center justify-center rounded-xl border-2 border-slate-300 bg-white text-slate-700 transition-colors hover:border-blue-950 hover:bg-blue-950 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-950';
+        'flex h-10 w-10 items-center justify-center rounded-xl border-2 border-amber-300 bg-white text-amber-800 transition-colors hover:border-orange-600 hover:bg-orange-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500';
 
     return (
         <section className="relative z-4 overflow-hidden bg-white py-10 sm:py-14">
-            <div className="pointer-events-none absolute top-20 -left-15 h-150 w-170 rounded-full bg-amber-300/15 blur-[120px] z-0" />
-            <div className="pointer-events-none absolute top-20 -right-15 h-150 w-170 rounded-full bg-emerald-600/15 blur-[120px] z-0" />
+            <div className="pointer-events-none absolute top-20 -left-15 h-150 w-170 rounded-full bg-amber-300/20 blur-[120px] z-0" />
+            <div className="pointer-events-none absolute top-20 -right-15 h-150 w-170 rounded-full bg-orange-400/15 blur-[120px] z-0" />
 
             <div className="relative mx-auto max-w-7xl px-8 z-10">
                 <div className="max-w-2xl mx-auto mb-6 text-center">
-                    <h2 className="font-serif text-5xl font-extrabold text-slate-900 leading-14">Homeowners Who Compared and Saved </h2>
+                    <h2 className="font-serif text-5xl font-extrabold text-slate-900 leading-14">
+                        Homeowners Who <span className="text-orange-400">Compared and Saved</span>
+                    </h2>
                     <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-700 sm:text-base">
                         Hear from our satisfied customers who have experienced the benefits of our solar solutions.
                     </p>
                 </div>
             </div>
             <div
-                aria-label="Customer testimonials, use the arrow keys to navigate"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                    if (e.key === 'ArrowRight') go(1);
-                    if (e.key === 'ArrowLeft') go(-1);
-                }}
-                className="relative h-110 w-full overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-blue-950 sm:h-120"
+                aria-label="Customer testimonials"
+                className="relative h-110 w-full overflow-hidden outline-none sm:h-120"
             >
                 {testimonials.map((t, i) => {
                     let offset = i - active;
@@ -50,8 +47,8 @@ export default function Testimonials() {
                             key={t.id}
                             onClick={() => setActive(i)}
                             className={`absolute left-1/2 top-1/2 cursor-pointer border-2 p-5 transition-all duration-500 ease-in-out sm:p-7 ${isCenter
-                                ? 'z-10 border-blue-950 bg-linear-to-br from-blue-950 to-blue-900 text-white'
-                                : 'z-0 border-slate-200 bg-white text-slate-700 hover:border-blue-900 '
+                                ? 'z-10 border-orange-600 bg-linear-to-br from-orange-600 from-30% to-amber-500 text-white'
+                                : 'z-0 border-amber-200 bg-white text-slate-700 hover:border-orange-400 '
                                 }`}
                             style={{
                                 width: CARD,
@@ -62,12 +59,12 @@ export default function Testimonials() {
                                     'polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)',
                                 transform: `translate(-50%, -50%) translateX(${STEP * offset}px) translateY(${isCenter ? -40 : odd ? 15 : -15
                                     }px) rotate(${isCenter ? 0 : odd ? 2.5 : -2.5}deg)`,
-                                boxShadow: isCenter ? '0px 8px 0px 4px #cbd5e1' : 'none',
+                                boxShadow: isCenter ? '0px 8px 0px 4px #fed7aa' : 'none',
                             }}
                         >
                             <div className="mb-4 flex items-center gap-3">
                                 <div
-                                    className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold ${isCenter ? 'bg-white text-emerald-700' : 'bg-sky-100 text-sky-700'
+                                    className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold ${isCenter ? 'bg-white text-orange-700' : 'bg-amber-100 text-amber-800'
                                         }`}
                                 >
                                     {t.initials}
@@ -88,7 +85,7 @@ export default function Testimonials() {
                                 </div>
                             </div>
                             <p className={`mb-2 text-[11px] font-bold uppercase tracking-wide 
-                            ${isCenter ? 'text-emerald-400' : 'text-emerald-700'
+                            ${isCenter ? 'text-amber-100' : 'text-orange-700'
                                 }`} >
                                 {t.service}
                             </p>

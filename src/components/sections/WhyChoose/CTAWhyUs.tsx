@@ -38,7 +38,9 @@ export default function CTAWhyUs() {
                     transition={{ duration: 0.5, delay: 0.06 }}
                     className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-300"
                 >
-                    Installers compete for your business, so you save up to 30% compared to getting just one quote. See your options in under a minute.
+                    Installers compete for your business, so you{" "}
+                    <span className="font-semibold text-amber-400">save up to 30%</span>{" "}
+                    compared to getting just one quote. See your options in under a minute.
                 </motion.p>
 
                 <motion.div

@@ -89,11 +89,11 @@ export default function HomeEnergySystem() {
             energy for later. You may also use electricity to charge an EV, heat water, or run
             heating and cooling—depending on your equipment, usage and when energy is available.
           </p>
-          <p className="mt-4 max-w-xl text-base leading-6 text-slate-700">
+          {/* <p className="mt-4 max-w-xl text-base leading-6 text-slate-700">
             There is no one-size-fits-all setup, and not every home needs every technology. Start
             with how your household uses energy, then consider which solutions suit your home
             today and your plans for the future.
-          </p>
+          </p> */}
           <a
             href="#all-services"
             className="group mt-8 inline-flex text-sm items-center gap-2 font-semibold px-4 py-2.5 border border-amber-500 rounded-full text-slate-900 transition-colors hover:text-amber-600  "

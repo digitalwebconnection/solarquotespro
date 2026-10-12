@@ -1,5 +1,6 @@
 import { Dot, ArrowRight } from "lucide-react";
 import { useQuoteModal } from "../../../../context/QuoteModalContext";
+import { motion } from "framer-motion";
 
 const HeroExploreAirConditioner = () => {
   const { openQuoteModal } = useQuoteModal();
@@ -7,35 +8,69 @@ const HeroExploreAirConditioner = () => {
   return (
     <section className="relative h-130 w-full overflow-hidden" >
 
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLsu5NM0Jm5NodSFFfMohCCsVVkAHxOmlY1PvJkPh6jA&s" alt="Modern air conditioner installation"
+      <motion.img
+        initial={{ scale: 1.06 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLsu5NM0Jm5NodSFFfMohCCsVVkAHxOmlY1PvJkPh6jA&s" alt="Modern air conditioner installation"
         className="absolute inset-0 w-full h-full object-cover object-bottom" />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/80 to-slate-900/60" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8 sm:py-14 lg:py-10">
-        <div className="max-w-3xl text-white space-y-5 py-8">
-          <p className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-blue-600/20 text-blue-300 border border-blue-400/40 backdrop-blur-md">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl text-white space-y-5 py-8"
+        >
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full inline-flex items-center gap-1 bg-blue-600/20 text-blue-300 border border-blue-400/40 backdrop-blur-md"
+          >
             <Dot strokeWidth={8} className="w-5 h-5 text-blue-200 animate-pulse" />
             <span>Explore Air Conditioners</span>
-          </p>
+          </motion.p>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight"
+          >
             Stay Comfortable <span className="bg-linear-to-r from-blue-500 via-blue-300  to-amber-300 bg-clip-text text-transparent"> in Every Season
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-base sm:text-lg text-white font-medium leading-relaxed max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base sm:text-lg text-white font-medium leading-relaxed max-w-2xl"
+          >
             Modern air conditioning systems provide efficient heating and
             cooling while helping you maintain a comfortable indoor
             temperature throughout the year.
-          </p>
+          </motion.p>
 
-          <p className="mt-1.5 text-slate-200">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-1.5 text-slate-200"
+          >
             From split systems to reverse-cycle air conditioners, understanding
             energy efficiency, system size, running costs, and installation
             requirements can help you choose the right solution for your home.
-          </p>
+          </motion.p>
 
-          <div className="py-4 flex gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="py-4 flex gap-3"
+          >
             <button onClick={() => openQuoteModal()}
               type="button"
               className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group ring-2 ring-transparent" >
@@ -43,8 +78,8 @@ const HeroExploreAirConditioner = () => {
 
               <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

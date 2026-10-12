@@ -16,7 +16,7 @@ const topics = [
             icon: "bg-amber-100/60 text-amber-700",
             activeIcon: "bg-amber-500 text-white",
             detail: "border-amber-200/70 bg-linear-to-br from-amber-100/60 via-amber-50/45 to-white",
-            glow: "bg-amber-300/15",
+            glow: "bg-amber-300/17  ",
             marker: "bg-amber-500",
         },
     },
@@ -33,7 +33,7 @@ const topics = [
             icon: "bg-emerald-100/60 text-emerald-700",
             activeIcon: "bg-emerald-500 text-white",
             detail: "border-emerald-200/70 bg-linear-to-br from-emerald-100/60 via-emerald-50/45 to-white",
-            glow: "bg-emerald-300/15",
+            glow: "bg-emerald-300/17",
             marker: "bg-emerald-500",
         },
     },
@@ -50,7 +50,7 @@ const topics = [
             icon: "bg-blue-100/60 text-blue-700",
             activeIcon: "bg-blue-500 text-white",
             detail: "border-blue-200/70 bg-linear-to-br from-blue-100/60 via-blue-50/45 to-white",
-            glow: "bg-blue-300/15",
+            glow: "bg-blue-300/17",
             marker: "bg-blue-500",
         },
     },
@@ -81,7 +81,7 @@ export default function WhyChooseBenefits() {
                         Why choose TrueSolarQuote
                     </p>
                     <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-5xl capitalize">
-                        Make sense of your <span className="text-amber-500">solar options.</span>
+                        Make sense of your <span className="text-amber-500">solar options</span>
                     </h2>
                     <p className="mt-5 text-base leading-7 text-slate-600">
                         Choosing solar is a major investment, and the right choice involves more than finding an installer or comparing a single price. It helps to know who is quoting, how the proposal fits your home and what you are getting for the cost.

@@ -1,12 +1,19 @@
 
 import { ArrowDown, ArrowUp, Fan, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const WhatIsAc = () => {
   return (
     <section className="w-full py-6 sm:py-6 lg:py-8 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center mb-12"
+        >
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-200/20 text-blue-900 border border-blue-100 text-xs sm:text-xs group font-bold uppercase tracking-wider">
             <Fan className="w-4 h-4 group-hover:rotate-360 duration-500 ease-in-out transition-transform" /> Understanding Air Conditioners </span>
 
@@ -17,10 +24,16 @@ const WhatIsAc = () => {
           <p className="mt-5 text-base sm:text-lg text-slate-700 leading-relaxed"> An air conditioner is a system designed to control the temperature and comfort of an indoor space. Rather than simply creating cold
             air, an air conditioner moves heat from one place to another.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-center mb-12">
-          <div className="pr-0 lg:pr-10">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="pr-0 lg:pr-10"
+          >
 
             <h3 className="mt-5 text-3xl font-bold text-slate-900 font-serif leading-tight">Heat is moved, not just created.</h3>
 
@@ -51,20 +64,42 @@ const WhatIsAc = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative overflow-hidden rounded-xl shadow-2xl shadow-black/40">
+          <motion.div
+            initial={{ opacity: 0, x: 24, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden rounded-xl shadow-2xl shadow-black/40"
+          >
             <img
               src="https://images.unsplash.com/photo-1780445392698-646b69b12dd5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Air conditioner indoor system"
               className="h-full min-h-100 w-full object-cover rounded-xl"
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 mb-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 mb-10"
+        >
 
-          <div className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 24 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center">
                 <ArrowDown className="w-5 h-5 text-sky-600" />
@@ -87,9 +122,16 @@ const WhatIsAc = () => {
               </div>
             </div>
             <p className="text-slate-600  text-base leading-relaxed"> The air conditioner absorbs heat from the indoor air and transfers it outside. This lowers the indoor temperature while the indoor unit circulates cooler air through the room. </p>
-          </div>
+          </motion.div>
 
-          <div className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 24 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-lg bg-orange-100 flex items-center justify-center">
                 <ArrowUp className="w-5 h-5 text-orange-600" />
@@ -115,9 +157,8 @@ const WhatIsAc = () => {
 
             <p className="text-slate-600 leading-relaxed">A reverse-cycle air conditioner can reverse the refrigeration cycle. This allows the same system to extract heat from outdoor air and transfer it indoors when the weather is cooler.
             </p>
-          </div>
-        </div>
-
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

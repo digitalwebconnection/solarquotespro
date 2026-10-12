@@ -30,7 +30,7 @@ export default function AboutHero() {
                 alt="Australian home with solar panels"
                 initial={{ scale: 1.08, opacity: 0.5 }}
                 animate={{ scale: 1, opacity: 0.8 }}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 1.6 }}
                 className="absolute inset-0 w-full h-130 object-cover" />
             <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-950/70 to-slate-950/20"></div>
 

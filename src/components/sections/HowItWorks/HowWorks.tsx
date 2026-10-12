@@ -81,7 +81,7 @@ export default function HowWorks() {
                         className="mx-auto mb-12 max-w-3xl text-center sm:mb-14"
                     >
                         <h2 className="font-serif text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
-                            Why It{" "}
+                            What Makes It {" "}
                             <motion.span
                                 initial={{ opacity: 0, scale: 0.85 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
@@ -89,7 +89,7 @@ export default function HowWorks() {
                                 transition={{ delay: 0.25, type: "spring", stiffness: 200, damping: 14 }}
                                 className="inline-block text-amber-500"
                             >
-                                Works
+                                Different
                             </motion.span>
                         </h2>
                         <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">

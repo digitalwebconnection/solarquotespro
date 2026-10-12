@@ -1,4 +1,5 @@
 import {  CircleCheck } from "lucide-react"
+import { motion } from "framer-motion";
 
 
 const BatteryTechnologies = () => {
@@ -15,7 +16,13 @@ const BatteryTechnologies = () => {
         </div>
 
         <div className="grid grid-cols-2 max-w-7xl gap-6 mx-auto">
-          <div className="p-6 rounded-lg border border-amber-400/40 bg-amber-300/4 shadow-lg/30 shadow-amber-500/50">
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="p-6 rounded-lg border border-amber-400/40 bg-amber-300/4 shadow-lg/30 shadow-amber-500/50 transition-shadow hover:shadow-amber-500/70"
+          >
             <h2 className="mb-4 font-extrabold text-3xl font-serif text-orange-400">Lead-Acid</h2>
             <h3 className="text-xl font-bold text-slate-800 mb-2">Traditional Energy Storage</h3>
             <p className="text-md mb-4 text-slate-500">Lead-acid batteries have been used for energy storage for many years and remain relevant in some off-grid applications. However, they are generally larger, heavier and more maintenance-intensive than modern lithium-based systems.</p>
@@ -26,8 +33,14 @@ const BatteryTechnologies = () => {
               <li className="flex gap-2 items-center"><CircleCheck className="w-3.5 h-3.5 text-orange-400"/>Historically common in off-grid systems</li>
               <li className="flex gap-2 items-center"><CircleCheck className="w-3.5 h-3.5 text-orange-400"/>Less common in modern residential installations</li>
             </ul>
-          </div>
-          <div className="p-6 rounded-lg border border-amber-400/40 bg-amber-300/4 shadow-lg/30 shadow-amber-500/50">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.12 }}
+            className="p-6 rounded-lg border border-amber-400/40 bg-amber-300/4 shadow-lg/30 shadow-amber-500/50 transition-shadow hover:shadow-amber-500/70"
+          >
             <h2 className="mb-4 font-extrabold text-3xl font-serif text-orange-400">Lithium-Ion</h2>
             <h3 className="text-xl font-bold text-slate-800 mb-2">Modern Residential Storage</h3>
             <p className="text-md mb-4 text-slate-500">Lithium-ion batteries have become widely used for residential energy storage because they offer a combination of compact size, performance and relatively low maintenance requirements.</p>
@@ -44,9 +57,15 @@ const BatteryTechnologies = () => {
               <span className="rounded-sm bg-emerald-400/20 text-black/80 px-2.5 py-1 tracking-wide font-bold">NMC</span>
               <span className="rounded-sm bg-emerald-400/20 text-black/80 px-2.5 py-1 tracking-wide font-bold">LFP</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-6 rounded-lg border border-emerald-400/40 bg-emerald-500/2 shadow-lg/30 shadow-emerald-500/50">
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.12 }}
+            className="p-6 rounded-lg border border-emerald-400/40 bg-emerald-500/2 shadow-lg/30 shadow-emerald-500/50 transition-shadow hover:shadow-emerald-500/70"
+          >
             <h2 className="mb-4 font-extrabold text-3xl font-serif text-emerald-400">NMC</h2>
             <h3 className="text-xl font-bold text-slate-800 mb-2">Nickel Manganese Cobalt</h3>
             <p className="text-md mb-4 text-slate-500">NMC is a lithium-ion chemistry known for its high energy density, allowing batteries to store substantial amounts of energy in a relatively compact package.</p>
@@ -56,8 +75,14 @@ const BatteryTechnologies = () => {
               <li className="flex gap-2 items-center"><CircleCheck className="w-3.5 h-3.5 text-emerald-400"/>Compact design</li>
               <li className="flex gap-2 items-center"><CircleCheck className="w-3.5 h-3.5 text-emerald-400"/>Used in some residential battery systems</li>
             </ul>
-          </div>
-          <div className="p-6 rounded-lg border border-emerald-400/40 bg-emerald-500/2 shadow-lg/30 shadow-emerald-500/50">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.24 }}
+            className="p-6 rounded-lg border border-emerald-400/40 bg-emerald-500/2 shadow-lg/30 shadow-emerald-500/50 transition-shadow hover:shadow-emerald-500/70"
+          >
             <h2 className="mb-4 font-extrabold text-3xl font-serif text-emerald-400">LFP</h2>
             <h3 className="text-xl font-bold text-slate-800 mb-2">Lithium Iron Phosphate</h3>
             <p className="text-md mb-4 text-slate-500">LFP is another lithium-ion chemistry that has become widely used in modern energy-storage systems. It is known for strong cycle-life characteristics and favorable thermal stability.</p>
@@ -68,7 +93,7 @@ const BatteryTechnologies = () => {
               <li className="flex gap-2 items-center"><CircleCheck className="w-3.5 h-3.5 text-emerald-400"/>Widely used in residential systems</li>
               <li className="flex gap-2 items-center"><CircleCheck className="w-3.5 h-3.5 text-emerald-400"/>Favorable thermal stability</li>
             </ul>
-          </div>
+          </motion.div>
         </div>
         <div className="border-blue-950 max-w-4xl mx-auto text-center text-slate-600 leading-relaxed mt-10 font-semibold tracking-wide"><p>For modern residential energy storage, lithium-ion batteries—particularly LFP and NMC chemistries—are widely used. The right choice depends on factors such as system design, available space, performance requirements, warranty, budget and intended</p></div>
         </div>
