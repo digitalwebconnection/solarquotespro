@@ -49,11 +49,11 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
     }, [index, total]);
 
     return (
-        <div ref={containerRef} className="sticky top-22 flex h-screen items-center justify-center">
+        <div ref={containerRef} className="sticky top-25 flex min-h-screen items-center justify-center py-4">
 
             <div
                 ref={cardRef}
-                className={`relative flex h-88 w-[92%] flex-col justify-center gap-4 rounded-3xl border-2 mt-4 ${a.bgColor} p-8 shadow-xl sm:h-105 sm:p-12 md:w-[70%] ${a.border}`}
+                className={`relative flex min-h-112 w-[calc(100%-2rem)] max-w-5xl flex-col justify-center gap-3 rounded-3xl border-2 ${a.bgColor} px-5 py-6 shadow-xl sm:min-h-128 sm:gap-4 sm:px-10 sm:py-10 md:w-[70%] lg:min-h-105 lg:w-[55%] lg:px-8 lg:py-8 xl:w-[62%] ${a.border}`}
                 style={{ top: `calc(-5vh + ${index * 30}px)` }}
             >
                 <div className="flex items-center justify-between">
@@ -62,8 +62,8 @@ const Card = ({ year, title, desc, icon: Icon, color, index, total }: CardProps)
                         <Icon className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800 sm:text-3xl">{title}</h3>
-                <p className="max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">{desc}</p>
+                <h3 className="text-xl font-bold text-slate-800 sm:text-3xl">{title}</h3>
+                <p className="max-w-2xl text-[0.8125rem] leading-relaxed text-slate-700 sm:text-base">{desc}</p>
             </div>
         </div>
     );

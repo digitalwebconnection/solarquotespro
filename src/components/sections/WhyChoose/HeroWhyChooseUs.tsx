@@ -80,7 +80,7 @@ const HeroWhyChooseUs = () => {
             <button
               type="button"
               onClick={() => openQuoteModal()}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 active:scale-95"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 cursor-pointer  active:scale-95"
             >
               <span>Get Your Solar Quotes</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />

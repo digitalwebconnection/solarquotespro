@@ -42,7 +42,7 @@ const SolarDesicion = () => {
       <div className="absolute bg-amber-400/12 h-100 w-100 blur-[120px] -top-10 left-10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
             {processStep.map((item, index) => (
               <motion.div initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ const SolarDesicion = () => {
                 <div className="flex gap-5">
                   <span className={`${item.stepStyle} text-sm font-bold text-amber-500 pt-2`}> {item.no}</span>
                   <div>
-                    <h3 className={` ${item.titleStyle} text-2xl font-bold mb-3`}> {item.title}</h3>
+                    <h3 className={` ${item.titleStyle} mb-3 text-xl font-bold sm:text-2xl`}> {item.title}</h3>
                     <p className="text-slate-600 leading-relaxed">{item.discription}</p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const SolarDesicion = () => {
             </div>
           </div>
 
-          <div className="sticky top-35 h-fit ">
+          <div className="h-fit lg:sticky lg:top-35">
             <div className="absolute bg-amber-500/10   z-0 -right-40 -bottom-30 w-120 h-120 rounded-full blur-[120px]" />
 
             <p className="text-sm font-bold uppercase tracking-widest    text-amber-500 mb-4">The Process

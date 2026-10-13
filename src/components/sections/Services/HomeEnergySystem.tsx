@@ -114,7 +114,7 @@ export default function HomeEnergySystem() {
           className="relative scroll-mt-24"
         >
           <div>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
               {supply.map(({ title, description, icon: Icon, link, color }) => (
                 <Link
                   key={title}
@@ -149,7 +149,7 @@ export default function HomeEnergySystem() {
               <ArrowDown aria-hidden="true" className="h-5 w-5 text-amber-600" />
             </div>
 
-            <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
               {waysToUseEnergy.map(({ title, description, icon: Icon, link, color }) => (
                 <Link
                   key={title}

@@ -49,12 +49,12 @@ export default function LeadershipSection() {
               Leadership
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-950 mb-3 font-serif">
-              Guided by <span className="bg-linear-to-r from-amber-400 to-emerald-600  bg-clip-text text-transparent"> Solar Experts</span>
+              Guided by <span className="bg-linear-to-r from-amber-700 to-emerald-700 bg-clip-text text-transparent"> Solar Experts</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">Setting direction, making big calls, and upholding our core values.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 relative gap-8 py-12 ">
+          <div className="relative grid grid-cols-1 gap-6 py-8 sm:gap-8 sm:py-12 md:grid-cols-2 lg:grid-cols-3">
             {leaders.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -62,7 +62,7 @@ export default function LeadershipSection() {
                 whileInView={{ opacity: 1, y: item.isMiddle ? -24 : 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
-                className={`bg-white border  rounded-lg overflow-hidden flex flex-col transition-all duration-300 shadow-lg ${item.isMiddle ? "-translate-y-6 border-amber-200 shadow-amber-500/10" : "border-slate-200 hover:border-slate-300 h-110"
+                className={`flex h-full flex-col overflow-hidden rounded-lg border bg-white shadow-lg transition-all duration-300 ${item.isMiddle ? "border-amber-200 shadow-amber-500/10 md:-translate-y-6" : "border-slate-200 hover:border-slate-300"
                   }`}>
                 <div className="flex flex-col ">
                   <div className="relative h-48 w-full overflow-hidden bg-slate-100">
@@ -97,5 +97,3 @@ export default function LeadershipSection() {
     </section>
   );
 }
-
-

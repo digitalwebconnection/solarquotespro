@@ -126,12 +126,8 @@ export default function WhyNumbers() {
                                         className="h-full origin-left bg-amber-300"
                                         initial={{ scaleX: 0 }}
                                         whileInView={{ scaleX: 1 }}
-                                        viewport={{ once: true, amount: 0.2 }}
-                                        transition={{
-                                            duration: reduce ? 0 : 0.8,
-                                            delay: reduce ? 0 : index * 0.12,
-                                            ease: "easeOut",
-                                        }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: reduce ? 0 : 0.8 }}
                                     />
                                 </div>
                             </div>

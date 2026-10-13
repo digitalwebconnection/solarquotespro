@@ -5,7 +5,7 @@ export default function CTAWhyUs() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="sticky top-30 z-0 flex min-h-[50vh] items-center overflow-hidden bg-slate-950 py-8 sm:py-10">
+        <section className="relative z-0 flex min-h-[50vh] items-center overflow-hidden bg-slate-950 py-8 sm:sticky sm:top-30 sm:py-10">
             <div
                 className="absolute inset-0 opacity-85"
                 style={{
@@ -16,7 +16,7 @@ export default function CTAWhyUs() {
                 }}
             />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(253,224,71,0.12),transparent_35%)]" />
-            <div className="absolute inset-5 rounded-sm border border-amber-400/70" />
+            <div className="pointer-events-none absolute inset-3 rounded-sm border border-amber-400/70 sm:inset-5" />
             <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-amber-400/7 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-amber-400/7 to-transparent" />
 
@@ -26,7 +26,7 @@ export default function CTAWhyUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5 }}
-                    className="mt-6 font-serif text-4xl font-extrabold leading-tight text-amber-400 sm:text-5xl"
+                    className="mt-6 font-serif text-3xl font-extrabold leading-tight text-amber-400 sm:text-5xl"
                 >
                     Stop Overpaying for Solar
                 </motion.h2>

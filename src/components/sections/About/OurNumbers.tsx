@@ -75,7 +75,7 @@ export default function OurNumbers() {
 
 
   return (
-    <section className="relative z-4 pb-12  bg-white pt-28">
+    <section className="relative z-4 bg-white pb-12 pt-20 sm:pt-28">
       <div className="absolute right-10 -top-5 bg-amber-400/15 -z-10  h-120 w-200 rounded-full  blur-[120px]" />
       <motion.div
         initial={{ opacity: 0.50, y: 20 }}
@@ -84,9 +84,9 @@ export default function OurNumbers() {
         transition={{ duration: 0.4 }}
       >
 
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-[1fr_1.2fr] md:items-center lg:gap-12 relative z-10">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-4 sm:px-5 md:grid-cols-[1fr_1.2fr] md:items-center lg:gap-12">
           <div className="max-w-xl">
-            <h2 className="font-serif text-5xl leading-14 font-extrabold text-slate-900">Making Energy <span className="bg-linear-to-r  from-amber-400    to-emerald-700 bg-clip-text text-transparent">Decisions Easier</span></h2>
+            <h2 className="font-serif text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">Making Energy <span className="text-amber-500">Decisions Easier</span></h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-lg">A snapshot of how True Solar Quote helps Australian homeowners research, compare and connect with energy professionals.</p>
             <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-lg">From solar panels and home batteries to EV chargers, inverters, heat pumps, and air conditioning, we make it easier to understand your options, explore available technologies, and find solutions that suit your home and energy needs.
             </p>

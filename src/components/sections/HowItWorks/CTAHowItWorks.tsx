@@ -6,7 +6,7 @@ export default function CTAHowItWorks() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="sticky top-29 z-0 overflow-hidden py-14 sm:py-25 min-h-[55vh] flex items-center">
+        <section className="relative z-0 flex min-h-[55vh] items-center overflow-hidden py-14 sm:sticky sm:top-29 sm:py-25">
             <motion.div
                 aria-hidden="true"
                 initial={{ scale: 1.25 }}
@@ -30,11 +30,11 @@ export default function CTAHowItWorks() {
                             <p className="mt-3 max-w-xl text-sm leading-6 text-slate-50 sm:text-base">Share a few details about your home and let the right options come to you.</p>
                         </motion.div>
 
-                        <div className="flex  flex-col items-start  gap-3 mr-30">
+                        <div className="flex flex-col items-stretch gap-3 lg:items-end">
                             <button
                                 type="button"
                                 onClick={() => openQuoteModal()}
-                                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-5 py-3 font-bold text-slate-950 transition-colors hover:bg-amber-300 cursor-pointer"
+                                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-5 py-3 font-bold text-slate-950 transition-colors hover:bg-amber-300 lg:whitespace-nowrap cursor-pointer "
                             >
                                 Start comparing
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

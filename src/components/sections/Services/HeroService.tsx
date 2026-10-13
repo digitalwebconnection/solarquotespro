@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, Dot, Pause, Play } from "lucide-react";
+import { ArrowRight, Check, Dot } from "lucide-react";
 import { useReducedMotion } from "framer-motion";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
 import acImage from "../../../assets/images/SolarServices/ac.webp";
@@ -27,31 +27,20 @@ const backgrounds = [
 export default function HeroService() {
     const { openQuoteModal } = useQuoteModal();
     const [backgroundIndex, setBackgroundIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
     const prefersReducedMotion = useReducedMotion();
 
     useEffect(() => {
-        if (isPaused || prefersReducedMotion) return;
+        if (prefersReducedMotion) return;
 
-        const nextIndex = (backgroundIndex + 1) % backgrounds.length;
-        const image = new Image();
-        let timer: number;
+        const timer = window.setInterval(() => {
+            setBackgroundIndex((currentIndex) => (currentIndex + 1) % backgrounds.length);
+        }, 4000);
 
-        image.onload = () => {
-            timer = window.setTimeout(() => setBackgroundIndex(nextIndex), 4000);
-        };
-        image.onerror = () => console.error(`Failed to load service hero background: ${image.src}`);
-        image.src = backgrounds[nextIndex].src;
-
-        return () => {
-            window.clearTimeout(timer);
-            image.onload = null;
-            image.onerror = null;
-        };
-    }, [backgroundIndex, isPaused, prefersReducedMotion]);
+        return () => window.clearInterval(timer);
+    }, [prefersReducedMotion]);
 
     return (
-        <section className="relative min-h-115 w-full overflow-hidden">
+        <section className="relative min-h-120 w-full overflow-hidden sm:min-h-115">
 
             <AnimatePresence initial={false}>
                 <motion.img
@@ -79,7 +68,7 @@ export default function HeroService() {
                 className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-amber-400/25 blur-3xl"
             />
 
-            <div className="relative z-10 mx-auto flex min-h-115 max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+            <div className="relative z-10 mx-auto flex min-h-120 max-w-7xl items-center px-4 py-12 pb-20 sm:min-h-115 sm:px-6 sm:py-14 sm:pb-14 lg:px-8 lg:py-16">
                 <motion.div
                     initial="hidden"
                     animate="visible"
@@ -141,7 +130,7 @@ export default function HeroService() {
                                 whileHover={{ scale: 1.04 }}
                                 whileTap={{ scale: 0.96 }}
                                 transition={{ type: "spring", stiffness: 350, damping: 20 }}
-                                className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                                className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 focus-visible:outline-2 focus-visible:outline-offset-4 cursor-pointer focus-visible:outline-white"
                             >
                                 <span>Compare Free Quotes</span>
                                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -173,17 +162,7 @@ export default function HeroService() {
                     </motion.ul>
                 </motion.div>
             </div>
-            {!prefersReducedMotion && (
-                <button
-                    type="button"
-                    onClick={() => setIsPaused((paused) => !paused)}
-                    aria-pressed={isPaused}
-                    className="absolute bottom-4 right-4 z-20 inline-flex items-center gap-2 rounded-lg bg-slate-950/80 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                    {isPaused ? <Play aria-hidden="true" className="h-4 w-4" /> : <Pause aria-hidden="true" className="h-4 w-4" />}
-                    {isPaused ? "Play background rotation" : "Pause background rotation"}
-                </button>
-            )}
+
         </section>
     );
 }

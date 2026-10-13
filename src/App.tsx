@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ServicePage from './pages/Services/ServicePage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import BlogPage from './pages/BlogPage';
+import BlogArticlePage from './pages/BlogArticlePage';
 import WhyChooseUsPage from './pages/WhyChooseUsPage';
 
 import ExploreSolarPage from './pages/Services/subpages/ExploreSolar';
@@ -61,6 +62,7 @@ function App() {
                 <Route path='/service/explore-airconditionar' element={<ExploreAirConditionar />} />
                 <Route path='/service/explore-inverters' element={<ExploreInverters />} />
                 <Route path='/blog' element={<BlogPage />} />
+                <Route path='/blog/:slug' element={<BlogArticlePage />} />
                 {/*  */}
 
 

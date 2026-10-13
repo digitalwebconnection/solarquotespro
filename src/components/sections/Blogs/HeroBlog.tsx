@@ -10,7 +10,7 @@ export default function HeroBlog() {
 
 
   return (
-    <section className="relative  h-110 w-full overflow-hidden ">
+    <section className="relative min-h-112 w-full overflow-hidden sm:min-h-110">
       <motion.img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNBYWoL81tQE1y2HUSppSAsvmZqpcEPTytWgWRobVvQ&s=10" alt="Solar energy and smart grid technology"
         initial={{ scale: 1.14 }}
         animate={{ scale: 1 }}
@@ -18,7 +18,7 @@ export default function HeroBlog() {
         className="absolute inset-0 w-full h-full object-cover object-bottom opacity-50" />
 
       <div className="absolute inset-0 bg-linear-to-br from-slate-950/95 via-slate-950/85 to-slate-950/60 z-0" />
-      <div className="relative  max-w-7xl mx-auto  py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-112 max-w-7xl items-center px-4 py-12 sm:min-h-110 sm:px-6 sm:py-16 lg:px-8">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -29,7 +29,7 @@ export default function HeroBlog() {
             },
           }}
         >
-          <div className="max-w-3xl text-white mt-2 space-y-5">
+          <div className="mt-2 max-w-3xl space-y-5 text-white">
             <motion.p
               variants={contentVariants}
               transition={{ duration: 0.3 }}
@@ -54,7 +54,7 @@ export default function HeroBlog() {
               variants={contentVariants}
               transition={{ duration: 0.65 }}
               className="pt-2 flex items-center">
-              <Link to="#blogs" className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-400/20 inline-flex items-center gap-2.5 cursor-pointer active:scale-95 group">
+              <Link to="#blogs" className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-4 py-3 text-center text-sm font-bold text-white shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-400/20 active:scale-95 sm:w-auto sm:px-5 sm:text-base">
                 <BookOpen className="w-4 h-4" />
                 <span>Explore Energy Guides</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />

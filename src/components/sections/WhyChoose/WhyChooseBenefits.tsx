@@ -104,7 +104,7 @@ export default function WhyChooseBenefits() {
                                     type="button"
                                     aria-pressed={isActive}
                                     onClick={() => setActiveTopic(index)}
-                                    className={`flex h-full items-start gap-3 rounded-xl border p-3 py-4 text-left transition-colors duration-200  sm:flex-col sm:gap-4 lg:flex-row lg:items-center ${isActive ? topic.theme.activeCard : topic.theme.card
+                                    className={`flex h-full items-start gap-3 rounded-xl border p-3 py-4 text-left transition-colors duration-200  sm:flex-col sm:gap-4 lg:flex-row lg:items-center cursor-pointer ${isActive ? topic.theme.activeCard : topic.theme.card
                                         }`}
                                 >
                                     <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${isActive ? topic.theme.activeIcon : topic.theme.icon

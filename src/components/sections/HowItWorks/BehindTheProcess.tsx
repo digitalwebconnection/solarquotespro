@@ -49,7 +49,7 @@ export default function HowItWorksInfo() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
-            <div className="sticky top-35 h-fit  ">
+            <div className="h-fit lg:sticky lg:top-35">
               <div className="absolute w-100 h-70 bg-amber-300/20 blur-[120px] rounded-full top-0 -left-30 z-0" />
               <p className="text-sm font-semibold uppercase tracking-[2px]    text-amber-600 mb-4">The Process
               </p>
@@ -79,7 +79,7 @@ export default function HowItWorksInfo() {
                   <div className="flex gap-5">
                     <span className={`${item.stepStyle} text-sm font-bold text-amber-500 pt-1`}> {item.no}</span>
                     <div>
-                      <h3 className={` ${item.titleStyle} text-2xl font-bold mb-3`}> {item.title}</h3>
+                      <h3 className={` ${item.titleStyle} mb-3 text-xl font-bold sm:text-2xl`}> {item.title}</h3>
                       <p className="text-slate-600 leading-relaxed">{item.discription}</p>
                     </div>
                   </div>

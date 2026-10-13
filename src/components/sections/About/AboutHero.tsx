@@ -24,48 +24,48 @@ export default function AboutHero() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="relative h-130 inset-0 w-full overflow-hidden">
+        <section className="relative min-h-106 w-full overflow-hidden sm:min-h-122 lg:min-h-screen">
 
             <motion.img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhhFiv9fDLXV4fAAXav-Ji5Q66etB0DVGpZnZ-qtszQ&s=10"
                 alt="Australian home with solar panels"
                 initial={{ scale: 1.08, opacity: 0.5 }}
                 animate={{ scale: 1, opacity: 0.8 }}
                 transition={{ duration: 1.6 }}
-                className="absolute inset-0 w-full h-130 object-cover" />
+                className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-950/70 to-slate-950/20"></div>
 
             <motion.div
                 variants={contentVariants}
                 initial="hidden"
                 animate="visible"
-                className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex">
-                <div className="max-w-3xl text-white mt-9">
+                className="relative mx-auto flex min-h-106 max-w-7xl items-center px-4 py-12 sm:min-h-122 sm:px-6 sm:py-9 lg:min-h-screen lg:px-8">
+                <div className="max-w-3xl text-white">
 
-                    <motion.p variants={itemVariants} className="font-bold text-xs uppercase mt-8 tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-2 bg-amber-500/8 text-amber-300 border-amber-400/80 border backdrop-blur-md">
+                    <motion.p variants={itemVariants} className="inline-flex items-center gap-2 rounded-full border border-amber-400/80 bg-amber-500/8 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-amber-300 backdrop-blur-md">
                         <Dot strokeWidth={10} className="w-4 h-4 animate-pulse" />About True Solar Quote
                     </motion.p>
 
-                    <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl  font-bold font-serif tracking-tight leading-15 text-white mt-6">
+                    <motion.h1 variants={itemVariants} className="mt-6 font-serif text-3xl font-bold leading-tight tracking-tight text-white  lg:text-5xl">
                         Helping Australians Make{" "}
                         <span className="bg-linear-to-r from-amber-300 from-40% to-green-400 bg-clip-text text-transparent">Smarter Energy Decisions
                         </span>
                     </motion.h1>
 
-                    <motion.p variants={itemVariants} className="text-lg text-white/90 mt-5 font-medium">At True Solar Quote, we make it easier for Australians to research solar and home-energy solutions, compare trusted installers, and find the right options for their homes. We bring together useful information, customer reviews
+                    <motion.p variants={itemVariants} className="mt-5 text-base font-medium text-white/90 sm:text-lg">At True Solar Quote, we make it easier for Australians to research solar and home-energy solutions, compare trusted installers, and find the right options for their homes. We bring together useful information, customer reviews
                         and competitive quotes so you can make an informed decision with confidence.
                     </motion.p>
 
                     {/* Buttons */}
-                    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mt-6">
+                    <motion.div variants={itemVariants} className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <button type="button" onClick={() => openQuoteModal()}
-                            className="bg-linear-to-r from-amber-400 to-orange-500 text-white font-bold text-base py-3 px-5 rounded-xl transition-all shadow-md hover:shadow-xl hover:shadow-amber-400/10 inline-flex items-center gap-2 cursor-pointer mt-5 active:scale-97 group" >
+                            className="group mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-amber-400 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-md transition-all hover:shadow-xl hover:shadow-amber-400/10 cursor-pointer active:scale-97 sm:mt-0 sm:w-auto" >
                             <span>Compare Free Quotes</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 duration-300 transition-all ease-in-out" />
                         </button>
 
-                        <button type="button" className="bg-transparent text-white backdrop-blur-sm font-bold text-base py-3 px-5 rounded-xl transition-all shadow-md hover:shadow-xl/40 hover:shadow-amber-400/20 inline-flex items-center gap-2 cursor-pointer mt-5 active:scale-97 group border-2 border-white/40 hover:border-amber-300 duration-300 ease-in-out">
-                            <Link to="/how-it-works">How It Works</Link>
-                        </button>
+                        <Link to="/how-it-works" className="group mt-2 inline-flex w-full items-center justify-center rounded-full border-2 border-white/40 bg-transparent px-5 py-3 text-base font-bold text-white shadow-md backdrop-blur-sm transition-all duration-300 ease-in-out hover:border-amber-300 hover:shadow-xl/40 hover:shadow-amber-400/20 active:scale-97 sm:mt-0 sm:w-auto">
+                            How It Works
+                        </Link>
                     </motion.div>
                 </div>
             </motion.div>

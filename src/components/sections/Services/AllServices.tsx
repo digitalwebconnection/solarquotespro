@@ -152,9 +152,9 @@ export default function AllServices() {
         >
           <div className="max-w-4xl mx-auto mb-8 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[2px] text-amber-700">Home energy guide</p>
-            <h2 className="mt-3 text-3xl font-bold font-serif text-slate-900 sm:text-5xl leading-15 capitalize">
+            <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-slate-900 capitalize sm:text-5xl">
               Explore{" "}
-              <span className="bg-linear-to-r from-amber-500 via-orange-500 to-emerald-600 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-amber-600 to-amber-400 bg-clip-text text-transparent">
                 home energy
               </span>{" "}
               solutions
@@ -164,7 +164,7 @@ export default function AllServices() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_minmax(0,1fr)] lg:items-stretch">
-            <div className="relative flex min-h-125 min-w-0 flex-col overflow-hidden rounded-2xl border border-amber-100 bg-linear-to-br from-amber-100/50 via-white to-emerald-100/50 lg:border-0 lg:shadow-none">
+            <div className="relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-amber-100 bg-linear-to-br from-amber-100/50 via-white to-emerald-100/50 lg:border-0 lg:shadow-none">
               {solutions.map((item, index) => {
                 const ItemIcon = item.icon;
                 const isActive = index === activeIndex;
@@ -202,7 +202,7 @@ export default function AllServices() {
               })}
             </div>
 
-            <div className="relative min-h-115 min-w-0 w-full overflow-hidden rounded-2xl bg-slate-900 lg:shadow-lg lg:shadow-amber-900/20">
+            <div className="relative min-h-100 min-w-0 w-full overflow-hidden rounded-2xl bg-slate-900 sm:min-h-115 lg:shadow-lg lg:shadow-amber-900/20">
               <Link
                 to={activeService.linkUrl}
                 aria-label={`Explore ${activeService.title}`}
@@ -223,7 +223,7 @@ export default function AllServices() {
                 />
               </Link>
 
-              <div className="pointer-events-none relative z-10 flex h-full min-h-115 flex-col p-5 sm:p-7">
+              <div className="pointer-events-none relative z-10 flex h-full min-h-100 flex-col p-4 sm:min-h-115 sm:p-7">
                 <div className="mt-4 flex items-center gap-3">
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${activeService.iconStyle}`}>
                     <ActiveIcon className="h-6 w-6" />
@@ -239,7 +239,7 @@ export default function AllServices() {
                   </div>
                 </div>
 
-                <div className="mt-8 grid min-w-0 gap-6 px-3 lg:grid-cols-2">
+                <div className="mt-6 grid min-w-0 gap-5 sm:mt-8 sm:gap-6 sm:px-3 lg:grid-cols-2">
                   <div className="min-w-0">
                     <p className="text-base leading-7 tracking-wide text-white sm:text-lg">
                       {activeService.description}
@@ -257,7 +257,7 @@ export default function AllServices() {
                     </div>
                   </div>
 
-                  <div className="min-w-0 rounded-2xl bg-slate-950/30 p-6">
+                  <div className="min-w-0 rounded-2xl bg-slate-950/30 p-4 sm:p-6">
                     <p className="mb-4 text-[11px] font-bold uppercase tracking-[2px] text-amber-400">
                       What to compare
                     </p>

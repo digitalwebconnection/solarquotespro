@@ -12,7 +12,7 @@ const HeroHowItWorks = () => {
 
   return (
     <section
-      className="relative h-115 w-full overflow-hidden"
+      className="relative min-h-120 w-full overflow-hidden sm:min-h-115"
       id="how-it-works"
     >
       <motion.img
@@ -25,7 +25,7 @@ const HeroHowItWorks = () => {
       />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 to-slate-950/75" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-15">
+      <div className="relative z-10 mx-auto flex min-h-120 max-w-7xl items-center px-4 py-12 sm:min-h-115 sm:px-6 sm:py-12 lg:px-8 lg:py-15">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -36,7 +36,7 @@ const HeroHowItWorks = () => {
             },
           }}
         >
-          <div className=" text-white space-y-3">
+          <div className="space-y-3 text-white">
             <motion.p
               variants={contentVariants}
               transition={{ duration: 0.55 }}
@@ -72,13 +72,13 @@ const HeroHowItWorks = () => {
               Our straightforward process helps you receive transparent quotes
               from CEC-accredited installers, with no pressure and no obligation.
             </motion.p>
-            <div className="pt-3 flex gap-3">
+            <div className="flex gap-3 pt-3">
               <motion.button
                 variants={contentVariants}
                 transition={{ duration: 0.7 }}
                 onClick={() => openQuoteModal()}
                 type="button"
-                className="bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-base py-3 px-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-orange-500/20 inline-flex items-center gap-2 cursor-pointer active:scale-95 group"
+                className="group inline-flex   items-center justify-center gap-2 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 active:scale-95  cursor-pointer"
               >
                 <span>Get Free Quotes Now</span>
                 <ArrowRight
