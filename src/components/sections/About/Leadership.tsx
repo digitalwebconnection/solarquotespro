@@ -49,7 +49,7 @@ export default function LeadershipSection() {
               Leadership
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-950 mb-3 font-serif">
-              Guided by <span className="bg-linear-to-r from-amber-700 to-emerald-700 bg-clip-text text-transparent"> Solar Experts</span>
+              Guided by <span className="bg-linear-to-r from-amber-500 to-emerald-600 bg-clip-text text-transparent"> Solar Experts</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">Setting direction, making big calls, and upholding our core values.</p>
           </div>

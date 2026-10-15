@@ -1,6 +1,6 @@
-import { ArrowLeft, ArrowRight, Calendar, List } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import { blogPosts } from "../data/blogPosts";
+import { blogPosts } from "../../../data/blogPosts";
 
 export default function BlogArticlePage() {
   const { slug } = useParams();
@@ -8,7 +8,7 @@ export default function BlogArticlePage() {
 
   if (!post) {
     return (
-      <main className="mx-auto flex min-h-[60vh] max-w-3xl flex-col items-center justify-center px-4 py-16 text-center">
+      <main className="mx-auto flex min-h-[60vh] max-w-3xl flex-col items-center justify-center px-4 py-14 text-center">
         <h1 className="font-serif text-3xl font-bold text-slate-900">Guide not found</h1>
         <p className="mt-3 text-slate-600">The guide may have moved or the link may be incorrect.</p>
         <Link
@@ -38,7 +38,7 @@ export default function BlogArticlePage() {
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 z-10 bg-slate-950/80"
+            className="absolute inset-0 z-10 bg-slate-950/55"
           />
           <div className="relative z-20 mx-auto max-w-5xl px-4 py-8 text-center sm:px-6 sm:py-10 lg:px-8 lg:py-12">
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -113,38 +113,17 @@ export default function BlogArticlePage() {
             </p>
             <Link
               to="/blog"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-700 transition hover:text-amber-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-600 transition hover:text-amber-500 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
             >
               <ArrowLeft aria-hidden="true" className="h-4 w-4" />
               Back to all guides
             </Link>
           </div>
 
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
-            <nav
-              aria-label="In this guide"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6"
-            >
-              <h2 className="flex items-center gap-2 font-serif text-lg font-bold text-slate-900">
-                <List aria-hidden="true" className="h-5 w-5 text-amber-600" />
-                In this guide
-              </h2>
-              <ol className="mt-4 space-y-3">
-                {post.sections.map((section, index) => (
-                  <li key={section.heading}>
-                    <a
-                      href={`#guide-section-${index + 1}`}
-                      className="text-sm leading-6 text-slate-600 transition hover:text-amber-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
-                    >
-                      {section.heading}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
+          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
 
             <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-5 sm:p-6">
-              <p className="text-xs font-bold uppercase tracking-wider text-amber-800">
+              <p className="text-xs font-bold uppercase tracking-wider text-amber-600">
                 Keep exploring
               </p>
               <h2 className="mt-2 font-serif text-xl font-bold text-slate-900">
@@ -155,7 +134,7 @@ export default function BlogArticlePage() {
                   <li key={relatedPost.slug} className="py-3 first:pt-0 last:pb-0">
                     <Link
                       to={`/blog/${relatedPost.slug}`}
-                      className="group flex items-start justify-between gap-3 text-sm font-semibold leading-5 text-slate-700 transition hover:text-amber-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+                      className="group flex items-start justify-between gap-3 text-sm font-semibold leading-5 text-slate-700 transition hover:text-amber-500 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
                     >
                       <span>{relatedPost.title}</span>
                       <ArrowRight aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
@@ -165,13 +144,13 @@ export default function BlogArticlePage() {
               </ul>
               <Link
                 to="/blog"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-amber-800 transition hover:text-amber-900 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-amber-500 transition hover:text-amber-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
               >
                 View all guides
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>
             </div>
-          </aside>
+          </div>
         </div>
       </article>
     </main>

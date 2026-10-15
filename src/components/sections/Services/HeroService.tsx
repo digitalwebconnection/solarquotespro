@@ -130,7 +130,7 @@ export default function HeroService() {
                                 whileHover={{ scale: 1.04 }}
                                 whileTap={{ scale: 0.96 }}
                                 transition={{ type: "spring", stiffness: 350, damping: 20 }}
-                                className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 focus-visible:outline-2 focus-visible:outline-offset-4 cursor-pointer focus-visible:outline-white"
+                                className="group relative inline-flex items-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-5 py-3 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/20 focus-visible:outline-2 focus-visible:outline-offset-4 cursor-pointer focus-visible:outline-white"
                             >
                                 <span>Compare Free Quotes</span>
                                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />

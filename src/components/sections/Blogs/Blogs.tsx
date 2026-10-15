@@ -34,7 +34,7 @@ function BlogCard({ post }: { post: BlogPost }) {
             <Calendar aria-hidden="true" className="h-3.5 w-3.5 text-slate-400" />
             {post.date}
           </time>
-          <h3 className="mb-2.5 font-serif text-lg font-bold leading-snug text-slate-900 transition-colors group-hover:text-amber-700">
+          <h3 className="mb-2.5 font-serif text-lg font-bold leading-snug text-slate-900 transition-colors group-hover:text-amber-500">
             {post.title}
           </h3>
           <p className="mb-5 text-sm leading-relaxed text-slate-600">{post.description}</p>
@@ -44,7 +44,7 @@ function BlogCard({ post }: { post: BlogPost }) {
               <User aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
               <span>{post.author}</span>
             </span>
-            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 transition-colors group-hover:text-amber-800">
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 transition-colors group-hover:text-amber-500">
               Read Guide
               <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </span>

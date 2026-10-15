@@ -156,21 +156,13 @@ const stages: Stage[] = [
 
 const SolarAnatomy = () => {
     const [active, setActive] = useState(0);
-    const [flippedPowerEnergyCards, setFlippedPowerEnergyCards] = useState([false, false]);
     const current = stages[active];
 
     const stepsRef = useRef<HTMLDivElement>(null);
-    const togglePowerEnergyCard = (cardIndex: number) => {
-        setFlippedPowerEnergyCards((flippedCards) =>
-            flippedCards.map((flipped, index) =>
-                index === cardIndex ? !flipped : flipped,
-            ),
-        );
-    };
 
     const { scrollYProgress } = useScroll({
         target: stepsRef,
-        offset: ["start 30%", "end 60%"],
+        offset: ["start 30%", "end 70%"],
     });
 
     const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 20 });
@@ -314,22 +306,16 @@ const SolarAnatomy = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                        {powerEnergyContent.map((item, index) => {
+                        {powerEnergyContent.map((item) => {
                             const Icon = item.icon;
-                            const isFlipped = flippedPowerEnergyCards[index];
 
                             return (
-                                <button
+                                <div
                                     key={item.title}
-                                    type="button"
-                                    onClick={() => togglePowerEnergyCard(index)}
-                                    aria-label={`${isFlipped ? "Show" : "Reveal"} ${item.title} details`}
-                                    aria-pressed={flippedPowerEnergyCards[index]}
-                                    className="group w-full cursor-pointer rounded-lg text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700 perspective-distant"
+                                    className="group w-full cursor-pointer rounded-lg text-left "
                                 >
                                     <div
-                                        className={`relative min-h-88 w-full transform-3d transition-transform duration-700 ease-in-out group-hover:rotate-y-180 ${isFlipped ? "rotate-y-180" : ""
-                                            }`}
+                                        className={`relative min-h-88 w-full transform-3d transition-transform duration-500 ease-in-out group-hover:rotate-y-180 `}
                                     >
                                         <div
                                             className="absolute inset-0 overflow-hidden rounded-lg shadow-md"
@@ -380,7 +366,7 @@ const SolarAnatomy = () => {
                                             </p>
                                         </div>
                                     </div>
-                                </button>
+                                </div>
                             );
                         })}
                     </div>

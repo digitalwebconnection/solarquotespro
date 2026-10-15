@@ -9,7 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ServicePage from './pages/Services/ServicePage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import BlogPage from './pages/BlogPage';
-import BlogArticlePage from './pages/BlogArticlePage';
+import BlogArticlePage from './components/sections/Blogs/BlogArticlePage';
 import WhyChooseUsPage from './pages/WhyChooseUsPage';
 
 import ExploreSolarPage from './pages/Services/subpages/ExploreSolar';
