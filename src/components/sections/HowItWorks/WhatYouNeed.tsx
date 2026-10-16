@@ -56,11 +56,11 @@ const WhatYoullNeed = () => {
         <section className="relative overflow-hidden bg-slate-50 py-20">
             <div
                 aria-hidden="true"
-                className="absolute top-24 -right-20 w-150 h-170 bg-amber-400/15 rounded-full blur-[120px] z-0"
+                className="absolute top-24 -right-20 w-150 h-170 bg-amber-400/12 rounded-full blur-[120px] z-0"
             />
             <div
                 aria-hidden="true"
-                className="absolute top-24 -left-20 w-150 h-170 bg-amber-400/15 rounded-full blur-[120px] z-0"
+                className="absolute top-24 -left-20 w-150 h-170 bg-amber-400/12 rounded-full blur-[120px] z-0"
             />
 
             <div className="relative max-w-7xl mx-auto px-6 sm:px-8">

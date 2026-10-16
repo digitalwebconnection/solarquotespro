@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import { testimonials } from '../../data/testimonials.js';
+import { testimonials } from '../../data/testimonials.ts';
 
 const CARD = 320;
 const STEP = CARD / 1.2;
@@ -12,7 +12,7 @@ export default function Testimonials() {
     const go = (dir: 1 | -1) => setActive((a) => (a + dir + total) % total);
 
     const btn =
-        'flex h-10 w-10 items-center justify-center rounded-xl border-2 border-amber-300 bg-white text-amber-800 transition-colors cursor-pointer hover:border-orange-600 hover:bg-orange-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500';
+        'flex h-10 w-10 items-center justify-center rounded-xl border-2 border-amber-300 bg-white text-amber-800 transition-colors cursor-pointer hover:border-orange-300 hover:bg-orange-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black';
 
     return (
         <section className="relative z-4 overflow-hidden bg-white py-10 sm:py-14">
@@ -46,8 +46,8 @@ export default function Testimonials() {
                         <div
                             key={t.id}
                             className={`absolute  left-1/2 top-1/2 border-2 p-5 transition-all duration-500 ease-in-out sm:p-7 ${isCenter
-                                ? 'z-10 border-orange-600 bg-linear-to-br from-orange-600 from-30% to-amber-500 text-white'
-                                : 'z-0 border-amber-200 bg-white text-slate-700 hover:border-orange-400 cursor-pointer '
+                                ? 'z-10 bg-linear-to-br from-orange-600 from-30% to-amber-500 text-white'
+                                : 'z-0 border-amber-200 bg-white text-slate-700 hover:border-amber-400 cursor-pointer '
                                 }`}
                             style={{
                                 width: CARD,
@@ -58,7 +58,7 @@ export default function Testimonials() {
                                     'polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)',
                                 transform: `translate(-50%, -50%) translateX(${STEP * offset}px) translateY(${isCenter ? -40 : odd ? 15 : -15
                                     }px) rotate(${isCenter ? 0 : odd ? 2.5 : -2.5}deg)`,
-                                boxShadow: isCenter ? '0px 8px 0px 4px #fed7aa' : 'none',
+                                boxShadow: isCenter ? '0px 8px 0px 4px #000' : 'none',
                             }}
                         >
                             {!isCenter && abs <= 2 && (
@@ -66,7 +66,7 @@ export default function Testimonials() {
                                     type="button"
                                     onClick={() => setActive(i)}
                                     aria-label={`Show ${t.name}'s testimonial`}
-                                    className="absolute inset-0 z-20 focus-visible:outline-2 focus-visible:outline-offset-2 cursor-pointer focus-visible:outline-orange-700"
+                                    className="absolute inset-0 z-20 focus-visible:outline-2 focus-visible:outline-offset-2 cursor-pointer focus-visible:outline-slate-500"
                                 />
                             )}
                             <div className="mb-4 flex items-center gap-3">

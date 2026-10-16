@@ -24,7 +24,7 @@ export default function AboutHero() {
     const { openQuoteModal } = useQuoteModal();
 
     return (
-        <section className="relative min-h-106 w-full overflow-hidden sm:min-h-122 lg:min-h-screen">
+        <section className="relative min-h-110 w-full overflow-hidden sm:min-h-118 lg:min-h-120">
 
             <motion.img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhhFiv9fDLXV4fAAXav-Ji5Q66etB0DVGpZnZ-qtszQ&s=10"
                 alt="Australian home with solar panels"
@@ -38,7 +38,7 @@ export default function AboutHero() {
                 variants={contentVariants}
                 initial="hidden"
                 animate="visible"
-                className="relative mx-auto flex min-h-106 max-w-7xl items-center px-4 py-12 sm:min-h-122 sm:px-6 sm:py-9 lg:min-h-screen lg:px-8">
+                className="relative mx-auto flex min-h-106 max-w-7xl items-center px-4 py-12 sm:min-h-115 sm:px-6 sm:py-8 lg:min-h-110 lg:px-8">
                 <div className="max-w-3xl text-white">
 
                     <motion.p variants={itemVariants} className="inline-flex items-center gap-2 rounded-full border border-amber-400/80 bg-amber-500/8 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-amber-300 backdrop-blur-md">
@@ -51,7 +51,7 @@ export default function AboutHero() {
                         </span>
                     </motion.h1>
 
-                    <motion.p variants={itemVariants} className="mt-5 text-base font-medium text-white/90 sm:text-lg">At True Solar Quote, we make it easier for Australians to research solar and home-energy solutions, compare trusted installers, and find the right options for their homes. We bring together useful information, customer reviews
+                    <motion.p variants={itemVariants} className="mt-6 text-base font-medium text-white/90 sm:text-lg">At True Solar Quote, we make it easier for Australians to research solar and home-energy solutions, compare trusted installers, and find the right options for their homes. We bring together useful information, customer reviews
                         and competitive quotes so you can make an informed decision with confidence.
                     </motion.p>
 
@@ -63,7 +63,7 @@ export default function AboutHero() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 duration-300 transition-all ease-in-out" />
                         </button>
 
-                        <Link to="/how-it-works" className="group mt-2 inline-flex w-full items-center justify-center rounded-full border-2 border-white/40 bg-transparent px-5 py-3 text-base font-bold text-white shadow-md backdrop-blur-sm transition-all duration-300 ease-in-out hover:border-amber-300 hover:shadow-xl/40 hover:shadow-amber-400/20 active:scale-97 sm:mt-0 sm:w-auto">
+                        <Link to="/how-it-works" className="group mt-2.5 inline-flex w-full items-center justify-center rounded-full border-2 border-white/40 bg-transparent px-5 py-3 text-base font-bold text-white shadow-md backdrop-blur-sm transition-all duration-300 ease-in-out hover:border-amber-300 hover:shadow-xl/40 hover:shadow-amber-400/20 active:scale-97 sm:mt-0 sm:w-auto">
                             How It Works
                         </Link>
                     </motion.div>

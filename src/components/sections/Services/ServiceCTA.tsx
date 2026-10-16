@@ -19,8 +19,8 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
     const serviceName = serviceNames[service];
 
     return (
-        <section className="  py-6 sm:py-8 mb-10 max-w-7xl mx-auto px-6">
-            <div className=" bg-linear-to-b from-slate-950 to-blue-950 flex rounded-xl flex-col items-start justify-between gap-4 px-4 sm:px-6 md:flex-row py-14 md:items-center lg:px-8">
+        <section className="py-6 sm:py-8 mb-10 max-w-7xl mx-auto px-4">
+            <div className=" bg-linear-to-b from-slate-950 to-blue-950 flex rounded-xl flex-col items-start justify-between gap-4 px-4 sm:px-6 md:flex-row py-14 md:items-center ">
                 <div>
                     <h2 className="font-serif text-2xl font-bold text-white sm:text-3xl">
                         Ready to compare {serviceName} quotes?
@@ -32,7 +32,7 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
                 <button
                     onClick={() => openQuoteModal()}
                     type="button"
-                    className="shrink-0 inline-flex items-center gap-1.5 cursor-pointer rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 md:mr-20 group hover:shadow-lg/20 hover:-translate-y-1 shadow-amber-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    className="shrink-0 inline-flex items-center gap-1.5 cursor-pointer rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 md:mr-20 group hover:shadow-lg/20 hover:-translate-y-1 shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                     Compare Quotes <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all" />
                 </button>

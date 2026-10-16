@@ -21,7 +21,7 @@ const HeroHowItWorks = () => {
         initial={{ scale: 1.14 }}
         animate={{ scale: 1 }}
         transition={{ duration: 14, ease: "easeOut" }}
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-top"
       />
 
       <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 to-slate-950/75" />

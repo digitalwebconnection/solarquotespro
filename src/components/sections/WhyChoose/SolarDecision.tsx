@@ -6,6 +6,8 @@ const SolarDesicion = () => {
       no: "01",
       title: "Tell Us About Your Energy Needs",
       stepStyle: "text-amber-500",
+      hoverBg: "hover:bg-amber-100/70",
+      borderStyle: "border-t-amber-500/40 border-l-amber-500/40",
       titleStyle: "text-slate-900 capitalize",
       discription:
         "Your property and energy information helps create a clear picture of your solar requirements and what kind of system may work for you.",
@@ -14,6 +16,8 @@ const SolarDesicion = () => {
       no: "02",
       title: "Review Your Energy Requirements",
       stepStyle: "text-emerald-600",
+      borderStyle: "border-t-emerald-600/40 border-l-emerald-600/40",
+      hoverBg: "hover:bg-emerald-100/70",
       titleStyle: "text-slate-900 capitalize",
       discription:
         "Your property details, energy usage and location help identify suitable solar solutions based on your home's needs and available options.",
@@ -22,6 +26,8 @@ const SolarDesicion = () => {
       no: "03",
       title: "Let The Right Installers Find You",
       stepStyle: "text-blue-600",
+      borderStyle: "border-t-blue-600/40 border-l-blue-600/40",
+      hoverBg: "hover:bg-blue-100/70",
       titleStyle: "text-slate-900 capitalize",
       discription:
         "Your requirements help connect your request with suitable installers. This saves you from contacting multiple companies and gives you relevant options.",
@@ -29,7 +35,9 @@ const SolarDesicion = () => {
     {
       no: "04",
       title: "Understand Your Solar Options",
-      stepStyle: "text-indigo-600",
+      stepStyle: "text-orange-500",
+      borderStyle: "border-t-orange-500/40 border-l-orange-500/40",
+      hoverBg: "hover:bg-orange-100/70",
       titleStyle: "text-slate-900 capitalize",
       discription:
         "Compare your quotes, including system size, equipment, pricing, rebates and other details, so you can understand the value of each option before deciding.",
@@ -42,20 +50,24 @@ const SolarDesicion = () => {
       <div className="absolute bg-amber-400/12 h-100 w-100 blur-[120px] -top-10 left-10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          <div className="space-y-8 sm:space-y-10">
+          <div className="space-y-8 sm:space-y-6">
             {processStep.map((item, index) => (
-              <motion.div initial={{ opacity: 0, x: -30 }}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.4,
-                  delay: index * 0.13
-                }} key={item.no} className="border-b border-slate-200 pb-10">
+                  delay: index * 0.13,
+                }}
+                key={item.no}
+                className={`bg-white/70 shadow-xl/30 hover:shadow-xl/50 shadow-black/30 p-5 transition-all duration-200 sm:p-6 rounded-2xl border-2 border-transparent ${item.borderStyle} ${item.hoverBg}`}
+              >
                 <div className="flex gap-5">
-                  <span className={`${item.stepStyle} text-sm font-bold text-amber-500 pt-2`}> {item.no}</span>
+                  <span className={`${item.stepStyle} pt-2 text-sm font-bold`}>{item.no}</span>
                   <div>
-                    <h3 className={` ${item.titleStyle} mb-3 text-xl font-bold sm:text-2xl`}> {item.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{item.discription}</p>
+                    <h3 className={`${item.titleStyle} mb-3 text-xl font-bold sm:text-2xl`}>{item.title}</h3>
+                    <p className="leading-relaxed text-slate-600">{item.discription}</p>
                   </div>
                 </div>
               </motion.div>
@@ -72,7 +84,7 @@ const SolarDesicion = () => {
             <p className="text-sm font-bold uppercase tracking-widest    text-amber-500 mb-4">The Process
             </p>
             <h2 className="text-3xl sm:text-4xl relative lg:text-5xl font-serif font-bold text-slate-900 leading-tight">
-              Know What You're Comparing <span className="bg-linear-to-r from-emerald-600 to-amber-500 text-transparent bg-clip-text">Before You Choose</span>
+              Know What You're Comparing <span className="bg-linear-to-r from-emerald-500 to-amber-500 text-transparent bg-clip-text">Before You Choose</span>
             </h2>
             <p className="mt-6 text-base sm:text-lg relative text-slate-600 leading-relaxed "> Getting solar quotes can involve a lot of research and contacting different installers. Our process brings the important steps together, making it easier to understand your options and make an informed decision.
             </p>

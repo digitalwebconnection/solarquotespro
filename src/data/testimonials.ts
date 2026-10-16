@@ -1,4 +1,15 @@
-export const testimonials = [
+export type Testimonial = {
+    id: number | string;
+    name: string;
+    initials: string;
+    rating: number;
+    service: string;
+    quote: string;
+    role: string;
+    location: string;
+};
+
+export const testimonials: Testimonial[] = [
     {
         id: 1,
         name: "Alex Morgan",

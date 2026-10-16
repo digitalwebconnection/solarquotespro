@@ -6,24 +6,39 @@ const stats = [
         value: "< 60 sec",
         label: "To request your quotes",
         description: "Tell us about your property and get matched without the long sales calls.",
+        border: "border-blue-600/60",
+        text: "text-blue-700",
+        track: "bg-blue-100",
+        fill: "bg-blue-500/80",
     },
     {
         value: "100%",
         label: "CEC-accredited installers",
         description: "Every installer is licensed, vetted and verified before they can quote you.",
+        border: "border-amber-500/60",
+        text: "text-amber-700",
+        track: "bg-amber-100",
+        fill: "bg-amber-500/80",
     },
     {
         value: "Up to 30%",
         label: "Savings vs. a single quote",
         description: "Installers compete for your business, so pricing stays transparent and fair.",
+        border: "border-emerald-600/60",
+        text: "text-emerald-700",
+        track: "bg-emerald-100",
+        fill: "bg-emerald-500/80",
     },
     {
         value: "10,000+",
         label: "Aussie homeowners matched",
         description: "Join homeowners across Australia who've compared quotes with True Solar Quote.",
+        border: "border-orange-500/60",
+        text: "text-orange-700",
+        track: "bg-orange-100",
+        fill: "bg-orange-500/80",
     },
 ]
-
 /** Splits "Up to 30%" into prefix "Up to ", number 30, suffix "%" and counts up. */
 function CountUp({ value, delay = 0 }: { value: string; delay?: number }) {
     const ref = useRef<HTMLSpanElement>(null)
@@ -65,7 +80,7 @@ export default function WhyNumbers() {
     const reduce = useReducedMotion()
 
     return (
-        <section className="relative overflow-hidden bg-linear-to-br from-slate-50/70 from-20% to-amber-400/14 px-6 py-20 sm:px-10 lg:px-14 lg:py-18">
+        <section className="relative overflow-hidden bg-slate-50  px-6 py-20 sm:px-10 lg:px-14 lg:py-18">
             {/* Drifting background glows */}
             {!reduce && (
                 <>
@@ -97,7 +112,7 @@ export default function WhyNumbers() {
                     </h2>
                 </motion.div>
 
-                <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={stat.label}
@@ -114,16 +129,13 @@ export default function WhyNumbers() {
                                 damping: 14,
                                 delay: index * 0.12,
                             }}
-                            className="relative overflow-hidden rounded-lg border border-slate-200 bg-white px-6 pb-6 pt-10 shadow-black/10 shadow-xl transition-shadow duration-300 hover:shadow-black/20 hover:shadow-2xl"
-                            whileHover={{ y: -8, scale: 1.03 }}
+                            whileHover={reduce ? undefined : { y: -8, scale: 1.03 }}
+                            className={`relative h-full overflow-hidden rounded-xl border bg-white px-6 pb-7 pt-10 shadow-lg shadow-slate-900/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-slate-900/15 ${stat.border}`}
                         >
-                            <div
-                                aria-hidden="true"
-                                className="absolute inset-x-0 top-0 px-7 pt-4"
-                            >
-                                <div className="h-1 overflow-hidden rounded-full bg-amber-100">
+                            <div aria-hidden="true" className="absolute inset-x-0 top-0 px-6 pt-4">
+                                <div className={`h-0.75 overflow-hidden rounded-full ${stat.track}`}>
                                     <motion.div
-                                        className="h-full origin-left bg-amber-300"
+                                        className={`h-full origin-left ${stat.fill}`}
                                         initial={{ scaleX: 0 }}
                                         whileInView={{ scaleX: 1 }}
                                         viewport={{ once: true }}
@@ -132,15 +144,15 @@ export default function WhyNumbers() {
                                 </div>
                             </div>
 
-                            <p className="relative text-4xl font-extrabold tracking-tight font-serif text-slate-950">
-                                <CountUp value={stat.value} delay={0.2 + index * 0.10} />
+                            <p className="font-serif text-4xl font-extrabold tracking-tight text-slate-950">
+                                <CountUp value={stat.value} delay={0.2 + index * 0.1} />
                             </p>
 
-                            <h3 className="relative mt-3 text-lg font-semibold text-amber-500">
+                            <h3 className={`mt-3 text-lg font-semibold ${stat.text}`}>
                                 {stat.label}
                             </h3>
 
-                            <p className="relative mt-3 text-sm leading-6 text-slate-600">
+                            <p className="mt-3 text-sm leading-6 text-slate-600">
                                 {stat.description}
                             </p>
                         </motion.div>

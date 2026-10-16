@@ -43,7 +43,7 @@ const highlights = [
 
 export default function MiniWhyTrueSolarQuotes() {
     return (
-        <section className="relative bg-slate-900 py-10 text-white ">
+        <section className="relative bg-slate-900 py-15 text-white ">
             <div className="absolute -top-10 left-20 w-150 h-100 bg-linear-to-r from-amber-300/20 to-emerald-500/20 rounded-full blur-[120px]" />
 
             <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function MiniWhyTrueSolarQuotes() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-4xl mx-auto mb-14">
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-2xl mx-auto  font-bold mt-5 font-serif">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-2xl mx-auto  font-bold  font-serif">
                         Make a More{" "}
                         <span className="bg-linear-to-r from-amber-400 via-orange-400 to-emerald-400 bg-clip-text text-transparent"> Informed Energy Decision
                         </span>
@@ -97,10 +97,7 @@ export default function MiniWhyTrueSolarQuotes() {
                         </motion.div>
                     ))}
                 </div>
-                <div className="mt-12 max-w-4xl mx-auto text-center">
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">Our goal is to help homeowners understand solar,batteries and other energy technologies so they cancompare their choices and decide what works best for their circumstances.
-                    </p>
-                </div>
+
             </div>
         </section>
     );

@@ -2,6 +2,7 @@
 import AllServices from "../../components/sections/Services/AllServices";
 import HeroService from "../../components/sections/Services/HeroService";
 import HomeEnergySystem from "../../components/sections/Services/HomeEnergySystem";
+
 import WhyTrueSolar from "../../components/sections/Services/WhyTrueSolar";
 // import ExploreSolar from "../../components/sections/Services/Sections/exploresolar/ExploreSolar";
 // import HowSolarWork from "../../components/sections/Services/Sections/exploresolar/sections/HowSolarWork";
@@ -14,6 +15,7 @@ export default function ServicePage() {
             <AllServices />
             <WhyTrueSolar />
             <HomeEnergySystem />
+
             {/* <CTA/> */}
         </main>
     )

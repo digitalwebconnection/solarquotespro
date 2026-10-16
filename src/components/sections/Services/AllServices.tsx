@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sun, BatteryCharging, Zap, Snowflake, Droplets, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ac from "../../../assets/images/SolarServices/ac.webp";
 import inverter from "../../../assets/images/SolarServices/inverter.webp";
 import battery from "../../../assets/images/SolarServices/battery.webp";
@@ -121,17 +121,19 @@ const solutions = [
 ];
 
 export default function AllServices() {
+  const shouldReduceMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
   const activeService = solutions[activeIndex];
   const ActiveIcon = activeService.icon;
 
   useEffect(() => {
+    if (shouldReduceMotion) return;
     const rotationTimer = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % solutions.length);
     }, 6000);
 
     return () => window.clearInterval(rotationTimer);
-  }, []);
+  }, [shouldReduceMotion]);
 
   return (
     <section className="relative overflow-hidden bg-slate-50 py-12 sm:py-16" id="all-services">
@@ -145,7 +147,7 @@ export default function AllServices() {
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
@@ -210,7 +212,7 @@ export default function AllServices() {
               >
                 <motion.img
                   key={activeService.image}
-                  initial={{ scale: 1.12 }}
+                  initial={{ scale: shouldReduceMotion ? 1 : 1.12 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 2.2, ease: "easeOut" }}
                   src={activeService.image}

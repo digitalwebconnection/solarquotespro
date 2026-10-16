@@ -7,7 +7,7 @@ export default function AboutCompany() {
             <div className="absolute inset-0 z-0 h-150 w-170 rounded-full bg-amber-400/10 blur-[120px]" />
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+                <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
                     <motion.div
                         initial={{ opacity: 0, x: -28 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ export default function AboutCompany() {
                                 <img
                                     src="https://www.solarquotes.com.au/wp-content/uploads/2024/01/solarquotes-team.jpg"
                                     alt="Team helping homeowners compare solar solutions"
-                                    className="h-72 w-full rounded-2xl object-cover sm:h-96 lg:h-110"
+                                    className="h-80 w-full rounded-2xl object-cover sm:h-105 lg:h-130"
                                 />
                             </div>
                             <div className="absolute -bottom-5 left-7 rounded-xl border border-blue-100 bg-white px-3 py-2 shadow-lg ">
