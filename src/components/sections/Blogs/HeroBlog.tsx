@@ -10,12 +10,12 @@ export default function HeroBlog() {
 
 
   return (
-    <section className="relative min-h-112 w-full overflow-hidden sm:min-h-110">
+    <section className="relative min-h-106 w-full overflow-hidden sm:min-h-110">
       <motion.img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNBYWoL81tQE1y2HUSppSAsvmZqpcEPTytWgWRobVvQ&s=10" alt="Solar energy and smart grid technology"
         initial={{ scale: 1.14 }}
         animate={{ scale: 1 }}
         transition={{ duration: 14, ease: "easeOut" }}
-        className="absolute inset-0 w-full h-full object-cover object-bottom opacity-50" />
+        className="absolute inset-0 w-full h-full object-cover object-bottom opacity-70" />
 
       <div className="absolute inset-0 bg-linear-to-br from-slate-950/95 via-slate-950/85 to-slate-950/60 z-0" />
       <div className="relative mx-auto flex min-h-112 max-w-7xl items-center px-4 py-12 sm:min-h-110 sm:px-6 sm:py-16 lg:px-8">

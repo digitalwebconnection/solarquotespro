@@ -9,7 +9,7 @@ const stats = [
         border: "border-blue-600/60",
         text: "text-blue-700",
         track: "bg-blue-100",
-        fill: "bg-blue-500/80",
+        fill: "bg-blue-500/40",
     },
     {
         value: "100%",
@@ -18,7 +18,7 @@ const stats = [
         border: "border-amber-500/60",
         text: "text-amber-700",
         track: "bg-amber-100",
-        fill: "bg-amber-500/80",
+        fill: "bg-amber-500/40",
     },
     {
         value: "Up to 30%",
@@ -27,7 +27,7 @@ const stats = [
         border: "border-emerald-600/60",
         text: "text-emerald-700",
         track: "bg-emerald-100",
-        fill: "bg-emerald-500/80",
+        fill: "bg-emerald-500/40",
     },
     {
         value: "10,000+",
@@ -36,7 +36,7 @@ const stats = [
         border: "border-orange-500/60",
         text: "text-orange-700",
         track: "bg-orange-100",
-        fill: "bg-orange-500/80",
+        fill: "bg-orange-500/40",
     },
 ]
 /** Splits "Up to 30%" into prefix "Up to ", number 30, suffix "%" and counts up. */
@@ -81,7 +81,6 @@ export default function WhyNumbers() {
 
     return (
         <section className="relative overflow-hidden bg-slate-50  px-6 py-20 sm:px-10 lg:px-14 lg:py-18">
-            {/* Drifting background glows */}
             {!reduce && (
                 <>
                     <div

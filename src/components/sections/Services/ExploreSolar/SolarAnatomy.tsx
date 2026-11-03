@@ -228,7 +228,7 @@ const SolarAnatomy = () => {
                                     "url('https://images.unsplash.com/photo-1730807908064-c087959dd52c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNvbGFyJTIwaG9tZXxlbnwwfHwwfHx8MA%3D%3D')",
                             }}
                         />
-                        <div className="absolute inset-0 z-0 bg-slate-950/80 backdrop-blur-[1.5px]" />
+                        <div className="absolute inset-0 z-0 bg-slate-950/80 backdrop-blur-[1.2px]" />
                         <div className="relative z-10 mx-auto max-w-5xl px-6">
                             <h3 className="mb-5 text-center text-xl font-bold md:text-2xl">
                                 From Sunlight to Electricity

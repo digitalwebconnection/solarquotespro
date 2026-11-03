@@ -37,6 +37,27 @@ const spotlightStyles = `
     );
   }
 
+  .spotlight-card__inner-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+    calc(var(--spotlight-size) * 1.2) calc(var(--spotlight-size) * 1.2) at
+    calc(var(--lx, 0) * 1px)
+    calc(var(--ly, 0) * 1px),
+    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / 0.3),
+    transparent 70%
+  );
+}
+
+  [data-glow]:hover > .spotlight-card__inner-glow {
+    opacity: 1;
+  }
+
   [data-glow] [data-glow] {
     position: absolute;
     inset: 0;
@@ -75,8 +96,8 @@ const glowColorMap = {
 
 const sizeMap = {
     sm: 'w-48 h-64',
-    md: 'w-64 h-80',
-    lg: 'w-80 h-96'
+    md: 'w-61 h-75',
+    lg: 'w-86 h-92'
 };
 
 const glowCards = new Set<HTMLDivElement>();
@@ -98,10 +119,16 @@ const syncPointer = (event: PointerEvent) => {
         const yp = (pointerY / window.innerHeight).toFixed(2);
 
         glowCards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+
             card.style.setProperty('--x', x);
             card.style.setProperty('--xp', xp);
             card.style.setProperty('--y', y);
             card.style.setProperty('--yp', yp);
+
+            // position relative to THIS card (used by the inner glow)
+            card.style.setProperty('--lx', (pointerX - rect.left).toFixed(2));
+            card.style.setProperty('--ly', (pointerY - rect.top).toFixed(2));
         });
     });
 };
@@ -181,7 +208,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
             backgroundAttachment: 'fixed',
             border: 'var(--border-size) solid var(--backup-border)',
             position: 'relative' as const,
-            touchAction: 'none' as const,
+            touchAction: 'pan-y' as const,
         } as React.CSSProperties;
 
         // Add width and height if provided
@@ -215,8 +242,9 @@ const GlowCard: React.FC<GlowCardProps> = ({
           ${className}
         `}
             >
+                <div className="spotlight-card__inner-glow" aria-hidden="true"></div>
                 <div data-glow></div>
-                {children}
+                <div className="relative z-10">{children}</div>
             </div>
         </>
     );

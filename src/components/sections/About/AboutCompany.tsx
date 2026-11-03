@@ -7,7 +7,7 @@ export default function AboutCompany() {
             <div className="absolute inset-0 z-0 h-150 w-170 rounded-full bg-amber-400/10 blur-[120px]" />
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+                <div className="grid items-center gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:gap-7">
                     <motion.div
                         initial={{ opacity: 0, x: -28 }}
                         whileInView={{ opacity: 1, x: 0 }}

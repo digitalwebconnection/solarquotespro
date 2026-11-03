@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Check, Dot } from "lucide-react";
-import { useReducedMotion } from "framer-motion";
 import { useQuoteModal } from "../../../context/QuoteModalContext";
-import acImage from "../../../assets/images/SolarServices/ac.webp";
-import batteryImage from "../../../assets/images/SolarServices/battery.webp";
-import evChargerImage from "../../../assets/images/SolarServices/evcharger.webp";
 
-import inverterImage from "../../../assets/images/SolarServices/inverter.webp";
-import solarImage from "../../../assets/images/SolarServices/solar.webp";
 
 const contentVariants = {
     hidden: { opacity: 0, y: 16 },
@@ -16,56 +10,35 @@ const contentVariants = {
 };
 
 const chips = ["100% Free to Use", "No Obligation", "Trusted Local Providers"];
-const backgrounds = [
-    { src: solarImage, alt: "Rooftop solar panels" },
-    { src: batteryImage, alt: "Home battery storage" },
-    { src: evChargerImage, alt: "Electric vehicle charging" },
-    { src: acImage, alt: "Energy-efficient home air conditioning" },
-    { src: inverterImage, alt: "Solar power inverter" },
-];
 
 export default function HeroService() {
     const { openQuoteModal } = useQuoteModal();
-    const [backgroundIndex, setBackgroundIndex] = useState(0);
-    const prefersReducedMotion = useReducedMotion();
-
-    useEffect(() => {
-        if (prefersReducedMotion) return;
-
-        const timer = window.setInterval(() => {
-            setBackgroundIndex((currentIndex) => (currentIndex + 1) % backgrounds.length);
-        }, 4000);
-
-        return () => window.clearInterval(timer);
-    }, [prefersReducedMotion]);
 
     return (
-        <section className="relative min-h-120 w-full overflow-hidden sm:min-h-115">
+        <section className="relative min-h-117 w-full overflow-hidden ">
 
-            <AnimatePresence initial={false}>
-                <motion.img
-                    key={backgroundIndex}
-                    src={backgrounds[backgroundIndex].src}
-                    alt={backgrounds[backgroundIndex].alt}
-                    fetchPriority="high"
-                    initial={{ opacity: 0, scale: 1.08 }}
-                    animate={{ opacity: 1, scale: 1.02 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                        opacity: { duration: 0.7, ease: "easeOut" },
-                        scale: { duration: 4.5, ease: "linear" },
-                    }}
-                    className="absolute inset-0 h-full w-full object-cover object-bottom will-change-transform blur-[1.5px]"
-                />
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-950/65 to-slate-950/50" />
 
-            {/* Pulsing sun glow */}
+            <motion.img
+                src="https://images.unsplash.com/photo-1762958266463-6af778b56beb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                alt="Home energy Solutions "
+                fetchPriority="high"
+                initial={{ opacity: 0, scale: 1 }}
+                animate={{ opacity: 1, scale: 1.02 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                    opacity: { duration: 0.7, ease: "easeOut" },
+                    scale: { duration: 4.5, ease: "linear" },
+                }}
+                className="absolute inset-0 h-full w-full object-cover object-bottom  "
+            />
+            <div className="absolute inset-0 bg-linear-to-r from-slate-950/75 via-slate-950/65 to-slate-950/40" />
+
+
             <motion.div
                 aria-hidden="true"
                 animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-amber-400/25 blur-3xl"
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -right-22 -top-22 h-96 w-96 rounded-full bg-amber-400/25 blur-3xl"
             />
 
             <div className="relative z-10 mx-auto flex min-h-120 max-w-7xl items-center px-4 py-12 pb-20 sm:min-h-115 sm:px-6 sm:py-14 sm:pb-14 lg:px-8 lg:py-16">
@@ -115,15 +88,6 @@ export default function HeroService() {
                         className="pt-2"
                     >
                         <div className="relative inline-block">
-                            {/* Pulsing ring behind the button */}
-                            <motion.span
-                                aria-hidden="true"
-                                animate={
-                                    { scale: [1, 1.2], opacity: [0.5, 0] }
-                                }
-                                transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
-                                className="absolute inset-0 rounded-full bg-amber-500"
-                            />
                             <motion.button
                                 type="button"
                                 onClick={() => openQuoteModal()}

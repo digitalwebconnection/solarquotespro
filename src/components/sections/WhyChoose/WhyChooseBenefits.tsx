@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BadgeCheck, House, Scale } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -58,7 +58,18 @@ const topics = [
 
 export default function WhyChooseBenefits() {
     const [activeTopic, setActiveTopic] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
     const selectedTopic = topics[activeTopic];
+
+    useEffect(() => {
+        if (isPaused) return;
+
+        const timer = setInterval(() => {
+            setActiveTopic((prev) => (prev + 1) % topics.length);
+        }, 6000);
+
+        return () => clearInterval(timer);
+    }, [activeTopic, isPaused]);
 
     return (
         <section className="relative overflow-hidden bg-slate-50  py-12 sm:py-16  lg:py-20">
@@ -104,6 +115,8 @@ export default function WhyChooseBenefits() {
                                     type="button"
                                     aria-pressed={isActive}
                                     onClick={() => setActiveTopic(index)}
+                                    onMouseEnter={() => setIsPaused(true)}
+                                    onMouseLeave={() => setIsPaused(false)}
                                     className={`flex h-full items-start gap-3 rounded-xl border p-3 py-4 text-left transition-colors duration-200  sm:flex-col sm:gap-4 lg:flex-row lg:items-center cursor-pointer ${isActive ? topic.theme.activeCard : topic.theme.card
                                         }`}
                                 >
